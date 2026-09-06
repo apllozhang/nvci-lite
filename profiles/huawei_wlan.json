@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_wlan",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为无线局域网｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "wlan",
+    "name": "03 无线局域网",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "03 无线局域网"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 10,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_wlan_01",
+      "series": "华为坤灵 eKitEngine 系列",
+      "modelNames": [
+        "eKitEngine AP572"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/b68f5caa35d8498e90beea6e04f7565c",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/b68f5caa35d8498e90beea6e04f7565c/M3T1A590N1197650178759094434/%E5%8D%8E%E4%B8%BA%E5%9D%A4%E7%81%B5%20eKitEngine%20AP572%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E7%82%B9%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 华为坤灵 eKitEngine 系列 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "fa0e93eaa4aa0f5816ab92aa7eb5582770a231ba4cf5d932f53f1b761d55cb66"
+    },
+    {
+      "documentId": "huawei_wlan_02",
+      "series": "华为坤灵无线控制器系列",
+      "modelNames": [
+        "华为坤灵无线控制器系列"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/240242de748f4950ac12ab29df14b329",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/240242de748f4950ac12ab29df14b329/M3T1A590N1250489243758362770/%E5%8D%8E%E4%B8%BA%E5%9D%A4%E7%81%B5AC650-128AP%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为坤灵AC650-128AP无线接入控制器彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "04bcc10398a487eccac9b21b738814e464533c3ae8bec4e93c0786d31a9f9535"
+    },
+    {
+      "documentId": "huawei_wlan_03",
+      "series": "AC600系列无线控制器",
+      "modelNames": [
+        "AC6508"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/147ce3bc827a42e4a21ec63de17e54d6",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/147ce3bc827a42e4a21ec63de17e54d6/M3T1A590N1197623070217462021/%E5%8D%8E%E4%B8%BAAC6508%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AC600系列无线控制器 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "4e352976d717cb9c776fd7e651b8ccc531d1fe454cbf52095603f836c8832563"
+    },
+    {
+      "documentId": "huawei_wlan_04",
+      "series": "AirEngine 5700系列面板AP",
+      "modelNames": [
+        "AirEngine 5762-10SW"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/66008f6c3e604c7481f46c14080334e5",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/66008f6c3e604c7481f46c14080334e5/M3T1A590N1061724045211656379/%E5%8D%8E%E4%B8%BAAirEngine%205762-10SW%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E7%82%B9%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AirEngine 5700系列面板AP 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "e94a8b87e1f09ef83b02b37d6c0d6747402b07167c2513a0e698c6289a0fae92"
+    },
+    {
+      "documentId": "huawei_wlan_05",
+      "series": "AirEngine 5700系列室内AP",
+      "modelNames": [
+        "AirEngine 5761S-12"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/029c6564fb3a45119f9d96496392232c",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/029c6564fb3a45119f9d96496392232c/M2T1A590N976948896265523415/%E5%8D%8E%E4%B8%BAAirEngine%205761S-12%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E7%82%B9%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AirEngine 5700系列室内AP 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "f5f2203b0ace650416c5646dd5f32dd77317368aba215385119d6a70dcc817f5"
+    },
+    {
+      "documentId": "huawei_wlan_06",
+      "series": "AirEngine 5700系列室外AP",
+      "modelNames": [
+        "AirEngine 5776I-X6H",
+        "AirEngine 5776I-X7H",
+        "AirEngine 5776I-X6EH"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/3e2131da1c8146eab855b5b484e75a44",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/3e2131da1c8146eab855b5b484e75a44/M3T1A590N1239161969343406178/%E5%8D%8E%E4%B8%BAAirEngine%205776I-X6H_AirEngine%205776I-X7H_AirEngine%205776I-X6EH%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E7%82%B9%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AirEngine 5700系列室外AP 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "2feebb8d401992a31efcfb0bca5477d5c5b0e819c759d55b42ac1db31d1086c0"
+    },
+    {
+      "documentId": "huawei_wlan_07",
+      "series": "AirEngine 6700系列室内AP",
+      "modelNames": [
+        "AirEngine 6761S-21"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/60951361ffbb483483d0698d83646f85",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/60951361ffbb483483d0698d83646f85/M2T1A590N976947070262865941/%E5%8D%8E%E4%B8%BAAirEngine%206761S-21%E6%97%A0%E7%BA%BF%E6%8E%A5%E5%85%A5%E7%82%B9%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AirEngine 6700系列室内AP 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "c3a80009ee18519f3fdf9e4604cfaf1fb941d316b4205a6192e9ce9f94097a6b"
+    },
+    {
+      "documentId": "huawei_wlan_08",
+      "series": "AirEngine 9700-L系列无线控制器",
+      "modelNames": [
+        "AirEngine 9700-L系列无线控制器"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/c33f63c6fc8c4ffa9bd26ba55b8e149a",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/c33f63c6fc8c4ffa9bd26ba55b8e149a/M3T1A590N1262164319807643723/华为AirEngine 9701-L无线接入控制器彩页.pdf",
+      "officialFileName": "华为AirEngine 9701-L无线接入控制器彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "5a3b186f69569548a6fbc912ca0c0a149a3c76148453034ba1ca8b6f2ab2cc98"
+    },
+    {
+      "documentId": "huawei_wlan_09",
+      "series": "AirEngine 9700D-M系列分布式中心AP",
+      "modelNames": [
+        "AirEngine 9700D-M系列分布式中心AP"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/0691727bcca647edbca9fabc43ebc7d0",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/0691727bcca647edbca9fabc43ebc7d0/M2T1A590N947432109177753671/%E5%8D%8E%E4%B8%BAAirEngine%209700D-M1%E4%B8%AD%E5%BF%83AP%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为AirEngine 9700D-M1中心AP详版彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "fa7c7de13aeb9977bb68c103250be7d3db33b0df35421528a2fa79ecf6d07fb8"
+    },
+    {
+      "documentId": "huawei_wlan_10",
+      "series": "AirEngine Wi-Fi 7零漫游系列",
+      "modelNames": [
+        "AirEngine 6776-26HD"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/wlan",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/campus-network/wlan/d4e163b9ad814bb38200ada5def73b80",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/d4e163b9ad814bb38200ada5def73b80/M3T1A590N1186045712200032316/%E5%8D%8E%E4%B8%BAWi-Fi%207%E9%9B%B6%E6%BC%AB%E6%B8%B8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 AirEngine Wi-Fi 7零漫游系列 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "1c52cb1c3bfa5c890ce68e8fbd445903da889932e59f1eb1f988956f7b4ddcc1"
+    }
+  ]
+}

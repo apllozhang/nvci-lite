@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_campus_access",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为园区接入交换机｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "campus_access",
+    "name": "01 园区交换机/02 接入交换机",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "01 园区交换机/02 接入交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 4,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_campus_access_01",
+      "series": "CloudEngine S5731-S",
+      "modelNames": [
+        "S5731-S24P4X",
+        "S5731-S48P4X"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s5731-s",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/9b88d80032e2450987d7b34ec524ff16",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/9b88d80032e2450987d7b34ec524ff16/M3T1A590N1046083966844362824/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S5731-S%E7%B3%BB%E5%88%97%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5731-S 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "3f1b57e26f49257dd37ed4d1b3057aa93e0d6984b0f2adb2a928fa264f098d11"
+    },
+    {
+      "documentId": "huawei_campus_access_02",
+      "series": "CloudEngine S5732-H-V2",
+      "modelNames": [
+        "S5732-H24S6Q-V2",
+        "S5732-H48S6Q-V2"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s5732-h-v2",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/40bd28b2abc6496bb5b17ee385da3546",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/40bd28b2abc6496bb5b17ee385da3546/M3T1A590N1080895760138997858/%E5%8D%8E%E4%B8%BACloudEngine%20S5732-H-V2%E7%B3%BB%E5%88%97%E5%A4%9A%E9%80%9F%E7%8E%87%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5732-H-V2 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "fab6ddcd6eabc531cd23934b88e313289ae3e78a0e15fb3845884877c21824c7"
+    },
+    {
+      "documentId": "huawei_campus_access_03",
+      "series": "CloudEngine S5755-H",
+      "modelNames": [
+        "S5755-H24U2X",
+        "S5755-H48U2X"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s5755-h",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/0d3b90a9b98d4062a4abde8bfbf30498",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/d3ee6ca65845405ca7f5c3b2a543abc1/M3T1A590N1197268881822130471/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S5755-H%E7%B3%BB%E5%88%97%E9%AB%98%E5%93%81%E8%B4%A8%E5%8D%83%E5%85%86%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5755-H 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "dd9acb3887bfe26530de47f3320b669956b4311bfe848ea64b5e7ff97c1e8aa6"
+    },
+    {
+      "documentId": "huawei_campus_access_04",
+      "series": "CloudEngine S6735-S",
+      "modelNames": [
+        "S6735-S24X4Q",
+        "S6735-S48X4Q"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s6735-s",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/8d800fca22ce489aa2a5c7cddd97dc67",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/8d800fca22ce489aa2a5c7cddd97dc67/M3T1A590N1066044075049025543/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S6735-S%E7%B3%BB%E5%88%97%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S6735-S 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "dc5a9354f42daec9f8cd54714621f36a0a69c2500977a67d2a75d285eb98fefc"
+    }
+  ]
+}

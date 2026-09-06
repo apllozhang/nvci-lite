@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "hpe_aruba_cx_switches",
+  "vendorId": "hpe",
+  "vendorName": "HPE Networking",
+  "displayName": "HPE Aruba CX 交换机｜已验证官方 Data sheet",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "trustedRedirectDomains": [],
+  "sourcePolicy": "仅采集已验证的 HPE 官方 Data sheet；型号事实遵循 Data sheet → Specifications → QuickSpecs，商城只用于固定优先级补洞。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01_aruba_cx",
+    "name": "01 Aruba CX 交换机",
+    "libraryRootName": "HPE Networking彩页"
+  },
+  "subseries": {
+    "id": "aruba_cx_data_sheet",
+    "name": "Aruba CX 已验证 Data sheet"
+  },
+  "productLinePath": [
+    "HPE Networking彩页",
+    "01 Aruba CX 交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 15,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "hpe_aruba_cx_01",
+      "series": "CX 6000",
+      "modelNames": [
+        "CX 6000"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00112996enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206000%20Switch%20Series-a00112996enw.pdf?id=a00112996enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6000 Switch Series-a00112996enw.pdf",
+      "expectedSha256": "ce763d35bd3aa1744821bdb798ef6a64a00d19940ba3ca95d407136714119e83",
+      "matchTerms": [
+        "CX 6000"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_02",
+      "series": "CX 6100",
+      "modelNames": [
+        "CX 6100"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00106853enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206100%20Switch%20Series-a00106853enw.pdf?id=a00106853enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6100 Switch Series-a00106853enw.pdf",
+      "expectedSha256": "4e7e4257687cdcf74ffe659278dc9bcab78b14eabaca54a03463f59e0de45923",
+      "matchTerms": [
+        "CX 6100"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_03",
+      "series": "CX 6200",
+      "modelNames": [
+        "CX 6200"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00097415enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206200%20Switch%20Series-a00097415enw.pdf?id=a00097415enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6200 Switch Series-a00097415enw.pdf",
+      "expectedSha256": "1d979ef8892061c76d3f6fcd38374a36b5e028d6174021de0b6dc7cb41cd98d3",
+      "matchTerms": [
+        "CX 6200"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_04",
+      "series": "CX 6300",
+      "modelNames": [
+        "CX 6300"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00085162enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206300%20Switch%20Series-a00085162enw.pdf?id=a00085162enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6300 Switch Series-a00085162enw.pdf",
+      "expectedSha256": "053dfeda30142fbceb47191c82a5e567af1d234e65214388aef9cf709c000023",
+      "matchTerms": [
+        "CX 6300"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_05",
+      "series": "CX 6300L",
+      "modelNames": [
+        "CX 6300L"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00148251enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206300L%20Switch%20Series-a00148251enw.pdf?id=a00148251enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6300L Switch Series-a00148251enw.pdf",
+      "expectedSha256": "4bd8085172730dfd5d9bee93ce69586f8498528bbfd554ebcc089a38a573d8ba",
+      "matchTerms": [
+        "CX 6300L"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_06",
+      "series": "CX 4100i",
+      "modelNames": [
+        "CX 4100i"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00117285enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%204100i%20Switch%20Series-a00117285enw.pdf?id=a00117285enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 4100i Switch Series-a00117285enw.pdf",
+      "expectedSha256": "4e4ea2c332afd8cbceee716004fec35bea6b419516cf8e1e85d453d6a1c76999",
+      "matchTerms": [
+        "CX 4100i"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_07",
+      "series": "CX 5420",
+      "modelNames": [
+        "CX 5420"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00143490enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%205420%20Switch%20Series-a00143490enw.pdf?id=a00143490enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 5420 Switch Series-a00143490enw.pdf",
+      "expectedSha256": "2bdcd7e562e5364a26286e9d4d0b653e34ade51e0b7b4fdaf6040374a31afe5b",
+      "matchTerms": [
+        "CX 5420"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_08",
+      "series": "CX 6400",
+      "modelNames": [
+        "CX 6400"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00085158enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%206400%20Switch%20Series-a00085158enw.pdf?id=a00085158enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 6400 Switch Series-a00085158enw.pdf",
+      "expectedSha256": "b841d911b85a80159e041a7287a3248aebd237c301bb71e36ac27e8574002419",
+      "matchTerms": [
+        "CX 6400"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_09",
+      "series": "CX 8320",
+      "modelNames": [
+        "CX 8320"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00036440enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%208320%20Switch%20Series-a00036440enw.pdf?id=a00036440enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 8320 Switch Series-a00036440enw.pdf",
+      "expectedSha256": "86f9733ea9633305520c2f460b27bb300f47c3004bc8e9cf753ac09f26121a77",
+      "matchTerms": [
+        "CX 8320"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_10",
+      "series": "CX 8360",
+      "modelNames": [
+        "CX 8360"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a50002121enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%208360%20Switch%20Series-a50002121enw.pdf?id=a50002121enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 8360 Switch Series-a50002121enw.pdf",
+      "expectedSha256": "0111888eac60b3e5cdd06699d662c575d2e750e12a2ee08c8d3f0fda2b9a9354",
+      "matchTerms": [
+        "CX 8360"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_11",
+      "series": "CX 8400",
+      "modelNames": [
+        "CX 8400"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00021508enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%208400%20Switch%20Series-a00021508enw.pdf?id=a00021508enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 8400 Switch Series-a00021508enw.pdf",
+      "expectedSha256": "801b30d47ada280fc60a2f419afe7334401b94c4079b52e41fc8f19f482367b8",
+      "matchTerms": [
+        "CX 8400"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_12",
+      "series": "CX 8100",
+      "modelNames": [
+        "CX 8100"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00131340enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%208100%20Switch%20Series-a00131340enw.pdf?id=a00131340enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 8100 Switch Series-a00131340enw.pdf",
+      "expectedSha256": "2620a8da213b26024902f46a5f6e7e66cd77433a2656bf6d01ef0bcda53d5ff3",
+      "matchTerms": [
+        "CX 8100"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_13",
+      "series": "CX 8325",
+      "modelNames": [
+        "CX 8325"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00059009enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%208325%20Switch%20Series-a00059009enw.pdf?id=a00059009enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 8325 Switch Series-a00059009enw.pdf",
+      "expectedSha256": "64545a4503acbb95b5a153de7ea7c9468e0298770cba95540568b99f31fca0d1",
+      "matchTerms": [
+        "CX 8325"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_14",
+      "series": "CX 9300",
+      "modelNames": [
+        "CX 9300"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00125744enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%209300%20Switch%20Series-a00125744enw.pdf?id=a00125744enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 9300 Switch Series-a00125744enw.pdf",
+      "expectedSha256": "c696a47366ffb2c51b10e890d0b855ce79b72909b3d9f4ddd71edcd903ab5d73",
+      "matchTerms": [
+        "CX 9300"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    },
+    {
+      "documentId": "hpe_aruba_cx_15",
+      "series": "CX 10000",
+      "modelNames": [
+        "CX 10000"
+      ],
+      "productPageUrl": "https://www.hpe.com/us/en/aruba-cx-switches.html",
+      "materialPageUrl": "https://www.hpe.com/psnow/doc/a00119682enw",
+      "pdfUrl": "https://www.hpe.com/psnow/downloadDoc/HPE%20Aruba%20Networking%20CX%2010000%20Switch%20Series-a00119682enw.pdf?id=a00119682enw&contentDisposition=attachment",
+      "officialFileName": "HPE Aruba Networking CX 10000 Switch Series-a00119682enw.pdf",
+      "expectedSha256": "2301959913301b8ee09ff99a8cb0b1d3e5ea7b832fd819d06f092007a3189167",
+      "matchTerms": [
+        "CX 10000"
+      ],
+      "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
+    }
+  ]
+}

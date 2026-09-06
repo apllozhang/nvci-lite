@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_datacenter_switches",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为数据中心交换机｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "datacenter_switches",
+    "name": "02 数据中心交换机",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "02 数据中心交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 5,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_datacenter_switches_01",
+      "series": "CloudEngine 16800-X系列",
+      "modelNames": [
+        "CE16800-X4",
+        "CE16800-X8",
+        "CE16800-X16"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/data-center-switches/ce16800",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/de9c7fdc490f451797f1a1f33b1a83df/M3T1A590N1235930119505109239/%E5%8D%8E%E4%B8%BA%20CloudEngine%2016800-X%20%E7%B3%BB%E5%88%97%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.PDF",
+      "officialFileName": "华为 CloudEngine 16800-X系列 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "b6c9e34f67f0dcb4ee027245f706339600814054d01e36488ff859b8d1ff1561"
+    },
+    {
+      "documentId": "huawei_datacenter_switches_02",
+      "series": "CloudEngine 6800系列",
+      "modelNames": [
+        "CE6885-48YS8CQ",
+        "CE6881-48S6CQ",
+        "CE6863H-48S6CQ"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/data-center-switches/ce6800",
+      "materialPageUrl": "https://e.huawei.com/cn/material/enterprise/62a2091e52e04e22b3e0c2680cd08e80",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/62a2091e52e04e22b3e0c2680cd08e80/M1T1A669N749588282715951116/%E5%8D%8E%E4%B8%BACloudEngine%206881E%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E4%BA%A4%E6%8D%A2%E6%9C%BA%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine 6800系列 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "45637467d3a5facaf305b6a71a794efb94620ab6ba6b4a0d42374fa427c9b827"
+    },
+    {
+      "documentId": "huawei_datacenter_switches_03",
+      "series": "CloudEngine 8800系列",
+      "modelNames": [
+        "CE8875-24BQ8DQ",
+        "CE8865-4C",
+        "CE8855-32CQ4BQ"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/data-center-switches/ce8800",
+      "materialPageUrl": "https://e.huawei.com/cn/material/enterprise/395e87640a4f4756a765ab46e5cd43c1",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/395e87640a4f4756a765ab46e5cd43c1/M3T1A590N1110977878724902980/%E5%8D%8E%E4%B8%BACloudEngine%208800%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E4%BA%A4%E6%8D%A2%E6%9C%BA%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine 8800系列 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "7410eea0e3db9f01a49326b9b6e8b60524101dea5c668b61fc5d4d4e27fe478f"
+    },
+    {
+      "documentId": "huawei_datacenter_switches_04",
+      "series": "CloudEngine XH16800系列",
+      "modelNames": [
+        "CloudEngine XH16800系列"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/material/enterprise/8c15627c1efa4b279e3e8e316088c140",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/8c15627c1efa4b279e3e8e316088c140/M3T1A590N1261017334375596185/华为CloudEngine XH16800 系列数据中心交换机彩页.PDF",
+      "officialFileName": "华为CloudEngine XH16800 系列数据中心交换机彩页.PDF",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "49a83716b3282598e465d4b75a9b1f8be856e472152143214cdd2de7867fd7e9"
+    },
+    {
+      "documentId": "huawei_datacenter_switches_05",
+      "series": "CloudEngine XH9000系列",
+      "modelNames": [
+        "CloudEngine XH9000系列"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/9952ea2db7a546179fa10879973125d0",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/9952ea2db7a546179fa10879973125d0/M3T1A590N1271892063327162515/华为 CloudEngine XH9110-24BQ8DQ 数据中心交换机彩页.pdf",
+      "officialFileName": "华为 CloudEngine XH9110-24BQ8DQ 数据中心交换机彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "ae894f00abc8c9075d50c25df4119d06c09771df387927932ba144a729c716fb"
+    }
+  ]
+}

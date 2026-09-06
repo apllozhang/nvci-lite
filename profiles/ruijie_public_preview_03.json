@@ -1,0 +1,903 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_public_preview_03",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "锐捷公开 PreviewFile｜已验证彩页 3",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "01 公开彩页",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_3",
+    "name": "锐捷公开 PreviewFile 3"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-21349-1",
+      "series": "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24",
+      "modelNames": [
+        "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hjly/rsr30xa24/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21349",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21349/?field=PreviewFile",
+      "officialFileName": "RG-RSR30-XA系列路由器产品彩页 - 浏览文件 - 04071554.pdf",
+      "expectedSha256": "28d95c7fd70228517dd7e9d3a5ec0ea6cce4444ab3515b57d9f329fbc149155c",
+      "matchTerms": [
+        "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24",
+        "21349"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21576-1",
+      "series": "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900",
+      "modelNames": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7900/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21576",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21576/?field=PreviewFile",
+      "officialFileName": "RG-CT7900整机产品彩页 - 浏览文件 - 05211156.pdf",
+      "expectedSha256": "44354272faf3508120642651d08f7315f96f27bd71c9e7710c13c00a7acc59d3",
+      "matchTerms": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900",
+        "21576"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21597-1",
+      "series": "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C",
+      "modelNames": [
+        "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21597",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21597/?field=PreviewFile",
+      "officialFileName": "RG-CT5300C IDV云终端 产品彩页 - 浏览文件 - 05220957.pdf",
+      "expectedSha256": "64eabd2f162ec992166ebfbbc27b258716e8cd14273d5cf3e706882dd10502a2",
+      "matchTerms": [
+        "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C",
+        "21597"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21602-1",
+      "series": "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006",
+      "modelNames": [
+        "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1006/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21602",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21602/?field=PreviewFile",
+      "officialFileName": "RG-CT1006 VDI云终端产品彩页 - 浏览文件 - 05271058.pdf",
+      "expectedSha256": "2b46232bfa3204fd464f911e2a93a5f14c6f1159f94bd8e8be7df4252ed2e505",
+      "matchTerms": [
+        "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006",
+        "21602"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21668-1",
+      "series": "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5200g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21668-2",
+      "series": "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21668-3",
+      "series": "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5500g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21668-4",
+      "series": "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5700g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21669-1",
+      "series": "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4",
+      "modelNames": [
+        "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6300g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21669",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21669/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT6000-G4系列一体机产品彩页 - 浏览文件 - 06041146.pdf",
+      "expectedSha256": "250057cde47bcfd6f5d0d7e63ee426b7a13eccc62d61e886f796802098d4e30e",
+      "matchTerms": [
+        "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4",
+        "21669"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21669-2",
+      "series": "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4",
+      "modelNames": [
+        "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6500g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21669",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21669/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT6000-G4系列一体机产品彩页 - 浏览文件 - 06041146.pdf",
+      "expectedSha256": "250057cde47bcfd6f5d0d7e63ee426b7a13eccc62d61e886f796802098d4e30e",
+      "matchTerms": [
+        "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4",
+        "21669"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21670-1",
+      "series": "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5200cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21670-2",
+      "series": "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21670-3",
+      "series": "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5500cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21671-1",
+      "series": "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4",
+      "modelNames": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6300cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21671",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21671/?field=PreviewFile",
+      "officialFileName": "RG-CT6000C-G4系列云一体机产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "5a5deccf9cb0a4f1a5ab1a5b15e7c5dff356fc785c94430a6d04600adbf10ef2",
+      "matchTerms": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4",
+        "21671"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21671-2",
+      "series": "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4",
+      "modelNames": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6500cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21671",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21671/?field=PreviewFile",
+      "officialFileName": "RG-CT6000C-G4系列云一体机产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "5a5deccf9cb0a4f1a5ab1a5b15e7c5dff356fc785c94430a6d04600adbf10ef2",
+      "matchTerms": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4",
+        "21671"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21673-1",
+      "series": "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000",
+      "modelNames": [
+        "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/CT78001000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21673",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21673/?field=PreviewFile",
+      "officialFileName": "RG-CT7800-1000终端计算机产品彩页 - 浏览文件 - 06041147.pdf",
+      "expectedSha256": "70f1c49177f3e108b049b9b2d297cf113e79dcbea4a720fcabaab06de57f75ea",
+      "matchTerms": [
+        "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000",
+        "21673"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21701-1",
+      "series": "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000",
+      "modelNames": [
+        "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-pj/cpk1000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21701",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21701/?field=PreviewFile",
+      "officialFileName": "RG-CPK1000 有线键鼠产品彩页 - 浏览文件 - 06071608.pdf",
+      "expectedSha256": "1cb6280e2f792271c117cd0e46d6e4d0364e16ef307dec4ace8817f90d9d638d",
+      "matchTerms": [
+        "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000",
+        "21701"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21702-1",
+      "series": "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2",
+      "modelNames": [
+        "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-pj/cpm2150g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21702",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21702/?field=PreviewFile",
+      "officialFileName": "RG-CPM2150-G2 液晶显示器产品彩页 - 浏览文件 - 06071625.pdf",
+      "expectedSha256": "8083bf2f9762886eb8064b5d37d32cc34aff07d2dbe61babb5032def1aa74af4",
+      "matchTerms": [
+        "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2",
+        "21702"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21747-1",
+      "series": "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX",
+      "modelNames": [
+        "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/pdbox/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21747/?field=PreviewFile",
+      "officialFileName": "RG-PDBOX集中供电主机产品彩页 - 浏览文件 - 06141457.pdf",
+      "expectedSha256": "8f4d18b5f834282d3372da09e6b0aef7fa9108c16db02271c4a53a9170117604",
+      "matchTerms": [
+        "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX",
+        "21747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21749-1",
+      "series": "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)",
+      "modelNames": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180w/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21749",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21749/?field=PreviewFile",
+      "officialFileName": "RG-AP180(W) Wi-Fi 6 双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 06141653.pdf",
+      "expectedSha256": "6c1535afcd068bd2e93269105473f7fad4f54147c84499a89d8cd4c3bfa0c25d",
+      "matchTerms": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)",
+        "21749"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21751-1",
+      "series": "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529",
+      "modelNames": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7529/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21751",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21751/?field=PreviewFile",
+      "officialFileName": "RG-CT7529系列云终端产品彩页 - 浏览文件 - 06141513.pdf",
+      "expectedSha256": "4ddcd1fcd6dd37d97a946f22a068297293b6e2025d7a3a23b9d3c4b92fb284ca",
+      "matchTerms": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529",
+        "21751"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21753-1",
+      "series": "高性能企业级万兆AC无线控制器，RG-WS6816",
+      "modelNames": [
+        "高性能企业级万兆AC无线控制器，RG-WS6816"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/6816/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21753",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21753/?field=PreviewFile",
+      "officialFileName": "RG-WS6816高性能无线控制器产品彩页 - 浏览文件 - 06171208.pdf",
+      "expectedSha256": "6f92d2c16f2983f438cfff1409ad13706402932a9c3defdc8c542694f4dcadb6",
+      "matchTerms": [
+        "高性能企业级万兆AC无线控制器，RG-WS6816",
+        "21753"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21800-1",
+      "series": "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P",
+      "modelNames": [
+        "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg2100p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21800",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21800/?field=PreviewFile",
+      "officialFileName": "安全网关RG-EG2100-P 全能PoE网关产品彩页 - 浏览文件 - 07031424.pdf",
+      "expectedSha256": "53b6da227f0960ba60e27534e89f1970d1f882afb683299ec3cbc484b2c61403",
+      "matchTerms": [
+        "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P",
+        "21800"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21802-1",
+      "series": "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210",
+      "modelNames": [
+        "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3210/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21802-2",
+      "series": "多业务安全网关，“多合一”出口设备， RG-EG3220",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备， RG-EG3220"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3220/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备， RG-EG3220",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21802-3",
+      "series": "多业务安全网关，“多合一”出口设备，RG-EG3230",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3230"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3230/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3230",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21802-4",
+      "series": "多业务安全网关，“多合一”出口设备，RG-EG3250",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3250"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3250/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3250",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21805-1",
+      "series": "新一代多业务安全网关，RG-EG3110",
+      "modelNames": [
+        "新一代多业务安全网关，RG-EG3110"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3110/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21805",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21805/?field=PreviewFile",
+      "officialFileName": "RG-EG3110多合一多业务安全网关产品彩页 - 浏览文件 - 07031411.pdf",
+      "expectedSha256": "8225d77eda1f7ce80dbcb64a8c1517ae95c81ff3972cb9d4a622c29181a05128",
+      "matchTerms": [
+        "新一代多业务安全网关，RG-EG3110",
+        "21805"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21807-1",
+      "series": "多业务PoE安全网关，RG-EG5200-P",
+      "modelNames": [
+        "多业务PoE安全网关，RG-EG5200-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg5200p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21807",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21807/?field=PreviewFile",
+      "officialFileName": "RG-EG5200-P多业务POE安全网关产品彩页 - 浏览文件 - 07031423.pdf",
+      "expectedSha256": "cb663c9251b3337aa8f2f8f4d76b5cc27fdce6ab9863a5e0315dc5136fd157dc",
+      "matchTerms": [
+        "多业务PoE安全网关，RG-EG5200-P",
+        "21807"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21813-1",
+      "series": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/ap820lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21813",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21813/?field=PreviewFile",
+      "officialFileName": "RG-AP820-L(V3) Wi-Fi 6 双射频放装型无线接入点产品彩页 - 浏览文件 - 06251453.pdf",
+      "expectedSha256": "03c142ee599336081c74cb99acd331066137610dbeeac6a08fd390fb745f37cd",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+        "21813"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21813-2",
+      "series": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wifi6/ap820lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21813",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21813/?field=PreviewFile",
+      "officialFileName": "RG-AP820-L(V3) Wi-Fi 6 双射频放装型无线接入点产品彩页 - 浏览文件 - 06251453.pdf",
+      "expectedSha256": "03c142ee599336081c74cb99acd331066137610dbeeac6a08fd390fb745f37cd",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+        "21813"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21860-1",
+      "series": "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+      "modelNames": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi6/ap180lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21860",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21860/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L(V3) Wi-Fi 6双射频超薄面板型无线接入点产品彩页 - 浏览文件 - 07051555.pdf",
+      "expectedSha256": "5f4bab9aa4a7968b63ffc0fd3f869f447a902335f7f6dfd2a743f9cccc4788fd",
+      "matchTerms": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+        "21860"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-21860-2",
+      "series": "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+      "modelNames": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21860",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21860/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L(V3) Wi-Fi 6双射频超薄面板型无线接入点产品彩页 - 浏览文件 - 07051555.pdf",
+      "expectedSha256": "5f4bab9aa4a7968b63ffc0fd3f869f447a902335f7f6dfd2a743f9cccc4788fd",
+      "matchTerms": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+        "21860"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-22324-1",
+      "series": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/ap820c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22324",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22324/?field=PreviewFile",
+      "officialFileName": "RG-AP820C  Wi-Fi 6双射频通用级放装型无线接入点产品彩页  - 浏览文件 - 11151656.pdf",
+      "expectedSha256": "d78174595333417456a4c25a5e80126ec666977ec938835e98b30d912a1fe01d",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+        "22324"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-22324-2",
+      "series": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap820c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22324",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22324/?field=PreviewFile",
+      "officialFileName": "RG-AP820C  Wi-Fi 6双射频通用级放装型无线接入点产品彩页  - 浏览文件 - 11151656.pdf",
+      "expectedSha256": "d78174595333417456a4c25a5e80126ec666977ec938835e98b30d912a1fe01d",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+        "22324"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-22464-1",
+      "series": "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010",
+      "modelNames": [
+        "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs7010/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22464/?field=PreviewFile",
+      "officialFileName": "RG-CS7010云服务器产品彩页 - 浏览文件 - 12311511.pdf",
+      "expectedSha256": "fd30c9837f5f3a416b0455c1db7ff229130046de92180795d01649e8e0fca7c1",
+      "matchTerms": [
+        "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010",
+        "22464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24664-1",
+      "series": "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E",
+      "modelNames": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/S291024GT4XSE/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24664",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24664/?field=PreviewFile",
+      "officialFileName": "RG-S2910XS-E系列千兆交换机产品彩页 - 浏览文件 - 03121022.pdf",
+      "expectedSha256": "102d30edc06a7c2a85d32389a4c772cc0ea7c6c5349854e0f008932122146c6e",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E",
+        "24664"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24664-2",
+      "series": "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E",
+      "modelNames": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/S291048GT4XSE/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24664",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24664/?field=PreviewFile",
+      "officialFileName": "RG-S2910XS-E系列千兆交换机产品彩页 - 浏览文件 - 03121022.pdf",
+      "expectedSha256": "102d30edc06a7c2a85d32389a4c772cc0ea7c6c5349854e0f008932122146c6e",
+      "matchTerms": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E",
+        "24664"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24747-1",
+      "series": "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS",
+      "modelNames": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531024gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24747/?field=PreviewFile",
+      "officialFileName": "RG-S5310系列新一代千兆以太网交换机产品彩页 - 浏览文件 - 03251747.pdf",
+      "expectedSha256": "43da7eb58337cf35633220ac0374c163243dc2f107eb9d3b771d8293d474253b",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS",
+        "24747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24747-2",
+      "series": "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS",
+      "modelNames": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531048gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24747/?field=PreviewFile",
+      "officialFileName": "RG-S5310系列新一代千兆以太网交换机产品彩页 - 浏览文件 - 03251747.pdf",
+      "expectedSha256": "43da7eb58337cf35633220ac0374c163243dc2f107eb9d3b771d8293d474253b",
+      "matchTerms": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS",
+        "24747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24754-1",
+      "series": "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L",
+      "modelNames": [
+        "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/400gq112dr4l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24754-2",
+      "series": "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L",
+      "modelNames": [
+        "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/800g-osfp-dr8-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24754-3",
+      "series": "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L",
+      "modelNames": [
+        "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/800gosfp2dr4l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24756-1",
+      "series": "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+      "modelNames": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/rgap840ar/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24756",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24756/?field=PreviewFile",
+      "officialFileName": "RG-AP840-ARWi-Fi 6三射频增强级高密放装型无线接入点产品彩页 - 浏览文件 - 03271622.pdf",
+      "expectedSha256": "00144a3fe681abb82b26ad70342a8be5a744d012a9e051a5fce88614f162834d",
+      "matchTerms": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+        "24756"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-24756-2",
+      "series": "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+      "modelNames": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/rgap840ar/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24756",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24756/?field=PreviewFile",
+      "officialFileName": "RG-AP840-ARWi-Fi 6三射频增强级高密放装型无线接入点产品彩页 - 浏览文件 - 03271622.pdf",
+      "expectedSha256": "00144a3fe681abb82b26ad70342a8be5a744d012a9e051a5fce88614f162834d",
+      "matchTerms": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+        "24756"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-25894-1",
+      "series": "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120",
+      "modelNames": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege5120/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25894",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25894/?field=PreviewFile",
+      "officialFileName": "RG-EG-E系列锐捷网络下一代智能网关产品彩页 - 浏览文件 - 04240905.pdf",
+      "expectedSha256": "49d2efbe717af8b70423b5f620c1e2f7da4b6065c80e01a7ee4996b245b51276",
+      "matchTerms": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120",
+        "25894"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-25894-2",
+      "series": "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220",
+      "modelNames": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege5220/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25894",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25894/?field=PreviewFile",
+      "officialFileName": "RG-EG-E系列锐捷网络下一代智能网关产品彩页 - 浏览文件 - 04240905.pdf",
+      "expectedSha256": "49d2efbe717af8b70423b5f620c1e2f7da4b6065c80e01a7ee4996b245b51276",
+      "matchTerms": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220",
+        "25894"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-25964-1",
+      "series": "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08",
+      "modelNames": [
+        "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hjly/rsr50xa08/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25964",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25964/?field=PreviewFile",
+      "officialFileName": "RG-RSR50-XA系列路由器产品彩页 - 浏览文件 - 05141142.pdf",
+      "expectedSha256": "3b8a8e65c964c3a7a838f818808ae639ee8f3ec1cbb40e6ad1ef2588ae5cbdeb",
+      "matchTerms": [
+        "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08",
+        "25964"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-26982-1",
+      "series": "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC",
+      "modelNames": [
+        "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is59008gt8sfp6csfpdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=26982",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-26982/?field=PreviewFile",
+      "officialFileName": "RG-IS5900系列双平面工业交换机产品彩页 - For Preview - 05131557.pdf",
+      "expectedSha256": "d3010adf75d2c2cecdc07c0df3957541937bd63eda664cef57e4ba600edf9136",
+      "matchTerms": [
+        "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC",
+        "26982"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-26983-1",
+      "series": "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC",
+      "modelNames": [
+        "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is29008gt3csfpdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=26983",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-26983/?field=PreviewFile",
+      "officialFileName": "RG-IS2900系列双平面工业交换机产品彩页 - 浏览文件 - 05131120.pdf",
+      "expectedSha256": "5b204ebe25525dbb4c8db75b5ee632629036473c72e1dcff2b95066bbb5b756a",
+      "matchTerms": [
+        "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC",
+        "26983"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    }
+  ]
+}

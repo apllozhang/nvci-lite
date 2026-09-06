@@ -1,0 +1,266 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "extreme_management_datasheets",
+  "vendorId": "extreme",
+  "vendorName": "Extreme Networks",
+  "displayName": "Extreme 03 Management｜已验证官方 Data Sheet",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.extremenetworks.com",
+    "extremenetworks.com",
+    "extr-p-001.sitecorecontenthub.cloud"
+  ],
+  "trustedRedirectDomains": [],
+  "sourcePolicy": "仅采集 Extreme 官方管理产品页明确关联的公开 Data Sheet；无公开 PDF 的产品保留 needs_route_validation，不进入队列。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "03_management",
+    "name": "03 Management",
+    "libraryRootName": "Extreme Networks产品彩页"
+  },
+  "subseries": {
+    "id": "extreme_data_sheet",
+    "name": "Extreme 网络管理与分析已验证 Data Sheet"
+  },
+  "productLinePath": [
+    "Extreme Networks产品彩页",
+    "03 Management"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 12,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "extreme_management_01",
+      "series": "ExtremeCloud IQ Controller",
+      "modelNames": [
+        "ExtremeCloud IQ Controller"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-management/extremecloud-iq-controller/extremecloud-iq-controller",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-management/extremecloud-iq-controller/extremecloud-iq-controller",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/6641220e4ac44166b6941d2066784304?v=3f71aa0b",
+      "officialFileName": "ExtremeCloud IQ Controller Data Sheet - 31Jul2026.pdf",
+      "expectedSha256": "884fe4dabec4015c7f22df262ae1706ec7d051d2139de5fe515cf4cede7f3d9a",
+      "matchTerms": [
+        "ExtremeCloud IQ Controller",
+        "ExtremeCloud IQ Controller Data Sheet - 31Jul2026.pdf",
+        "ExtremeCloud IQ Controller Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_02",
+      "series": "Universal Compute Platform",
+      "modelNames": [
+        "Universal Compute Platform"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/universal-compute-platform/universal-appliances/universal-compute-platform",
+      "materialPageUrl": "https://www.extremenetworks.com/products/universal-compute-platform/universal-appliances/universal-compute-platform",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/0cfd6c9456c6474595a9059ecefff618?v=525acdf9",
+      "officialFileName": "UCP_DS_15aug25.pdf",
+      "expectedSha256": "e39005c99fc25df35ab9c324e7b257b1d1b123e7a60c30a04ba05b505c8364c5",
+      "matchTerms": [
+        "Universal Compute Platform",
+        "UCP_DS_15aug25.pdf",
+        "Universal Compute Platform Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_03",
+      "series": "ExtremeCloud Orchestrator",
+      "modelNames": [
+        "ExtremeCloud Orchestrator"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/cloud-based-management/extremecloud-iq/extremecloud-orchestrator",
+      "materialPageUrl": "https://www.extremenetworks.com/products/cloud-based-management/extremecloud-iq/extremecloud-orchestrator",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/a07aa8b231014a5d9132d17e8b6f4f4d?v=b13ccaa5",
+      "officialFileName": "XCO_DS_8aug25.pdf",
+      "expectedSha256": "f1e60414e8d87b85ac56d42e4359ba6acc6694f5dc869032978d99837c63ba16",
+      "matchTerms": [
+        "ExtremeCloud Orchestrator",
+        "XCO_DS_8aug25.pdf",
+        "ExtremeCloud Orchestrator Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_04",
+      "series": "ExtremeCloud IQ - Site Engine",
+      "modelNames": [
+        "ExtremeCloud IQ - Site Engine"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/network-management/extremecloud-iq-site-engine/extremecloud-iq---site-engine",
+      "materialPageUrl": "https://www.extremenetworks.com/products/network-management/extremecloud-iq-site-engine/extremecloud-iq---site-engine",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8f4806fb9fa14455a4c023983cad9ad0?v=e6f1d822",
+      "officialFileName": "ExtremeCloud IQ Site Engine Data Sheet - 26Jun2026.pdf",
+      "expectedSha256": "bdc143b32c77436931fdd49120c5bbd0a16a1a7fe3399c6d192acca05d80fc43",
+      "matchTerms": [
+        "ExtremeCloud IQ - Site Engine",
+        "ExtremeCloud IQ Site Engine Data Sheet - 26Jun2026.pdf",
+        "ExtremeCloud IQ Site Engine Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_05",
+      "series": "Extreme AirDefense",
+      "modelNames": [
+        "Extreme AirDefense"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/network-access-control/extreme-airdefense/extreme-airdefense",
+      "materialPageUrl": "https://www.extremenetworks.com/products/network-access-control/extreme-airdefense/extreme-airdefense",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8b417f80945b4a479e390c92eb0cbc45?v=f13d1662",
+      "officialFileName": "AirDefense-Data Sheet-30Apr2026.pdf",
+      "expectedSha256": "2ac6ae0fd53cf383efcb4e35bad7be33cb8bff887f7bcab5c89a6e6d4afc74e0",
+      "matchTerms": [
+        "Extreme AirDefense",
+        "AirDefense-Data Sheet-30Apr2026.pdf",
+        "Extreme AirDefense Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_06",
+      "series": "ExtremeCloud IQ",
+      "modelNames": [
+        "ExtremeCloud IQ"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/cloud-based-management/extremecloud-iq/extremecloud-iq",
+      "materialPageUrl": "https://www.extremenetworks.com/products/cloud-based-management/extremecloud-iq/extremecloud-iq",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/456984eaad814f2caba9a9a7a62b27d1?v=14a8c7c7",
+      "officialFileName": "26797-ExtremeCloud-IQ-DS_April2025.pdf",
+      "expectedSha256": "596cd0b6e43254925bcb8e008bb5c8a58a3905ec01f0b13fe455934089c402e7",
+      "matchTerms": [
+        "ExtremeCloud IQ",
+        "26797-ExtremeCloud-IQ-DS_April2025.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_07",
+      "series": "ExtremeAnalytics",
+      "modelNames": [
+        "ExtremeAnalytics"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/network-analytics/extremeanalytics/extremeanalytics",
+      "materialPageUrl": "https://www.extremenetworks.com/products/network-analytics/extremeanalytics/extremeanalytics",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/f2d087ef12bc43dbb5349fea967f48df?v=9b5b754d",
+      "officialFileName": "ExtremeAnalytics Data Sheet - 13July2026.pdf",
+      "expectedSha256": "9e168071a91c509fd8b9d0e8132487cfc4a9e32802fd1386face58088249f24c",
+      "matchTerms": [
+        "ExtremeAnalytics",
+        "ExtremeAnalytics Data Sheet - 13July2026.pdf",
+        "ExtremeAnalytics Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_08",
+      "series": "ExtremeControl",
+      "modelNames": [
+        "ExtremeControl"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/network-access-control/extremecontrol/extremecontrol",
+      "materialPageUrl": "https://www.extremenetworks.com/products/network-access-control/extremecontrol/extremecontrol",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/70b9619a80234c2f8b5b9390a716b42b?v=bbfc2975",
+      "officialFileName": "ExtremeControl DS ExtremeControl=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "0d4eaa3a1a90c446e21cfd097384cc37dd0784f769ecd9a0106458de1755d933",
+      "matchTerms": [
+        "ExtremeControl",
+        "ExtremeControl DS ExtremeControl=1=en-US=Extreme Datasheet.pdf",
+        "ExtremeControl Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_09",
+      "series": "ExtremeCloud Business Insights for Venues",
+      "modelNames": [
+        "ExtremeCloud Business Insights for Venues"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/network-analytics/extremeanalytics/extremecloud-business-insights-for-venues",
+      "materialPageUrl": "https://www.extremenetworks.com/products/network-analytics/extremeanalytics/extremecloud-business-insights-for-venues",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/72f9673b31664bd3a1d1e57b01b52174?v=5351fb8a",
+      "officialFileName": "ExtremeCloud Business Insights for Venues DS Business Insights=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "e6f01590a96a36d3520a85819aef4cf417f1f7afdd5ca76bf3d2360e0656ada0",
+      "matchTerms": [
+        "ExtremeCloud Business Insights for Venues",
+        "ExtremeCloud Business Insights for Venues DS Business Insights=1=en-US=Extreme Datasheet.pdf",
+        "Business Insights for Venues - Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_10",
+      "series": "ExtremeCloud SD-WAN",
+      "modelNames": [
+        "ExtremeCloud SD-WAN"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/sd-wan/extreme-sd-wan/extremecloud-sd-wan",
+      "materialPageUrl": "https://www.extremenetworks.com/products/sd-wan/extreme-sd-wan/extremecloud-sd-wan",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/extremecloud-sd-wan?v=37a9094b",
+      "officialFileName": "ExtremeCloud SD-WAN-Data Sheet-17Jun2026.pdf",
+      "expectedSha256": "34324ac2431e3b17c56eb36cb3ea4b8e75299c76df335ea193b1be5adc02e57c",
+      "matchTerms": [
+        "ExtremeCloud SD-WAN",
+        "ExtremeCloud SD-WAN-Data Sheet-17Jun2026.pdf",
+        "ExtremeCloud SD-WAN Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_11",
+      "series": "VPN Gateway Virtual Appliance",
+      "modelNames": [
+        "VPN Gateway Virtual Appliance"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/vpn-gateway/vpn-virtual-appliance/vpn-gateway-virtual-appliance",
+      "materialPageUrl": "https://www.extremenetworks.com/products/vpn-gateway/vpn-virtual-appliance/vpn-gateway-virtual-appliance",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8cbf56bb27b24d1c9df6fbd7d1a798a5?v=00152258",
+      "officialFileName": "VPN Gateway Virtual Appliance DS VPN GW Virtual Ap=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "cb401ff2bf7f3c4c10c6159e346bddccc4b481323093bed809aaf4f701d9d8ba",
+      "matchTerms": [
+        "VPN Gateway Virtual Appliance",
+        "VPN Gateway Virtual Appliance DS VPN GW Virtual Ap=1=en-US=Extreme Datasheet.pdf",
+        "VPN Gateway Virtual Appliance Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_management_12",
+      "series": "Extreme Tunnel Concentrator",
+      "modelNames": [
+        "Extreme Tunnel Concentrator"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/tunnel-concentrator/extreme-tunnel-concentrator/extreme-tunnel-concentrator",
+      "materialPageUrl": "https://www.extremenetworks.com/products/tunnel-concentrator/extreme-tunnel-concentrator/extreme-tunnel-concentrator",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8641eadd2f714171b5c1c60cbde4b369?v=b7b474e7",
+      "officialFileName": "Tunnel_Conc_DS_18sep25.pdf",
+      "expectedSha256": "a19f67bcf153e699f9af174b852ce2d166ea5c55f2496c7cfe4a68aae538183b",
+      "matchTerms": [
+        "Extreme Tunnel Concentrator",
+        "Tunnel_Conc_DS_18sep25.pdf",
+        "Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    }
+  ]
+}

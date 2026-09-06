@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_security",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为网络安全产品｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "security",
+    "name": "05 网络安全产品",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "05 网络安全产品"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 10,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_security_01",
+      "series": "HiSecEngine IPS6000F-K",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "无",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/cdc9e3cb57cd4be88f1fcef6cd461b4c/M3T1A669N1110364783442067623/%E5%8D%8E%E4%B8%BAHiSecEngine%20IPS6000F-K%E7%B3%BB%E5%88%97%E5%BD%A9%E9%A1%B5_R24C10_-0322.pdf",
+      "officialFileName": "华为 HiSecEngine IPS6000F-K 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "3f4b7452f289dfc6f1d460aba7240a7973adb3cb853319364cef1154195a8882"
+    },
+    {
+      "documentId": "huawei_security_02",
+      "series": "HiSecEngine Probe1000",
+      "modelNames": [
+        "Probe1001"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/security/probe1000",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/4264e2e4d7234943bff14759b4763398",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/4264e2e4d7234943bff14759b4763398/M2T1A590N1015332875519127731/%E5%8D%8E%E4%B8%BAHiSecEngine%20Probe1000%E7%B3%BB%E5%88%97%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E5%A8%81%E8%83%81%E6%A3%80%E6%B5%8B%E6%8E%A2%E9%92%88-Probe1005-1010-1020-1030-1001F_0703%E6%9B%B4%E6%96%B0_.pdf",
+      "officialFileName": "华为 HiSecEngine Probe1000 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "4aae4b327ffae8655e24d799b63bc63e0252a6ab16b2270ed956e9af8bc100f2"
+    },
+    {
+      "documentId": "huawei_security_03",
+      "series": "HiSecEngine USG12000",
+      "modelNames": [
+        "USG12004"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/security/usg12000",
+      "materialPageUrl": "https://e.huawei.com/en/documents/products/enterprise-network/e662b897c13b48b7893aafe685c1603e",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/3330e7695ebe457886b91379c4c21eb8/M3T1A590N1244706868993839107/Huawei%20HiSecEngine%20USG12000-F%20Series%20AI%20Firewall%20Brochure.pdf",
+      "officialFileName": "华为 HiSecEngine USG12000 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "488a912acc7cf9d462cade1bb9f47f83425d408bf15ba39af61e0db4934f2a56"
+    },
+    {
+      "documentId": "huawei_security_04",
+      "series": "HiSecEngine USG6000E-K",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "无",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/191d42b75b144680b8d5ffa8a2237e8a/M3T1A590N1074726346855805143/%E5%8D%8E%E4%B8%BAHiSecEngine%20USG6000E-K%E7%B3%BB%E5%88%97AI%E9%98%B2%E7%81%AB%E5%A2%99_%E7%9B%92%E5%BC%8F_%20%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 HiSecEngine USG6000E-K 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "4f44c088353536db3e6780947a58979d833125c3f376131a0a731f8c6f57d628"
+    },
+    {
+      "documentId": "huawei_security_05",
+      "series": "HiSecEngine USG6000F-K",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "无",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/a95502d057ca47a89b12a9bdb197e716/M3T1A669N1176921408129097898/%E5%8D%8E%E4%B8%BAHiSecEngine%20USG6000F-K%E7%B3%BB%E5%88%97AI%E9%98%B2%E7%81%AB%E5%A2%99%E5%BD%A9%E9%A1%B5V600R25C00.pdf",
+      "officialFileName": "华为 HiSecEngine USG6000F-K 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "615a32be463782822464eaa3fbbf0b6c4fb535a2c69725f725d476cbaa43a41e"
+    },
+    {
+      "documentId": "huawei_security_06",
+      "series": "HiSecEngine USG6000F-S",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/e3c344c801e34fc5ae88601294b79329",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/2cf4bcee74e04f2fb29383ff6031ca1b/M3T1A590N1190627817823711272/_V600R025C00_HUAWEI%20eKitEngine%20USG6000F-S%20Series%20Firewalls%20Datasheet.pdf",
+      "officialFileName": "华为 HiSecEngine USG6000F-S 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "a5b394b66e466c0e4e0e0ae856852b67ab7e7121ea4e0137fbd558a1e4091563"
+    },
+    {
+      "documentId": "huawei_security_07",
+      "series": "HiSecEngine USG6600E",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/security/usg6600e",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/40ad8ce73b01452187e2ac069ddfeed8/M3T1A590N1146480662406168779/%E5%8D%8E%E4%B8%BAUSG6600E%E7%B3%BB%E5%88%97AI%E9%98%B2%E7%81%AB%E5%A2%99%20_%E7%9B%92%E5%BC%8F_%20%E5%BD%A9%E9%A1%B5%20_1_.pdf",
+      "officialFileName": "华为 HiSecEngine USG6600E 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "fd5e8d3186455091df852f1dbe874730f2af990eb0063288fc69afe1c2c9ce54"
+    },
+    {
+      "documentId": "huawei_security_08",
+      "series": "HiSecEngine USG6700E",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/security/usg6700e",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/9f290f63712a4a88aa9d9ebe64ee6df0/M3T1A590N1074712247497678884/%E5%8D%8E%E4%B8%BAUSG6700E%E7%B3%BB%E5%88%97AI%E9%98%B2%E7%81%AB%E5%A2%99_%E7%9B%92%E5%BC%8F_%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 HiSecEngine USG6700E 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "7c4879a49dab2a060f9f854336dbe9a0d6603813671b4eb8d5553b4fa723e63f"
+    },
+    {
+      "documentId": "huawei_security_09",
+      "series": "HiSecEngine USG6800G",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "无",
+      "materialPageUrl": "无",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/fa3757b576ff4b6fab97c58c8a1ef6b5/M3T1A590N1245746397013831734/%E5%8D%8E%E4%B8%BAHiSecEngine%20USG6800G%E7%B3%BB%E5%88%97AI%E9%98%B2%E7%81%AB%E5%A2%99%E5%BD%A9%E9%A1%B5%20_R25C10_.pdf",
+      "officialFileName": "华为 HiSecEngine USG6800G 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "3293fab61414273364fb4caf2a27c8fb25030d86a6ac3949870cc5d1aaeac66d"
+    },
+    {
+      "documentId": "huawei_security_10",
+      "series": "SecoManager",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "无",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/50e4dc18d7da4271b60a02ce078831db",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/50e4dc18d7da4271b60a02ce078831db/M3T1A590N1185715001602728028/%E5%8D%8E%E4%B8%BASecoManager%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BD%A9%E9%A1%B5-V500R025C00.pdf",
+      "officialFileName": "华为 SecoManager 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "8846ae1f2d9277361f9aa93bf97edbd717a7e87590ed5cea40a02a37f648368a"
+    }
+  ]
+}

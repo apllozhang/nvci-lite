@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_public_preview_10",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "锐捷公开 PreviewFile｜已验证彩页 10",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "01 公开彩页",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_10",
+    "name": "锐捷公开 PreviewFile 10"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 12,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-29465-3",
+      "series": "多功能安全网关，多合一出口设备RG-CMG6000-03-L",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-03-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600003l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-03-L",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29465-4",
+      "series": "多功能安全网关，多合一出口设备RG-CMG6000-02",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-02"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600002/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-02",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29465-5",
+      "series": "多功能安全网关，多合一出口设备RG-CMG6000-01-P",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-01-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600001p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-01-P",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29465-6",
+      "series": "多功能安全网关，多合一出口设备RG-CMG6000-09-E",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-09-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-aqwg/cmg600009e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-09-E",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29465-7",
+      "series": "多功能安全网关，多合一出口设备RG-CMG6000-06-E",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-06-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-aqwg/cmg600006e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-06-E",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29473-1",
+      "series": "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2",
+      "modelNames": [
+        "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1000g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29473",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29473/?field=PreviewFile",
+      "officialFileName": "RG-CT1000-G2 VDI云终端产品彩页 - 浏览文件 - 07301602.pdf",
+      "expectedSha256": "3923d62b7980f7b5ed0c228a951d92c685c7b1c0f114d40c3d4b36357e4a5b55",
+      "matchTerms": [
+        "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2",
+        "29473"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29476-1",
+      "series": "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120",
+      "modelNames": [
+        "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1120/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29476",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29476/?field=PreviewFile",
+      "officialFileName": "RG-CT1120终端产品彩页 - 浏览文件 - 07301607.pdf",
+      "expectedSha256": "b17c16990c4a9544fdd94ea1559f1867d0df7ddf9ac67f4d4cf0df08d9cd1755",
+      "matchTerms": [
+        "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120",
+        "29476"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29477-1",
+      "series": "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S",
+      "modelNames": [
+        "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-bgzmyzj/cs1020s/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29477",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29477/?field=PreviewFile",
+      "officialFileName": "RG-CS1020S云服务器产品彩页 - For Preview - 08111028.pdf",
+      "expectedSha256": "2bcbea67b6e2daaa3652e92abe4e3e169fd08fbfae005b46b58f27701447b7b9",
+      "matchTerms": [
+        "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S",
+        "29477"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29488-1",
+      "series": "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981",
+      "modelNames": [
+        "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap6981/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29488",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29488/?field=PreviewFile",
+      "officialFileName": "RG-AP6981 Wi-Fi 7三射频通用级室外型无线接入点产品彩页 - 浏览文件 - 08102026.pdf",
+      "expectedSha256": "f21b74e7f7990759744a400bf8487e7a560d50a015b1faefb739b5f3e1a3c348",
+      "matchTerms": [
+        "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981",
+        "29488"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29525-1",
+      "series": "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X",
+      "modelNames": [
+        "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S6160-28VS8CQ-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29525-2",
+      "series": "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X",
+      "modelNames": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/rg-s6160-48vs8cq-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    },
+    {
+      "documentId": "ruijie-preview-29525-3",
+      "series": "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X",
+      "modelNames": [
+        "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/rg-s6160-48xmg4vs2cq-uo-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain"
+    }
+  ]
+}

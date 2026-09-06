@@ -1,0 +1,19 @@
+services:
+  nvci-lite:
+    build: .
+    image: nvci-lite:0.2.0
+    container_name: nvci-lite
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    env_file:
+      - .env
+    environment:
+      - NVCI_LITE_DATA_DIR=/data
+      - NVCI_LITE_PROFILES_DIR=/app/profiles
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/data
+      - ./profiles:/app/profiles:ro
+    ports:
+      - "${NVCI_LITE_PORT:-8788}:8788"

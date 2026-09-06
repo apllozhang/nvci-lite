@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "extreme_wired_access_datasheets",
+  "vendorId": "extreme",
+  "vendorName": "Extreme Networks",
+  "displayName": "Extreme 01 Wired Access｜已验证官方 Data Sheet",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.extremenetworks.com",
+    "extremenetworks.com",
+    "extr-p-001.sitecorecontenthub.cloud"
+  ],
+  "trustedRedirectDomains": [],
+  "sourcePolicy": "仅采集 Extreme 官方产品目录发现、精确系列页明确关联的 Sitecore Content Hub Data Sheet；先验证产品页关联、PDF 可读性、系列适用范围与 SHA-256。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01_wired_access",
+    "name": "01 Wired Access",
+    "libraryRootName": "Extreme Networks产品彩页"
+  },
+  "subseries": {
+    "id": "extreme_data_sheet",
+    "name": "Extreme 交换机已验证 Data Sheet"
+  },
+  "productLinePath": [
+    "Extreme Networks产品彩页",
+    "01 Wired Access"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 23,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "extreme_wired_access_01",
+      "series": "4000 Series",
+      "modelNames": [
+        "4000 Series"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/4000-series",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/4000-series",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4000-Series-Data-Sheet%27?v=bb9ebc88",
+      "officialFileName": "4000 Series Switches - Data Sheet - 30Jun2026.pdf",
+      "expectedSha256": "8193e38650b4425b1339a609aefcf4913646b27f2e8c04eaa0870fa585a8135c",
+      "matchTerms": [
+        "4000 Series",
+        "4000 Series Switches - Data Sheet - 30Jun2026.pdf",
+        "4000 Series Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_02",
+      "series": "5420",
+      "modelNames": [
+        "5420"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5420",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5420",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/5420-Series-Data-Sheet?v=cf246124",
+      "officialFileName": "5420-Data Sheet-02Jul2026.pdf",
+      "expectedSha256": "206d0e2887c45c2ac0791c12a95dda3b8cc0a325802d3516ad0b81baef85a8c2",
+      "matchTerms": [
+        "5420",
+        "5420-Data Sheet-02Jul2026.pdf",
+        "5420 Series Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_03",
+      "series": "Extreme 5320 Series – Enterprise Switches",
+      "modelNames": [
+        "Extreme 5320 Series – Enterprise Switches"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5320",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5320",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/5320-Series-Data-Sheet?v=f1232b29",
+      "officialFileName": "5320-Data Sheet-18May2026.pdf",
+      "expectedSha256": "d4b0b9c08e03beac5e366b35d95f2d05ed031dac1630229bdbe6beb6c0b73c90",
+      "matchTerms": [
+        "Extreme 5320 Series – Enterprise Switches",
+        "5320-Data Sheet-18May2026.pdf",
+        "5320 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_04",
+      "series": "5520",
+      "modelNames": [
+        "5520"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5520",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5520",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/5520-Series-Data-Sheet?v=b01cf46b",
+      "officialFileName": "5520-Data Sheet-13Apr2026.pdf",
+      "expectedSha256": "777435e896d9c87e33f67efec664ce78c58da836d82d95f2968e71dbb251ca78",
+      "matchTerms": [
+        "5520",
+        "5520-Data Sheet-13Apr2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_05",
+      "series": "7520",
+      "modelNames": [
+        "7520"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7520",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7520",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7520-Series-Data-Sheet?v=e203d9c0",
+      "officialFileName": "7520-Data Sheet-14Apr2026.pdf",
+      "expectedSha256": "7548f0bb55e8674cd132f1813550981378ded8b1f0c82fb4b973006ac8086018",
+      "matchTerms": [
+        "7520",
+        "7520-Data Sheet-14Apr2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_06",
+      "series": "Thermal Sensing for Universal Switches",
+      "modelNames": [
+        "Thermal Sensing for Universal Switches"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/thermal-sensing-for-universal-switches",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/thermal-sensing-for-universal-switches",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/1d4ae1984fa04d0f9e99341e8857373e?v=21dba2d7",
+      "officialFileName": "Temp_Sensor_DS_12sep25.pdf",
+      "expectedSha256": "d5e0dabae746da392b8056da5c72ed094e1f605ea9455e6b7de95450f3bc8e44",
+      "matchTerms": [
+        "Thermal Sensing for Universal Switches",
+        "Temp_Sensor_DS_12sep25.pdf",
+        "External Switch Temperature Sensor Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_07",
+      "series": "5720",
+      "modelNames": [
+        "5720"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5720",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5720",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/5720-Series-Data-Sheet?v=25a4737c",
+      "officialFileName": "5720-Data Sheet-20Apr2026.pdf",
+      "expectedSha256": "4f49a4b09be464f223fb69c1a6fc2b8ab718de56948ba472a1286c6350256510",
+      "matchTerms": [
+        "5720",
+        "5720-Data Sheet-20Apr2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_08",
+      "series": "Optics",
+      "modelNames": [
+        "Optics"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/optics",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/optics",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Optics-Data-Sheet?v=0ee1a44c",
+      "officialFileName": "Extreme Optics-Data Sheet-02Jun2026.pdf",
+      "expectedSha256": "7fc5b5ee351d82143189d1d84a5763585f42e735e47885f70274cf8cb4d65ec9",
+      "matchTerms": [
+        "Optics",
+        "Extreme Optics-Data Sheet-02Jun2026.pdf",
+        "Extreme Optics Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_09",
+      "series": "7830",
+      "modelNames": [
+        "7830"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7830",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7830",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7830-series-data-sheet?v=7ba08e6a",
+      "officialFileName": "7830-Datasheet-NEW-MASTER-30Mar2026.pdf",
+      "expectedSha256": "5347a35d2844416d84519085d440e49bc9e852b640e0856cac1a581a7bb7f7f8",
+      "matchTerms": [
+        "7830",
+        "7830-Datasheet-NEW-MASTER-30Mar2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_10",
+      "series": "7720",
+      "modelNames": [
+        "7720"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7720",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/7720",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7720-Series-Data-Sheet?v=151cc70c",
+      "officialFileName": "7720-Data Sheet-14Apr2026.pdf",
+      "expectedSha256": "05869ac998fc3d18a07e202c86110fdf7fc416589d94ffc2991166e47f0b1e55",
+      "matchTerms": [
+        "7720",
+        "7720-Data Sheet-14Apr2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_11",
+      "series": "5120",
+      "modelNames": [
+        "5120"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5120",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/universal-switches/5120",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/5120-Series-Data-Sheet?v=e78c0956",
+      "officialFileName": "5120-Data Sheet-02Jul2026.pdf",
+      "expectedSha256": "07cb5fd73d2ba0fb0f4ffbbd5a3d0d35826f572e325ebe9fc2324fff86b3c1c1",
+      "matchTerms": [
+        "5120",
+        "5120-Data Sheet-02Jul2026.pdf",
+        "5120 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_12",
+      "series": "8730",
+      "modelNames": [
+        "8730"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8730",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8730",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/f5accbdeb18342dd8c714999c2fa613e?v=f04b9104",
+      "officialFileName": "8730_DS_15aug25.pdf",
+      "expectedSha256": "d28eff210f0a9f7c229d662c1479dfd80ba9c1f50973605fc6cdc5315db7e654",
+      "matchTerms": [
+        "8730",
+        "8730_DS_15aug25.pdf",
+        "8730 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_13",
+      "series": "8820",
+      "modelNames": [
+        "8820"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/routers/trusted-delivery-switches-and-routers/8820",
+      "materialPageUrl": "https://www.extremenetworks.com/products/routers/trusted-delivery-switches-and-routers/8820",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/495050545e604f26b8671f7d2a168127?v=c3ab3d91",
+      "officialFileName": "8820 DS 8820=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "1b52ebdf22b3e54e7ceb8acb5a4a7e9a959a9fd572892855b1f6b34df30b04f1",
+      "matchTerms": [
+        "8820",
+        "8820 DS 8820=1=en-US=Extreme Datasheet.pdf",
+        "8820 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_14",
+      "series": "8720",
+      "modelNames": [
+        "8720"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8720",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8720",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/d7a91bec2c1d41ae8bcc79b041a0486d?v=ccfa3029",
+      "officialFileName": "8720 DS 8720=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "e2dd7a3d722eaae9b292feca8cf00b389009430092f63a3ec1b4d61139a7e61d",
+      "matchTerms": [
+        "8720",
+        "8720 DS 8720=1=en-US=Extreme Datasheet.pdf",
+        "8720 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_15",
+      "series": "8520",
+      "modelNames": [
+        "8520"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8520",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/trusted-delivery-switches/8520",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/6e83c6f3a66f4be69b1bfbcaecc9c1ee?v=b66a8662",
+      "officialFileName": "8520 DS 8520=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "fcaa15a965ec97ac009f8478ae66ff52bc8ff7a890f9ae065be22b75b2b8c92c",
+      "matchTerms": [
+        "8520",
+        "8520 DS 8520=1=en-US=Extreme Datasheet.pdf",
+        "8520 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_16",
+      "series": "Industrial Switches (ISW)",
+      "modelNames": [
+        "Industrial Switches (ISW)"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/industrial-switches/isw-series",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/industrial-switches/isw-series",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/50f8506b287e4bbb831a12fecffe50b1?v=bc464162",
+      "officialFileName": "ISW Series DS ISW Series=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "4bf660d3bda3abb96e6a21ed2926e71422ca79352243c6af5926ceb360449592",
+      "matchTerms": [
+        "Industrial Switches (ISW)",
+        "ISW Series DS ISW Series=1=en-US=Extreme Datasheet.pdf",
+        "ISW Series Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_17",
+      "series": "VSP 4900",
+      "modelNames": [
+        "VSP 4900"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/vsp-and-voss-switches/vsp-4900",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/vsp-and-voss-switches/vsp-4900",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/VSP-4900-Series-Data-Sheet?v=edf8da94",
+      "officialFileName": "VSP 4900-Data Sheet-27Apr2026.pdf",
+      "expectedSha256": "d78627b743db5f655ba9e1ac7dfeedb0589765951ef084546ea4d18845676ece",
+      "matchTerms": [
+        "VSP 4900",
+        "VSP 4900-Data Sheet-27Apr2026.pdf",
+        "VSP 4900 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_18",
+      "series": "VSP 7400",
+      "modelNames": [
+        "VSP 7400"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/vsp-and-voss-switches/vsp-7400",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/vsp-and-voss-switches/vsp-7400",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/VSP-7400-Series-Data-Sheet?v=000cf960",
+      "officialFileName": "VSP 7400-Data Sheet-27Apr2026.pdf",
+      "expectedSha256": "7e6ce32bbd8c1a04db9a9d7b5d086c74a46000105949365e983f8fdccb36f1ca",
+      "matchTerms": [
+        "VSP 7400",
+        "VSP 7400-Data Sheet-27Apr2026.pdf",
+        "VSP 7400 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_19",
+      "series": "SLX 9540",
+      "modelNames": [
+        "SLX 9540"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/routers/switches-and-routers/slx-9540",
+      "materialPageUrl": "https://www.extremenetworks.com/products/routers/switches-and-routers/slx-9540",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/425445872fff40998ff1a10ee93393f1?v=2016f150",
+      "officialFileName": "SLX 9540 DS SLX 9540=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "13200ac944977653dfa3c97039bea97e8420ccef0c37643414b0dfcf3ffea23e",
+      "matchTerms": [
+        "SLX 9540",
+        "SLX 9540 DS SLX 9540=1=en-US=Extreme Datasheet.pdf",
+        "SLX 9540 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_20",
+      "series": "SLX 9640",
+      "modelNames": [
+        "SLX 9640"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/routers/switches-and-routers/slx-9640",
+      "materialPageUrl": "https://www.extremenetworks.com/products/routers/switches-and-routers/slx-9640",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/1bb729239926446cb792c344465a4e42?v=d8876f5b",
+      "officialFileName": "SLX 9640 DS SLX 9640=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "a2371f8d042e5a1373c1dff5c70eee51ff168a0f21f160d23239b2524e47fae3",
+      "matchTerms": [
+        "SLX 9640",
+        "SLX 9640 DS SLX 9640=1=en-US=Extreme Datasheet.pdf",
+        "SLX 9640 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_21",
+      "series": "X465",
+      "modelNames": [
+        "X465"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/extremexos-switches/x465",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/extremexos-switches/x465",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8852229434f94501b387bfe314f721ac?v=dc646cad",
+      "officialFileName": "X465_DS_9jul25.pdf",
+      "expectedSha256": "b47e94e6d91348443bd837d452960a399306d2759209c32804dab242a1cef67f",
+      "matchTerms": [
+        "X465",
+        "X465_DS_9jul25.pdf",
+        "X465 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_22",
+      "series": "X435",
+      "modelNames": [
+        "X435"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/switches/extremexos-switches/x435",
+      "materialPageUrl": "https://www.extremenetworks.com/products/switches/extremexos-switches/x435",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/X435-Data-Sheet?v=83ff8e12",
+      "officialFileName": "X435 Data Sheet.pdf",
+      "expectedSha256": "e04599ca38580468b5aa565f14fff4d0c60fb6d4afb6d092de1366f3e3caa6ea",
+      "matchTerms": [
+        "X435",
+        "X435 Data Sheet.pdf",
+        "X435 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wired_access_23",
+      "series": "Extreme Platform ONE™: Secure Connectivity Made Simple",
+      "modelNames": [
+        "Extreme Platform ONE™: Secure Connectivity Made Simple"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/platform-one/extreme-platform-one-secure-connectivity-made-simple",
+      "materialPageUrl": "https://www.extremenetworks.com/platform-one/extreme-platform-one-secure-connectivity-made-simple",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/Extreme-Platform-ONE-Data-Sheet?v=b2be30fe",
+      "officialFileName": "65031-Extreme Platform ONE Data Sheet_April2026.pdf",
+      "expectedSha256": "5c477132befbb09e829dc3a8fbe624b832aa5c4c3d4db0719d114e3d3d926cf3",
+      "matchTerms": [
+        "Extreme Platform ONE™: Secure Connectivity Made Simple",
+        "65031-Extreme Platform ONE Data Sheet_April2026.pdf"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    }
+  ]
+}

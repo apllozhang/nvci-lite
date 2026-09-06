@@ -1,0 +1,285 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "extreme_wireless_access_datasheets",
+  "vendorId": "extreme",
+  "vendorName": "Extreme Networks",
+  "displayName": "Extreme 02 Wireless Access｜已验证官方 Data Sheet",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.extremenetworks.com",
+    "extremenetworks.com",
+    "extr-p-001.sitecorecontenthub.cloud"
+  ],
+  "trustedRedirectDomains": [],
+  "sourcePolicy": "仅采集 Extreme 官方产品目录发现、精确 AP 系列页明确关联的 Sitecore Content Hub Data Sheet；不猜测 Content Hub 文件名或版本参数。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "02_wireless_access",
+    "name": "02 Wireless Access",
+    "libraryRootName": "Extreme Networks产品彩页"
+  },
+  "subseries": {
+    "id": "extreme_data_sheet",
+    "name": "Extreme 无线接入点已验证 Data Sheet"
+  },
+  "productLinePath": [
+    "Extreme Networks产品彩页",
+    "02 Wireless Access"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 13,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "extreme_wireless_access_01",
+      "series": "AP3020W",
+      "modelNames": [
+        "AP3020W"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap3020w",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap3020w",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/2697cb28f05f431785553ccfbc2e55a3?v=574afaf7",
+      "officialFileName": "AP3020W-Data Sheet-10Aug2026.pdf",
+      "expectedSha256": "0759b62656735f23f806b27826663cd4c3da557104e3871823a859358b3e1340",
+      "matchTerms": [
+        "AP3020W",
+        "AP3020W-Data Sheet-10Aug2026.pdf",
+        "AP3020W Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_02",
+      "series": "AP360i and AP360e",
+      "modelNames": [
+        "AP360i and AP360e"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/nonuniversal-aps-outdoor/ap360i-and-ap360e",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/nonuniversal-aps-outdoor/ap360i-and-ap360e",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/6d28f7527fd0462db66e24ad571c6f25?v=3a022810",
+      "officialFileName": "AP360i and AP360e DS AP360ie=1=en-US=Extreme Datasheet.pdf",
+      "expectedSha256": "40d24634e9a657f6bda5162f9d4f0381f45a68bb16cb35445209d99277a50071",
+      "matchTerms": [
+        "AP360i and AP360e",
+        "AP360i and AP360e DS AP360ie=1=en-US=Extreme Datasheet.pdf",
+        "AP360i/e Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_03",
+      "series": "AP5060",
+      "modelNames": [
+        "AP5060"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap5060",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap5060",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/AP5060-SERIES-DATA-SHEET?v=d8bf004a",
+      "officialFileName": "AP5060-Data Sheet-30Apr2026.pdf",
+      "expectedSha256": "ae6098f9281b177b21c6e14f13014ca08f3b5e269ace35f3db3fbf6daa1e7fe6",
+      "matchTerms": [
+        "AP5060",
+        "AP5060-Data Sheet-30Apr2026.pdf",
+        "AP5060 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_04",
+      "series": "AP302W",
+      "modelNames": [
+        "AP302W"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap302w",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap302w",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/cf7c325d08ed4ac0aeb1a5ce202ce249?v=be2994a7",
+      "officialFileName": "AP302W_DS_20aug25.pdf",
+      "expectedSha256": "b1903d653b15ac1bfd5525a7f33a5727ddacc1c46d91cfd64540b4047718e709",
+      "matchTerms": [
+        "AP302W",
+        "AP302W_DS_20aug25.pdf",
+        "AP302W Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_05",
+      "series": "AP4000",
+      "modelNames": [
+        "AP4000"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap4000",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap4000",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/eed08dd25a624526b6e54ec7dce071de?v=dea43a99",
+      "officialFileName": "AP4000-Data Sheet-15Jul2026.pdf",
+      "expectedSha256": "49dc7526fafd36c6feba5f7043bbd80559756508dfdb5c6859ac5901ad4818c7",
+      "matchTerms": [
+        "AP4000",
+        "AP4000-Data Sheet-15Jul2026.pdf",
+        "AP4000 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_06",
+      "series": "AP4020",
+      "modelNames": [
+        "AP4020"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap4020",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap4020",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/6c4cd97dc1db45478295b8f74d2c6c82?v=3b7b171f",
+      "officialFileName": "AP4020-Data Sheet-14Jul2026.pdf",
+      "expectedSha256": "38e49d7e3a6b11dcc13174e97f2b0a3633d3065d07b966e8c15051beb2883b61",
+      "matchTerms": [
+        "AP4020",
+        "AP4020-Data Sheet-14Jul2026.pdf",
+        "AP4020 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_07",
+      "series": "AP3000",
+      "modelNames": [
+        "AP3000"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap3000",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap3000",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/683d99cb0cda4cb0b1c7f35275426fb6?v=f22e6320",
+      "officialFileName": "AP3000_DS_20aug25.pdf",
+      "expectedSha256": "8fc51d9d979d0f5de71bdf13ea170d2c519aadabc72c90de74027ce6ffe68496",
+      "matchTerms": [
+        "AP3000",
+        "AP3000_DS_20aug25.pdf",
+        "AP3000/X Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_08",
+      "series": "AP5050U",
+      "modelNames": [
+        "AP5050U"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap5050u",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap5050u",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/7a8cb89e2bc24bc88df63840a50fca74?v=6055d624",
+      "officialFileName": "AP5050_DS_20aug25.pdf",
+      "expectedSha256": "2c24b5c9b1c9e57da30a6576d7250b7f87a67d70c1283f75b3c78ec75f30a5bf",
+      "matchTerms": [
+        "AP5050U",
+        "AP5050_DS_20aug25.pdf",
+        "AP5050 Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_09",
+      "series": "AP305C and AP305CX",
+      "modelNames": [
+        "AP305C and AP305CX"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap305c-and-ap305cx",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap305c-and-ap305cx",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/4673ef4f4e5142c2831c55f19feef077?v=7295689d",
+      "officialFileName": "AP305C_DS_20aug25.pdf",
+      "expectedSha256": "189706827da2fdc215f47d393584efa165eb5bd1c9dd098904b650c4ccea0769",
+      "matchTerms": [
+        "AP305C and AP305CX",
+        "AP305C_DS_20aug25.pdf",
+        "AP305C and AP305CX Datasheet Map"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_10",
+      "series": "AP5010",
+      "modelNames": [
+        "AP5010"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5010",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5010",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/8bf44e62c25d42618aa22536bba23f99?v=a06771e3",
+      "officialFileName": "AP5010-Data Sheet-13Jul2026.pdf",
+      "expectedSha256": "4048a9d6c879018429593aff8544b2221b1180847fc5d9c14d7e897cef0cab47",
+      "matchTerms": [
+        "AP5010",
+        "AP5010-Data Sheet-13Jul2026.pdf",
+        "AP5010 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_11",
+      "series": "AP4060",
+      "modelNames": [
+        "AP4060"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap4060",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-outdoor/ap4060",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/AP4060-Series-Data-Sheet?v=f6f4fd50",
+      "officialFileName": "AP4060-Data Sheet-11Jun2026.pdf",
+      "expectedSha256": "b6ec933077e4738c8c6252564af8647deefe3c21294231dd3ccb3cbfddb6a573",
+      "matchTerms": [
+        "AP4060",
+        "AP4060-Data Sheet-11Jun2026.pdf",
+        "AP4060 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_12",
+      "series": "AP5022",
+      "modelNames": [
+        "AP5022"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5022",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5022",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/AP5022-Series-Access-Points?v=8648155d",
+      "officialFileName": "AP5022-Data Sheet-27Jul2026.pdf",
+      "expectedSha256": "433ea5f07b5f3418ade1717a49f910a6d182422eb18539cc64d8ed54c36a3280",
+      "matchTerms": [
+        "AP5022",
+        "AP5022-Data Sheet-27Jul2026.pdf",
+        "AP5022 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    },
+    {
+      "documentId": "extreme_wireless_access_13",
+      "series": "AP5020",
+      "modelNames": [
+        "AP5020"
+      ],
+      "productPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5020",
+      "materialPageUrl": "https://www.extremenetworks.com/products/wi-fi-access-points/universal-aps-indoor/ap5020",
+      "pdfUrl": "https://extr-p-001.sitecorecontenthub.cloud/api/public/content/b441c2ee9d24460f8412f12c1dc04426?v=1e570430",
+      "officialFileName": "AP5020-Data Sheet-10Jul2026.pdf",
+      "expectedSha256": "1e7dca4ac25d0c115cb9d6fa5472a6adc9f710e29a5e3b051c7efa81833179b2",
+      "matchTerms": [
+        "AP5020",
+        "AP5020-Data Sheet-10Jul2026.pdf",
+        "AP5020 Data Sheet"
+      ],
+      "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
+    }
+  ]
+}

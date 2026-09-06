@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_campus_industrial",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为园区工业交换机｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "campus_industrial",
+    "name": "01 园区交换机/03 工业交换机",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "01 园区交换机/03 工业交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 5,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_campus_industrial_01",
+      "series": "CloudEngine S1731I-L",
+      "modelNames": [
+        "S1731I-L8T2X",
+        "S1731I-L8P2X"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s1731i-l",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/3ea89729b6bd40bcb15b81a4d809dcd0",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/3ea89729b6bd40bcb15b81a4d809dcd0/M3T1A590N1238088783477387450/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S1731I-L%E7%B3%BB%E5%88%97%E5%B7%A5%E4%B8%9A%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S1731I-L 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "f43b827af7cb84886e3954de57ee45d608fad923799e58fe20fe42b9254d3311"
+    },
+    {
+      "documentId": "huawei_campus_industrial_02",
+      "series": "CloudEngine S5735I-H-V2(TSN)",
+      "modelNames": [
+        "CloudEngine S5735I-H-V2(TSN)"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/3e147280e2214cb3bafd4ee39c392a67",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/3e147280e2214cb3bafd4ee39c392a67/M3T1A590N1211688632623161567/华为 CloudEngine S5735I-H-V2系列TSN工业交换机_机架款_彩页.pdf",
+      "officialFileName": "华为 CloudEngine S5735I-H-V2系列TSN工业交换机_机架款_彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "5d933fdf316cb92687055cd26e6631fef85174b5fb5d082146c0bace8e9c35b5"
+    },
+    {
+      "documentId": "huawei_campus_industrial_03",
+      "series": "CloudEngine S5735I-S-SPE-V2",
+      "modelNames": [
+        "CloudEngine S5735I-S-SPE-V2"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/ea0c64dbcfae4a4da64288d292e68707",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/ea0c64dbcfae4a4da64288d292e68707/M3T1A590N1258794976125137081/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S5735I-S-SPE-V2%E7%B3%BB%E5%88%97SPE%E5%B7%A5%E4%B8%9A%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5735I-S-SPE-V2系列SPE工业交换机彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "bf02a90147180ad9d0f5e2565255d20dcb4943ff6ab0735196b9806ec2bdab4f"
+    },
+    {
+      "documentId": "huawei_campus_industrial_04",
+      "series": "CloudEngine S5735I-S-V2(机架款)",
+      "modelNames": [
+        "S5735I-S24T4X-V2",
+        "S5735I-S24P4X-V2"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s5735i-s-v2",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/ac95233fc98e464589ec17a7d7ebc4f5",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/ac95233fc98e464589ec17a7d7ebc4f5/M3T1A590N1211687259860271117/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S5735I-S-V2%E7%B3%BB%E5%88%97%E5%B7%A5%E4%B8%9A%E4%BA%A4%E6%8D%A2%E6%9C%BA_%E6%9C%BA%E6%9E%B6%E6%AC%BE_%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5735I-S-V2(机架款) 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "b2f3c39ce35545cb02e1b81f85520dc44ec30e689b7b09db12ec06d19656d575"
+    },
+    {
+      "documentId": "huawei_campus_industrial_05",
+      "series": "CloudEngine S5735I-S-V2(DIN款)",
+      "modelNames": [
+        "S5735I-S8T4X-V2",
+        "S5735I-S8P4X-V2"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/switches/campus-switches/s5735i-s-v2",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/3df1836a0e1140af92b5195a187fa047",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/3df1836a0e1140af92b5195a187fa047/M3T1A590N1211686538215440593/%E5%8D%8E%E4%B8%BA%20CloudEngine%20S5735I-S-V2%E7%B3%BB%E5%88%97%E5%B7%A5%E4%B8%9A%E4%BA%A4%E6%8D%A2%E6%9C%BA_DIN%E6%AC%BE_%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 CloudEngine S5735I-S-V2(DIN款) 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "706800c2c49243dfc27a6d916c43904fd53921701dfbf93cef86c13fdc388492"
+    }
+  ]
+}

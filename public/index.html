@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NVCI Lite · 网络厂商彩页采集与对比</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">NVCI <span class="lite">Lite</span></div>
+    <div class="steps" id="steps">
+      <div class="step active" data-step="1"><span class="no">1</span>选品牌与型号</div>
+      <div class="step" data-step="2"><span class="no">2</span>采集彩页</div>
+      <div class="step" data-step="3"><span class="no">3</span>选对比产品</div>
+      <div class="step" data-step="4"><span class="no">4</span>分析报告</div>
+      <div class="step" data-step="5"><span class="no">5</span>彩页校验</div>
+    </div>
+    <div class="ai-badge" id="aiBadge">…</div>
+    <div class="alert-bell" id="alertBell" title="彩页告警通知（厂商更新 / 来源异常）">
+      <span class="bell-icon">🔔</span>
+      <span class="alert-count hidden" id="alertCount">0</span>
+    </div>
+  </header>
+
+  <!-- 告警日志面板 -->
+  <div id="alertPanel" class="alert-panel hidden">
+    <div class="alert-panel-head">告警日志 <span class="muted small" id="alertGenerated"></span></div>
+    <div id="alertList" class="alert-list"></div>
+  </div>
+
+  <main id="main">
+    <!-- 步骤 1：品牌树 + 勾选表 + 已选托盘 -->
+    <section id="step1" class="panel">
+      <div class="wizard-grid">
+        <aside id="catalogTree" class="catalog-tree" aria-label="品牌与产品线"></aside>
+        <div class="catalog-main">
+          <div class="picker-bar">
+            <input type="search" id="docSearch" placeholder="在当前产品线中搜索系列或型号…">
+            <span class="muted" id="lineInfo"></span>
+          </div>
+          <div class="doc-table" id="docTable"></div>
+        </div>
+      </div>
+      <div id="selTray" class="sel-tray hidden"></div>
+      <div class="panel-footer">
+        <span class="muted">左侧选品牌和产品线，勾选型号；可跨品牌任意多选，已选清单在下方托盘</span>
+        <button class="btn primary" id="toStep2" disabled>下一步：采集（<span id="selCount">0</span>）</button>
+      </div>
+    </section>
+
+    <!-- 步骤 2：采集（逐条 + 进度条） -->
+    <section id="step2" class="panel hidden">
+      <div class="panel-head">
+        <h2>采集彩页</h2>
+        <label class="check"><input type="checkbox" id="includePages"> 同时采集产品页参数（Markdown，尽力而为）</label>
+      </div>
+      <div class="panel-body">
+        <div id="collectSummary" class="collect-summary"></div>
+        <div id="progressWrap" class="progress-wrap hidden">
+          <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+          <div class="progress-text" id="progressText"></div>
+        </div>
+        <div id="collectResults"></div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn ghost" id="backToStep1">← 加选资料</button>
+        <div class="footer-actions">
+          <button class="btn danger hidden" id="stopCollect">■ 停止</button>
+          <button class="btn primary" id="startCollect">开始采集</button>
+          <button class="btn primary hidden" id="toStep3">下一步：选对比 →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 步骤 3：选对比对象 -->
+    <section id="step3" class="panel hidden">
+      <div class="panel-head"><h2>选择拟对比的产品（≥2，跨品牌可混选）</h2></div>
+      <div class="panel-body">
+        <div id="libraryList"></div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn ghost" id="backToStep2">← 返回采集</button>
+        <div class="footer-actions">
+          <button class="btn ghost" id="gotoStep1">＋ 回去补采</button>
+          <button class="btn primary" id="toStep4" disabled>下一步：分析（<span id="cmpCount">0</span>）</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 步骤 4：分析 -->
+    <section id="step4" class="panel hidden">
+      <div class="panel-head"><h2>AI 智能分析</h2><div id="aiMode" class="muted"></div></div>
+      <div class="panel-body">
+        <div class="analyze-options" id="analyzeOptions">
+          <label class="check"><input type="checkbox" id="useAi" checked> 用 AI 抽取参数并生成 Word 分析报告</label>
+          <p class="muted small" id="aiHint"></p>
+        </div>
+        <button class="btn primary" id="startAnalyze">生成报告（Excel 参数对照 + Word 分析 / AI 材料包）</button>
+        <div id="analyzeResult"></div>
+        <h3>历史导出</h3>
+        <div id="exportList" class="export-list"></div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn ghost" id="backToStep3">← 重选对比对象</button>
+        <button class="btn ghost" id="restart">↻ 从头开始</button>
+      </div>
+    </section>
+    <!-- 步骤 5：彩页资料探测校验（手动 + 定时，哈希建档比对） -->
+    <section id="step5" class="panel hidden">
+      <div class="panel-head">
+        <h2>彩页资料探测校验</h2>
+        <div class="muted" id="probeScheduleInfo"></div>
+      </div>
+      <div class="panel-body">
+        <div class="probe-controls">
+          <select id="probeMode" title="校验模式">
+            <option value="full">完整校验（HEAD + 变化下载 + SHA-256 建档比对）</option>
+            <option value="light">轻量探测（仅 HEAD 元数据，不下载）</option>
+          </select>
+          <select id="probeScope" title="校验范围">
+            <option value="all">全部品牌</option>
+          </select>
+          <button class="btn primary" id="startProbe">开始校验</button>
+          <button class="btn" id="batchBtn">批量导入 PDF</button>
+          <button class="btn danger hidden" id="stopProbe">■ 停止</button>
+        </div>
+        <p class="muted small">遵循采集方法论：HTTPS 白名单断言、顺序请求、HEAD 优先；完整校验首次建档会下载全部彩页进入内容缓存（之后仅增量下载有变化的）。SHA-256 与基线或上次建档不一致时标记「厂商已更新」，告警不阻断。</p>
+        <div id="probeProgressWrap" class="progress-wrap hidden">
+          <div class="progress-bar"><div id="probeProgressFill" class="progress-fill"></div></div>
+          <div class="progress-text" id="probeProgressText"></div>
+        </div>
+        <div id="probeTotals" class="probe-totals"></div>
+        <div class="probe-filter">
+          <select id="probeFilter"><option value="">全部状态</option></select>
+          <input type="search" id="probeSearch" placeholder="搜索品牌 / 系列 / 文件名…">
+        </div>
+        <div id="probeResults"></div>
+        <h3>历史校验</h3>
+        <div id="probeRuns" class="probe-runs"></div>
+      </div>
+      <div class="panel-footer">
+        <span class="muted">校验在服务端后台运行，可随时切换页面；哈希建档存于 data/probe-state.json</span>
+        <button class="btn ghost" id="probeBack">← 返回向导</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 登录遮罩 -->
+  <div id="loginMask" class="login-mask hidden">
+    <div class="login-box">
+      <h2>NVCI Lite</h2>
+      <input type="password" id="passwordInput" placeholder="访问口令">
+      <button class="btn primary" id="loginBtn">进入</button>
+      <div id="loginError" class="error"></div>
+    </div>
+  </div>
+
+  <!-- 人工校验对话框 -->
+  <div id="manualMask" class="dlg-mask hidden">
+    <div class="dlg" id="manualDlg"></div>
+  </div>
+
+  <!-- 批量导入对话框 -->
+  <div id="batchMask" class="dlg-mask hidden">
+    <div class="dlg dlg-wide" id="batchDlg"></div>
+  </div>
+
+  <!-- 全局提示 -->
+  <div id="toastWrap" class="toast-wrap"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_network_management",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为网络管控与分析软件｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "network_management",
+    "name": "06 网络管控与分析软件",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "06 网络管控与分析软件"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 4,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_network_management_01",
+      "series": "iMaster NCE-Campus",
+      "modelNames": [
+        "iMaster NCE-Campus"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/material/networking/nce/b69f947a98374855bb7fb432ce04d2b4",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/b69f947a98374855bb7fb432ce04d2b4/M3T1A590N1283373183375827108/iMaster NCE-Campus 产品彩页.pdf",
+      "officialFileName": "iMaster NCE-Campus 产品彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "f62d61f53ad6c7c04d1051f33acbb046e5318dd1ead18fe7b8bd70b31924b735"
+    },
+    {
+      "documentId": "huawei_network_management_02",
+      "series": "iMaster NCE-CampusInsight",
+      "modelNames": [
+        "未披露"
+      ],
+      "productPageUrl": "https://e.huawei.com/en/products/network-analysis/campusinsight",
+      "materialPageUrl": "https://e.huawei.com/en/documents/products/enterprise-network/2f55644fbe3f4628a061ed26cf8bf541",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/fa836539cf7d433fbbb54bb12c1f0a98/M3T1A590N1183456174261411952/Huawei%20iMaster%20NCE-CampusInsight%20Brochure.pdf",
+      "officialFileName": "华为 iMaster NCE-CampusInsight 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "2794258c75fbc752d6a27345288876e62f52c0f37e7bcb3b3a3c66b7a2de5335"
+    },
+    {
+      "documentId": "huawei_network_management_03",
+      "series": "iMaster NCE-Fabric",
+      "modelNames": [
+        "V100R024C00 / V100R024C10"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/network-analysis",
+      "materialPageUrl": "https://e.huawei.com/en/documents/products/enterprise-network/50da6f5b31014978beda80853eeab5f6",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/866f4876dd894ee28d1a533badd838d0/M2T1A590N1041036011572056154/iMaster%20NCE-Fabric%20V100R024C00%20Datasheet%20_Channel%20Version__24H2_.pdf",
+      "officialFileName": "华为 iMaster NCE-Fabric 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "7d74f2a4e3dea5fde671fea26dd5022421b8f00bee5f8757d320310a608f5be4"
+    },
+    {
+      "documentId": "huawei_network_management_04",
+      "series": "iMaster NCE-FabricInsight",
+      "modelNames": [
+        "V100R025C10 / 未披露"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/network-analysis",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/b19a4346156d41bc82878fd5b7cb2324",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/b19a4346156d41bc82878fd5b7cb2324/M3T1A590N1185159600800935961/Huawei%20iMaster%20NCE-FabricInsight%20V100R025C00%20%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为 iMaster NCE-FabricInsight 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "a84ba4acf27aee3bdb430781f1fd1eadd6006b041fc0d9e087ebd576ded3335c"
+    }
+  ]
+}

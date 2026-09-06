@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "2.1",
+  "bundledRevision": "2026-08-19-huawei-verified-v1",
+  "profileId": "huawei_routers",
+  "vendorId": "huawei",
+  "vendorName": "华为",
+  "displayName": "华为路由器｜已验证官方彩页",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "e.huawei.com",
+    "e-file.huawei.com"
+  ],
+  "sourcePolicy": "仅采集已在 2026-08-19 本地镜像中通过官方资料链、PDF 签名、SHA-256 和系列/文件名匹配门禁的华为企业网络公开彩页。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "routers",
+    "name": "04 路由器",
+    "libraryRootName": "华为产品彩页"
+  },
+  "subseries": {
+    "id": "verified_public_brochures",
+    "name": "已验证公开彩页"
+  },
+  "productLinePath": [
+    "华为产品彩页",
+    "04 路由器"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 4,
+    "userAgent": "",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "huawei_routers_01",
+      "series": "华为坤灵 eKitEngine 企业级无线路由器",
+      "modelNames": [
+        "华为坤灵 eKitEngine 企业级无线路由器"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/9c41128944a2456687d8038bf6ced74c",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/9c41128944a2456687d8038bf6ced74c/M3T1A590N1188523037790793733/%E5%8D%8E%E4%B8%BA%E5%9D%A4%E7%81%B5%20eKitEngine%20E3%E4%BC%81%E4%B8%9A%E7%BA%A7%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BD%A9%E9%A1%B5.pdf",
+      "officialFileName": "华为坤灵 eKitEngine E3企业级无线路由器彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "8d1c62991a16dbae75a925bf859e2f2c3552bd7e1129d2aaa5b250778ae9a39e"
+    },
+    {
+      "documentId": "huawei_routers_02",
+      "series": "NetEngine AR502H-V2",
+      "modelNames": [
+        "NetEngine AR502H-V2"
+      ],
+      "productPageUrl": "",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/a5c6e00786b64cf6ab88fe17d9fe235d",
+      "pdfUrl": "https://e-file.huawei.com/marketingcloud/pep/asset/20000001/Material/a5c6e00786b64cf6ab88fe17d9fe235d/M3T1A590N1225741348996632809/%E5%8D%8E%E4%B8%BAAR502H-V2%E4%BA%A7%E5%93%81%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5-FINAL.pdf",
+      "officialFileName": "华为AR502H-V2产品详版彩页-FINAL.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "06513801d71dcbc39fa2647946033a54ab8409c3522dfd2ffe9669e5e58f2daa"
+    },
+    {
+      "documentId": "huawei_routers_03",
+      "series": "NetEngine AR6710-L 系列企业路由器",
+      "modelNames": [
+        "AR6710-L"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/routers",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/997412eb63254d9cac053b85c0d591b0",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/997412eb63254d9cac053b85c0d591b0/M3T1A590N1245694812335767639/%E5%8D%8E%E4%B8%BANetEngine%20AR6710-L%E7%B3%BB%E5%88%97%E4%BC%81%E4%B8%9A%E8%B7%AF%E7%94%B1%E5%99%A8%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5-R25C10.pdf",
+      "officialFileName": "华为 NetEngine AR6710-L 系列企业路由器 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "8d5b2b0d0121f78fdea836d1be742c7c245250f7c24fcad6c15d07ab8a796b39"
+    },
+    {
+      "documentId": "huawei_routers_04",
+      "series": "NetEngine AR8000 系列企业路由器",
+      "modelNames": [
+        "AR8700"
+      ],
+      "productPageUrl": "https://e.huawei.com/cn/products/routers/netengine-ar8700",
+      "materialPageUrl": "https://e.huawei.com/cn/documents/products/enterprise-network/5663ddc9ff014694848f321f79bc706c",
+      "pdfUrl": "https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/5663ddc9ff014694848f321f79bc706c/M3T1A590N1250397258114519044/%E5%8D%8E%E4%B8%BANetEngine%20AR8000%E7%B3%BB%E5%88%97%E4%BC%81%E4%B8%9A%E8%B7%AF%E7%94%B1%E5%99%A8%E8%AF%A6%E7%89%88%E5%BD%A9%E9%A1%B5-R25C10.pdf",
+      "officialFileName": "华为 NetEngine AR8000 系列企业路由器 彩页.pdf",
+      "evidencePolicy": "official_product_brochure_pdf",
+      "expectedSha256": "26b3f975e29a641678113384f5ecb2ef4bea92e66fd78dcd60c07eb45d5f0afa"
+    }
+  ]
+}
