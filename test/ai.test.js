@@ -3,15 +3,17 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-// chatCompletion 读取进程环境变量，测试内用临时覆盖并恢复
-function withEnv(env, fn) {
+// chatCompletion 读取进程环境变量，测试内用临时覆盖并恢复。
+// 必须 await fn() 完成后再恢复：finally 里直接 return fn() 会在拿到 Promise 的瞬间
+// 恢复环境，异步用例中的后续 AI 调用就会退回默认协议（曾在双调用用例中真实踩到）。
+async function withEnv(env, fn) {
   const saved = {};
   for (const [key, value] of Object.entries(env)) {
     saved[key] = process.env[key];
     process.env[key] = value;
   }
   try {
-    return fn();
+    return await fn();
   } finally {
     for (const [key, value] of Object.entries(saved)) {
       if (value === undefined) delete process.env[key];
@@ -135,9 +137,57 @@ test('extractParamsWithAi：引用经原文校验，命中回填实际页码，�
     assert.equal(byKey.get('switching_capacity').quote, '交换容量：598Gbit/s', '空白差异不应影响校验命中');
     assert.equal(byKey.get('switching_capacity').page, 1, '页码应按原文实际位置机械回填，而非采信模型口述');
     assert.equal(byKey.get('switching_capacity').source, 'ai');
-    assert.equal(byKey.get('switching_capacity').status, 'ok', '引用核实通过的值保持有值');
+    assert.equal(byKey.get('switching_capacity').status, 'ok', '引用核实通过且值被引用支持时保持有依据');
     assert.equal(byKey.get('vlan_count').quote, '', '未命中原文的引用应清空');
     assert.equal(byKey.get('vlan_count').page, 0, '引用未核实时页码一并清零');
     assert.equal(byKey.get('vlan_count').status, 'pending_review', '引用未核实的值应降为待复核');
+  });
+});
+
+test('值-引用一致性：真实引用携带错误数值不得进入有依据状态（报告复现用例）', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6v',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    // 原文写 128Gbit/s，模型却返回 value=999Gbit/s 并引用真实存在的原句
+    const payload = JSON.stringify({ params: [
+      { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '999Gbit/s', quote: '交换容量 128Gbit/s', page: 1 },
+    ] });
+    const mockFetch = async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({ content: [{ type: 'text', text: payload }] }),
+    });
+    const extraction = {
+      pageCount: 1,
+      pages: [{ page: 1, lines: ['交换容量 128Gbit/s'] }],
+      fullText: '交换容量 128Gbit/s',
+    };
+    const params = await ai.extractParamsWithAi(
+      { vendorName: '华为', series: 'S5731', modelNames: [] },
+      extraction,
+      { fetchImpl: mockFetch },
+    );
+    assert.equal(params[0].status, 'pending_review', '引用真实但值不被引用支持 → 待核对');
+    assert.equal(params[0].quote, '交换容量 128Gbit/s', '真实引用保留供人工核对');
+    assert.equal(params[0].reviewNote, '取值与引用原文不一致');
+    // 对照：数值改写但数字组一致的合法转写（如 598 Gbit/s → 598Gbit/s）应保持 ok
+    const payloadOk = JSON.stringify({ params: [
+      { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '128 Gbit/s', quote: '交换容量 128Gbit/s', page: 1 },
+    ] });
+    const mockFetchOk = async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({ content: [{ type: 'text', text: payloadOk }] }),
+    });
+    const paramsOk = await ai.extractParamsWithAi(
+      { vendorName: '华为', series: 'S5731', modelNames: [] },
+      extraction,
+      { fetchImpl: mockFetchOk },
+    );
+    assert.equal(paramsOk[0].status, 'ok', '数值与单位一致的合法转写应保持有依据');
   });
 });

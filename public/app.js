@@ -352,7 +352,7 @@ async function renderLibrary() {
       <span class="vendor-chip">${esc(doc.vendorName)}</span>
       <span class="doc-series">${esc(doc.series)}</span>
       <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-      <span class="muted small">${doc.pageCount || '?'} 页${doc.warning ? ' · ⚠ 哈希与基线不一致' : ''}${doc.pageMarkdown?.status === 'ok' ? ' · 含网页参数' : ''}</span>
+      <span class="muted small">${doc.pageCount || '?'} 页${doc.warning ? ' · ⚠ 哈希与基线不一致' : ''}${doc.pageMarkdown?.status === 'ok' ? ' · 已保存网页' : ''}</span>
     </label>`).join('');
   box.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', () => {
     const id = row.dataset.id;
@@ -446,6 +446,7 @@ const PROBE_SEVERITY = {
 
 const PROBE_BADGE_CLASS = {
   valid_unchanged: 'ok',
+  link_ok: 'info',
   baseline_matched: 'ok',
   updated: 'warn',
   new_archived: 'info',

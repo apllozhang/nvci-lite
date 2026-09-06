@@ -65,7 +65,7 @@ test('Excel：待复核单元格显示取值并带批注', async () => {
     const valueCell = sheet.getCell('C4'); // 第 3 行为分组行，第 4 行为首个参数行
     assert.equal(valueCell.value, '176Gbps', '待复核值应照常显示');
     assert.equal(valueCell.font.italic, true, '待复核值应为斜体');
-    assert.match(String(valueCell.note || ''), /待复核/, '应有待复核批注');
+    assert.match(String(valueCell.note || ''), /待核对/, '应有待核对批注');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
 

@@ -65,9 +65,9 @@ test('参数矩阵：合并、补齐三态、分组有序', () => {
 });
 
 test('四态文案', () => {
-  assert.equal(cellStatusText('ok'), '有值');
-  assert.equal(cellStatusText('pending_review'), '待复核');
-  assert.equal(cellStatusText('not_disclosed'), '未披露');
+  assert.equal(cellStatusText('ok'), '有依据');
+  assert.equal(cellStatusText('pending_review'), '待核对');
+  assert.equal(cellStatusText('not_disclosed'), '未找到');
   assert.equal(cellStatusText('extract_failed'), '抽取失败');
 });
 
@@ -112,4 +112,41 @@ test('证据分级：待复核值让位于已核验值，同级先到先得', ()
   const aiVerified = [{ key: 'mtu', label: '最大 MTU', group: '协议特性', value: '9216', quote: 'MTU 9216', page: 4, status: 'ok', source: 'ai' }];
   const merged3 = mergeParams(aiPending, aiVerified);
   assert.equal(new Map(merged3.map((p) => [p.key, p])).get('mtu').value, '9216', '已核验引用应胜过待复核');
+});
+
+test('冲突保留：规则 128 与 AI 256 不一致时保留双方候选并标待核对', () => {
+  const { mergeParams } = require('../lib/params');
+  const ruleParams = [
+    { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '128Gbit/s', quote: '交换容量 128Gbit/s', page: 2, status: 'ok', source: 'rule' },
+  ];
+  const aiParams = [
+    { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '256Gbit/s', quote: '交换容量 256Gbit/s', page: 2, status: 'ok', source: 'ai' },
+  ];
+  const merged = mergeParams(aiParams, ruleParams);
+  assert.equal(merged.length, 1, '冲突不产生重复行');
+  const field = merged[0];
+  assert.equal(field.source, 'rule', '高证据级别胜出');
+  assert.equal(field.status, 'pending_review', '冲突时胜出值也降为待核对');
+  assert.match(field.reviewNote, /128Gbit\/s/, '候选一（规则值）保留在批注');
+  assert.match(field.reviewNote, /256Gbit\/s/, '候选二（AI 值）保留在批注');
+  // 取值一致（仅单位写法差异归一化后相同）不算冲突
+  const same = mergeParams(
+    [{ key: 'poe', value: '370 W', quote: 'q', status: 'ok', source: 'ai' }],
+    [{ key: 'poe', value: '370W', quote: 'q', status: 'ok', source: 'rule' }],
+  );
+  assert.equal(same[0].status, 'ok', '归一化后同值不触发冲突');
+});
+
+test('模板初始化：双方都无参数时矩阵仍含全部固定字段行', () => {
+  const { FIELD_TEMPLATE } = require('../lib/params');
+  const matrix = buildMatrix([
+    { documentId: 'a', label: 'A 系列', params: [] },
+    { documentId: 'b', label: 'B 系列', params: [] },
+  ], { initTemplate: true });
+  const rows = matrix.groups.flatMap((group) => group.fields);
+  assert.equal(rows.length, FIELD_TEMPLATE.length, '固定模板字段全部在矩阵中');
+  for (const field of rows) {
+    assert.equal(field.values.a.status, 'not_disclosed', `${field.key} 应显示未找到而非被折叠`);
+    assert.equal(field.values.b.status, 'not_disclosed');
+  }
 });

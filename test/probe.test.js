@@ -63,11 +63,17 @@ function headResponse(status, headers = {}) {
   };
 }
 
-test('轻量探测：200 + PDF 类型 → 有效未变', async () => {
-  const mockFetch = async () => headResponse(200, { 'content-type': 'application/pdf', 'content-length': '1024' });
-  const result = await lightProbeDocument({ document: DOC, fetchImpl: mockFetch });
-  assert.equal(result.probeStatus, 'valid_unchanged');
-  assert.equal(result.status, 200);
+test('轻量探测：200 + PDF 类型 → 无历史时仅「链接可访问」，历史元数据一致才「有效·未变」', async () => {
+  const mockFetch = async () => headResponse(200, { 'content-type': 'application/pdf', 'content-length': '1024', etag: '"v1"', 'last-modified': 'Mon, 01 Sep 2026 00:00:00 GMT' });
+  const first = await lightProbeDocument({ document: DOC, fetchImpl: mockFetch });
+  assert.equal(first.probeStatus, 'link_ok', '无历史可比时只标链接可访问');
+
+  const same = await lightProbeDocument({ document: DOC, previous: { etag: '"v1"', lastModified: 'Mon, 01 Sep 2026 00:00:00 GMT', contentLength: 1024 }, fetchImpl: mockFetch });
+  assert.equal(same.probeStatus, 'valid_unchanged', '历史元数据逐项一致才标未变');
+
+  const mockFetchV2 = async () => headResponse(200, { 'content-type': 'application/pdf', 'content-length': '2048', etag: '"v2"', 'last-modified': 'Tue, 02 Sep 2026 00:00:00 GMT' });
+  const changed = await lightProbeDocument({ document: DOC, previous: { etag: '"v1"', lastModified: 'Mon, 01 Sep 2026 00:00:00 GMT', contentLength: 1024 }, fetchImpl: mockFetchV2 });
+  assert.equal(changed.probeStatus, 'link_ok', '元数据变化仍只标可访问，内容变化由完整校验确认');
 });
 
 test('轻量探测：404 → 资源不可用；非 PDF 类型 → not_pdf', async () => {
@@ -167,7 +173,7 @@ test('人工裁定：自动巡检跳过，修正链接注入探测', async () =>
     assert.equal(run.results.length, 1, '裁定条目不产生结果行');
     assert.ok(seenUrls.some((u) => u === 'https://mirror.example.com/new.pdf'), '探测应使用人工修正链接');
     assert.ok(!seenUrls.some((u) => u.includes('al-enterprise.com/old.pdf')), '旧地址不应被请求');
-    assert.equal(run.results[0].probeStatus, 'valid_unchanged');
+    assert.equal(run.results[0].probeStatus, 'link_ok');
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -229,15 +235,22 @@ test('完整校验：HEAD 被 403 拒绝时回退 GET 下载并建档', async ()
   }
 });
 
-test('轻量探测：HEAD 403 → GET Range 回退判定有效', async () => {
-  const fetchImpl = methodAwareFetch({
+test('轻量探测：HEAD 403 → GET Range 回退（PDF 类型通过为 link_ok，HTML 为 not_pdf）', async () => {
+  const pdfFetch = methodAwareFetch({
     HEAD: async () => headerOnly(403),
     GET: async () => ({ ...headerOnly(206, pdfHeaders), body: { cancel: async () => {} } }),
   });
-  const result = await lightProbeDocument({ document: DOC, fetchImpl });
-  assert.equal(result.probeStatus, 'valid_unchanged');
-  assert.match(result.detail, /GET 回退/);
-  assert.equal(result.status, 206, 'HTTP 状态来自 GET 回退响应');
+  const okResult = await lightProbeDocument({ document: DOC, fetchImpl: pdfFetch });
+  assert.equal(okResult.probeStatus, 'link_ok');
+  assert.match(okResult.detail, /GET 回退/);
+  assert.equal(okResult.status, 206, 'HTTP 状态来自 GET 回退响应');
+
+  const htmlFetch = methodAwareFetch({
+    HEAD: async () => headerOnly(403),
+    GET: async () => ({ ...headerOnly(206, { 'content-type': 'text/html' }), body: { cancel: async () => {} } }),
+  });
+  const htmlResult = await lightProbeDocument({ document: DOC, fetchImpl: htmlFetch });
+  assert.equal(htmlResult.probeStatus, 'not_pdf', 'GET 回退也必须检查 PDF 类型');
 });
 
 test('限流判定：403/429/5xx/网络异常参与，404 与内容类失败不参与', () => {
@@ -275,7 +288,7 @@ test('自动降频：失败翻倍封顶，成功减半回基准，熔断后本�
     const statuses = run.results.map((row) => row.probeStatus);
     assert.equal(statuses.filter((s) => s === 'unreachable').length, 3, '熔断阈值 3 次');
     assert.equal(statuses.filter((s) => s === 'vendor_throttled').length, 5, '熔断后 A 品牌剩余 5 条跳过');
-    assert.equal(statuses.includes('valid_unchanged'), true, 'B 品牌正常探测不受影响');
+    assert.equal(statuses.includes('link_ok'), true, 'B 品牌正常探测不受影响（轻量模式标链接可访问）');
     assert.equal(state.vendorPace('ale'), 20, '失败翻倍应封顶在 maxPaceMs');
     assert.equal(state.vendorPace('cisco'), 5, '成功后应回到基准节拍');
     const alertStatuses = state.alerts().map((item) => item.status);

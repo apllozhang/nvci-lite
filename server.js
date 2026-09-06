@@ -400,7 +400,7 @@ app.post('/api/analyze', auth, async (req, res) => {
             documents.find((doc) => doc.documentId === entry.documentId),
             entry.extraction,
           );
-          // 同键规则优先（引用可机械复核），LLM 补齐其余键；AI 抽取失败时仅用规则结果。
+          // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
           params = mergeParams(aiParams, params);
         } catch (error) {
           entry.aiExtractError = String(error.message || error);
@@ -422,7 +422,18 @@ app.post('/api/analyze', auth, async (req, res) => {
       return { documentId: entry.documentId, label: entry.label, params };
     }));
 
-    const matrix = buildMatrix(paramsByDoc);
+    // 固定字段模板初始化：关键字段没抽到也要显示为「未找到」，不完整审阅的原因随矩阵传递
+    const matrix = buildMatrix(paramsByDoc, { initTemplate: true });
+    const incompleteDocs = [];
+    for (const entry of extractions) {
+      const reasons = [];
+      if (entry.extraction.truncated) reasons.push(`仅抽取前 ${entry.extraction.pages.length} 页（彩页共 ${entry.extraction.pageCount} 页）`);
+      if (entry.extraction.fullText.length > 60000) reasons.push('彩页文本超长，AI 输入被截断');
+      if (vision.isWeakText(entry.extraction) && vision.visionConfig().mode === 'off') reasons.push('文字层薄弱（疑似图片型彩页），视觉抽取默认关闭');
+      if (reasons.length) incompleteDocs.push({ documentId: entry.documentId, label: entry.label, reason: reasons.join('；') });
+    }
+    matrix.meta.incompleteDocs = incompleteDocs;
+
     const stem = `对比_${documents.map((doc) => doc.series.replace(/[\\/:*?"<>|\s]+/g, '')).join('_vs_')}`.slice(0, 120);
 
     const excelPath = store.exportPath(store.exportFileName(stem, 'xlsx'));
@@ -436,7 +447,20 @@ app.post('/api/analyze', auth, async (req, res) => {
         await buildWordDocx({ analysis, matrix, documents, outPath: wordPath });
         files.push({ fileName: path.basename(wordPath), kind: 'word' });
       } catch (error) {
-        files.push({ fileName: '', kind: 'word_failed', error: String(error.message || error) });
+        // Word 失败时自动降级导出材料包，保证分析产物始终可下载
+        try {
+          const packPath = store.exportPath(store.exportFileName(`${stem}_AI材料包`, 'md'));
+          buildMaterialPack({
+            matrix,
+            documents,
+            extractions: extractions.map((entry) => ({ label: entry.label, pageCount: entry.extraction.pageCount, pages: entry.extraction.pages })),
+            outPath: packPath,
+          });
+          files.push({ fileName: '', kind: 'word_failed', error: String(error.message || error) });
+          files.push({ fileName: path.basename(packPath), kind: 'material_pack' });
+        } catch (packError) {
+          files.push({ fileName: '', kind: 'word_failed', error: `${String(error.message || error)}；材料包降级也失败：${String(packError.message || packError)}` });
+        }
       }
     } else {
       const packPath = store.exportPath(store.exportFileName(`${stem}_AI材料包`, 'md'));
