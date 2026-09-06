@@ -86,7 +86,8 @@ function refreshProfiles() {
 function packTar() {
   const out = path.join(os.tmpdir(), `nvci-lite-deploy-${Date.now()}.tgz`);
   const excludes = ['./node_modules', './node_modules/*', './data', './data/*', './deploy.config.json', './start.bat'];
-  execSync(`tar -czf "${out}" -C "${PROJECT_DIR}" ${excludes.map((item) => `--exclude "${item}"`).join(' ')} .`, { stdio: 'pipe' });
+  // --force-local：GNU tar 会把 "C:\..." 里的盘符冒号误判为远程主机名
+  execSync(`tar --force-local -czf "${out}" -C "${PROJECT_DIR}" ${excludes.map((item) => `--exclude "${item}"`).join(' ')} .`, { stdio: 'pipe' });
   const megabytes = (fs.statSync(out).size / 1024 / 1024).toFixed(2);
   console.log(`打包完成：${out}（${megabytes} MB）`);
   return out;
