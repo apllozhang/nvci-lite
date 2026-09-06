@@ -427,6 +427,7 @@ async function loadExports() {
 const probe = {
   pollTimer: null,
   currentRunId: null,
+  currentRunInfo: null,
   statusLabels: {},
   lastResults: [],
   wasRunning: false,
@@ -434,6 +435,9 @@ const probe = {
   sort: { key: 'time', dir: 'desc' },
   page: 1,
   pageSize: 20,
+  filterStatus: '',
+  lastSchedule: null,
+  lastTotals: null,
 };
 
 // 状态排序权重：正常 < 提示 < 警告 < 异常
@@ -444,24 +448,30 @@ const PROBE_SEVERITY = {
   unreachable: 3, redirect_broken: 3, not_pdf: 3, corrupt: 3, network_error: 3,
 };
 
-const PROBE_BADGE_CLASS = {
-  valid_unchanged: 'ok',
-  link_ok: 'info',
-  baseline_matched: 'ok',
-  updated: 'warn',
-  new_archived: 'info',
-  unreachable: 'err',
-  redirect_broken: 'err',
-  not_pdf: 'err',
-  corrupt: 'err',
-  too_large: 'warn',
-  network_error: 'err',
-  vendor_throttled: 'info',
-  manual_ok: 'ok',
-  manual_invalid: 'info',
-  paused: 'info',
-  manual_settled: 'info',
+// 状态元数据：短标签 + 形状前缀（色弱双通道）+ 样式类，与 docs/UI美化设计方案.md 3.1 表一致
+const PROBE_CHIP_META = {
+  valid_unchanged: { short: '有效未变', shape: '●', cls: 'st-pos' },
+  baseline_matched: { short: '基线一致', shape: '●', cls: 'st-pos' },
+  manual_ok: { short: '人工有效', shape: '●', cls: 'st-pos' },
+  new_archived: { short: '新建档', shape: '○', cls: 'st-info' },
+  link_ok: { short: '可访问', shape: '○', cls: 'st-info' },
+  pending_review: { short: '待核对', shape: '○', cls: 'st-info' },
+  updated: { short: '已更新', shape: '▲', cls: 'st-warn' },
+  too_large: { short: '超限', shape: '▲', cls: 'st-warn' },
+  vendor_throttled: { short: '限流跳过', shape: '—', cls: 'st-neutral' },
+  paused: { short: '暂缓', shape: '—', cls: 'st-neutral' },
+  manual_invalid: { short: '人工失效', shape: '—', cls: 'st-neutral' },
+  manual_settled: { short: '已裁定', shape: '—', cls: 'st-neutral' },
+  unreachable: { short: '异常', shape: '■', cls: 'st-err' },
+  redirect_broken: { short: '异常', shape: '■', cls: 'st-err' },
+  not_pdf: { short: '异常', shape: '■', cls: 'st-err' },
+  corrupt: { short: '异常', shape: '■', cls: 'st-err' },
+  network_error: { short: '异常', shape: '■', cls: 'st-err' },
 };
+// 五种错误态在芯片上合并为一个「异常」筛选（__error）
+const PROBE_ERROR_SET = new Set(['unreachable', 'redirect_broken', 'not_pdf', 'corrupt', 'network_error']);
+// 芯片展示顺序：正向 → 提醒 → 信息 → 异常 → 中性
+const PROBE_CHIP_ORDER = ['', 'valid_unchanged', 'baseline_matched', 'manual_ok', 'updated', 'too_large', 'new_archived', 'link_ok', '__error', 'vendor_throttled', 'paused', 'manual_invalid'];
 
 // 需要人工兜底的异常状态
 const MANUAL_ELIGIBLE = new Set(['unreachable', 'redirect_broken', 'not_pdf', 'corrupt', 'too_large', 'network_error', 'vendor_throttled']);
@@ -473,6 +483,8 @@ function fmtBytes(bytes) {
 }
 
 function renderProbeSchedule(schedule, totals, labels) {
+  probe.lastSchedule = schedule;
+  probe.lastTotals = totals;
   const info = $('probeScheduleInfo');
   if (schedule?.enabled) {
     const next = schedule.nextScheduledAt ? schedule.nextScheduledAt.slice(0, 16).replace('T', ' ') : '计算中';
@@ -481,15 +493,56 @@ function renderProbeSchedule(schedule, totals, labels) {
     info.textContent = '定时校验未启用（NVCI_LITE_PROBE_ENABLED=true 开启）· 可手动触发';
   }
   const entries = Object.entries(totals || {});
-  $('probeTotals').innerHTML = entries.length
-    ? entries.map(([key, count]) => `<span class="probe-chip"><span class="badge ${PROBE_BADGE_CLASS[key] || 'info'}">${esc(labels[key] || key)}</span> ${count}</span>`).join('')
-    : '<span class="muted small">还没有校验记录，点击「开始校验」建立第一轮哈希档案</span>';
-  const filter = $('probeFilter');
-  const current = filter.value;
-  filter.innerHTML = '<option value="">全部状态</option>'
-    + entries.map(([key]) => `<option value="${esc(key)}">${esc(labels[key] || key)}</option>`).join('');
-  filter.value = current;
-  if (filter.value !== current) filter.value = '';
+  if (!entries.length) {
+    $('probeTotals').innerHTML = '<span class="muted small">还没有校验记录，点击「开始校验」建立第一轮哈希档案</span>';
+    return;
+  }
+  // 错误五态合并为一个「异常」芯片；其余逐状态展示
+  const groups = new Map();
+  let allCount = 0;
+  for (const [key, count] of entries) {
+    allCount += count;
+    const groupKey = PROBE_ERROR_SET.has(key) ? '__error' : key;
+    groups.set(groupKey, (groups.get(groupKey) || 0) + count);
+  }
+  const chips = [{ key: '', short: '全部', shape: '', cls: 'st-all', count: allCount, title: '显示全部状态' }];
+  for (const [key, count] of groups) {
+    const meta = key === '__error'
+      ? { short: '异常', cls: 'st-err', title: '不可达 / 跳转越界 / 非PDF / 无法解析 / 网络异常' }
+      : PROBE_CHIP_META[key];
+    if (meta) chips.push({ key, count, title: labels[key] || meta.short, ...meta });
+  }
+  chips.sort((a, b) => {
+    const ia = PROBE_CHIP_ORDER.indexOf(a.key); const ib = PROBE_CHIP_ORDER.indexOf(b.key);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  $('probeTotals').innerHTML = chips.map((chip) => {
+    const selected = (probe.filterStatus || '') === chip.key ? 'selected' : '';
+    const disabled = chip.count === 0 && chip.key !== '' ? 'disabled' : '';
+    return `<button type="button" class="chip ${chip.cls} ${selected} ${disabled}" data-status="${esc(chip.key)}" title="${esc(chip.title)}" aria-pressed="${selected ? 'true' : 'false'}">
+      <span class="dot"></span>${esc(chip.short)} <span class="cnt">${chip.count}</span></button>`;
+  }).join('');
+  $('probeTotals').querySelectorAll('.chip:not(.disabled)').forEach((chip) => chip.addEventListener('click', () => {
+    probe.filterStatus = probe.filterStatus === chip.dataset.status ? '' : chip.dataset.status;
+    probe.page = 1;
+    renderProbeSchedule(probe.lastSchedule, probe.lastTotals, probe.statusLabels);
+    renderProbeResults(probe.lastResults);
+  }));
+}
+
+/* 状态图例（首次展开时构建） */
+function renderLegend() {
+  const pop = $('legendPop');
+  if (!pop || pop.dataset.built === '1') return;
+  pop.dataset.built = '1';
+  const rows = Object.keys(PROBE_CHIP_META)
+    .filter((key) => key !== 'manual_settled')
+    .map((key) => {
+      const meta = PROBE_CHIP_META[key];
+      const full = probe.statusLabels[key] || key;
+      return `<div class="lg-row"><span class="lg-shape">${meta.shape}</span><span class="lg-name">${esc(meta.short)}</span><span class="lg-desc">${esc(full)}</span></div>`;
+    }).join('');
+  pop.innerHTML = `<h4>状态图例</h4>${rows}<div class="lg-row"><span class="lg-shape">■</span><span class="lg-name">异常</span><span class="lg-desc">不可达 / 跳转越界 / 非PDF / 无法解析 / 网络异常（点击上方芯片可筛选对应状态）</span></div>`;
 }
 
 async function fetchStates() {
@@ -532,13 +585,56 @@ function pageList(current, pages) {
   return out;
 }
 
+/* 轮次横条：当前表格显示的是哪一轮 */
+function renderRunCaption() {
+  const c = probe.currentRunInfo;
+  if (!c) return '';
+  const when = String(c.startedAt).slice(0, 16).replace('T', ' ');
+  const text = `当前显示：<b>${esc(when)}</b> · ${c.trigger === 'scheduled' ? '定时' : '手动'} · ${c.mode === 'light' ? '轻量' : '完整'}（${c.count} 条）`;
+  return c.isLatest
+    ? `<div class="run-caption">${text}<span class="muted small">最新一轮</span></div>`
+    : `<div class="run-caption">${text}<span class="muted small">历史轮次</span><button type="button" class="rc-clear" id="rcLatest">× 恢复最新</button></div>`;
+}
+
+async function loadLatestRun({ scroll = true } = {}) {
+  try {
+    const payload = await api('/api/probe/runs');
+    history.rows = payload.runs;
+    renderRunsTable();
+    const latest = payload.runs[0];
+    if (!latest) return;
+    const detail = await api(`/api/probe/runs/${encodeURIComponent(latest.runId)}`);
+    probe.currentRunId = latest.runId;
+    probe.currentRunInfo = {
+      runId: latest.runId, startedAt: latest.startedAt, trigger: latest.trigger, mode: latest.mode,
+      count: latest.resultCount ?? latest.scope ?? 0, isLatest: true,
+    };
+    renderProbeResults(detail.results || []);
+    if (scroll) scrollToResults();
+  } catch (error) {
+    toast('error', `加载最新校验轮次失败：${error.message}`);
+  }
+}
+
+function scrollToResults() {
+  const box = $('probeResults');
+  if (box) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const table = box && box.querySelector('.probe-table');
+  if (table) {
+    table.classList.remove('flash');
+    void table.offsetWidth; // 重启动画
+    table.classList.add('flash');
+  }
+}
+
 function renderProbeResults(results) {
   probe.lastResults = results || [];
-  const filter = $('probeFilter').value;
+  const filter = probe.filterStatus || '';
   const needle = $('probeSearch').value.trim().toLowerCase();
   const rows = probe.lastResults.filter((row) => {
     const display = displayStatusOf(row);
-    return (!filter || display === filter)
+    const statusHit = !filter || display === filter || (filter === '__error' && PROBE_ERROR_SET.has(display));
+    return statusHit
       && (!needle || `${row.vendorName} ${row.series} ${row.officialFileName}`.toLowerCase().includes(needle));
   }).sort(cmpProbeRows);
   const total = rows.length;
@@ -556,6 +652,7 @@ function renderProbeResults(results) {
   const bodyRows = pageRows.map((row) => {
     const current = probe.currentState[row.documentId];
     const display = displayStatusOf(row);
+    const meta = PROBE_CHIP_META[display] || { short: probe.statusLabels[display] || display, shape: '', cls: 'st-neutral' };
     const changed = display !== row.probeStatus;
     const sha = current?.sha256 || row.sha256;
     const sizeText = sha ? `SHA ${esc(String(sha).slice(0, 10))}…` : (row.contentLength ? fmtBytes(row.contentLength) : '—');
@@ -565,11 +662,11 @@ function renderProbeResults(results) {
       changed ? `本轮记录：${esc(probe.statusLabels[row.probeStatus] || row.probeStatus)}` : '',
       current?.manualNote ? `<span class="tag" title="${esc(current.manualNote)}">✍ ${esc(current.manualNote)}</span>` : '',
       current?.manualSettled ? '<span class="muted small">自动巡检跳过</span>' : '',
-      row.detail ? (changed ? '<span class="error" title="' + esc(row.detail) + '">历史异常</span>' : `<span class="error">${esc(row.detail)}</span>`) : '',
+      row.detail ? (changed ? `<span class="error" title="${esc(row.detail)}">历史异常</span>` : `<span class="error">${esc(row.detail)}</span>`) : '',
     ].filter(Boolean).join(' ');
     const timeText = String(row.checkedAt).slice(0, 16).replace('T', ' ');
     return `<tr>
-      <td><span class="badge ${PROBE_BADGE_CLASS[display] || 'info'}">${esc(probe.statusLabels[display] || display)}</span></td>
+      <td><span class="badge ${meta.cls}" title="${esc(probe.statusLabels[display] || display)}">${meta.shape} ${esc(meta.short)}</span></td>
       <td>${esc(row.vendorName)}</td>
       <td title="${esc(row.officialFileName || '')}">${esc(row.series)}</td>
       <td>${row.httpStatus || '—'}</td>
@@ -581,7 +678,10 @@ function renderProbeResults(results) {
     </tr>`;
   }).join('');
 
-  const rangeText = total === 0 ? '共 0 条' : `第 ${startNo + 1}-${Math.min(startNo + (size > 0 ? size : total), total)} 条，共 ${total} 条`;
+  const rangeEl = $('probeRange');
+  if (rangeEl) {
+    rangeEl.textContent = total === 0 ? '共 0 条' : `第 ${startNo + 1}-${Math.min(startNo + (size > 0 ? size : total), total)} 条，共 ${total} 条`;
+  }
   const pagerBtns = size > 0 ? [
     `<button class="pg" data-page="1" ${probe.page <= 1 ? 'disabled' : ''}>«</button>`,
     `<button class="pg" data-page="${probe.page - 1}" ${probe.page <= 1 ? 'disabled' : ''}>‹</button>`,
@@ -593,6 +693,7 @@ function renderProbeResults(results) {
   ].join('') : '';
 
   $('probeResults').innerHTML = `
+    ${renderRunCaption()}
     <table class="probe-table">
       <thead><tr>
         ${th('status', '状态')}${th('vendor', '品牌')}${th('series', '系列')}${th('http', 'HTTP')}${th('pages', '页数')}<th>大小 / SHA-256</th>${th('time', '检查时间')}
@@ -600,19 +701,10 @@ function renderProbeResults(results) {
       </tr></thead>
       <tbody>${bodyRows || '<tr><td colspan="9" class="muted empty">没有符合筛选条件的记录</td></tr>'}</tbody>
     </table>
-    <div class="pager">
-      <label class="muted small">每页
-        <select id="pgSize">
-          <option value="20" ${probe.pageSize === 20 ? 'selected' : ''}>20</option>
-          <option value="50" ${probe.pageSize === 50 ? 'selected' : ''}>50</option>
-          <option value="100" ${probe.pageSize === 100 ? 'selected' : ''}>100</option>
-          <option value="0" ${probe.pageSize === 0 ? 'selected' : ''}>全部</option>
-        </select>
-      </label>
-      <span class="muted small">${rangeText}</span>
-      <div class="pager-btns">${pagerBtns}</div>
-    </div>`;
+    <div class="pager pager-bottom"><div class="pager-btns">${pagerBtns}</div></div>`;
 
+  const rcLatest = $('rcLatest');
+  if (rcLatest) rcLatest.addEventListener('click', () => { loadLatestRun(); });
   $('probeResults').querySelectorAll('th.sortable').forEach((el) => el.addEventListener('click', () => {
     const key = el.dataset.sort;
     if (probe.sort.key === key) probe.sort.dir = probe.sort.dir === 'asc' ? 'desc' : 'asc';
@@ -625,12 +717,6 @@ function renderProbeResults(results) {
     const row = probe.lastResults.find((item) => item.documentId === btn.dataset.id);
     if (row) openManualDlg(row.documentId);
   }));
-  const pgSize = $('pgSize');
-  if (pgSize) pgSize.addEventListener('change', () => {
-    probe.pageSize = Number(pgSize.value) || 0;
-    probe.page = 1;
-    renderProbeResults(probe.lastResults);
-  });
   $('probeResults').querySelectorAll('.pg[data-page]').forEach((btn) => btn.addEventListener('click', () => {
     probe.page = Number(btn.dataset.page);
     renderProbeResults(probe.lastResults);
@@ -743,7 +829,13 @@ function renderRunsTable() {
     try {
       const detail = await api(`/api/probe/runs/${encodeURIComponent(run.runId)}`);
       probe.currentRunId = run.runId;
+      probe.currentRunInfo = {
+        runId: run.runId, startedAt: run.startedAt, trigger: run.trigger, mode: run.mode,
+        count: run.resultCount ?? run.scope ?? 0,
+        isLatest: history.rows[0]?.runId === run.runId,
+      };
       renderProbeResults(detail.results || []);
+      scrollToResults();
       const totalCount = Object.values(detail.totals || {}).reduce((sum, n) => sum + Number(n || 0), 0);
       if (totalCount > 0 && (!detail.results || !detail.results.length)) {
         toast('info', '该轮明细已归档（仅保留最近 5 轮完整明细）', 5000);
@@ -806,6 +898,12 @@ async function refreshRunResults() {
   if (!probe.currentRunId) { renderProbeResults([]); return; }
   try {
     const run = await api(`/api/probe/runs/${encodeURIComponent(probe.currentRunId)}`);
+    const latest = history.rows[0];
+    probe.currentRunInfo = {
+      runId: run.runId, startedAt: run.startedAt, trigger: run.trigger, mode: run.mode,
+      count: run.results?.length || run.resultCount || run.scope || 0,
+      isLatest: !latest || latest.runId === run.runId,
+    };
     renderProbeResults(run.results || []);
   } catch { renderProbeResults([]); }
 }
@@ -817,11 +915,35 @@ async function renderProbe() {
   const vendors = (state.catalog?.vendors || []).map((vendor) => `<option value="${esc(vendor.vendorId)}">${esc(vendor.vendorName)}（${vendor.productLines.reduce((sum, line) => sum + line.documentCount, 0)} 条）</option>`).join('');
   scope.innerHTML = '<option value="all">全部品牌</option>' + vendors + '<option value="__failed__">仅上次异常项</option>';
   scope.value = [...scope.options].some((option) => option.value === current) ? current : 'all';
-  $('probeFilter').oninput = () => { probe.page = 1; renderProbeResults(probe.lastResults); };
+  // 状态筛选已由顶部芯片承担；此处只绑搜索、每页与图例
   $('probeSearch').oninput = () => { probe.page = 1; renderProbeResults(probe.lastResults); };
+  const pgSizeTop = $('pgSizeTop');
+  if (pgSizeTop && !pgSizeTop.dataset.bound) {
+    pgSizeTop.dataset.bound = '1';
+    pgSizeTop.value = String(probe.pageSize);
+    pgSizeTop.addEventListener('change', () => {
+      probe.pageSize = Number(pgSizeTop.value) || 0;
+      probe.page = 1;
+      renderProbeResults(probe.lastResults);
+    });
+  }
+  const legendBtn = $('legendBtn');
+  if (legendBtn && !legendBtn.dataset.bound) {
+    legendBtn.dataset.bound = '1';
+    legendBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      renderLegend();
+      $('legendPop').classList.toggle('hidden');
+    });
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('#legendPop') && !event.target.closest('#legendBtn')) {
+        $('legendPop')?.classList.add('hidden');
+      }
+    });
+  }
   await pollProbe();
-  await loadProbeRuns();
-  await refreshRunResults();
+  // 进入第 5 步即展示最新一轮结果（带「最新一轮」横条），无需先点历史
+  await loadLatestRun({ scroll: false });
 }
 
 async function startProbe() {
@@ -854,7 +976,7 @@ async function openManualDlg(documentId) {
   catch (error) { toast('error', `加载资料详情失败：${error.message}`); return; }
   const probeInfo = info.probe || {};
   const statusLabel = probeInfo.lastProbeStatus ? (probe.statusLabels[probeInfo.lastProbeStatus] || probeInfo.lastProbeStatus) : '未校验';
-  const badgeClass = PROBE_BADGE_CLASS[probeInfo.lastProbeStatus] || 'info';
+  const badgeClass = (PROBE_CHIP_META[probeInfo.lastProbeStatus] || { cls: 'st-neutral' }).cls;
   $('manualDlg').innerHTML = `
     <div class="dlg-head">
       <span>人工校验 · ${esc(info.vendorName)} ${esc(info.series)}</span>
@@ -947,8 +1069,8 @@ function showManualResult(payload, labels) {
   if (!box) return;
   if (payload.error) { box.innerHTML = `<div class="error">✘ ${esc(payload.error)}</div>`; return; }
   const label = labels?.[payload.probeStatus] || probe.statusLabels?.[payload.probeStatus] || payload.probeStatus || '';
-  const badge = PROBE_BADGE_CLASS[payload.probeStatus] || 'info';
-  box.innerHTML = `<div class="analyze-ok">✔ 校验完成：<span class="badge ${badge}">${esc(label)}</span>
+  const meta = PROBE_CHIP_META[payload.probeStatus] || { cls: 'st-neutral' };
+  box.innerHTML = `<div class="analyze-ok">✔ 校验完成：<span class="badge ${meta.cls}">${esc(label)}</span>
     ${payload.pageCount ? `· ${payload.pageCount} 页` : ''}
     ${payload.sha256 ? `· SHA-256 ${esc(payload.sha256.slice(0, 12))}…` : ''}
     ${payload.warning ? `<div class="warn small">${esc(payload.warning)}</div>` : ''}

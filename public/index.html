@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NVCI Lite · 网络厂商彩页采集与对比</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">NVCI <span class="lite">Lite</span></div>
+    <div class="brand">
+      <img src="/assets/brand/ale-primary-logo-horizontal.png" alt="Alcatel-Lucent Enterprise">
+      <span class="brand-divider"></span>
+      <span class="brand-name">NVCI<span class="lite">Lite</span></span>
+    </div>
     <div class="steps" id="steps">
       <div class="step active" data-step="1"><span class="no">1</span>选品牌与型号</div>
       <div class="step" data-step="2"><span class="no">2</span>采集彩页</div>
@@ -130,10 +135,21 @@
           <div class="progress-bar"><div id="probeProgressFill" class="progress-fill"></div></div>
           <div class="progress-text" id="probeProgressText"></div>
         </div>
-        <div id="probeTotals" class="probe-totals"></div>
+        <div id="probeTotals" class="probe-chips"></div>
         <div class="probe-filter">
-          <select id="probeFilter"><option value="">全部状态</option></select>
           <input type="search" id="probeSearch" placeholder="搜索品牌 / 系列 / 文件名…">
+          <div class="spacer"></div>
+          <label class="muted small">每页
+            <select id="pgSizeTop">
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="0">全部</option>
+            </select>
+          </label>
+          <span class="range-text" id="probeRange"></span>
+          <button type="button" class="legend-btn" id="legendBtn" title="状态图例">?</button>
+          <div class="legend-pop hidden" id="legendPop"></div>
         </div>
         <div id="probeResults"></div>
         <h3>历史校验</h3>
