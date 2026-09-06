@@ -1384,7 +1384,7 @@ function refreshUI() {
 async function openSettings() {
   try {
     const view = await api('/api/settings');
-    $('sPdfDir').value = view.storage.pdfSubdir || '';
+    $('sDataDir').textContent = view.storage.dataDir || '—';
     $('sProtocol').value = view.ai.protocol || '';
     $('sBaseUrl').value = view.ai.baseUrl || '';
     $('sModel').value = view.ai.model || '';
@@ -1511,7 +1511,11 @@ document.addEventListener('click', (event) => {
 $('settingsBtn').addEventListener('click', openSettings);
 $('sClose').addEventListener('click', () => $('settingsMask').classList.add('hidden'));
 $('settingsMask').addEventListener('click', (event) => { if (event.target === $('settingsMask')) $('settingsMask').classList.add('hidden'); });
-$('sSaveStorage').addEventListener('click', () => saveSettings({ storage: { pdfSubdir: $('sPdfDir').value.trim() } }));
+$('sResetAi').addEventListener('click', async () => {
+  if (!window.confirm('清除界面保存的 AI 配置，恢复使用环境变量？')) return;
+  await saveSettings({ resetAi: true });
+  openSettings();
+});
 $('sSaveAi').addEventListener('click', () => saveSettings({ ai: {
   protocol: $('sProtocol').value, baseUrl: $('sBaseUrl').value.trim(),
   model: $('sModel').value.trim(), visionModel: $('sVisionModel').value.trim(),

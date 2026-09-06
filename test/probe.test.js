@@ -74,6 +74,10 @@ test('轻量探测：200 + PDF 类型 → 无历史时仅「链接可访问」�
   const mockFetchV2 = async () => headResponse(200, { 'content-type': 'application/pdf', 'content-length': '2048', etag: '"v2"', 'last-modified': 'Tue, 02 Sep 2026 00:00:00 GMT' });
   const changed = await lightProbeDocument({ document: DOC, previous: { etag: '"v1"', lastModified: 'Mon, 01 Sep 2026 00:00:00 GMT', contentLength: 1024 }, fetchImpl: mockFetchV2 });
   assert.equal(changed.probeStatus, 'link_ok', '元数据变化仍只标可访问，内容变化由完整校验确认');
+
+  // 仅长度相同（无 ETag/Last-Modified）不足以证明未变——同长度新文件完全可能
+  const lengthOnly = await lightProbeDocument({ document: DOC, previous: { etag: '', lastModified: '', contentLength: 1024 }, fetchImpl: mockFetch });
+  assert.equal(lengthOnly.probeStatus, 'link_ok', '仅长度相同只标可访问，不得标有效·未变');
 });
 
 test('轻量探测：404 → 资源不可用；非 PDF 类型 → not_pdf', async () => {

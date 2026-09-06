@@ -191,3 +191,41 @@ test('值-引用一致性：真实引用携带错误数值不得进入有依据�
     assert.equal(paramsOk[0].status, 'ok', '数值与单位一致的合法转写应保持有依据');
   });
 });
+
+test('值-引用一致性反例矩阵：单位不一致 / 数字截断 / 否定含义（第二轮复核复现用例）', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    const cases = [
+      // [原文引用, 模型值, 期望状态, 说明]
+      ['交换容量 128Gbit/s', '128Tbit/s', 'pending_review', '单位不一致：Gbit/s ≠ Tbit/s'],
+      ['交换容量 128Gbit/s', '28Gbit/s', 'pending_review', '数字截断：28 是 128 的子串也不得放行'],
+      ['不支持 OSPF', '支持 OSPF', 'pending_review', '含义相反：否定表达'],
+      ['PoE 总功率 370W', '370 W', 'ok', '合法：单位空格差异'],
+      ['工作温度 -5°C 至 45°C', '-5℃~45℃', 'ok', '合法：全角 ℃ 与波浪线转写'],
+      ['MAC 地址表 16K', '16K entries', 'ok', '合法：单位与数字一致（附加词不否定）'],
+      ['包转发率 126Mpps', '126 mpps', 'ok', '合法：大小写与空格'],
+      ['不支持 IPv6 路由', '不支持 IPv6 路由', 'ok', '合法：双方都否定'],
+    ];
+    for (const [quote, value, expected, name] of cases) {
+      const payload = JSON.stringify({ params: [
+        { key: 'f1', label: '字段', group: '其他', value, quote, page: 1 },
+      ] });
+      const mockFetch = async () => ({
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: payload }] }),
+      });
+      const extraction = { pageCount: 1, pages: [{ page: 1, lines: [quote] }], fullText: quote };
+      const params = await ai.extractParamsWithAi(
+        { vendorName: 'V', series: 'S', modelNames: [] },
+        extraction,
+        { fetchImpl: mockFetch },
+      );
+      assert.equal(params[0].status, expected, `${name}：${value} vs "${quote}"`);
+    }
+  });
+});

@@ -69,6 +69,29 @@ test('Excel：待复核单元格显示取值并带批注', async () => {
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('Excel：无参数资料的字段单元格显示「（未找到）」而非「（未披露）」', async () => {
+  const dir = tempDir();
+  try {
+    const outPath = path.join(dir, 'out.xlsx');
+    const entries = [{ documentId: 'a', label: '空资料', params: [] }];
+    await buildExcel({ matrix: buildMatrix(entries, { initTemplate: true }), documents: DOCUMENTS.slice(0, 1), outPath });
+    const ExcelJS = require('exceljs');
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(outPath);
+    const sheet = workbook.worksheets[0];
+    const cells = [];
+    sheet.eachRow((row, rowNum) => {
+      if (rowNum <= 2) return;
+      const field = String(row.getCell(1).value || '');
+      if (!field || field.startsWith('【') || field.startsWith('说明：')) return;
+      cells.push(String(row.getCell(3).value || ''));
+    });
+    assert.ok(cells.length >= 14, `模板字段行应齐全，实际 ${cells.length}`);
+    assert.ok(cells.every((text) => text === '（未找到）'), `全部应为（未找到），样例：${cells[0]}`);
+    assert.ok(!cells.includes('（未披露）'), '不得再出现旧语义（未披露）');
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
+
 test('Word：docx 生成且为有效 zip 包', async () => {
   const dir = tempDir();
   try {

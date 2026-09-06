@@ -463,21 +463,23 @@ app.post('/api/analyze', auth, async (req, res) => {
     matrix.meta.incompleteDocs = incompleteDocs;
 
     const stem = `对比_${documents.map((doc) => doc.series.replace(/[\\/:*?"<>|\s]+/g, '')).join('_vs_')}`.slice(0, 120);
+    // 同一次分析的三个产物共享 base（runId 语义），杜绝同毫秒并发互相占名
+    const runBase = store.exportBaseName(stem);
 
-    const excelPath = store.exportPath(store.exportFileName(stem, 'xlsx'));
+    const excelPath = store.exportPath(`${runBase}.xlsx`);
     await buildExcel({ matrix, documents, outPath: excelPath });
 
     const files = [{ fileName: path.basename(excelPath), kind: 'excel' }];
     if (useAi && ai.isConfigured()) {
       try {
         const analysis = await ai.analyzeWithAi(matrix, documents);
-        const wordPath = store.exportPath(store.exportFileName(stem, 'docx'));
+        const wordPath = store.exportPath(`${runBase}.docx`);
         await buildWordDocx({ analysis, matrix, documents, outPath: wordPath });
         files.push({ fileName: path.basename(wordPath), kind: 'word' });
       } catch (error) {
         // Word 失败时自动降级导出材料包，保证分析产物始终可下载
         try {
-          const packPath = store.exportPath(store.exportFileName(`${stem}_AI材料包`, 'md'));
+          const packPath = store.exportPath(`${runBase}.md`);
           buildMaterialPack({
             matrix,
             documents,
@@ -491,7 +493,7 @@ app.post('/api/analyze', auth, async (req, res) => {
         }
       }
     } else {
-      const packPath = store.exportPath(store.exportFileName(`${stem}_AI材料包`, 'md'));
+      const packPath = store.exportPath(`${runBase}.md`);
       buildMaterialPack({
         matrix,
         documents,

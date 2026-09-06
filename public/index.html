@@ -203,9 +203,9 @@
       <div class="dlg-body">
         <div class="dlg-sec">
           <div class="dlg-sec-title" data-i18n="settings.storage">存储</div>
-          <label class="dlg-label muted small" data-i18n="settings.pdfDir">PDF 存放路径（相对数据目录的子目录，留空为默认）</label>
-          <div class="dlg-row"><input type="text" id="sPdfDir" placeholder="cache/pdfs"><button class="btn primary" id="sSaveStorage" data-i18n="common.save">保存</button></div>
-          <div class="muted small" data-i18n="settings.pdfDirNote">修改后重启容器生效；已有缓存建议保持默认或自行迁移。</div>
+          <label class="dlg-label muted small">当前数据目录（PDF 缓存 / 档案 / 导出）：</label>
+          <div class="dlg-row"><code id="sDataDir" style="font-size:12.5px;">—</code></div>
+          <div class="muted small">自定义 PDF 存放路径暂未开放（避免缓存分裂），如需迁移请联系管理员移动数据目录。</div>
         </div>
         <div class="dlg-sec">
           <div class="dlg-sec-title" data-i18n="settings.ai">AI 模型对接</div>
@@ -216,7 +216,7 @@
             <input type="text" id="sVisionModel" placeholder="视觉模型 ID">
             <input type="password" id="sApiKey" placeholder="API Key" autocomplete="new-password">
           </div>
-          <div class="dlg-row"><button class="btn primary" id="sSaveAi" data-i18n="common.save">保存</button><span class="muted small" id="sAiState"></span></div>
+          <div class="dlg-row"><button class="btn primary" id="sSaveAi" data-i18n="common.save">保存</button><button class="btn ghost" id="sResetAi">清除已保存（恢复环境变量）</button><span class="muted small" id="sAiState"></span></div>
           <div class="muted small" data-i18n="settings.aiNote">保存后立即生效（无需重启）；留空字段沿用环境变量。</div>
         </div>
       </div>
