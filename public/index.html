@@ -122,6 +122,10 @@
         </div>
         <button class="btn primary" id="startAnalyze">生成报告（Excel 参数对照 + Word 分析 / AI 材料包）</button>
         <div id="analyzeResult"></div>
+        <h3 id="matrixTitle" class="hidden" data-i18n="matrix.title">参数对照矩阵</h3>
+        <div class="muted small hidden" id="matrixHint" data-i18n="matrix.hint">点击「待核对」或「✓ 人工核对」单元格：查看全部候选与原文，选定或修正后保存。确认绑定彩页 SHA-256，下次分析自动采用；彩页更新后自动失效。</div>
+        <div id="matrixMeta" class="matrix-meta hidden"></div>
+        <div id="matrixWrap"></div>
         <h3 data-i18n="step4.history">历史导出</h3>
         <div id="exportList" class="export-list"></div>
       </div>
@@ -226,6 +230,10 @@
   <!-- 批量导入对话框 -->
   <div id="batchMask" class="dlg-mask hidden">
     <div class="dlg dlg-wide" id="batchDlg"></div>
+  </div>
+
+  <div id="confirmMask" class="dlg-mask hidden">
+    <div class="dlg dlg-wide" id="confirmDlg"></div>
   </div>
 
   <!-- 全局提示 -->

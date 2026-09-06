@@ -17,6 +17,7 @@ const { autoAssign, matchDocuments } = require('./lib/match');
 const vision = require('./lib/vision');
 const { FAILED_STATES, MANUAL_SETTLED, ProbeRunner, ProbeState, PROBE_STATE_LABELS, classifyCollectRow, startScheduleLoop } = require('./lib/probe');
 const settings = require('./lib/settings');
+const confirm = require('./lib/confirm');
 
 const PORT = Number(process.env.PORT || 8788);
 const DATA_DIR = process.env.NVCI_LITE_DATA_DIR || path.join(__dirname, 'data');
@@ -360,6 +361,37 @@ app.put('/api/settings', auth, (req, res) => {
   }
 });
 
+// ---------- 人工核对确认（轻量参数核对） ----------
+
+app.get('/api/confirmations', auth, (_req, res) => {
+  res.json({ confirmations: confirm.loadConfirmations(DATA_DIR) });
+});
+
+app.post('/api/confirmations', auth, (req, res) => {
+  const input = req.body || {};
+  const documentId = String(input.documentId || '');
+  const doc = new Map(store.library().map((entry) => [entry.documentId, entry])).get(documentId);
+  if (!doc) return res.status(400).json({ error: '该资料尚未采集，无法保存确认' });
+  try {
+    const record = confirm.upsertConfirmation(DATA_DIR, {
+      documentId,
+      paramKey: input.paramKey,
+      value: input.value,
+      model: input.model,
+      note: input.note,
+      docSha256: doc.sha256,
+    });
+    res.json({ ok: true, confirmation: record });
+  } catch (error) {
+    res.status(400).json({ error: `确认保存失败：${String(error.message || error)}` });
+  }
+});
+
+app.delete('/api/confirmations', auth, (req, res) => {
+  const removed = confirm.removeConfirmation(DATA_DIR, String(req.query.documentId || ''), String(req.query.paramKey || ''));
+  res.json({ ok: removed });
+});
+
 app.post('/api/collect', auth, async (req, res) => {
   const documentIds = [...new Set(Array.isArray(req.body?.documentIds) ? req.body.documentIds.map(String) : [])];
   const includePages = Boolean(req.body?.includePages);
@@ -452,6 +484,18 @@ app.post('/api/analyze', auth, async (req, res) => {
 
     // 固定字段模板初始化：关键字段没抽到也要显示为「未找到」，不完整审阅的原因随矩阵传递
     const matrix = buildMatrix(paramsByDoc, { initTemplate: true });
+    // 人工核对确认生效：绑定文档 SHA-256，彩页未更新时确认值直接进入矩阵与导出
+    matrix.documents = documents.map((doc) => ({
+      documentId: doc.documentId,
+      label: `${doc.vendorName} ${doc.series}`,
+      sha256: doc.sha256,
+      modelNames: doc.modelNames || [],
+      vendorName: doc.vendorName,
+      series: doc.series,
+    }));
+    const wantedIds = new Set(documentIds);
+    const confirmations = confirm.loadConfirmations(DATA_DIR).filter((item) => wantedIds.has(item.documentId));
+    const confirmedStats = confirm.applyConfirmations(matrix, confirmations);
     const incompleteDocs = [];
     for (const entry of extractions) {
       const reasons = [];
@@ -507,7 +551,7 @@ app.post('/api/analyze', auth, async (req, res) => {
     const visionUsed = extractions.filter((entry) => entry.visionUsed).length;
     const visionErrors = extractions.filter((entry) => entry.visionError).map((entry) => ({ documentId: entry.documentId, error: entry.visionError }));
     const paramPendingCount = matrix.groups.reduce((sum, group) => sum + group.fields.filter((field) => Object.values(field.values).some((cell) => cell.status === 'pending_review')).length, 0);
-    res.json({ ok: true, documents: documents.map((doc) => ({ documentId: doc.documentId, label: `${doc.vendorName} ${doc.series}` })), paramFieldCount: matrix.groups.reduce((sum, group) => sum + group.fields.length, 0), paramPendingCount, visionUsed, visionErrors, aiErrors, files });
+    res.json({ ok: true, documents: documents.map((doc) => ({ documentId: doc.documentId, label: `${doc.vendorName} ${doc.series}` })), paramFieldCount: matrix.groups.reduce((sum, group) => sum + group.fields.length, 0), paramPendingCount, confirmedCount: confirmedStats.applied, staleConfirmationCount: confirmedStats.stale, visionUsed, visionErrors, aiErrors, files, matrix: { documents: matrix.documents, groups: matrix.groups, meta: matrix.meta } });
   } catch (error) {
     res.status(500).json({ error: `分析失败：${String(error.message || error)}` });
   }

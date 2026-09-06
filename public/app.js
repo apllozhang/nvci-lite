@@ -11,6 +11,7 @@ const state = {
   collected: new Set(),  // 已采集 documentId
   library: [],           // 服务端已采集清单
   cmpSel: new Set(),     // 对比勾选
+  matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
   collecting: false,
   aborted: false,
 };
@@ -92,7 +93,7 @@ async function goStep(step) {
   refreshStepBar();
   if (step === 2) renderCollectSummary();
   if (step === 3) renderLibrary();
-  if (step === 4) { renderAiMode(); loadExports(); }
+  if (step === 4) { renderAiMode(); loadExports(); renderMatrix(); }
   if (step === 5) renderProbe();
 }
 
@@ -328,7 +329,9 @@ async function startCollect() {
   $('startCollect').disabled = false;
   $('startCollect').textContent = pending.length ? '继续采集（自动跳过已成功）' : '重新采集';
   renderCollectSummary();
-  if (done > 0) $('toStep3').classList.remove('hidden');
+  // 全部已采集（本次零下载）也要给出下一步入口，否则页面只有提示语没有按钮
+  const allCollected = [...state.selected.keys()].every((id) => state.collected.has(id));
+  if (done > 0 || allCollected) $('toStep3').classList.remove('hidden');
 
   if (state.aborted) return;
   if (failed === 0 && done === pending.length && pending.length > 0) {
@@ -399,14 +402,18 @@ async function startAnalyze() {
   button.disabled = true;
   button.textContent = '分析中…（PDF 抽取 + 参数对齐，可能需要 1–3 分钟）';
   $('analyzeResult').innerHTML = '';
+  state.matrix = null;
+  renderMatrix();
   try {
     const payload = await api('/api/analyze', {
       method: 'POST',
       body: JSON.stringify({ documentIds: [...state.cmpSel], useAi: $('useAi').checked && !$('useAi').disabled }),
     });
     const wordFailed = payload.files.some((file) => file.kind === 'word_failed');
+    const confirmedNote = payload.confirmedCount ? `，人工已确认 ${payload.confirmedCount} 项` : '';
+    const staleNote = payload.staleConfirmationCount ? `，${payload.staleConfirmationCount} 项旧确认因彩页更新失效` : '';
     $('analyzeResult').innerHTML = `
-      <div class="analyze-ok">✔ 完成：对齐 ${payload.paramFieldCount} 个参数字段${payload.aiErrors?.length ? `（${payload.aiErrors.length} 个型号 AI 抽取失败已用规则兜底）` : ''}</div>
+      <div class="analyze-ok">✔ 完成：对齐 ${payload.paramFieldCount} 个参数字段${payload.aiErrors?.length ? `（${payload.aiErrors.length} 个型号 AI 抽取失败已用规则兜底）` : ''}${confirmedNote}${staleNote}</div>
       ${payload.files.map((file) => file.kind === 'word_failed'
         ? `<div class="warn">Word 生成失败：${esc(file.error)}（Excel 与材料包仍可用）</div>`
         : `<a class="file-card" href="/api/exports/${encodeURIComponent(file.fileName)}" download>
@@ -414,6 +421,8 @@ async function startAnalyze() {
              <span>${esc(file.fileName)}</span>
              <span class="muted small">${file.kind === 'excel' ? 'Excel 参数对照' : file.kind === 'word' ? 'Word 分析报告' : 'AI 材料包 Markdown'}</span>
            </a>`).join('')}`;
+    state.matrix = payload.matrix || null;
+    renderMatrix();
     if (wordFailed) toast('warn', '报告已生成，但 Word 部分失败（详见页面说明）', 6000);
     else toast('success', '报告生成完成，可点击文件下载');
     loadExports();
@@ -423,6 +432,208 @@ async function startAnalyze() {
   } finally {
     button.disabled = false;
     button.textContent = '生成报告（Excel 参数对照 + Word 分析 / AI 材料包）';
+  }
+}
+
+/* ---------- 步骤 4：参数对照矩阵 + 人工核对 ---------- */
+
+const MATRIX_STATUS_TEXT = {
+  ok: () => t('matrix.stOk'),
+  pending_review: () => t('matrix.stPending'),
+  not_disclosed: () => t('matrix.stNotFound'),
+  extract_failed: () => t('matrix.stFailed'),
+};
+const MATRIX_SOURCE_TEXT = { rule: () => t('matrix.srcRule'), ai: () => t('matrix.srcAi'), vision: () => t('matrix.srcVision'), manual: () => t('matrix.srcManual') };
+
+function renderMatrix() {
+  const wrap = $('matrixWrap');
+  const hasMatrix = Boolean(state.matrix?.groups?.length);
+  $('matrixTitle').classList.toggle('hidden', !hasMatrix);
+  $('matrixHint').classList.toggle('hidden', !hasMatrix);
+  $('matrixMeta').classList.toggle('hidden', !hasMatrix);
+  if (!hasMatrix) { wrap.innerHTML = ''; return; }
+  const docs = state.matrix.documents;
+  const head = `<thead><tr><th class="mx-field">${esc(t('matrix.field'))}</th>${docs.map((doc) => `<th title="${esc(doc.label)}">${esc(doc.label)}</th>`).join('')}</tr></thead>`;
+  const body = state.matrix.groups.map((group) => `
+    <tr class="mx-group"><td colspan="${docs.length + 1}">${esc(group.group)}</td></tr>
+    ${group.fields.map((field) => `<tr><td class="mx-field">${esc(field.label)}</td>${docs.map((doc) => matrixCellHtml(field, doc)).join('')}</tr>`).join('')}
+  `).join('');
+  wrap.innerHTML = `<table class="matrix-table">${head}<tbody>${body}</tbody></table>`;
+  wrap.querySelectorAll('td.mx-click').forEach((td) => td.addEventListener('click', () => {
+    openConfirmDlg(td.dataset.doc, td.dataset.key);
+  }));
+  updateMatrixMeta();
+}
+
+function matrixCellHtml(field, doc) {
+  const cell = field.values[doc.documentId];
+  if (!cell) return '<td class="mx-cell"></td>';
+  const manual = cell.source === 'manual' && cell.manual;
+  const clickable = cell.status === 'pending_review' || manual || cell.staleConfirmation;
+  const marker = manual
+    ? `<span class="mx-manual" title="${esc(t('matrix.confirmedMark'))}">✓</span>`
+    : cell.status === 'pending_review' ? '<span class="mx-pend">○</span>' : '';
+  const text = (cell.status === 'ok' || cell.status === 'pending_review') && cell.value
+    ? esc(cell.value)
+    : `<span class="muted">（${esc(MATRIX_STATUS_TEXT[cell.status] ? MATRIX_STATUS_TEXT[cell.status]() : cell.status)}）</span>`;
+  const staleMark = cell.staleConfirmation ? '<span class="mx-stale" title="stale">!</span>' : '';
+  const cls = ['mx-cell', manual ? 'is-manual' : '', cell.status === 'pending_review' ? 'is-pending' : ''].filter(Boolean).join(' ');
+  return `<td class="${cls}${clickable ? ' mx-click' : ''}"${clickable ? ` data-doc="${esc(doc.documentId)}" data-key="${esc(field.key)}"` : ''}>${marker}${staleMark}${text}</td>`;
+}
+
+function updateMatrixMeta() {
+  let pending = 0;
+  let confirmed = 0;
+  let stale = 0;
+  for (const group of state.matrix.groups) {
+    for (const field of group.fields) {
+      for (const doc of state.matrix.documents) {
+        const cell = field.values[doc.documentId];
+        if (!cell) continue;
+        if (cell.status === 'pending_review') pending += 1;
+        if (cell.source === 'manual' && cell.manual) confirmed += 1;
+        if (cell.staleConfirmation) stale += 1;
+      }
+    }
+  }
+  $('matrixMeta').innerHTML = [
+    pending ? `<span class="chip st-info">○ ${esc(t('matrix.pendingCount'))} ${pending}</span>` : '',
+    confirmed ? `<span class="chip st-pos">✓ ${esc(t('matrix.confirmedCount'))} ${confirmed}</span>` : '',
+    stale ? `<span class="chip st-warn">! ${esc(t('matrix.staleCount'))} ${stale}</span>` : '',
+  ].filter(Boolean).join(' ');
+}
+
+function findMatrixCell(documentId, paramKey) {
+  for (const group of state.matrix.groups) {
+    for (const field of group.fields) {
+      if (field.key !== paramKey) continue;
+      const doc = state.matrix.documents.find((entry) => entry.documentId === documentId);
+      if (!doc) return null;
+      return { field, doc, cell: field.values[documentId] || null };
+    }
+  }
+  return null;
+}
+
+async function openConfirmDlg(documentId, paramKey) {
+  const hit = findMatrixCell(documentId, paramKey);
+  if (!hit || !hit.cell) return;
+  const { field, doc, cell } = hit;
+  const candidates = Array.isArray(cell.candidates) && cell.candidates.length
+    ? cell.candidates
+    : (cell.value ? [{ source: cell.source, value: cell.value, quote: cell.quote, page: cell.page }] : []);
+  const candHtml = candidates.length
+    ? candidates.map((cand, index) => `
+        <label class="cand-item">
+          <input type="radio" name="candPick" value="${index}">
+          <div class="cand-main">
+            <div class="cand-value">${esc(cand.value || '—')} <span class="cand-src muted small">${esc(cand.source ? (MATRIX_SOURCE_TEXT[cand.source] ? MATRIX_SOURCE_TEXT[cand.source]() : cand.source) : '—')}${cand.page ? ` · ${esc(t('matrix.page'))} ${cand.page}` : ''}</span></div>
+            ${cand.quote ? `<div class="cand-quote">${esc(cand.quote)}</div>` : ''}
+          </div>
+        </label>`).join('')
+    : `<div class="muted small">${esc(t('matrix.noCandidates'))}</div>`;
+  const staleHtml = cell.staleConfirmation
+    ? `<div class="warn small">${esc(t('matrix.staleWarn'))}：${esc(cell.staleConfirmation.value)}${cell.staleConfirmation.model ? `（${esc(cell.staleConfirmation.model)}）` : ''}</div>`
+    : '';
+  const manualHtml = cell.manual
+    ? `<div class="analyze-ok small">${esc(t('matrix.confirmedMark'))}：${esc(cell.value)} · ${esc(cell.manual.confirmedAt ? cell.manual.confirmedAt.slice(0, 16).replace('T', ' ') : '')}${cell.manual.model ? ` · ${esc(t('common.model'))} ${esc(cell.manual.model)}` : ''}${cell.manual.note ? ` · ${esc(cell.manual.note)}` : ''}</div>`
+    : '';
+  const models = (doc.modelNames || []).map((name) => `<option value="${esc(name)}">`).join('');
+  $('confirmDlg').innerHTML = `
+    <div class="dlg-head"><span>${esc(doc.label)} · ${esc(field.label)}</span><button class="dlg-x" id="cfClose">×</button></div>
+    <div class="dlg-body">
+      ${staleHtml}${manualHtml}
+      <div class="dlg-sec">
+        <div class="dlg-sec-title">${esc(t('matrix.candidates'))}</div>
+        <div class="cand-list">${candHtml}</div>
+      </div>
+      <div class="dlg-sec">
+        <div class="dlg-sec-title">${esc(t('matrix.value'))}</div>
+        <div class="dlg-row"><input type="text" id="cfValue" maxlength="200" placeholder="${esc(t('matrix.valuePh'))}" value="${esc(cell.value || '')}"></div>
+        <div class="dlg-row"><input type="text" id="cfModel" maxlength="100" list="cfModels" placeholder="${esc(t('matrix.modelPh'))}" value="${esc(cell.manual?.model || '')}"><datalist id="cfModels">${models}</datalist></div>
+        <div class="dlg-row"><input type="text" id="cfNote" maxlength="500" placeholder="${esc(t('matrix.notePh'))}" value="${esc(cell.manual?.note || '')}"></div>
+      </div>
+      <p class="muted small">${esc(t('matrix.bindNote'))}</p>
+    </div>
+    <div class="dlg-foot">
+      <button class="btn ghost hidden" id="cfClear">${esc(t('matrix.clear'))}</button>
+      <div class="spacer"></div>
+      <button class="btn ghost" id="cfCancel">${esc(t('common.cancel'))}</button>
+      <button class="btn primary" id="cfSave">${esc(t('matrix.save'))}</button>
+    </div>`;
+  if (cell.manual) $('cfClear').classList.remove('hidden');
+  $('confirmDlg').querySelectorAll('input[name="candPick"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+      const cand = candidates[Number(radio.value)];
+      if (cand && radio.checked) $('cfValue').value = cand.value || '';
+    });
+  });
+  $('cfClose').addEventListener('click', closeConfirmDlg);
+  $('cfCancel').addEventListener('click', closeConfirmDlg);
+  $('cfClear').addEventListener('click', () => clearConfirm(documentId, paramKey));
+  $('cfSave').addEventListener('click', () => saveConfirm(documentId, paramKey));
+  $('confirmMask').classList.remove('hidden');
+  $('cfValue').focus();
+}
+
+function closeConfirmDlg() {
+  $('confirmMask').classList.add('hidden');
+  $('confirmDlg').innerHTML = '';
+}
+
+async function saveConfirm(documentId, paramKey) {
+  const value = $('cfValue').value.trim();
+  if (!value) { toast('warn', t('matrix.valueRequired')); return; }
+  try {
+    await api('/api/confirmations', {
+      method: 'POST',
+      body: JSON.stringify({
+        documentId,
+        paramKey,
+        value,
+        model: $('cfModel').value.trim(),
+        note: $('cfNote').value.trim(),
+      }),
+    });
+    const hit = findMatrixCell(documentId, paramKey);
+    if (hit?.cell) {
+      hit.cell.value = value;
+      hit.cell.status = 'ok';
+      hit.cell.source = 'manual';
+      hit.cell.manual = { confirmedAt: new Date().toISOString(), model: $('cfModel').value.trim(), note: $('cfNote').value.trim() };
+      hit.cell.staleConfirmation = null;
+    }
+    renderMatrix();
+    closeConfirmDlg();
+    toast('success', t('matrix.saved'));
+  } catch (error) {
+    toast('error', `${t('matrix.saveFailed')}：${error.message}`, 6000);
+  }
+}
+
+async function clearConfirm(documentId, paramKey) {
+  try {
+    await api(`/api/confirmations?documentId=${encodeURIComponent(documentId)}&paramKey=${encodeURIComponent(paramKey)}`, { method: 'DELETE' });
+    const hit = findMatrixCell(documentId, paramKey);
+    if (hit?.cell) {
+      const snapshot = hit.cell.preConfirm;
+      delete hit.cell.manual;
+      hit.cell.staleConfirmation = null;
+      if (snapshot) {
+        hit.cell.value = snapshot.value;
+        hit.cell.status = snapshot.status;
+        hit.cell.source = snapshot.source;
+        hit.cell.reviewNote = snapshot.reviewNote;
+      } else {
+        hit.cell.status = 'pending_review';
+        hit.cell.reviewNote = '';
+      }
+    }
+    renderMatrix();
+    closeConfirmDlg();
+    toast('info', t('matrix.cleared'));
+  } catch (error) {
+    toast('error', `${t('matrix.clearFailed')}：${error.message}`, 6000);
   }
 }
 
@@ -1377,7 +1588,7 @@ function refreshUI() {
   updateTray();
   if (state.step === 2) renderCollectSummary();
   if (state.step === 3) renderLibrary();
-  if (state.step === 4) { renderAiMode(); loadExports(); }
+  if (state.step === 4) { renderAiMode(); loadExports(); renderMatrix(); }
   if (state.step === 5) { renderProbe(); }
 }
 
@@ -1530,6 +1741,8 @@ $('treeCollapseBtn').addEventListener('click', () => applyTreeCollapsed(true));
 $('treeExpandBtn').addEventListener('click', () => applyTreeCollapsed(false));
 $('manualMask').addEventListener('click', (event) => { if (event.target === $('manualMask')) closeManualDlg(); });
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !$('manualMask').classList.contains('hidden')) closeManualDlg(); });
+$('confirmMask').addEventListener('click', (event) => { if (event.target === $('confirmMask')) closeConfirmDlg(); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !$('confirmMask').classList.contains('hidden')) closeConfirmDlg(); });
 $('probeBack').addEventListener('click', () => goStep(1));
 $('restart').addEventListener('click', () => {
   state.selected.clear();

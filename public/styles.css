@@ -594,3 +594,36 @@ body.theme-dark .batch-row, body.theme-dark .collect-row { background: var(--sur
    注意用 relative 而非 static：static 会让表头内的拖拽手柄（绝对定位）失去
    锚点、全部漂到外层容器右缘，导致列宽不可拖——真实踩坑。 */
 .doc-table thead th { position: relative; box-shadow: none; }
+
+/* ================= 第4步：参数对照矩阵 + 人工核对弹窗 ================= */
+.matrix-meta { display: flex; gap: 8px; margin: 4px 0 10px; flex-wrap: wrap; }
+.matrix-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.matrix-table thead th {
+  font-size: 12px; font-weight: 600; color: var(--ink-700); text-align: left;
+  background: var(--surface-soft); padding: 9px 12px; border-bottom: 1px solid var(--line);
+  position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px;
+}
+.matrix-table td { border-bottom: 1px solid var(--line-soft); padding: 8px 12px; text-align: left; vertical-align: top; word-break: break-word; }
+.matrix-table tbody tr:last-child td { border-bottom: none; }
+tr.mx-group td { background: var(--surface-soft); font-weight: 700; font-size: 12px; color: var(--ink-700); padding: 5px 12px; border-top: 1px solid var(--line); }
+.mx-field { width: 168px; min-width: 132px; font-weight: 600; white-space: nowrap; color: var(--ink-900); }
+td.mx-cell { min-width: 130px; }
+td.mx-click { cursor: pointer; }
+td.mx-click:hover { background: var(--mx-hover, var(--info-bg)); }
+td.is-pending { color: var(--ale-blue); font-style: italic; }
+td.is-manual { color: var(--ink-900); }
+.mx-manual { color: var(--ok); font-weight: 700; margin-right: 5px; }
+.mx-pend { color: var(--ale-blue); margin-right: 5px; }
+.mx-stale { color: var(--warn); font-weight: 700; margin-right: 4px; }
+
+.dlg-foot { display: flex; gap: 8px; align-items: center; padding: 12px 18px; border-top: 1px solid var(--line-soft); }
+.dlg .spacer { flex: 1; }
+.cand-list { display: flex; flex-direction: column; gap: 6px; max-height: 300px; overflow: auto; }
+.cand-item { display: flex; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.cand-item:hover { border-color: var(--primary); }
+.cand-item input[type="radio"] { margin-top: 3px; flex: none; accent-color: var(--ale-purple-600); }
+.cand-main { flex: 1; min-width: 0; }
+.cand-value { font-weight: 600; font-size: 13px; }
+.cand-src { font-weight: 400; }
+.cand-quote { margin-top: 4px; font-size: 12px; color: var(--ink-700); background: var(--surface-soft); border-left: 3px solid var(--ale-teal); padding: 5px 8px; border-radius: 0 6px 6px 0; white-space: pre-wrap; word-break: break-word; }
+body.theme-dark td.mx-click:hover { background: #2c3340; }
