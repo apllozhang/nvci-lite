@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "2.2",
+  "vendorId": "ale",
+  "vendorName": "ALE",
+  "profileId": "ale_stellar",
+  "displayName": "Stellar 无线网络管理",
+  "productLine": {
+    "name": "Stellar 无线网络管理"
+  },
+  "officialDomains": [
+    "www.al-enterprise.com",
+    "al-enterprise.com"
+  ],
+  "trustedRedirectDomains": [],
+  "sources": []
+}

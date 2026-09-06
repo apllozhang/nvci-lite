@@ -16,6 +16,7 @@ const { fetchPageMarkdown } = require('./lib/page-markdown');
 const { autoAssign, matchDocuments } = require('./lib/match');
 const vision = require('./lib/vision');
 const { FAILED_STATES, MANUAL_SETTLED, ProbeRunner, ProbeState, PROBE_STATE_LABELS, classifyCollectRow, startScheduleLoop } = require('./lib/probe');
+const settings = require('./lib/settings');
 
 const PORT = Number(process.env.PORT || 8788);
 const DATA_DIR = process.env.NVCI_LITE_DATA_DIR || path.join(__dirname, 'data');
@@ -23,6 +24,7 @@ const PASSWORD = process.env.NVCI_LITE_PASSWORD || '';
 const MAX_COLLECT = 50;
 
 const store = new Store(DATA_DIR);
+settings.init(DATA_DIR);
 const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit: '2mb' }));
@@ -330,6 +332,32 @@ app.get('/api/catalog', (req, res) => {
 app.get('/api/ai-status', (req, res) => {
   const config = ai.aiConfig();
   res.json({ configured: config.configured, model: config.configured ? config.model : '', mode: config.configured ? 'auto' : 'material_pack' });
+});
+
+// ---------- 运行时设置（AI 对接热生效；存储路径重启生效） ----------
+
+app.get('/api/settings', auth, (_req, res) => {
+  res.json(settings.publicView({
+    base: process.env.NVCI_LITE_AI_BASE || '',
+    apiKey: process.env.NVCI_LITE_AI_KEY || '',
+    model: process.env.NVCI_LITE_AI_MODEL || '',
+    protocol: process.env.NVCI_LITE_AI_PROTOCOL || 'openai',
+  }));
+});
+
+app.put('/api/settings', auth, (req, res) => {
+  try {
+    settings.update(req.body);
+    const view = settings.publicView({
+      base: process.env.NVCI_LITE_AI_BASE || '',
+      apiKey: process.env.NVCI_LITE_AI_KEY || '',
+      model: process.env.NVCI_LITE_AI_MODEL || '',
+      protocol: process.env.NVCI_LITE_AI_PROTOCOL || 'openai',
+    });
+    res.json({ ok: true, settings: view });
+  } catch (error) {
+    res.status(500).json({ error: `设置保存失败：${String(error.message || error)}` });
+  }
 });
 
 app.post('/api/collect', auth, async (req, res) => {

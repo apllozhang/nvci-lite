@@ -1,0 +1,1745 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_07_others",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "07 其他网络产品",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "07 其他网络产品",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-6265-1",
+      "series": "RG-iData",
+      "modelNames": [
+        "无线大数据平台，RG-iData"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxglyyy/idata/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=6265",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-6265/?field=PreviewFile",
+      "officialFileName": "RG-iData大数据产品彩页 - 浏览文件 - 08060941.pdf",
+      "expectedSha256": "28ce296043b1b2e664e9a4c9fdf43137f305883d9182dff06242ea6b23475ef0",
+      "matchTerms": [
+        "无线大数据平台，RG-iData",
+        "6265"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线大数据平台，RG-iData"
+    },
+    {
+      "documentId": "ruijie-preview-7374-1",
+      "series": "RIIL-Relax乐为服务管理平台",
+      "modelNames": [
+        "RIIL-Relax乐为服务管理平台"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/riil-rj/rgrelax/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=7374",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-7374/?field=PreviewFile",
+      "officialFileName": "锐捷RIIL-Relax乐为服务管理平台产品彩页 - 浏览文件 - 04121440.pdf",
+      "expectedSha256": "ea2b1b6c1f65afb3ffd61d70425ceea1cd6f6def2616b9e4321d1b7e99570fb4",
+      "matchTerms": [
+        "RIIL-Relax乐为服务管理平台",
+        "7374"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RIIL-Relax乐为服务管理平台"
+    },
+    {
+      "documentId": "ruijie-preview-9197-1",
+      "series": "RG-PowerCacheG4",
+      "modelNames": [
+        "RG-PowerCache G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hcjs/cacheg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9197",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9197/?field=PreviewFile",
+      "officialFileName": "RG-PowerCacheG系列内容加速系统产品彩页 - 浏览文件 - 02121553.pdf",
+      "expectedSha256": "44998076b0392f69b46b376df61053b88ca0dc2342e43e93a6535619894e5d82",
+      "matchTerms": [
+        "RG-PowerCache G4",
+        "9197"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-PowerCache G4"
+    },
+    {
+      "documentId": "ruijie-preview-9197-2",
+      "series": "RG-PowerCacheG12",
+      "modelNames": [
+        "RG-PowerCache G12"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hcjs/powercacheg12/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9197",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9197/?field=PreviewFile",
+      "officialFileName": "RG-PowerCacheG系列内容加速系统产品彩页 - 浏览文件 - 02121553.pdf",
+      "expectedSha256": "44998076b0392f69b46b376df61053b88ca0dc2342e43e93a6535619894e5d82",
+      "matchTerms": [
+        "RG-PowerCache G12",
+        "9197"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-PowerCache G12"
+    },
+    {
+      "documentId": "ruijie-preview-9197-3",
+      "series": "RG-PowerCacheG24",
+      "modelNames": [
+        "RG-PowerCache G24"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hcjs/powercacheg24/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9197",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9197/?field=PreviewFile",
+      "officialFileName": "RG-PowerCacheG系列内容加速系统产品彩页 - 浏览文件 - 02121553.pdf",
+      "expectedSha256": "44998076b0392f69b46b376df61053b88ca0dc2342e43e93a6535619894e5d82",
+      "matchTerms": [
+        "RG-PowerCache G24",
+        "9197"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-PowerCache G24"
+    },
+    {
+      "documentId": "ruijie-preview-9274-1",
+      "series": "RG-DDS3000",
+      "modelNames": [
+        "域名与IP管理平台，1U主机，支持部署DHCP和DNS，固化6个千兆电口，1T企业级硬盘，单电源，RG-DDS 3000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-ipglxl/dds3000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9274",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9274/?field=PreviewFile",
+      "officialFileName": "RG-DDS域名与IP管理平台---渠道大会认证计费彩页 - 浏览文件 - 02220938.pdf",
+      "expectedSha256": "44ad6730ae1eb9684f1eb1a39cd1819b32e2c6e8ea7c17780f3c5cae2511db17",
+      "matchTerms": [
+        "域名与IP管理平台，1U主机，支持部署DHCP和DNS，固化6个千兆电口，1T企业级硬盘，单电源，RG-DDS 3000",
+        "9274"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "域名与IP管理平台，1U主机，支持部署DHCP和DNS，固化6个千兆电口，1T企业级硬盘，单电源，RG-DDS 3000"
+    },
+    {
+      "documentId": "ruijie-preview-9274-2",
+      "series": "RG-DDS6000",
+      "modelNames": [
+        "域名与IP管理平台，2U主机，支持部署DHCP和DNS，固化6个千兆电口，1个扩展槽，1T企业级硬盘，冗余电源，RG-DDS 6000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-ipglxl/dds6000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9274",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9274/?field=PreviewFile",
+      "officialFileName": "RG-DDS域名与IP管理平台---渠道大会认证计费彩页 - 浏览文件 - 02220938.pdf",
+      "expectedSha256": "44ad6730ae1eb9684f1eb1a39cd1819b32e2c6e8ea7c17780f3c5cae2511db17",
+      "matchTerms": [
+        "域名与IP管理平台，2U主机，支持部署DHCP和DNS，固化6个千兆电口，1个扩展槽，1T企业级硬盘，冗余电源，RG-DDS 6000",
+        "9274"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "域名与IP管理平台，2U主机，支持部署DHCP和DNS，固化6个千兆电口，1个扩展槽，1T企业级硬盘，冗余电源，RG-DDS 6000"
+    },
+    {
+      "documentId": "ruijie-preview-9360-1",
+      "series": "RG-MACC",
+      "modelNames": [
+        "诺客云Wi-Fi管理系统平台，RG-MACC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxglyyy/macc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9360",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9360/?field=PreviewFile",
+      "officialFileName": "RG-MACC诺客云平台广告页 - 浏览文件 - 03011403.pdf",
+      "expectedSha256": "6efba338f0b98585b8c0f1c46811f0ebbca8155d77117a6c8c8bbb87f93ee8f6",
+      "matchTerms": [
+        "诺客云Wi-Fi管理系统平台，RG-MACC",
+        "9360"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "诺客云Wi-Fi管理系统平台，RG-MACC"
+    },
+    {
+      "documentId": "ruijie-preview-10201-1",
+      "series": "RG-MCP",
+      "modelNames": [
+        "云营销平台，RG-MCP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxglyyy/mcp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10201",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10201/?field=PreviewFile",
+      "officialFileName": "RG-MCP云营销平台产品彩页 - 浏览文件 - 06100950.pdf",
+      "expectedSha256": "6adbdb23d02e94d46f5a6a3ebdfe6dcd977833768a1d1b5c58e3dc418e966914",
+      "matchTerms": [
+        "云营销平台，RG-MCP",
+        "10201"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "云营销平台，RG-MCP"
+    },
+    {
+      "documentId": "ruijie-preview-10202-1",
+      "series": "RG-RBIS",
+      "modelNames": [
+        "商业智能系统，RG-RBIS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxglyyy/rbis/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10202",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10202/?field=PreviewFile",
+      "officialFileName": "RG-RBIS商业智能系统产品彩页 - 浏览文件 - 06100948.pdf",
+      "expectedSha256": "10ea936cc76cb47543aebaa54cfb80eaa9b6edfcbdae4a8935fa7111e1a217a2",
+      "matchTerms": [
+        "商业智能系统，RG-RBIS",
+        "10202"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "商业智能系统，RG-RBIS"
+    },
+    {
+      "documentId": "ruijie-preview-10471-1",
+      "series": "RG-EG3000GE",
+      "modelNames": [
+        "新一代高性能综合网关，RG-EG3000GE"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/3000ge/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10471",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10471/?field=PreviewFile",
+      "officialFileName": "RG-EG3000MEGE新一代高性能网关产品彩页 - 浏览文件 - 07151044.pdf",
+      "expectedSha256": "687a7994d52b9377f39a0a1975819d4b080a7ab7b1ba7e45a8b4fd8339732507",
+      "matchTerms": [
+        "新一代高性能综合网关，RG-EG3000GE",
+        "10471"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代高性能综合网关，RG-EG3000GE"
+    },
+    {
+      "documentId": "ruijie-preview-10493-1",
+      "series": "RG-EG3000CE",
+      "modelNames": [
+        "新一代高性能综合网关，RG-EG3000CE"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/3000ce/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10493",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10493/?field=PreviewFile",
+      "officialFileName": "RG-EG3000CESE新一代高性能综合网关产品彩页 - 浏览文件 - 07230914.pdf",
+      "expectedSha256": "9122643f3b97dabed663ddf21e20b3ebc478a2da89fde931ff429cb974a52165",
+      "matchTerms": [
+        "新一代高性能综合网关，RG-EG3000CE",
+        "10493"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代高性能综合网关，RG-EG3000CE"
+    },
+    {
+      "documentId": "ruijie-preview-10722-1",
+      "series": "RG-EG2000F",
+      "modelNames": [
+        "RG-EG2000F"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/2000f/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10722",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10722/?field=PreviewFile",
+      "officialFileName": "RG-EG2000系列下一代网关产品彩页 - 浏览文件 - 09121143.pdf",
+      "expectedSha256": "594cf7713ce497b591e371b80b0f944263d038ba07d2bc90d0523ce5d515de31",
+      "matchTerms": [
+        "RG-EG2000F",
+        "10722"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-EG2000F"
+    },
+    {
+      "documentId": "ruijie-preview-13547-1",
+      "series": "RG-IS2706G",
+      "modelNames": [
+        "4口千兆电接入交换机，2个1000BASE-X SFP光口，RG-IS2706G"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is2706g/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=13547",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-13547/?field=PreviewFile",
+      "officialFileName": "RG-IS2700G系列工业以太网交换机产品彩页 - 浏览文件 - 09221357.pdf",
+      "expectedSha256": "d00a3816061df04d598684281cf1ed7a84a164169a44e8eb640b1867b59f152f",
+      "matchTerms": [
+        "4口千兆电接入交换机，2个1000BASE-X SFP光口，RG-IS2706G",
+        "13547"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "4口千兆电接入交换机，2个1000BASE-X SFP光口，RG-IS2706G"
+    },
+    {
+      "documentId": "ruijie-preview-13547-2",
+      "series": "RG-IS2712G-DC",
+      "modelNames": [
+        "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is2712gdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=13547",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-13547/?field=PreviewFile",
+      "officialFileName": "RG-IS2700G系列工业以太网交换机产品彩页 - 浏览文件 - 09221357.pdf",
+      "expectedSha256": "d00a3816061df04d598684281cf1ed7a84a164169a44e8eb640b1867b59f152f",
+      "matchTerms": [
+        "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G-DC",
+        "13547"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G-DC"
+    },
+    {
+      "documentId": "ruijie-preview-13547-3",
+      "series": "RG-IS2712G",
+      "modelNames": [
+        "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is27g/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=13547",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-13547/?field=PreviewFile",
+      "officialFileName": "RG-IS2700G系列工业以太网交换机产品彩页 - 浏览文件 - 09221357.pdf",
+      "expectedSha256": "d00a3816061df04d598684281cf1ed7a84a164169a44e8eb640b1867b59f152f",
+      "matchTerms": [
+        "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G",
+        "13547"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆电接入交换机，4个1000BASE-X SFP光口，RG-IS2712G"
+    },
+    {
+      "documentId": "ruijie-preview-13740-1",
+      "series": "RG-ONC-DC",
+      "modelNames": [
+        "RG-ONC-DC数据中心SDN控制器"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-sdn/oncdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=13740",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-13740/?field=PreviewFile",
+      "officialFileName": "RG-ONC-DC数据中心SDN控制器产品彩页 - 浏览文件 - 11031848.pdf",
+      "expectedSha256": "d3a51444e26eeb46911d860c8fb73e9ae9e7408c86d4216614487287830d4865",
+      "matchTerms": [
+        "RG-ONC-DC数据中心SDN控制器",
+        "13740"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-ONC-DC数据中心SDN控制器"
+    },
+    {
+      "documentId": "ruijie-preview-14442-1",
+      "series": "RG-MAP852-SF",
+      "modelNames": [
+        "全光智分+方案微AP，Wi-Fi 6双射频1.775Gbps，下联千兆电口*4，RG-MAP852-SF"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-jjqgzf/map852sf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=14442",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-14442/?field=PreviewFile",
+      "officialFileName": "RG-MAP852-SF无线接入点 - 浏览文件 - 04161540.pdf",
+      "expectedSha256": "133f06baaf4407dd1c67928a7f0f4de3a5b9e254b7f487ff770865e67fde9251",
+      "matchTerms": [
+        "全光智分+方案微AP，Wi-Fi 6双射频1.775Gbps，下联千兆电口*4，RG-MAP852-SF",
+        "14442"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "全光智分+方案微AP，Wi-Fi 6双射频1.775Gbps，下联千兆电口*4，RG-MAP852-SF"
+    },
+    {
+      "documentId": "ruijie-preview-15698-1",
+      "series": "千兆单模LC全双工接口SFP光模块，1310nm波长, 10km传输距离, 支持DDM，GE-LX-SM1310",
+      "modelNames": [
+        "千兆单模LC全双工接口SFP光模块，1310nm波长, 10km传输距离, 支持DDM，GE-LX-SM1310"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gmk/gelxsm1310/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=15698",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-15698/?field=PreviewFile",
+      "officialFileName": "GE-LX-SM1310千兆光模块产品彩页 - 浏览文件 - 12290917.pdf",
+      "expectedSha256": "4edea09dbb5b13f6f86efedf6817fb84808f863834688d3a57a3d06ce27ba481",
+      "matchTerms": [
+        "千兆单模LC全双工接口SFP光模块，1310nm波长, 10km传输距离, 支持DDM，GE-LX-SM1310",
+        "15698"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "千兆单模LC全双工接口SFP光模块，1310nm波长, 10km传输距离, 支持DDM，GE-LX-SM1310"
+    },
+    {
+      "documentId": "ruijie-preview-15702-1",
+      "series": "千兆多模LC双工接口SFP光模块，850nm波长，500m传输距离，支持DDM，GE-SX-MM850",
+      "modelNames": [
+        "千兆多模LC双工接口SFP光模块，850nm波长，500m传输距离，支持DDM，GE-SX-MM850"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gmk/gesxmm850/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=15702",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-15702/?field=PreviewFile",
+      "officialFileName": "GE-SX-MM850千兆光模块产品彩页 - 浏览文件 - 12271612.pdf",
+      "expectedSha256": "e6843353a07335d1780e6760800a7d20432e4f5392ee93688377315e360c89f4",
+      "matchTerms": [
+        "千兆多模LC双工接口SFP光模块，850nm波长，500m传输距离，支持DDM，GE-SX-MM850",
+        "15702"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "千兆多模LC双工接口SFP光模块，850nm波长，500m传输距离，支持DDM，GE-SX-MM850"
+    },
+    {
+      "documentId": "ruijie-preview-15736-1",
+      "series": "RG-PA70I",
+      "modelNames": [
+        "热插拔交流电源模块，最大功率70W，适用于RG-S5750V2-L系列交换机，RG-PA70I"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gmk/pa70i/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=15736",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-15736/?field=PreviewFile",
+      "officialFileName": "RG-PA70I电源模块产品介绍 - 浏览文件 - 01181159.pdf",
+      "expectedSha256": "49e23f5c9665ed85c6ce2d0fda06add88e16188907b13ac1ee221508df132757",
+      "matchTerms": [
+        "热插拔交流电源模块，最大功率70W，适用于RG-S5750V2-L系列交换机，RG-PA70I",
+        "15736"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "热插拔交流电源模块，最大功率70W，适用于RG-S5750V2-L系列交换机，RG-PA70I"
+    },
+    {
+      "documentId": "ruijie-preview-16357-1",
+      "series": "万兆多模LC全双工接口SFP+光模块，850nm波长，300m传输距离，支持DDM，XG-SR-MM850",
+      "modelNames": [
+        "万兆多模LC全双工接口SFP+光模块，850nm波长，300m传输距离，支持DDM，XG-SR-MM850"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gmk/xgsrmm850/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16357",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16357/?field=PreviewFile",
+      "officialFileName": "XG-SR-MM850万兆光模块产品彩页 - 浏览文件 - 05101614.pdf",
+      "expectedSha256": "08b0fc638f1a1e7809e506629e0c1c86fd01280c882d321a0a4289fe4824e105",
+      "matchTerms": [
+        "万兆多模LC全双工接口SFP+光模块，850nm波长，300m传输距离，支持DDM，XG-SR-MM850",
+        "16357"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "万兆多模LC全双工接口SFP+光模块，850nm波长，300m传输距离，支持DDM，XG-SR-MM850"
+    },
+    {
+      "documentId": "ruijie-preview-16490-1",
+      "series": "RG-Rain100V2",
+      "modelNames": [
+        "锐捷VDI云终端，X86高性能4核处理器，RG-Rain100 V2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/r100v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16490",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16490/?field=PreviewFile",
+      "officialFileName": "云桌面RG-Rain100V2VDI云终端产品彩页 - 浏览文件 - 06131139.pdf",
+      "expectedSha256": "e3318126cb1fd6da45459388bc89e1ea64d64792ddb17e2ced44ac0c3308b7b1",
+      "matchTerms": [
+        "锐捷VDI云终端，X86高性能4核处理器，RG-Rain100 V2",
+        "16490"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷VDI云终端，X86高性能4核处理器，RG-Rain100 V2"
+    },
+    {
+      "documentId": "ruijie-preview-16578-1",
+      "series": "RG-OAS500E",
+      "modelNames": [
+        "锐捷统一安全认证和运维审计系统，RG-OAS 500E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/oas500e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16578",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16578/?field=PreviewFile",
+      "officialFileName": "安全产品RG-OAS500E统一安全认证和运维审计系统产品彩页 - 浏览文件 - 06150931.pdf",
+      "expectedSha256": "1a35978afade77544878a3bdb2fd92954d75952d8a6d2e81b5bb0ece70060b60",
+      "matchTerms": [
+        "锐捷统一安全认证和运维审计系统，RG-OAS 500E",
+        "16578"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷统一安全认证和运维审计系统，RG-OAS 500E"
+    },
+    {
+      "documentId": "ruijie-preview-16579-1",
+      "series": "RG-DBS500-A",
+      "modelNames": [
+        "数据库安全审计系统，RG-DBS 500-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/dba500a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16579",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16579/?field=PreviewFile",
+      "officialFileName": "安全产品RG-DBS500-A数据库审计系统产品彩页 - 浏览文件 - 06150931.pdf",
+      "expectedSha256": "74051aa5688cf363d8083592e928de1398c210568ca6d0289708cd36be79db14",
+      "matchTerms": [
+        "数据库安全审计系统，RG-DBS 500-A",
+        "16579"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据库安全审计系统，RG-DBS 500-A"
+    },
+    {
+      "documentId": "ruijie-preview-19942-1",
+      "series": "RG-MAP852-SF-S",
+      "modelNames": [
+        "无线星空方案行星AP，Wi-Fi 6双射频1.775Gbps，1G光口，RG-MAP852-SF-S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/map852sfs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19942",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19942/?field=PreviewFile",
+      "officialFileName": "RG-MAP852-SF-S行星AP产品彩页 - 浏览文件 - 07061456.pdf",
+      "expectedSha256": "a0436e00e685d9b70f7687aa2e12fd6e8c20207b6834665c43af7b90466a53f4",
+      "matchTerms": [
+        "无线星空方案行星AP，Wi-Fi 6双射频1.775Gbps，1G光口，RG-MAP852-SF-S",
+        "19942"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线星空方案行星AP，Wi-Fi 6双射频1.775Gbps，1G光口，RG-MAP852-SF-S"
+    },
+    {
+      "documentId": "ruijie-preview-19946-2",
+      "series": "RG-Cab-SMA-18m-MJ",
+      "modelNames": [
+        "18米，单轨，射频线缆RG-Cab-SMA-18m-MJ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/cabsma18/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "18米，单轨，射频线缆RG-Cab-SMA-18m-MJ",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "18米，单轨，射频线缆RG-Cab-SMA-18m-MJ"
+    },
+    {
+      "documentId": "ruijie-preview-19946-3",
+      "series": "RG-Cab-SMA-35m-MJ",
+      "modelNames": [
+        "35米，单轨，射频线缆RG-Cab-SMA-35m-MJ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/cabsma35/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "35米，单轨，射频线缆RG-Cab-SMA-35m-MJ",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "35米，单轨，射频线缆RG-Cab-SMA-35m-MJ"
+    },
+    {
+      "documentId": "ruijie-preview-19946-4",
+      "series": "RG-DCAB-SMA-10m",
+      "modelNames": [
+        "10米，双轨，射频线缆RG-DCAB-SMA-10m"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/dcabsma10/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "10米，双轨，射频线缆RG-DCAB-SMA-10m",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10米，双轨，射频线缆RG-DCAB-SMA-10m"
+    },
+    {
+      "documentId": "ruijie-preview-19946-5",
+      "series": "RG-DCAB-SMA-15m-SP",
+      "modelNames": [
+        "15米，双轨，射频线缆RG-DCAB-SMA-15m-SP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/dcabsma15/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "15米，双轨，射频线缆RG-DCAB-SMA-15m-SP",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "15米，双轨，射频线缆RG-DCAB-SMA-15m-SP"
+    },
+    {
+      "documentId": "ruijie-preview-19946-6",
+      "series": "RG-DCAB-SMA-5m",
+      "modelNames": [
+        "5米，双轨，射频线缆RG-DCAB-SMA-5m"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/dcabsma5/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "5米，双轨，射频线缆RG-DCAB-SMA-5m",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "5米，双轨，射频线缆RG-DCAB-SMA-5m"
+    },
+    {
+      "documentId": "ruijie-preview-19946-7",
+      "series": "RG-IOA-2503-X5",
+      "modelNames": [
+        "圆形室内美化天线，吊顶，RG-IOA-2503-X5"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/ioa2503x5/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "圆形室内美化天线，吊顶，RG-IOA-2503-X5",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "圆形室内美化天线，吊顶，RG-IOA-2503-X5"
+    },
+    {
+      "documentId": "ruijie-preview-19946-8",
+      "series": "RG-IOA-2503-X6",
+      "modelNames": [
+        "方形室内美化天线，壁挂，RG-IOA-2503-X6"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/ioa2503x6/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "方形室内美化天线，壁挂，RG-IOA-2503-X6",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "方形室内美化天线，壁挂，RG-IOA-2503-X6"
+    },
+    {
+      "documentId": "ruijie-preview-20620-1",
+      "series": "RG-AM5832-SF-P",
+      "modelNames": [
+        "无线星空方案24口恒星主机，24x1G/2.5G/10G下行光口，24路PoE供电，RG-AM5832-SF-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/am5832sfp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20620",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20620/?field=PreviewFile",
+      "officialFileName": "RG-AM5832-SF-P恒星主机产品彩页 - 浏览文件 - 11091720.pdf",
+      "expectedSha256": "aaae9053b43082857664f0f8dd705062d1901afe64a7b0969507049a7e710852",
+      "matchTerms": [
+        "无线星空方案24口恒星主机，24x1G/2.5G/10G下行光口，24路PoE供电，RG-AM5832-SF-P",
+        "20620"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线星空方案24口恒星主机，24x1G/2.5G/10G下行光口，24路PoE供电，RG-AM5832-SF-P"
+    },
+    {
+      "documentId": "ruijie-preview-21205-1",
+      "series": "RG-MAP852-SF",
+      "modelNames": [
+        "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，1G光口，RG-MAP852-SF(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/map852-sfv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21205",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21205/?field=PreviewFile",
+      "officialFileName": "RG-MAP852-SF(V3) Wi-Fi 6双射频面板型行星AP产品彩页 - 浏览文件 - 03151154.pdf",
+      "expectedSha256": "36b15e502664f19db86cb2a7403b5b4c00b09bded09a165ee06a1b48fba074f1",
+      "matchTerms": [
+        "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，1G光口，RG-MAP852-SF(V3)",
+        "21205"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，1G光口，RG-MAP852-SF(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21206-1",
+      "series": "RG-MAP852-SF-M",
+      "modelNames": [
+        "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，2.5G光口，RG-MAP852-SF-M(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/map852-sf-mv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21206",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21206/?field=PreviewFile",
+      "officialFileName": "RG-MAP852-SF-M(V3) Wi-Fi 6双射频面板型行星AP产品彩页 - 浏览文件 - 03151158.pdf",
+      "expectedSha256": "5fe881d77104b9d683d0258d3912b4c13628ee5351336e5929e28031673f3669",
+      "matchTerms": [
+        "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，2.5G光口，RG-MAP852-SF-M(V3)",
+        "21206"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线星空方案4口行星AP，Wi-Fi 6双射频2.975Gbps，2.5G光口，RG-MAP852-SF-M(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21702-1",
+      "series": "RG-CPM2150-G2",
+      "modelNames": [
+        "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-pj/cpm2150g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21702",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21702/?field=PreviewFile",
+      "officialFileName": "RG-CPM2150-G2 液晶显示器产品彩页 - 浏览文件 - 06071625.pdf",
+      "expectedSha256": "8083bf2f9762886eb8064b5d37d32cc34aff07d2dbe61babb5032def1aa74af4",
+      "matchTerms": [
+        "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2",
+        "21702"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷液晶显示器，21.5寸高端VA屏幕，RG-CPM2150-G2"
+    },
+    {
+      "documentId": "ruijie-preview-21747-1",
+      "series": "RG-PDBOX",
+      "modelNames": [
+        "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/pdbox/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21747/?field=PreviewFile",
+      "officialFileName": "RG-PDBOX集中供电主机产品彩页 - 浏览文件 - 06141457.pdf",
+      "expectedSha256": "8f4d18b5f834282d3372da09e6b0aef7fa9108c16db02271c4a53a9170117604",
+      "matchTerms": [
+        "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX",
+        "21747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "集中供电主机，内置电源，支持一对多供电和点对点供电，最大支持370W供电输出，RG-PDBOX"
+    },
+    {
+      "documentId": "ruijie-preview-21800-1",
+      "series": "RG-EG2100-P",
+      "modelNames": [
+        "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg2100p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21800",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21800/?field=PreviewFile",
+      "officialFileName": "安全网关RG-EG2100-P 全能PoE网关产品彩页 - 浏览文件 - 07031424.pdf",
+      "expectedSha256": "53b6da227f0960ba60e27534e89f1970d1f882afb683299ec3cbc484b2c61403",
+      "matchTerms": [
+        "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P",
+        "21800"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "全能PoE网关，内置AC无线控制器，支持7个PoE端口，整机PoE最大输出45W，RG-EG2100-P"
+    },
+    {
+      "documentId": "ruijie-preview-21802-1",
+      "series": "RG-EG3210",
+      "modelNames": [
+        "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3210/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代多业务安全网关，8千兆电、2千兆光，并发带机数300，RG-EG3210"
+    },
+    {
+      "documentId": "ruijie-preview-21802-2",
+      "series": "RG-EG3220",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备， RG-EG3220"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3220/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备， RG-EG3220",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务安全网关，“多合一”出口设备， RG-EG3220"
+    },
+    {
+      "documentId": "ruijie-preview-21802-3",
+      "series": "RG-EG3230",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3230"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3230/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3230",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务安全网关，“多合一”出口设备，RG-EG3230"
+    },
+    {
+      "documentId": "ruijie-preview-21802-4",
+      "series": "RG-EG3250",
+      "modelNames": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3250"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3250/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21802",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21802/?field=PreviewFile",
+      "officialFileName": "RG-EG3200系列多业务安全网关产品彩页 - 浏览文件 - 07031412.pdf",
+      "expectedSha256": "d7bd28ccb143deac640443fe13517f7e8c5d17d6cd2ee3437fd04485403fb6e4",
+      "matchTerms": [
+        "多业务安全网关，“多合一”出口设备，RG-EG3250",
+        "21802"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务安全网关，“多合一”出口设备，RG-EG3250"
+    },
+    {
+      "documentId": "ruijie-preview-21805-1",
+      "series": "RG-EG3110",
+      "modelNames": [
+        "新一代多业务安全网关，RG-EG3110"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg3110/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21805",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21805/?field=PreviewFile",
+      "officialFileName": "RG-EG3110多合一多业务安全网关产品彩页 - 浏览文件 - 07031411.pdf",
+      "expectedSha256": "8225d77eda1f7ce80dbcb64a8c1517ae95c81ff3972cb9d4a622c29181a05128",
+      "matchTerms": [
+        "新一代多业务安全网关，RG-EG3110",
+        "21805"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代多业务安全网关，RG-EG3110"
+    },
+    {
+      "documentId": "ruijie-preview-21807-1",
+      "series": "RG-EG5200-P",
+      "modelNames": [
+        "多业务PoE安全网关，RG-EG5200-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/eg5200p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21807",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21807/?field=PreviewFile",
+      "officialFileName": "RG-EG5200-P多业务POE安全网关产品彩页 - 浏览文件 - 07031423.pdf",
+      "expectedSha256": "cb663c9251b3337aa8f2f8f4d76b5cc27fdce6ab9863a5e0315dc5136fd157dc",
+      "matchTerms": [
+        "多业务PoE安全网关，RG-EG5200-P",
+        "21807"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务PoE安全网关，RG-EG5200-P"
+    },
+    {
+      "documentId": "ruijie-preview-24754-1",
+      "series": "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L",
+      "modelNames": [
+        "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/400gq112dr4l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "400G DR4 LPO单模光模块，QSFP112封装，400G-Q112-DR4-L"
+    },
+    {
+      "documentId": "ruijie-preview-24754-2",
+      "series": "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L",
+      "modelNames": [
+        "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/800g-osfp-dr8-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "800G DR8 LPO单模光模块，OSFP封装，800G-OSFP-DR8-L"
+    },
+    {
+      "documentId": "ruijie-preview-24754-3",
+      "series": "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L",
+      "modelNames": [
+        "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-gmk/800gosfp2dr4l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24754",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24754/?field=PreviewFile",
+      "officialFileName": "锐捷LPO系列光模块产品彩页 - 浏览文件 - 03271027.pdf",
+      "expectedSha256": "1c1426c9b889f9afd0ed2434fad5d8c6238c8636fc02b6c360b9664eed1c2b46",
+      "matchTerms": [
+        "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L",
+        "24754"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "800G 2DR4 LPO单模光模块，OSFP封装，800G-OSFP-2DR4-L"
+    },
+    {
+      "documentId": "ruijie-preview-25894-1",
+      "series": "RG-EG-E5120",
+      "modelNames": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege5120/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25894",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25894/?field=PreviewFile",
+      "officialFileName": "RG-EG-E系列锐捷网络下一代智能网关产品彩页 - 浏览文件 - 04240905.pdf",
+      "expectedSha256": "49d2efbe717af8b70423b5f620c1e2f7da4b6065c80e01a7ee4996b245b51276",
+      "matchTerms": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120",
+        "25894"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5120"
+    },
+    {
+      "documentId": "ruijie-preview-25894-2",
+      "series": "RG-EG-E5220",
+      "modelNames": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege5220/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25894",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25894/?field=PreviewFile",
+      "officialFileName": "RG-EG-E系列锐捷网络下一代智能网关产品彩页 - 浏览文件 - 04240905.pdf",
+      "expectedSha256": "49d2efbe717af8b70423b5f620c1e2f7da4b6065c80e01a7ee4996b245b51276",
+      "matchTerms": [
+        "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220",
+        "25894"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代智能安全网关，构筑网络出口边界防护屏障，RG-EG-E5220"
+    },
+    {
+      "documentId": "ruijie-preview-26982-1",
+      "series": "RG-IS5900-8GT8SFP6CSFP-DC",
+      "modelNames": [
+        "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is59008gt8sfp6csfpdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=26982",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-26982/?field=PreviewFile",
+      "officialFileName": "RG-IS5900系列双平面工业交换机产品彩页 - For Preview - 05131557.pdf",
+      "expectedSha256": "d3010adf75d2c2cecdc07c0df3957541937bd63eda664cef57e4ba600edf9136",
+      "matchTerms": [
+        "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC",
+        "26982"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "双平面三层工业级以太网交换机，一机双网，千兆上行，RG-IS5900-8GT8SFP6CSFP-DC"
+    },
+    {
+      "documentId": "ruijie-preview-26983-1",
+      "series": "RG-IS2900-8GT3CSFP-DC",
+      "modelNames": [
+        "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is29008gt3csfpdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=26983",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-26983/?field=PreviewFile",
+      "officialFileName": "RG-IS2900系列双平面工业交换机产品彩页 - 浏览文件 - 05131120.pdf",
+      "expectedSha256": "5b204ebe25525dbb4c8db75b5ee632629036473c72e1dcff2b95066bbb5b756a",
+      "matchTerms": [
+        "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC",
+        "26983"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "双平面二层工业级以太网交换机，一机双网，千兆上行，RG-IS2900-8GT3CSFP-DC"
+    },
+    {
+      "documentId": "ruijie-preview-27112-1",
+      "series": "RG-AM5532",
+      "modelNames": [
+        "智分+解决方案AP主机，上行4个万兆光口+4个千兆电口，RG-AM5532"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-zfxap/am5532/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27112",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27112/?field=PreviewFile",
+      "officialFileName": "RG-AM5532智分 方案专用型无线接入点产品彩页 - 浏览文件 - 06091625.pdf",
+      "expectedSha256": "2409c16193a45941378e5b432690daba761facf3a4d978da69a9ddd76194fada",
+      "matchTerms": [
+        "智分+解决方案AP主机，上行4个万兆光口+4个千兆电口，RG-AM5532",
+        "27112"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智分+解决方案AP主机，上行4个万兆光口+4个千兆电口，RG-AM5532"
+    },
+    {
+      "documentId": "ruijie-preview-27112-2",
+      "series": "RG-MAP852",
+      "modelNames": [
+        "智分+解决方案微AP，Wi-Fi 6双射频2.975Gbps，下联千兆电口*4，RG-MAP852(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-zfxap/map852v3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27112",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27112/?field=PreviewFile",
+      "officialFileName": "RG-AM5532智分 方案专用型无线接入点产品彩页 - 浏览文件 - 06091625.pdf",
+      "expectedSha256": "2409c16193a45941378e5b432690daba761facf3a4d978da69a9ddd76194fada",
+      "matchTerms": [
+        "智分+解决方案微AP，Wi-Fi 6双射频2.975Gbps，下联千兆电口*4，RG-MAP852(V3)",
+        "27112"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智分+解决方案微AP，Wi-Fi 6双射频2.975Gbps，下联千兆电口*4，RG-MAP852(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-28240-1",
+      "series": "RG-CPM2700-G3",
+      "modelNames": [
+        "锐捷液晶显示器，27寸高端IPS屏幕，RG-CPM2700-G3"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-pj/cpm2700g3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28240",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28240/?field=PreviewFile",
+      "officialFileName": "RG-CPM2700-G3显示器产品彩页 - 浏览文件 - 07031333.pdf",
+      "expectedSha256": "a9be49b098a4453d918ff7de4f9d21d6080e651009de6bc344ee5a4a41df70d6",
+      "matchTerms": [
+        "锐捷液晶显示器，27寸高端IPS屏幕，RG-CPM2700-G3",
+        "28240"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷液晶显示器，27寸高端IPS屏幕，RG-CPM2700-G3"
+    },
+    {
+      "documentId": "ruijie-preview-28280-1",
+      "series": "RG-IS5200-24GT4XS-UP-DC",
+      "modelNames": [
+        "沙海系列24口千兆机架式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP40，RG-IS5200-24GT4XS-UP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/RG-IS5200-24GT4XS-UP-DC/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28280",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28280/?field=PreviewFile",
+      "officialFileName": "RG-IS5200系列工业交换机产品彩页 - 浏览文件 - 07231106.pdf",
+      "expectedSha256": "9a16ae070504de1a4aa5174f2a319565c4cefa1222a7381733c712ddb6df5432",
+      "matchTerms": [
+        "沙海系列24口千兆机架式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP40，RG-IS5200-24GT4XS-UP-DC",
+        "28280"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "沙海系列24口千兆机架式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP40，RG-IS5200-24GT4XS-UP-DC"
+    },
+    {
+      "documentId": "ruijie-preview-28280-2",
+      "series": "RG-IS5200-8GT4XS",
+      "modelNames": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，内置AC电源，支持IP41，RG-IS5200-8GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is52008gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28280",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28280/?field=PreviewFile",
+      "officialFileName": "RG-IS5200系列工业交换机产品彩页 - 浏览文件 - 07231106.pdf",
+      "expectedSha256": "9a16ae070504de1a4aa5174f2a319565c4cefa1222a7381733c712ddb6df5432",
+      "matchTerms": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，内置AC电源，支持IP41，RG-IS5200-8GT4XS",
+        "28280"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，内置AC电源，支持IP41，RG-IS5200-8GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-28280-3",
+      "series": "RG-IS5200-8GT4XS-DC",
+      "modelNames": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is52008gt4xsdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28280",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28280/?field=PreviewFile",
+      "officialFileName": "RG-IS5200系列工业交换机产品彩页 - 浏览文件 - 07231106.pdf",
+      "expectedSha256": "9a16ae070504de1a4aa5174f2a319565c4cefa1222a7381733c712ddb6df5432",
+      "matchTerms": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-DC",
+        "28280"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-DC"
+    },
+    {
+      "documentId": "ruijie-preview-28280-4",
+      "series": "RG-IS5200-8GT4XS-UP-DC",
+      "modelNames": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-UP-DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-gyjh/is52008gt4xsupdc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28280",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28280/?field=PreviewFile",
+      "officialFileName": "RG-IS5200系列工业交换机产品彩页 - 浏览文件 - 07231106.pdf",
+      "expectedSha256": "9a16ae070504de1a4aa5174f2a319565c4cefa1222a7381733c712ddb6df5432",
+      "matchTerms": [
+        "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-UP-DC",
+        "28280"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "沙海系列8口千兆导轨式工业级以太网交换机，千兆上行，双路备份冗余输入，支持IP41，RG-IS5200-8GT4XS-UP-DC"
+    },
+    {
+      "documentId": "ruijie-preview-28300-1",
+      "series": "RG-MUX-8LC",
+      "modelNames": [
+        "模块化8口透明汇聚设备，应用于以太彩光方案，RG-MUX-8LC/LC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/mux8lclc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "模块化8口透明汇聚设备，应用于以太彩光方案，RG-MUX-8LC/LC",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "模块化8口透明汇聚设备，应用于以太彩光方案，RG-MUX-8LC/LC"
+    },
+    {
+      "documentId": "ruijie-preview-28300-2",
+      "series": "RG-MUX-8LC",
+      "modelNames": [
+        "模块化8口透明汇聚，应用于以太彩光方案，搭配裂变器支持双链路上行，RG-MUX-8LC/LC-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/mux8lclch/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "模块化8口透明汇聚，应用于以太彩光方案，搭配裂变器支持双链路上行，RG-MUX-8LC/LC-H",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "模块化8口透明汇聚，应用于以太彩光方案，搭配裂变器支持双链路上行，RG-MUX-8LC/LC-H"
+    },
+    {
+      "documentId": "ruijie-preview-28300-3",
+      "series": "RG-MUX-EXT",
+      "modelNames": [
+        "透明汇聚光裂变器扩展模块，应用于以太彩光方案，RG-MUX-EXT"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/muxext/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "透明汇聚光裂变器扩展模块，应用于以太彩光方案，RG-MUX-EXT",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "透明汇聚光裂变器扩展模块，应用于以太彩光方案，RG-MUX-EXT"
+    },
+    {
+      "documentId": "ruijie-preview-28300-4",
+      "series": "RG-MUX-BOX-H",
+      "modelNames": [
+        "楼栋侧透明汇聚/融合汇聚外框，1U高度，3个设备插槽，可支持16口/8口透明汇聚设备/裂变器或融合汇聚设备，RG-MUX-BOX-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/rgmuxboxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "楼栋侧透明汇聚/融合汇聚外框，1U高度，3个设备插槽，可支持16口/8口透明汇聚设备/裂变器或融合汇聚设备，RG-MUX-BOX-H",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "楼栋侧透明汇聚/融合汇聚外框，1U高度，3个设备插槽，可支持16口/8口透明汇聚设备/裂变器或融合汇聚设备，RG-MUX-BOX-H"
+    },
+    {
+      "documentId": "ruijie-preview-28300-5",
+      "series": "RG-MUX-16LC",
+      "modelNames": [
+        "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-H-BIDI"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/rgmux16lclchbidi/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-H-BIDI",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-H-BIDI"
+    },
+    {
+      "documentId": "ruijie-preview-28300-6",
+      "series": "RG-MUX-16LC",
+      "modelNames": [
+        "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，双上行COM口，支持VSU场景，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-V-BIDI"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/rgmux16lclcvbidi/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28300/?field=PreviewFile",
+      "officialFileName": "园区极简光RG-MUX系列透明汇聚产品彩页 - 浏览文件 - 07251720.pdf",
+      "expectedSha256": "b4f7b6f4b0fe1b0bf174f16bc21f6c0f851fdf988cc42be8debe8b34da4a82b6",
+      "matchTerms": [
+        "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，双上行COM口，支持VSU场景，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-V-BIDI",
+        "28300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "楼栋侧16口无源透明汇聚设备， 单端口支持1G/2.5G/10G，超低损耗，双上行COM口，支持VSU场景，搭配BIDI彩光模块，应用于极简以太彩光方案4.0，RG-MUX-16LC/LC-V-BIDI"
+    },
+    {
+      "documentId": "ruijie-preview-28579-1",
+      "series": "RG-MAP920-SF-MXT",
+      "modelNames": [
+        "Wi-Fi 7双射频3.57Gbps超融合面板型光无线接入点(OAP)，RG-MAP920-SF-MXT"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi7/map920sfmxt/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28579",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28579/?field=PreviewFile",
+      "officialFileName": "RG-MAP920-SF-MXT Wi-Fi 7双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 09300909.pdf",
+      "expectedSha256": "879976e0f30b5c6569a3a15fed28f94e248298858753085ff3cac4490d9c26fa",
+      "matchTerms": [
+        "Wi-Fi 7双射频3.57Gbps超融合面板型光无线接入点(OAP)，RG-MAP920-SF-MXT",
+        "28579"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频3.57Gbps超融合面板型光无线接入点(OAP)，RG-MAP920-SF-MXT"
+    },
+    {
+      "documentId": "ruijie-preview-28584-1",
+      "series": "RG-UNC",
+      "modelNames": [
+        "RG-UNC统一网络中心"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/riil-wlgk/rg-unc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28584",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28584/?field=PreviewFile",
+      "officialFileName": "锐捷RG-UNC CS系列产品彩页 - 浏览文件 - 10291148.pdf",
+      "expectedSha256": "96a7ceb44c7331c7995ef4ce88c9eafc452e0ea4cb6c05b8f498a72c133480b9",
+      "matchTerms": [
+        "RG-UNC统一网络中心",
+        "28584"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UNC统一网络中心"
+    },
+    {
+      "documentId": "ruijie-preview-28781-1",
+      "series": "RG-LiteOS-2-16",
+      "modelNames": [
+        "2分16均分型无源融合汇聚设备，LC/UPC接口，可提供最大16端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-16"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/liteos-2-16/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28781",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28781/?field=PreviewFile",
+      "officialFileName": "RG-LiteOS系列融合汇聚产品彩页 - 浏览文件 - 02061059.pdf",
+      "expectedSha256": "c35d778ab13123eed8f352f598a2df7dcd06a792ea0728e3afb145cb7eeaa397",
+      "matchTerms": [
+        "2分16均分型无源融合汇聚设备，LC/UPC接口，可提供最大16端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-16",
+        "28781"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "2分16均分型无源融合汇聚设备，LC/UPC接口，可提供最大16端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-16"
+    },
+    {
+      "documentId": "ruijie-preview-28781-2",
+      "series": "RG-LiteOS-2-32",
+      "modelNames": [
+        "2分32均分型无源融合汇聚设备，LC/UPC接口，可提供最大32端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-32"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/liteos-2-32/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28781",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28781/?field=PreviewFile",
+      "officialFileName": "RG-LiteOS系列融合汇聚产品彩页 - 浏览文件 - 02061059.pdf",
+      "expectedSha256": "c35d778ab13123eed8f352f598a2df7dcd06a792ea0728e3afb145cb7eeaa397",
+      "matchTerms": [
+        "2分32均分型无源融合汇聚设备，LC/UPC接口，可提供最大32端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-32",
+        "28781"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "2分32均分型无源融合汇聚设备，LC/UPC接口，可提供最大32端口的接入能力，适用于极简以太彩光4.0-超融合方案，RG-LiteOS-2-32"
+    },
+    {
+      "documentId": "ruijie-preview-28899-1",
+      "series": "12口千兆交换路由一体机远端模块，支持PoE取电，M7000L-12GT-RU",
+      "modelNames": [
+        "12口千兆交换路由一体机远端模块，支持PoE取电，M7000L-12GT-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/m7000l-12gt-ru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "12口千兆交换路由一体机远端模块，支持PoE取电，M7000L-12GT-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "12口千兆交换路由一体机远端模块，支持PoE取电，M7000L-12GT-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-2",
+      "series": "5口千兆交换路由一体机远端模块，支持PoE取电，M7000L-5GT-RU",
+      "modelNames": [
+        "5口千兆交换路由一体机远端模块，支持PoE取电，M7000L-5GT-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/m7000l-5gt-ru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "5口千兆交换路由一体机远端模块，支持PoE取电，M7000L-5GT-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "5口千兆交换路由一体机远端模块，支持PoE取电，M7000L-5GT-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-3",
+      "series": "8口千兆交换路由一体机远端模块，支持PoE取电，M7000L-8GT-RU",
+      "modelNames": [
+        "8口千兆交换路由一体机远端模块，支持PoE取电，M7000L-8GT-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/m7000l-8gt-ru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "8口千兆交换路由一体机远端模块，支持PoE取电，M7000L-8GT-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆交换路由一体机远端模块，支持PoE取电，M7000L-8GT-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-4",
+      "series": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU",
+      "modelNames": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-yjywwxydmk/m7000lap842iru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-5",
+      "series": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU",
+      "modelNames": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-yjywwxydmk/m7000lap842wru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-6",
+      "series": "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU",
+      "modelNames": [
+        "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-yjywwxydmk/m7000lap842oru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-7",
+      "series": "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU",
+      "modelNames": [
+        "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna/m7000lap842oru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室外无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842O-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-8",
+      "series": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU",
+      "modelNames": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna/m7000lap842wru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，上行千兆电口*1，下行千兆电口*4，M7000L-AP842W-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28899-9",
+      "series": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU",
+      "modelNames": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna/m7000lap842iru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28899",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28899/?field=PreviewFile",
+      "officialFileName": "M7000L-RU系列一体机远端模块产品彩页 - 浏览文件 - 12301710.pdf",
+      "expectedSha256": "8b6e7fcaf7df784b4ab1fa51fc8f0e73a5ca9157d8d32cc7d7d9d0a70a6c46ff",
+      "matchTerms": [
+        "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU",
+        "28899"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案室内无线远端模块，Wi-Fi 6双射频2.975Gbps，2.5G光口，M7000L-AP842I-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28960-1",
+      "series": "RG-IF2920-24GT4MS-P",
+      "modelNames": [
+        "24口千兆POE以太彩光网络交换机，4个2.5G光口， RG-IF2920-24GT4MS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/if292024gt4msp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28960",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28960/?field=PreviewFile",
+      "officialFileName": "RG-IF2920系列极简以太全光交换机产品彩页 - 浏览文件 - 02091642.pdf",
+      "expectedSha256": "9aab94a82ee9bb6f0f83981673844d9add159f44f2e1e1f74d8b1805b1c36b15",
+      "matchTerms": [
+        "24口千兆POE以太彩光网络交换机，4个2.5G光口， RG-IF2920-24GT4MS-P",
+        "28960"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆POE以太彩光网络交换机，4个2.5G光口， RG-IF2920-24GT4MS-P"
+    },
+    {
+      "documentId": "ruijie-preview-28960-2",
+      "series": "RG-IF2920-48GT4MS",
+      "modelNames": [
+        "48口千兆以太彩光网络交换机，4个2.5G光口， RG-IF2920-48GT4MS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/if292048gt4ms/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28960",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28960/?field=PreviewFile",
+      "officialFileName": "RG-IF2920系列极简以太全光交换机产品彩页 - 浏览文件 - 02091642.pdf",
+      "expectedSha256": "9aab94a82ee9bb6f0f83981673844d9add159f44f2e1e1f74d8b1805b1c36b15",
+      "matchTerms": [
+        "48口千兆以太彩光网络交换机，4个2.5G光口， RG-IF2920-48GT4MS",
+        "28960"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆以太彩光网络交换机，4个2.5G光口， RG-IF2920-48GT4MS"
+    },
+    {
+      "documentId": "ruijie-preview-29026-1",
+      "series": "8口千兆二层接入层交换机，2.5G上行口，XS-S1620J-8GT1MG",
+      "modelNames": [
+        "8口千兆二层接入层交换机，2.5G上行口，XS-S1620J-8GT1MG"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/xs-s1620j-8gt1mg/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29026",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29026/?field=PreviewFile",
+      "officialFileName": "锐捷XS-S1620J 2.5G上行智慧交换机产品彩页 - 浏览文件 - 03271139.pdf",
+      "expectedSha256": "8f3c797a9fdc783700f35ef02f927d2afe99cf410a9ef1b5eee48fc17ea5cf50",
+      "matchTerms": [
+        "8口千兆二层接入层交换机，2.5G上行口，XS-S1620J-8GT1MG",
+        "29026"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆二层接入层交换机，2.5G上行口，XS-S1620J-8GT1MG"
+    },
+    {
+      "documentId": "ruijie-preview-29026-2",
+      "series": "8口千兆二层接入层PoE交换机，2.5G上行口，XS-S1620J-8GT1MG-P",
+      "modelNames": [
+        "8口千兆二层接入层PoE交换机，2.5G上行口，XS-S1620J-8GT1MG-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/xs-s1620j-8gt1mg-p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29026",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29026/?field=PreviewFile",
+      "officialFileName": "锐捷XS-S1620J 2.5G上行智慧交换机产品彩页 - 浏览文件 - 03271139.pdf",
+      "expectedSha256": "8f3c797a9fdc783700f35ef02f927d2afe99cf410a9ef1b5eee48fc17ea5cf50",
+      "matchTerms": [
+        "8口千兆二层接入层PoE交换机，2.5G上行口，XS-S1620J-8GT1MG-P",
+        "29026"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆二层接入层PoE交换机，2.5G上行口，XS-S1620J-8GT1MG-P"
+    },
+    {
+      "documentId": "ruijie-preview-29034-1",
+      "series": "RG-CloudManagerRemote",
+      "modelNames": [
+        "锐捷云桌面教学管理软件，RG-CloudManagerRemote"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-jxglrj-yktyyrj/cloudmanagerremote/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29034",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29034/?field=PreviewFile",
+      "officialFileName": "RG-CloudManagerRemote云桌面教学管理软件产品彩页 - For Preview - 03191530.pdf",
+      "expectedSha256": "633f17be2b61c77166c44a0a942888ca4d285ab84c8df695ff468e298b58f182",
+      "matchTerms": [
+        "锐捷云桌面教学管理软件，RG-CloudManagerRemote",
+        "29034"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷云桌面教学管理软件，RG-CloudManagerRemote"
+    },
+    {
+      "documentId": "ruijie-preview-29103-1",
+      "series": "RG-MAP920-SF-U",
+      "modelNames": [
+        "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-U"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/map920sfu/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29103",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29103/?field=PreviewFile",
+      "officialFileName": "RG-MAP920-SF-U Wi-Fi 7双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 04071815.pdf",
+      "expectedSha256": "3dd97a9eaf8cea0f59808159ec72f2a84ac62df15b512301719b744a94cc8a70",
+      "matchTerms": [
+        "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-U",
+        "29103"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-U"
+    },
+    {
+      "documentId": "ruijie-preview-29104-1",
+      "series": "RG-MAP920-SF-M",
+      "modelNames": [
+        "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-M(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/map920sfmv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29104",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29104/?field=PreviewFile",
+      "officialFileName": "RG-MAP920-SF-M(V3) Wi-Fi 7双射频通用级面板型无线接入点产品彩页 - For Preview - 04081000.pdf",
+      "expectedSha256": "9af3e327ffd1ed3d0f846cd101a9b38b8cd41abe2e83a3ba290d679fdb7cd1b1",
+      "matchTerms": [
+        "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-M(V3)",
+        "29104"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频3.570Gbps面板型无线AP，RG-MAP920-SF-M(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-29293-1",
+      "series": "RG-AM5528-SF",
+      "modelNames": [
+        "无线星空方案24口恒星主机，24x1G/2.5G下行光口，24个电源口，10G上行，RG-AM5528-SF"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-zfap-xkap/am5528sf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29293",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29293/?field=PreviewFile",
+      "officialFileName": "RG-AM5528-SF恒星主机产品彩页 - 浏览文件 - 06071857.pdf",
+      "expectedSha256": "7f65db4c150654e74ce0cd2384be71e5eb275e41d776303de31aab1d09d3a9bc",
+      "matchTerms": [
+        "无线星空方案24口恒星主机，24x1G/2.5G下行光口，24个电源口，10G上行，RG-AM5528-SF",
+        "29293"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "无线星空方案24口恒星主机，24x1G/2.5G下行光口，24个电源口，10G上行，RG-AM5528-SF"
+    },
+    {
+      "documentId": "ruijie-preview-29322-2",
+      "series": "RG-ANTx2-5000D-PS",
+      "modelNames": [
+        "龙伯透镜天线，RG-AP9520-RDX外接高旁瓣抑制定向天线，RG-ANTx2-5000D-PS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi7/ant2-5000dps/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29322",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29322/?field=PreviewFile",
+      "officialFileName": "RG-AP9520-RDX Wi-Fi 7三射频增强级放装型无线接入点产品彩页 - 浏览文件 - 06071851.pdf",
+      "expectedSha256": "9bb8c2941b3d579bf6cc3fc14bdd46aaa2526b083bedf2a50904ac8b1b826a3a",
+      "matchTerms": [
+        "龙伯透镜天线，RG-AP9520-RDX外接高旁瓣抑制定向天线，RG-ANTx2-5000D-PS",
+        "29322"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "龙伯透镜天线，RG-AP9520-RDX外接高旁瓣抑制定向天线，RG-ANTx2-5000D-PS"
+    },
+    {
+      "documentId": "ruijie-preview-29461-1",
+      "series": "RG-EG-E3300",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3300/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300"
+    },
+    {
+      "documentId": "ruijie-preview-29461-2",
+      "series": "RG-EG-E3500",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3500/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500"
+    },
+    {
+      "documentId": "ruijie-preview-29461-3",
+      "series": "RG-EG-E3000-G",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3000-G"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3000g/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3000-G",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3000-G"
+    },
+    {
+      "documentId": "ruijie-preview-29461-4",
+      "series": "RG-EG-E3300-L",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3300l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-L",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-L"
+    },
+    {
+      "documentId": "ruijie-preview-29461-5",
+      "series": "RG-EG-E3100-P",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3100-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3100p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3100-P",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3100-P"
+    },
+    {
+      "documentId": "ruijie-preview-29461-6",
+      "series": "RG-EG-E3500-E",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3500e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500-E",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3500-E"
+    },
+    {
+      "documentId": "ruijie-preview-29461-7",
+      "series": "RG-EG-E3300-E",
+      "modelNames": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/ege3300e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29461",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29461/?field=PreviewFile",
+      "officialFileName": "RG-EG-E3000系列锐捷网络智能安全网关产品彩页V1.1 - 浏览文件 - 07301351.pdf",
+      "expectedSha256": "9176e450d2b4f6b7bfe68c15bff0133c9a71ca0053b94764a2b98b91fa02ef14",
+      "matchTerms": [
+        "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-E",
+        "29461"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-E"
+    }
+  ]
+}

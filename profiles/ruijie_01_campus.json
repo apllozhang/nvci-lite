@@ -1,0 +1,2051 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_01_campus",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "01 园区交换机",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "01 园区交换机",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-3672-1",
+      "series": "RG-S5750-24GT4XS-L",
+      "modelNames": [
+        "RG-S5750-24GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/S575024GT4XSL/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3672",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3672/?field=PreviewFile",
+      "officialFileName": "RG-S5750XS-L系列新一代千兆汇聚以太网交换机产品彩页 - 浏览文件 - 12241350.pdf",
+      "expectedSha256": "e1dfba8a5353ff3f5d2410245da5c0e90e987e7305d3a2f018a7a793ede7ac40",
+      "matchTerms": [
+        "RG-S5750-24GT4XS-L",
+        "3672"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S5750-24GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-3672-2",
+      "series": "RG-S5750-48GT4XS-L",
+      "modelNames": [
+        "RG-S5750-48GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/S575048GT4XSL/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3672",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3672/?field=PreviewFile",
+      "officialFileName": "RG-S5750XS-L系列新一代千兆汇聚以太网交换机产品彩页 - 浏览文件 - 12241350.pdf",
+      "expectedSha256": "e1dfba8a5353ff3f5d2410245da5c0e90e987e7305d3a2f018a7a793ede7ac40",
+      "matchTerms": [
+        "RG-S5750-48GT4XS-L",
+        "3672"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S5750-48GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-6311-1",
+      "series": "RG-S12006",
+      "modelNames": [
+        "RG-S12006"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/12006/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=6311",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-6311/?field=PreviewFile",
+      "officialFileName": "RG-S12000系列数据中心交换机产品彩页 - 浏览文件 - 12241341.pdf",
+      "expectedSha256": "dfc2caedc969b39569940c38e57bc9ebf7a1e16af54de363e7a50f9602b1d780",
+      "matchTerms": [
+        "RG-S12006",
+        "6311"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S12006"
+    },
+    {
+      "documentId": "ruijie-preview-6311-2",
+      "series": "RG-S12010",
+      "modelNames": [
+        "RG-S12010"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/12010/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=6311",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-6311/?field=PreviewFile",
+      "officialFileName": "RG-S12000系列数据中心交换机产品彩页 - 浏览文件 - 12241341.pdf",
+      "expectedSha256": "dfc2caedc969b39569940c38e57bc9ebf7a1e16af54de363e7a50f9602b1d780",
+      "matchTerms": [
+        "RG-S12010",
+        "6311"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S12010"
+    },
+    {
+      "documentId": "ruijie-preview-9277-1",
+      "series": "RG-SAM",
+      "modelNames": [
+        "RG-SAM运营商版安全计费管理系统"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-yygl/samyys/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9277",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9277/?field=PreviewFile",
+      "officialFileName": "RG-SAM3.X运营商版安全计费管理系统产品彩页 - 浏览文件 - 02181454.pdf",
+      "expectedSha256": "7039ab8cf96a3659471070a845edbc27eb6b217f11a923c9ccad3b09c2d47204",
+      "matchTerms": [
+        "RG-SAM运营商版安全计费管理系统",
+        "9277"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-SAM运营商版安全计费管理系统"
+    },
+    {
+      "documentId": "ruijie-preview-9286-1",
+      "series": "RG-SourceID",
+      "modelNames": [
+        "RG-SourceID身份数据中台"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-sfzt/sourceido/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=9286",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-9286/?field=PreviewFile",
+      "officialFileName": "RG-SourceID智慧身份源系统产品彩页 - 浏览文件 - 02141125.pdf",
+      "expectedSha256": "0871bc88802c9fe20a585821017a2e725b8b631dc4b466b1afea39e34355aef0",
+      "matchTerms": [
+        "RG-SourceID身份数据中台",
+        "9286"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-SourceID身份数据中台"
+    },
+    {
+      "documentId": "ruijie-preview-10326-1",
+      "series": "RG-S2930-12GT12MG4XS-UP-H",
+      "modelNames": [
+        "RG-S2930-12GT12MG4XS-UP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s293012gt12mg4xsuph/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=10326",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-10326/?field=PreviewFile",
+      "officialFileName": "RG-S2930系列多速率大功率以太网供电交换机产品彩页 - 浏览文件 - 06191148.pdf",
+      "expectedSha256": "a626dd662aaec3904d1aa6eddc4b44798ba130d9977e9ebe04d34198aaebe5e8",
+      "matchTerms": [
+        "RG-S2930-12GT12MG4XS-UP-H",
+        "10326"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2930-12GT12MG4XS-UP-H"
+    },
+    {
+      "documentId": "ruijie-preview-11258-1",
+      "series": "RG-S7910E",
+      "modelNames": [
+        "新一代城域网汇聚交换机，可插8个业务板卡，2个主控引擎，2个交换网板，RG-S7910E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s7910xl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=11258",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-11258/?field=PreviewFile",
+      "officialFileName": "RG-S7910E系列新一代城域网汇聚交换机产品彩页 - 浏览文件 - 02131627.pdf",
+      "expectedSha256": "c1f42a33a6e259bf7dbe93b4c346df7a99dac89c4210700c4af18b57fe368ed5",
+      "matchTerms": [
+        "新一代城域网汇聚交换机，可插8个业务板卡，2个主控引擎，2个交换网板，RG-S7910E",
+        "11258"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代城域网汇聚交换机，可插8个业务板卡，2个主控引擎，2个交换网板，RG-S7910E"
+    },
+    {
+      "documentId": "ruijie-preview-14578-1",
+      "series": "RG-S8606",
+      "modelNames": [
+        "RG-S8606"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/8606/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=14578",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-14578/?field=PreviewFile",
+      "officialFileName": "RG-S8600系列高密度多业务IPv6核心路由交换机产品彩页 - 浏览文件 - 05241548.pdf",
+      "expectedSha256": "614b25ec500e7fb956a3acca881f25b04afebca6ac48cd27d59b8b17a83e6488",
+      "matchTerms": [
+        "RG-S8606",
+        "14578"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S8606"
+    },
+    {
+      "documentId": "ruijie-preview-14578-2",
+      "series": "RG-S8610",
+      "modelNames": [
+        "RG-S8610"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/8610/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=14578",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-14578/?field=PreviewFile",
+      "officialFileName": "RG-S8600系列高密度多业务IPv6核心路由交换机产品彩页 - 浏览文件 - 05241548.pdf",
+      "expectedSha256": "614b25ec500e7fb956a3acca881f25b04afebca6ac48cd27d59b8b17a83e6488",
+      "matchTerms": [
+        "RG-S8610",
+        "14578"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S8610"
+    },
+    {
+      "documentId": "ruijie-preview-14578-3",
+      "series": "RG-S8614",
+      "modelNames": [
+        "RG-S8614"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/8614/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=14578",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-14578/?field=PreviewFile",
+      "officialFileName": "RG-S8600系列高密度多业务IPv6核心路由交换机产品彩页 - 浏览文件 - 05241548.pdf",
+      "expectedSha256": "614b25ec500e7fb956a3acca881f25b04afebca6ac48cd27d59b8b17a83e6488",
+      "matchTerms": [
+        "RG-S8614",
+        "14578"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S8614"
+    },
+    {
+      "documentId": "ruijie-preview-16492-1",
+      "series": "RG-SmartRain100S",
+      "modelNames": [
+        "锐捷VDI云终端，ARM Cortex A9低功耗四核处理器，RG-SmartRain100S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/smartrain100s/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16492",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16492/?field=PreviewFile",
+      "officialFileName": "【产品彩页】RG-SmartRain100SVDI云终端产品彩页 - 浏览文件 - 06131143.pdf",
+      "expectedSha256": "68b19fcd578d700d788a9c6cf98dc67d9ec016ce37c5cc937d136e997bc14730",
+      "matchTerms": [
+        "锐捷VDI云终端，ARM Cortex A9低功耗四核处理器，RG-SmartRain100S",
+        "16492"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷VDI云终端，ARM Cortex A9低功耗四核处理器，RG-SmartRain100S"
+    },
+    {
+      "documentId": "ruijie-preview-16832-1",
+      "series": "RG-SourceID",
+      "modelNames": [
+        "RG-SourceID身份数据中台"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-sfzt/sourceido/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16832",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16832/?field=PreviewFile",
+      "officialFileName": "身份管理SourceID折页设计 - 浏览文件 - 08090946.pdf",
+      "expectedSha256": "f303c328dde336d0e060dafb06f7bd223172edb65e281425db9c26c25c366703",
+      "matchTerms": [
+        "RG-SourceID身份数据中台",
+        "16832"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-SourceID身份数据中台"
+    },
+    {
+      "documentId": "ruijie-preview-16909-1",
+      "series": "RG-S8612E",
+      "modelNames": [
+        "云架构网络三层框式核心交换机，12个模块插槽，另外支持独立交换网板，RG-S8612E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s8612e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16909",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16909/?field=PreviewFile",
+      "officialFileName": "RG-S8600E系列云架构网络核心交换机产品彩页 - 浏览文件 - 08031002.pdf",
+      "expectedSha256": "aa50fef6cdca85536db0a8831206d88748b7b3773975e36f7a31a395befb1ecb",
+      "matchTerms": [
+        "云架构网络三层框式核心交换机，12个模块插槽，另外支持独立交换网板，RG-S8612E",
+        "16909"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "云架构网络三层框式核心交换机，12个模块插槽，另外支持独立交换网板，RG-S8612E"
+    },
+    {
+      "documentId": "ruijie-preview-17023-1",
+      "series": "RG-SCAN",
+      "modelNames": [
+        "RG-SCAN 漏洞评估系统"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/RG-Scan/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=17023",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-17023/?field=PreviewFile",
+      "officialFileName": "RG-Scan漏洞评估系统-产品彩页 - 浏览文件 - 08161557.pdf",
+      "expectedSha256": "0639979ed1d7dfcb859e33a0f763e994397b061efd319dc36ee6ea60003e5c41",
+      "matchTerms": [
+        "RG-SCAN 漏洞评估系统",
+        "17023"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-SCAN 漏洞评估系统"
+    },
+    {
+      "documentId": "ruijie-preview-18688-1",
+      "series": "RG-S2910-10GT2SFP-P-E",
+      "modelNames": [
+        "10口千兆电接入PoE交换机，2个千兆上行口，RG-S2910-10GT2SFP-P-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s2910102pe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=18688",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-18688/?field=PreviewFile",
+      "officialFileName": "RG-S2910G-P系列千兆PoE交换机产品彩页 - 浏览文件 - 12161729.pdf",
+      "expectedSha256": "e87f5f83371a269ccf4a3d98ffcb12a065aad07f50ceb8e88cca33eea6d878ce",
+      "matchTerms": [
+        "10口千兆电接入PoE交换机，2个千兆上行口，RG-S2910-10GT2SFP-P-E",
+        "18688"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆电接入PoE交换机，2个千兆上行口，RG-S2910-10GT2SFP-P-E"
+    },
+    {
+      "documentId": "ruijie-preview-20194-1",
+      "series": "RG-SF2900-8GT2SFP-S",
+      "modelNames": [
+        "8口千兆电极简光交换机，2个千兆上行口，RG-SF2900-8GT2SFP-S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf29008gt2sfps/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20194",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20194/?field=PreviewFile",
+      "officialFileName": "RG-SF2900-S系列极简光交换机产品彩页 - 浏览文件 - 08161758.pdf",
+      "expectedSha256": "3168590710cbb2d86266529d336bd89d032df6396b06ce414e1f5b4a6770f44a",
+      "matchTerms": [
+        "8口千兆电极简光交换机，2个千兆上行口，RG-SF2900-8GT2SFP-S",
+        "20194"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆电极简光交换机，2个千兆上行口，RG-SF2900-8GT2SFP-S"
+    },
+    {
+      "documentId": "ruijie-preview-20195-1",
+      "series": "RG-SF2900-16GT2SFP",
+      "modelNames": [
+        "16口千兆电极简光交换机，2个千兆上行口，RG-SF2900-16GT2SFP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf290016gt2sfp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20195",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20195/?field=PreviewFile",
+      "officialFileName": "RG-SF2900系列极简光交换机产品彩页 - 浏览文件 - 08161759.pdf",
+      "expectedSha256": "44d5079426c65b2808e25566a6bc963f29d8f9fbb82487e8d4f99fcc746c18b2",
+      "matchTerms": [
+        "16口千兆电极简光交换机，2个千兆上行口，RG-SF2900-16GT2SFP",
+        "20195"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆电极简光交换机，2个千兆上行口，RG-SF2900-16GT2SFP"
+    },
+    {
+      "documentId": "ruijie-preview-20195-2",
+      "series": "RG-SF2900-16GT2SFP-P",
+      "modelNames": [
+        "16口千兆电极简光PoE交换机，2个千兆上行口，RG-SF2900-16GT2SFP-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf290016gt2sfpp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20195",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20195/?field=PreviewFile",
+      "officialFileName": "RG-SF2900系列极简光交换机产品彩页 - 浏览文件 - 08161759.pdf",
+      "expectedSha256": "44d5079426c65b2808e25566a6bc963f29d8f9fbb82487e8d4f99fcc746c18b2",
+      "matchTerms": [
+        "16口千兆电极简光PoE交换机，2个千兆上行口，RG-SF2900-16GT2SFP-P",
+        "20195"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆电极简光PoE交换机，2个千兆上行口，RG-SF2900-16GT2SFP-P"
+    },
+    {
+      "documentId": "ruijie-preview-20540-1",
+      "series": "RG-S2910V2-24GT4SFP-L",
+      "modelNames": [
+        "24口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-24GT4SFP-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-24gt4sfp-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "24口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-24GT4SFP-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-24GT4SFP-L"
+    },
+    {
+      "documentId": "ruijie-preview-20540-2",
+      "series": "RG-S2910V2-24GT4SFP-P-L",
+      "modelNames": [
+        "24口千兆三层网管型盒式接入PoE交换机，千兆上行，RG-S2910V2-24GT4SFP-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-24gt4sfp-p-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "24口千兆三层网管型盒式接入PoE交换机，千兆上行，RG-S2910V2-24GT4SFP-P-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层网管型盒式接入PoE交换机，千兆上行，RG-S2910V2-24GT4SFP-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-20540-3",
+      "series": "RG-S2910V2-24GT4XS-L",
+      "modelNames": [
+        "24口千兆三层网管型盒式接入交换机，万兆上行，RG-S2910V2-24GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-24gt4xs-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "24口千兆三层网管型盒式接入交换机，万兆上行，RG-S2910V2-24GT4XS-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层网管型盒式接入交换机，万兆上行，RG-S2910V2-24GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-20540-4",
+      "series": "RG-S2910V2-24GT4XS-P-L",
+      "modelNames": [
+        "24口千兆三层网管型盒式接入PoE交换机，万兆上行，RG-S2910V2-24GT4XS-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-24gt4xs-p-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "24口千兆三层网管型盒式接入PoE交换机，万兆上行，RG-S2910V2-24GT4XS-P-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层网管型盒式接入PoE交换机，万兆上行，RG-S2910V2-24GT4XS-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-20540-5",
+      "series": "RG-S2910V2-48GT4SFP-L",
+      "modelNames": [
+        "48口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-48GT4SFP-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-48gt4sfp-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "48口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-48GT4SFP-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆三层网管型盒式接入交换机，千兆上行，RG-S2910V2-48GT4SFP-L"
+    },
+    {
+      "documentId": "ruijie-preview-20540-6",
+      "series": "RG-S2910V2-48GT4XS-L",
+      "modelNames": [
+        "48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910V2-48GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2910v2-48gt4xs-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20540/?field=PreviewFile",
+      "officialFileName": "RG-S2910V2-L系列精简型千兆交换机产品彩页 - 浏览文件 - 10241502.pdf",
+      "expectedSha256": "5542f8e602cb16b3c8ef7d4e00a93da5f09a7cb4f630399392ac31e2bc3021ad",
+      "matchTerms": [
+        "48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910V2-48GT4XS-L",
+        "20540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910V2-48GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-24664-1",
+      "series": "RG-S2910-24GT4XS-E",
+      "modelNames": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/S291024GT4XSE/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24664",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24664/?field=PreviewFile",
+      "officialFileName": "RG-S2910XS-E系列千兆交换机产品彩页 - 浏览文件 - 03121022.pdf",
+      "expectedSha256": "102d30edc06a7c2a85d32389a4c772cc0ea7c6c5349854e0f008932122146c6e",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E",
+        "24664"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-24664-2",
+      "series": "RG-S2910-48GT4XS-E",
+      "modelNames": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/S291048GT4XSE/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24664",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24664/?field=PreviewFile",
+      "officialFileName": "RG-S2910XS-E系列千兆交换机产品彩页 - 浏览文件 - 03121022.pdf",
+      "expectedSha256": "102d30edc06a7c2a85d32389a4c772cc0ea7c6c5349854e0f008932122146c6e",
+      "matchTerms": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E",
+        "24664"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电接入交换机，4个万兆上行口，RG-S2910-48GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-24747-1",
+      "series": "RG-S5310-24GT4XS",
+      "modelNames": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531024gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24747/?field=PreviewFile",
+      "officialFileName": "RG-S5310系列新一代千兆以太网交换机产品彩页 - 浏览文件 - 03251747.pdf",
+      "expectedSha256": "43da7eb58337cf35633220ac0374c163243dc2f107eb9d3b771d8293d474253b",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS",
+        "24747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电接入交换机，4个万兆上行口，RG-S5310-24GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-24747-2",
+      "series": "RG-S5310-48GT4XS",
+      "modelNames": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531048gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24747",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24747/?field=PreviewFile",
+      "officialFileName": "RG-S5310系列新一代千兆以太网交换机产品彩页 - 浏览文件 - 03251747.pdf",
+      "expectedSha256": "43da7eb58337cf35633220ac0374c163243dc2f107eb9d3b771d8293d474253b",
+      "matchTerms": [
+        "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS",
+        "24747"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电接入交换机，4个万兆上行口，RG-S5310-48GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-28319-1",
+      "series": "RG-S5750C-48GT4XS-H",
+      "modelNames": [
+        "48口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48GT4XS-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/a5750c48g4xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28319",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28319/?field=PreviewFile",
+      "officialFileName": "RG-S5750-H系列高性能千兆交换机产品彩页 - 浏览文件 - 07281626.pdf",
+      "expectedSha256": "a82b1339add73d423d31c19b99ba1a7cd61a94ec139b019b4b9172a5035c1542",
+      "matchTerms": [
+        "48口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48GT4XS-H",
+        "28319"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48GT4XS-H"
+    },
+    {
+      "documentId": "ruijie-preview-28319-2",
+      "series": "RG-S5750-48GT4XS-HP-H",
+      "modelNames": [
+        "48口千兆电企业级核心汇聚PoE交换机，万兆上行，RG-S5750-48GT4XS-HP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s575048gt4xshph/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28319",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28319/?field=PreviewFile",
+      "officialFileName": "RG-S5750-H系列高性能千兆交换机产品彩页 - 浏览文件 - 07281626.pdf",
+      "expectedSha256": "a82b1339add73d423d31c19b99ba1a7cd61a94ec139b019b4b9172a5035c1542",
+      "matchTerms": [
+        "48口千兆电企业级核心汇聚PoE交换机，万兆上行，RG-S5750-48GT4XS-HP-H",
+        "28319"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电企业级核心汇聚PoE交换机，万兆上行，RG-S5750-48GT4XS-HP-H"
+    },
+    {
+      "documentId": "ruijie-preview-28319-3",
+      "series": "RG-S5750C-28GT4XS-H",
+      "modelNames": [
+        "28口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28GT4XS-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s5750c28g4xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28319",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28319/?field=PreviewFile",
+      "officialFileName": "RG-S5750-H系列高性能千兆交换机产品彩页 - 浏览文件 - 07281626.pdf",
+      "expectedSha256": "a82b1339add73d423d31c19b99ba1a7cd61a94ec139b019b4b9172a5035c1542",
+      "matchTerms": [
+        "28口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28GT4XS-H",
+        "28319"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "28口千兆电企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28GT4XS-H"
+    },
+    {
+      "documentId": "ruijie-preview-28319-4",
+      "series": "RG-S5750C-28SFP4XS-H",
+      "modelNames": [
+        "28口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28SFP4XS-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s5750c28s4xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28319",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28319/?field=PreviewFile",
+      "officialFileName": "RG-S5750-H系列高性能千兆交换机产品彩页 - 浏览文件 - 07281626.pdf",
+      "expectedSha256": "a82b1339add73d423d31c19b99ba1a7cd61a94ec139b019b4b9172a5035c1542",
+      "matchTerms": [
+        "28口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28SFP4XS-H",
+        "28319"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "28口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-28SFP4XS-H"
+    },
+    {
+      "documentId": "ruijie-preview-28319-5",
+      "series": "RG-S5750C-48SFP4XS-H",
+      "modelNames": [
+        "48口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48SFP4XS-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s5750c48sfp4xsh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28319",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28319/?field=PreviewFile",
+      "officialFileName": "RG-S5750-H系列高性能千兆交换机产品彩页 - 浏览文件 - 07281626.pdf",
+      "expectedSha256": "a82b1339add73d423d31c19b99ba1a7cd61a94ec139b019b4b9172a5035c1542",
+      "matchTerms": [
+        "48口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48SFP4XS-H",
+        "28319"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆光企业级核心汇聚交换机，万兆上行，2个扩展槽，RG-S5750C-48SFP4XS-H"
+    },
+    {
+      "documentId": "ruijie-preview-28320-1",
+      "series": "RG-S7805C",
+      "modelNames": [
+        "4U框式园区核心交换机，RG-S7805C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/rgs7805cx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C系列云架构网络核心交换机产品彩页  - 浏览文件 - 07241728.pdf",
+      "expectedSha256": "c822ebb2c340980d910aa6d6a4695d2c51326888ea9ddc75786a0548f5ec4552",
+      "matchTerms": [
+        "4U框式园区核心交换机，RG-S7805C",
+        "28320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "4U框式园区核心交换机，RG-S7805C"
+    },
+    {
+      "documentId": "ruijie-preview-28320-2",
+      "series": "RG-S7810C",
+      "modelNames": [
+        "10U框式园区核心交换机，RG-S7810C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s7810c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C系列云架构网络核心交换机产品彩页  - 浏览文件 - 07241728.pdf",
+      "expectedSha256": "c822ebb2c340980d910aa6d6a4695d2c51326888ea9ddc75786a0548f5ec4552",
+      "matchTerms": [
+        "10U框式园区核心交换机，RG-S7810C",
+        "28320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10U框式园区核心交换机，RG-S7810C"
+    },
+    {
+      "documentId": "ruijie-preview-28320-3",
+      "series": "RG-S7808C",
+      "modelNames": [
+        "10U框式园区/数据中心核心交换机，RG-S7808C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/S7808C/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C系列云架构网络核心交换机产品彩页  - 浏览文件 - 07241728.pdf",
+      "expectedSha256": "c822ebb2c340980d910aa6d6a4695d2c51326888ea9ddc75786a0548f5ec4552",
+      "matchTerms": [
+        "10U框式园区/数据中心核心交换机，RG-S7808C",
+        "28320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10U框式园区/数据中心核心交换机，RG-S7808C"
+    },
+    {
+      "documentId": "ruijie-preview-28445-1",
+      "series": "RG-S3000-10GT2MS-P-RU",
+      "modelNames": [
+        "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-P-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s300010gt2mspru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28445",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28445/?field=PreviewFile",
+      "officialFileName": "RG-S3000-RU系列一体机远端模块产品彩页 - 浏览文件 - 08251625.pdf",
+      "expectedSha256": "3e3c6ce66c6580eccf8c0c4b8101d2414a03e56652b68d404a4b332432c829ae",
+      "matchTerms": [
+        "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-P-RU",
+        "28445"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-P-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28445-2",
+      "series": "RG-S3000-10GT2MS-RU",
+      "modelNames": [
+        "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s300010gt2msru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28445",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28445/?field=PreviewFile",
+      "officialFileName": "RG-S3000-RU系列一体机远端模块产品彩页 - 浏览文件 - 08251625.pdf",
+      "expectedSha256": "3e3c6ce66c6580eccf8c0c4b8101d2414a03e56652b68d404a4b332432c829ae",
+      "matchTerms": [
+        "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-RU",
+        "28445"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆交换路由一体化机架式远端模块，RG-S3000-10GT2MS-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28445-3",
+      "series": "RG-S3000-16GT4MS-RU",
+      "modelNames": [
+        "16口千兆交换路由一体化机架式远端模块，RG-S3000-16GT4MS-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s300016gt4msru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28445",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28445/?field=PreviewFile",
+      "officialFileName": "RG-S3000-RU系列一体机远端模块产品彩页 - 浏览文件 - 08251625.pdf",
+      "expectedSha256": "3e3c6ce66c6580eccf8c0c4b8101d2414a03e56652b68d404a4b332432c829ae",
+      "matchTerms": [
+        "16口千兆交换路由一体化机架式远端模块，RG-S3000-16GT4MS-RU",
+        "28445"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆交换路由一体化机架式远端模块，RG-S3000-16GT4MS-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28445-4",
+      "series": "RG-S3000-24GT4MS-RU",
+      "modelNames": [
+        "24口千兆交换路由一体化机架式远端模块，RG-S3000-24GT4MS-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s300024gt4msru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28445",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28445/?field=PreviewFile",
+      "officialFileName": "RG-S3000-RU系列一体机远端模块产品彩页 - 浏览文件 - 08251625.pdf",
+      "expectedSha256": "3e3c6ce66c6580eccf8c0c4b8101d2414a03e56652b68d404a4b332432c829ae",
+      "matchTerms": [
+        "24口千兆交换路由一体化机架式远端模块，RG-S3000-24GT4MS-RU",
+        "28445"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆交换路由一体化机架式远端模块，RG-S3000-24GT4MS-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28445-5",
+      "series": "RG-S3000-48GT4MS-P-RU",
+      "modelNames": [
+        "48口千兆交换路由一体化机架式远端模块，RG-S3000-48GT4MS-P-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s300048gt4mspru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28445",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28445/?field=PreviewFile",
+      "officialFileName": "RG-S3000-RU系列一体机远端模块产品彩页 - 浏览文件 - 08251625.pdf",
+      "expectedSha256": "3e3c6ce66c6580eccf8c0c4b8101d2414a03e56652b68d404a4b332432c829ae",
+      "matchTerms": [
+        "48口千兆交换路由一体化机架式远端模块，RG-S3000-48GT4MS-P-RU",
+        "28445"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆交换路由一体化机架式远端模块，RG-S3000-48GT4MS-P-RU"
+    },
+    {
+      "documentId": "ruijie-preview-28531-1",
+      "series": "RG-S2906-10GT2MS-L",
+      "modelNames": [
+        "10口千兆网管型接入交换机，2.5G上行，RG-S2906-10GT2MS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-10gt2ms-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "10口千兆网管型接入交换机，2.5G上行，RG-S2906-10GT2MS-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆网管型接入交换机，2.5G上行，RG-S2906-10GT2MS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28531-2",
+      "series": "RG-S2906-10GT2MS-P-L",
+      "modelNames": [
+        "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-10GT2MS-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-10gt2ms-p-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-10GT2MS-P-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-10GT2MS-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-28531-3",
+      "series": "RG-S2906-16GT4MS-L",
+      "modelNames": [
+        "16口千兆网管型接入交换机，2.5G上行，RG-S2906-16GT4MS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-16gt4ms-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "16口千兆网管型接入交换机，2.5G上行，RG-S2906-16GT4MS-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆网管型接入交换机，2.5G上行，RG-S2906-16GT4MS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28531-4",
+      "series": "RG-S2906-24GT4MS-L",
+      "modelNames": [
+        "24口千兆网管型接入交换机，2.5G上行，RG-S2906-24GT4MS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-24gt4ms-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "24口千兆网管型接入交换机，2.5G上行，RG-S2906-24GT4MS-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆网管型接入交换机，2.5G上行，RG-S2906-24GT4MS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28531-5",
+      "series": "RG-S2906-24GT4MS-P-L",
+      "modelNames": [
+        "24口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-24GT4MS-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-24gt4ms-p-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "24口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-24GT4MS-P-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆网管型接入PoE交换机，2.5G上行，RG-S2906-24GT4MS-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-28531-6",
+      "series": "RG-S2906-48GT4MS-L",
+      "modelNames": [
+        "48口千兆网管型接入交换机，2.5G上行，RG-S2906-48GT4MS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s2906-48gt4ms-l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28531",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28531/?field=PreviewFile",
+      "officialFileName": "RG-S2906-L系列千兆交换机产品彩页 - 浏览文件 - 09151137.pdf",
+      "expectedSha256": "2f4c100a3354e4505bc860ee5fe0e24ec4f8b025dac41454e5b90ffd31d0cb1e",
+      "matchTerms": [
+        "48口千兆网管型接入交换机，2.5G上行，RG-S2906-48GT4MS-L",
+        "28531"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆网管型接入交换机，2.5G上行，RG-S2906-48GT4MS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28532-1",
+      "series": "RG-S5300-48GT4XS-P-L",
+      "modelNames": [
+        "48口千兆三层盒式接入层PoE交换机，万兆上行，RG-S5300-48GT4XS-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s530048gt4xspl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28532",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28532/?field=PreviewFile",
+      "officialFileName": "RG-S5300-L系列千兆交换机产品彩页 - 浏览文件 - 09151136.pdf",
+      "expectedSha256": "94ac998b6d1d01531fe756e9e4955ee788db4d563594ff3675879c814f8ec655",
+      "matchTerms": [
+        "48口千兆三层盒式接入层PoE交换机，万兆上行，RG-S5300-48GT4XS-P-L",
+        "28532"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆三层盒式接入层PoE交换机，万兆上行，RG-S5300-48GT4XS-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-28538-1",
+      "series": "RG-S5000-24GT4SFP",
+      "modelNames": [
+        "24口千兆三层盒式接入层交换机，千兆上行，RG-S5000-24GT4SFP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s500024gt4sfp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28538",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28538/?field=PreviewFile",
+      "officialFileName": "RG-S5000系列千兆交换机产品彩页 - 浏览文件 - 09171608.pdf",
+      "expectedSha256": "6e641215f780e26f573a7e39d8dce77c711e1615cb59c2a13d4891154ccd6dd2",
+      "matchTerms": [
+        "24口千兆三层盒式接入层交换机，千兆上行，RG-S5000-24GT4SFP",
+        "28538"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层盒式接入层交换机，千兆上行，RG-S5000-24GT4SFP"
+    },
+    {
+      "documentId": "ruijie-preview-28538-2",
+      "series": "RG-S5000-24GT4SFP-P",
+      "modelNames": [
+        "24口千兆三层盒式接入层PoE交换机，千兆上行，RG-S5000-24GT4SFP-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s500024gt4sfpp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28538",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28538/?field=PreviewFile",
+      "officialFileName": "RG-S5000系列千兆交换机产品彩页 - 浏览文件 - 09171608.pdf",
+      "expectedSha256": "6e641215f780e26f573a7e39d8dce77c711e1615cb59c2a13d4891154ccd6dd2",
+      "matchTerms": [
+        "24口千兆三层盒式接入层PoE交换机，千兆上行，RG-S5000-24GT4SFP-P",
+        "28538"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层盒式接入层PoE交换机，千兆上行，RG-S5000-24GT4SFP-P"
+    },
+    {
+      "documentId": "ruijie-preview-28538-3",
+      "series": "RG-S5000-24GT4XS",
+      "modelNames": [
+        "24口千兆三层盒式接入层交换机，万兆上行，RG-S5000-24GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s500024gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28538",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28538/?field=PreviewFile",
+      "officialFileName": "RG-S5000系列千兆交换机产品彩页 - 浏览文件 - 09171608.pdf",
+      "expectedSha256": "6e641215f780e26f573a7e39d8dce77c711e1615cb59c2a13d4891154ccd6dd2",
+      "matchTerms": [
+        "24口千兆三层盒式接入层交换机，万兆上行，RG-S5000-24GT4XS",
+        "28538"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆三层盒式接入层交换机，万兆上行，RG-S5000-24GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-28538-4",
+      "series": "RG-S5000-48GT4XS",
+      "modelNames": [
+        "48口千兆三层盒式接入层交换机，万兆上行，RG-S5000-48GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s500048gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28538",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28538/?field=PreviewFile",
+      "officialFileName": "RG-S5000系列千兆交换机产品彩页 - 浏览文件 - 09171608.pdf",
+      "expectedSha256": "6e641215f780e26f573a7e39d8dce77c711e1615cb59c2a13d4891154ccd6dd2",
+      "matchTerms": [
+        "48口千兆三层盒式接入层交换机，万兆上行，RG-S5000-48GT4XS",
+        "28538"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆三层盒式接入层交换机，万兆上行，RG-S5000-48GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-28540-1",
+      "series": "RG-S2910-24GT4SFP-L",
+      "modelNames": [
+        "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-24GT4SFP-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291024gt4sfpl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-24GT4SFP-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-24GT4SFP-L"
+    },
+    {
+      "documentId": "ruijie-preview-28540-2",
+      "series": "RG-S2910-24GT4SFP-P-L",
+      "modelNames": [
+        "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，千兆上行，RG-S2910-24GT4SFP-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291024gt4sfppl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，千兆上行，RG-S2910-24GT4SFP-P-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，千兆上行，RG-S2910-24GT4SFP-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-28540-3",
+      "series": "RG-S2910-24GT4XS-L",
+      "modelNames": [
+        "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-24GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291024gt4xsl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-24GT4XS-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-L系列24口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-24GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28540-4",
+      "series": "RG-S2910-24GT4XS-P-L",
+      "modelNames": [
+        "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，万兆上行，RG-S2910-24GT4XS-P-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291024gt4xspl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，万兆上行，RG-S2910-24GT4XS-P-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-P-L系列24口千兆三层网管型盒式接入层PoE交换机，万兆上行，RG-S2910-24GT4XS-P-L"
+    },
+    {
+      "documentId": "ruijie-preview-28540-5",
+      "series": "RG-S2910-48GT4SFP-L",
+      "modelNames": [
+        "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-48GT4SFP-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291048gt4sfpl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-48GT4SFP-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，千兆上行，RG-S2910-48GT4SFP-L"
+    },
+    {
+      "documentId": "ruijie-preview-28540-6",
+      "series": "RG-S2910-48GT4XS-L",
+      "modelNames": [
+        "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-48GT4XS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s291048gt4xsl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28540",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28540/?field=PreviewFile",
+      "officialFileName": "RG-S2910-L系列精简型千兆交换机产品彩页 - 浏览文件 - 09171607.pdf",
+      "expectedSha256": "bc1baa8680fe1d9d72b879dfde806dd0b4c9316e4a244d14bf14a2ec9ef78b7f",
+      "matchTerms": [
+        "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-48GT4XS-L",
+        "28540"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S2910-L系列48口千兆三层网管型盒式接入层交换机，万兆上行，RG-S2910-48GT4XS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28625-1",
+      "series": "RG-S2000-10GT2MS",
+      "modelNames": [
+        "10口千兆网管型接入交换机，2.5G上行，RG-S2000-10GT2MS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/rg-s2000-10gt2ms/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28625",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28625/?field=PreviewFile",
+      "officialFileName": "RG-S2000系列产品彩页 - 浏览文件 - 10140951.pdf",
+      "expectedSha256": "8510d000ff1fa39c993d030e5bb939c9d0cf3ee6ede2d19b1156fd7736676052",
+      "matchTerms": [
+        "10口千兆网管型接入交换机，2.5G上行，RG-S2000-10GT2MS",
+        "28625"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆网管型接入交换机，2.5G上行，RG-S2000-10GT2MS"
+    },
+    {
+      "documentId": "ruijie-preview-28625-2",
+      "series": "RG-S2000-10GT2MS-P",
+      "modelNames": [
+        "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2000-10GT2MS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/rg-s2000-10gt2ms-p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28625",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28625/?field=PreviewFile",
+      "officialFileName": "RG-S2000系列产品彩页 - 浏览文件 - 10140951.pdf",
+      "expectedSha256": "8510d000ff1fa39c993d030e5bb939c9d0cf3ee6ede2d19b1156fd7736676052",
+      "matchTerms": [
+        "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2000-10GT2MS-P",
+        "28625"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口千兆网管型接入PoE交换机，2.5G上行，RG-S2000-10GT2MS-P"
+    },
+    {
+      "documentId": "ruijie-preview-28737-1",
+      "series": "RG-SMP",
+      "modelNames": [
+        "安全管理平台，终端安全智能准入与身份安全智能准入， RG-SMP+"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-aqgl/smpx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28737",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28737/?field=PreviewFile",
+      "officialFileName": "RG-SMP 安全管理平台产品彩页 - 浏览文件 - 11061620.pdf",
+      "expectedSha256": "b66a4875742244cb6cbe0cb6e45f19a5067ec11b13b0ec8a51d9fea58af1b056",
+      "matchTerms": [
+        "安全管理平台，终端安全智能准入与身份安全智能准入， RG-SMP+",
+        "28737"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "安全管理平台，终端安全智能准入与身份安全智能准入， RG-SMP+"
+    },
+    {
+      "documentId": "ruijie-preview-28793-1",
+      "series": "RG-S5300-24GT4XS-E",
+      "modelNames": [
+        "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530024gt1xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-2",
+      "series": "RG-S5300-24GT2SFP2XS-E",
+      "modelNames": [
+        "24口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530024gt2sfp2xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "24口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-3",
+      "series": "RG-S5300-24GT2SFP2XS-P-E",
+      "modelNames": [
+        "24口千兆电三层网管型PoE接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-P-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530024gt2sfp2xspe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "24口千兆电三层网管型PoE接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-P-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型PoE接入交换机，2个千兆光口，万兆上行，RG-S5300-24GT2SFP2XS-P-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-4",
+      "series": "RG-S5300-24GT4XS-P-E",
+      "modelNames": [
+        "24口千兆电三层网管型PoE接入交换机，万兆上行，RG-S5300-24GT4XS-P-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530024gt4xspe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "24口千兆电三层网管型PoE接入交换机，万兆上行，RG-S5300-24GT4XS-P-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型PoE接入交换机，万兆上行，RG-S5300-24GT4XS-P-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-5",
+      "series": "RG-S5300-48GT2SFP2XS-E",
+      "modelNames": [
+        "48口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-48GT2SFP2XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530048gt2sfp2xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "48口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-48GT2SFP2XS-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层网管型接入交换机，2个千兆光口，万兆上行，RG-S5300-48GT2SFP2XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-6",
+      "series": "RG-S5300-48GT4XS-E",
+      "modelNames": [
+        "48口千兆电三层网管型接入交换机，万兆上行，RG-S5300-48GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530048gt4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "48口千兆电三层网管型接入交换机，万兆上行，RG-S5300-48GT4XS-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层网管型接入交换机，万兆上行，RG-S5300-48GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28793-7",
+      "series": "RG-S5300-24GT4XS-E",
+      "modelNames": [
+        "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s530024gt4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28793",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28793/?field=PreviewFile",
+      "officialFileName": "RG-S5300-E系列交换机产品彩页 - 浏览文件 - 12041417.pdf",
+      "expectedSha256": "0319b2fc011641bbc80be43f87821fefa5158d6da46a0890291ce43d59d0c9e6",
+      "matchTerms": [
+        "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E",
+        "28793"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型接入交换机，万兆上行，RG-S5300-24GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28809-1",
+      "series": "RG-SAM",
+      "modelNames": [
+        "认证计费管理平台，认证计费一站式整体解决方案，RG-SAM+4.X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/yyxt-yygl/samx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28809",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28809/?field=PreviewFile",
+      "officialFileName": "RG-SAM+4.X 认证计费管理平台产品彩页 - 浏览文件 - 12041534.pdf",
+      "expectedSha256": "6cf00987b713f682d36cef3cb4ed38180a4601403d2257a10eb1115c0eac4b95",
+      "matchTerms": [
+        "认证计费管理平台，认证计费一站式整体解决方案，RG-SAM+4.X",
+        "28809"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "认证计费管理平台，认证计费一站式整体解决方案，RG-SAM+4.X"
+    },
+    {
+      "documentId": "ruijie-preview-28878-1",
+      "series": "RG-S5750C-24GT8XS-X",
+      "modelNames": [
+        "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5750C-24GT8XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5750C-24GT8XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28878",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28878/?field=PreviewFile",
+      "officialFileName": "RG-S5750-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 12191151.pdf",
+      "expectedSha256": "716420a6364b6b175b07570e921bac48f605b860ff74f7881ae66ed4b2ea280f",
+      "matchTerms": [
+        "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5750C-24GT8XS-X",
+        "28878"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5750C-24GT8XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-28878-2",
+      "series": "RG-S5750C-24SFP",
+      "modelNames": [
+        "24口千兆光三层企业级核心汇聚网络交换机（加8个COMBO口），8个万兆上行口，RG-S5750C-24SFP/8GT8XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5750C-24SFP-8GT8XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28878",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28878/?field=PreviewFile",
+      "officialFileName": "RG-S5750-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 12191151.pdf",
+      "expectedSha256": "716420a6364b6b175b07570e921bac48f605b860ff74f7881ae66ed4b2ea280f",
+      "matchTerms": [
+        "24口千兆光三层企业级核心汇聚网络交换机（加8个COMBO口），8个万兆上行口，RG-S5750C-24SFP/8GT8XS-X",
+        "28878"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆光三层企业级核心汇聚网络交换机（加8个COMBO口），8个万兆上行口，RG-S5750C-24SFP/8GT8XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-28878-3",
+      "series": "RG-S5750C-48GT4XS-X",
+      "modelNames": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5750C-48GT4XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5750C-48GT4XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28878",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28878/?field=PreviewFile",
+      "officialFileName": "RG-S5750-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 12191151.pdf",
+      "expectedSha256": "716420a6364b6b175b07570e921bac48f605b860ff74f7881ae66ed4b2ea280f",
+      "matchTerms": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5750C-48GT4XS-X",
+        "28878"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5750C-48GT4XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-28927-1",
+      "series": "RG-S5315-24MG6XS-UP-E",
+      "modelNames": [
+        "新一代24口2.5G多速率接入交换机，支持PoE++，10G上行，RG-S5315-24MG6XS-UP-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531524mg6xsupe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28927",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28927/?field=PreviewFile",
+      "officialFileName": "RG-S5315-E系列2.5G多速率交换机产品彩页 - 浏览文件 - 01121124.pdf",
+      "expectedSha256": "d44e96c71fe262a230516afcc4578a15cb187124a8d2f8746d485955ba631239",
+      "matchTerms": [
+        "新一代24口2.5G多速率接入交换机，支持PoE++，10G上行，RG-S5315-24MG6XS-UP-E",
+        "28927"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代24口2.5G多速率接入交换机，支持PoE++，10G上行，RG-S5315-24MG6XS-UP-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-1",
+      "series": "RG-S5310-24GT4XS-E",
+      "modelNames": [
+        "24口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-24GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531024gt4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "24口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-24GT4XS-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-24GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-2",
+      "series": "RG-S5310-24GT4XS-P-E",
+      "modelNames": [
+        "24口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-24GT4XS-P-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531024gt4xspe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "24口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-24GT4XS-P-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-24GT4XS-P-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-3",
+      "series": "RG-S5310-24SFP4XS-E",
+      "modelNames": [
+        "24口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-24SFP4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531024sfp4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "24口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-24SFP4XS-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-24SFP4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-4",
+      "series": "RG-S5310-48GT4XS-E",
+      "modelNames": [
+        "48口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-48GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531048gt4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "48口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-48GT4XS-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层网管型接入交换机，4个万兆上行口，RG-S5310-48GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-5",
+      "series": "RG-S5310-48GT4XS-P-E",
+      "modelNames": [
+        "48口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-48GT4XS-P-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531048gt4xspe/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "48口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-48GT4XS-P-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层网管型接入PoE+供电交换机，4个万兆上行口，RG-S5310-48GT4XS-P-E"
+    },
+    {
+      "documentId": "ruijie-preview-28928-6",
+      "series": "RG-S5310-48SFP4XS-E",
+      "modelNames": [
+        "48口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-48SFP4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s531048sfp4xse/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28928",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28928/?field=PreviewFile",
+      "officialFileName": "RG-S5310-E系列千兆交换机产品彩页 - 浏览文件 - 01121121.pdf",
+      "expectedSha256": "d618acc98f3d8deab69a13f4f41dd5f00866243eb8cc0ae19768fd2a53a09915",
+      "matchTerms": [
+        "48口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-48SFP4XS-E",
+        "28928"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆光三层网管型汇聚交换机，4个万兆上行口，RG-S5310-48SFP4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28931-1",
+      "series": "RG-SF2920-16GT2MG2XS-P",
+      "modelNames": [
+        "16口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf2920/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "16口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS-P",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS-P"
+    },
+    {
+      "documentId": "ruijie-preview-28931-2",
+      "series": "RG-SF2920-16GT2MG2XS",
+      "modelNames": [
+        "16口千兆以太全光网络入室交换机，2个2.5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf292016gt2mg2xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "16口千兆以太全光网络入室交换机，2个2.5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆以太全光网络入室交换机，2个2.5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-16GT2MG2XS"
+    },
+    {
+      "documentId": "ruijie-preview-28931-3",
+      "series": "RG-SF2920-16GT2SFP",
+      "modelNames": [
+        "16口千兆以太全光网络入室交换机，2个千兆上行光口，RG-SF2920-16GT2SFP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf292016gt2sfp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "16口千兆以太全光网络入室交换机，2个千兆上行光口，RG-SF2920-16GT2SFP",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆以太全光网络入室交换机，2个千兆上行光口，RG-SF2920-16GT2SFP"
+    },
+    {
+      "documentId": "ruijie-preview-28931-4",
+      "series": "RG-SF2920-16GT2SFP-P",
+      "modelNames": [
+        "16口千兆以太全光网络入室PoE交换机，2个千兆上行光口，RG-SF2920-16GT2SFP-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf292016gt2sfpp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "16口千兆以太全光网络入室PoE交换机，2个千兆上行光口，RG-SF2920-16GT2SFP-P",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆以太全光网络入室PoE交换机，2个千兆上行光口，RG-SF2920-16GT2SFP-P"
+    },
+    {
+      "documentId": "ruijie-preview-28931-5",
+      "series": "RG-SF2920-8GT2MG2XS-P",
+      "modelNames": [
+        "8口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-8GT2MG2XS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf29208gt2mg2xsp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "8口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-8GT2MG2XS-P",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆以太全光网络入室PoE交换机，2个5G电口（支持向下兼容），2个万兆上行光口，RG-SF2920-8GT2MG2XS-P"
+    },
+    {
+      "documentId": "ruijie-preview-28931-6",
+      "series": "RG-SF2920-8GT2XMG2XS-P",
+      "modelNames": [
+        "8口千兆以太全光网络/以太彩光入室PoE交换机，2个万兆上行光口，RG-SF2920-8GT2XMG2XS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf29208gt2xmg2xsp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "8口千兆以太全光网络/以太彩光入室PoE交换机，2个万兆上行光口，RG-SF2920-8GT2XMG2XS-P",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆以太全光网络/以太彩光入室PoE交换机，2个万兆上行光口，RG-SF2920-8GT2XMG2XS-P"
+    },
+    {
+      "documentId": "ruijie-preview-28931-7",
+      "series": "RG-SF2920-8GT4XS",
+      "modelNames": [
+        "8口千兆以太全光网络/以太彩光入室交换机，4个万兆上行光口，RG-SF2920-8GT4XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf29208gt4xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "8口千兆以太全光网络/以太彩光入室交换机，4个万兆上行光口，RG-SF2920-8GT4XS",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆以太全光网络/以太彩光入室交换机，4个万兆上行光口，RG-SF2920-8GT4XS"
+    },
+    {
+      "documentId": "ruijie-preview-28931-8",
+      "series": "RG-SF2920-16GT2XMG2XS-UP",
+      "modelNames": [
+        "16口千兆以太全光网络/以太彩光入室PoE交换机交换网元，2个万兆上行光口，支持PoE++，单端口最高支持90W供电，RG-SF2920-16GT2XMG2XS-UP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/rgsf292016gt2xmg2xsup/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28931",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28931/?field=PreviewFile",
+      "officialFileName": "RG-SF2920系列极简光交换机产品彩页 - For Preview - 02261409.pdf",
+      "expectedSha256": "7e0fc922748ce7ff87cfd66294cb9c327abe8fea02601bd1a3d3f19aa2b654c5",
+      "matchTerms": [
+        "16口千兆以太全光网络/以太彩光入室PoE交换机交换网元，2个万兆上行光口，支持PoE++，单端口最高支持90W供电，RG-SF2920-16GT2XMG2XS-UP",
+        "28931"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "16口千兆以太全光网络/以太彩光入室PoE交换机交换网元，2个万兆上行光口，支持PoE++，单端口最高支持90W供电，RG-SF2920-16GT2XMG2XS-UP"
+    },
+    {
+      "documentId": "ruijie-preview-29011-1",
+      "series": "RG-S7610-10SFG2CQ",
+      "modelNames": [
+        "10口SFG千兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFG2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s761010sfg2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "10口SFG千兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFG2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口SFG千兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFG2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29011-2",
+      "series": "RG-S7610-10SFX2CQ",
+      "modelNames": [
+        "10口SFX万兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFX2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s761010sfx2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "10口SFX万兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFX2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10口SFX万兆超高密度盒式彩光核心交换机，1U，RG-S7610-10SFX2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29011-3",
+      "series": "RG-S7620-20SFG2CQ",
+      "modelNames": [
+        "20口SFG千兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFG2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s762020sfg2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "20口SFG千兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFG2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "20口SFG千兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFG2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29011-4",
+      "series": "RG-S7620-20SFX2CQ",
+      "modelNames": [
+        "20口SFX万兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFX2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s762020sfx2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "20口SFX万兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFX2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "20口SFX万兆超高密度盒式彩光核心交换机，2U，RG-S7620-20SFX2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29011-5",
+      "series": "RG-S7610-10SFXP2CQ",
+      "modelNames": [
+        "1U 10口SFXP万兆超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFXP2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s761010sfxp2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "1U 10口SFXP万兆超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFXP2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "1U 10口SFXP万兆超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFXP2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29011-6",
+      "series": "RG-S7610-10SFMP2CQ",
+      "modelNames": [
+        "1U 10口SFMP 2.5G超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFMP2CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s761010sfmp2cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29011",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29011/?field=PreviewFile",
+      "officialFileName": "RG-S7600系列交换机产品彩页 - 浏览文件 - 06251438.pdf",
+      "expectedSha256": "496bb23a95a81dff8ccf484e615cef1d36d148da3690cdb05be9c38f54866f78",
+      "matchTerms": [
+        "1U 10口SFMP 2.5G超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFMP2CQ",
+        "29011"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "1U 10口SFMP 2.5G超高密度超聚合盒式彩光核心交换机，RG-S7610-10SFMP2CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29044-1",
+      "series": "RG-SF2920U-4GT1XS-P",
+      "modelNames": [
+        "4口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-4GT1XS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf2920u4gt1xsp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29044",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29044/?field=PreviewFile",
+      "officialFileName": "RG-SF2920U系列极简光交换机产品彩页 - 浏览文件 - 03201606.pdf",
+      "expectedSha256": "ce525867d4c668a0450bd1b5d82a613bdd6f1346f3df607c2cc347950db0b957",
+      "matchTerms": [
+        "4口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-4GT1XS-P",
+        "29044"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "4口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-4GT1XS-P"
+    },
+    {
+      "documentId": "ruijie-preview-29044-2",
+      "series": "RG-SF2920U-8GT1XS",
+      "modelNames": [
+        "8口千兆以太全光网络/以太彩光入室交换机，1个万兆上行光口，RG-SF2920U-8GT1XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf2920u8gt1xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29044",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29044/?field=PreviewFile",
+      "officialFileName": "RG-SF2920U系列极简光交换机产品彩页 - 浏览文件 - 03201606.pdf",
+      "expectedSha256": "ce525867d4c668a0450bd1b5d82a613bdd6f1346f3df607c2cc347950db0b957",
+      "matchTerms": [
+        "8口千兆以太全光网络/以太彩光入室交换机，1个万兆上行光口，RG-SF2920U-8GT1XS",
+        "29044"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆以太全光网络/以太彩光入室交换机，1个万兆上行光口，RG-SF2920U-8GT1XS"
+    },
+    {
+      "documentId": "ruijie-preview-29044-3",
+      "series": "RG-SF2920U-8GT1XS-P",
+      "modelNames": [
+        "8口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-8GT1XS-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jgjh/sf2920u8gt1xsp/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29044",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29044/?field=PreviewFile",
+      "officialFileName": "RG-SF2920U系列极简光交换机产品彩页 - 浏览文件 - 03201606.pdf",
+      "expectedSha256": "ce525867d4c668a0450bd1b5d82a613bdd6f1346f3df607c2cc347950db0b957",
+      "matchTerms": [
+        "8口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-8GT1XS-P",
+        "29044"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "8口千兆以太全光网络/以太彩光入室PoE交换机，1个万兆上行光口，RG-SF2920U-8GT1XS-P"
+    },
+    {
+      "documentId": "ruijie-preview-29148-1",
+      "series": "RG-S5760C-24GT8XS-X",
+      "modelNames": [
+        "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5760C-24GT8XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5760C-24GT8XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5760C-24GT8XS-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电三层企业级核心汇聚网络交换机，8个万兆上行口，RG-S5760C-24GT8XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-29148-2",
+      "series": "RG-S5760C-24SFP",
+      "modelNames": [
+        "24口千兆光三层企业级核心汇聚网络交换机（含8个COMBO口），8个万兆上行口，RG-S5760C-24SFP/8GT8XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5760C-24SFP8GT8XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "24口千兆光三层企业级核心汇聚网络交换机（含8个COMBO口），8个万兆上行口，RG-S5760C-24SFP/8GT8XS-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆光三层企业级核心汇聚网络交换机（含8个COMBO口），8个万兆上行口，RG-S5760C-24SFP/8GT8XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-29148-3",
+      "series": "RG-S5760C-48GT4XS-X",
+      "modelNames": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S5760C-48GT4XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-29148-4",
+      "series": "RG-S5760C-48GT4XS-HP-X",
+      "modelNames": [
+        "48口千兆电三层企业级核心汇聚网络PoE交换机，4个万兆上行口，RG-S5760C-48GT4XS-HP-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s5760c-48gt4xs-hp-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "48口千兆电三层企业级核心汇聚网络PoE交换机，4个万兆上行口，RG-S5760C-48GT4XS-HP-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层企业级核心汇聚网络PoE交换机，4个万兆上行口，RG-S5760C-48GT4XS-HP-X"
+    },
+    {
+      "documentId": "ruijie-preview-29148-5",
+      "series": "RG-S5760C-48SFP4XS-X",
+      "modelNames": [
+        "48口千兆全光三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48SFP4XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s5760c-48sfp4xs-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "48口千兆全光三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48SFP4XS-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆全光三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48SFP4XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-29148-6",
+      "series": "RG-S5760C-48GT4XS-X",
+      "modelNames": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/RG-S5760C-48GT4XS-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29148",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29148/?field=PreviewFile",
+      "officialFileName": "RG-S5760-X系列新一代高性能千兆交换机产品彩页 - 浏览文件 - 04171756.pdf",
+      "expectedSha256": "e86eed488a903d207d8f16b93b0c4193072b95065f1b5e83b8038ced1fa06aa3",
+      "matchTerms": [
+        "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X",
+        "29148"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口千兆电三层企业级核心汇聚网络交换机，4个万兆上行口，RG-S5760C-48GT4XS-X"
+    },
+    {
+      "documentId": "ruijie-preview-29232-1",
+      "series": "RG-SG7524L",
+      "modelNames": [
+        "一机一网主机，RG-SG7524L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/rg-sg7524l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29232",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29232/?field=PreviewFile",
+      "officialFileName": "RG-SG7500L系列多业务融合一体机产品彩页 - 浏览文件 - 05131132.pdf",
+      "expectedSha256": "6fa83b9f97ab6cc5a9e8a8af68d5fe0e5205e1e9f42583a8547372c0c1a0ae67",
+      "matchTerms": [
+        "一机一网主机，RG-SG7524L",
+        "29232"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网主机，RG-SG7524L"
+    },
+    {
+      "documentId": "ruijie-preview-29232-2",
+      "series": "RG-SG7512L",
+      "modelNames": [
+        "一机一网主机，RG-SG7512L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/rg-sg7512l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29232",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29232/?field=PreviewFile",
+      "officialFileName": "RG-SG7500L系列多业务融合一体机产品彩页 - 浏览文件 - 05131132.pdf",
+      "expectedSha256": "6fa83b9f97ab6cc5a9e8a8af68d5fe0e5205e1e9f42583a8547372c0c1a0ae67",
+      "matchTerms": [
+        "一机一网主机，RG-SG7512L",
+        "29232"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网主机，RG-SG7512L"
+    },
+    {
+      "documentId": "ruijie-preview-29320-1",
+      "series": "RG-S7810C-X",
+      "modelNames": [
+        "多业务高性能核心交换机，10个模块插槽，另外支持4个独立交换网板，主控引擎1+1冗余，电源模块N+M冗余，支持热插拔，RG-S7810C-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/RG-S7810C-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C-X系列核心交换机产品彩页 - 浏览文件 - 06150048.pdf",
+      "expectedSha256": "16637f2a4d9414e0390d0e1efb78b5b4b003b97b233a789433e5130855a89874",
+      "matchTerms": [
+        "多业务高性能核心交换机，10个模块插槽，另外支持4个独立交换网板，主控引擎1+1冗余，电源模块N+M冗余，支持热插拔，RG-S7810C-X",
+        "29320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务高性能核心交换机，10个模块插槽，另外支持4个独立交换网板，主控引擎1+1冗余，电源模块N+M冗余，支持热插拔，RG-S7810C-X"
+    },
+    {
+      "documentId": "ruijie-preview-29320-2",
+      "series": "RG-S7805C",
+      "modelNames": [
+        "4U框式园区核心交换机，RG-S7805C(搭配CM-X系列主控)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s7805c-cmx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C-X系列核心交换机产品彩页 - 浏览文件 - 06150048.pdf",
+      "expectedSha256": "16637f2a4d9414e0390d0e1efb78b5b4b003b97b233a789433e5130855a89874",
+      "matchTerms": [
+        "4U框式园区核心交换机，RG-S7805C(搭配CM-X系列主控)",
+        "29320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "4U框式园区核心交换机，RG-S7805C(搭配CM-X系列主控)"
+    },
+    {
+      "documentId": "ruijie-preview-29320-3",
+      "series": "RG-S7808C",
+      "modelNames": [
+        "10U框式园区/数据中心核心交换机，RG-S7808C(搭配CM-X系列主控)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/s7808c-cmx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29320",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29320/?field=PreviewFile",
+      "officialFileName": "RG-S7800C-X系列核心交换机产品彩页 - 浏览文件 - 06150048.pdf",
+      "expectedSha256": "16637f2a4d9414e0390d0e1efb78b5b4b003b97b233a789433e5130855a89874",
+      "matchTerms": [
+        "10U框式园区/数据中心核心交换机，RG-S7808C(搭配CM-X系列主控)",
+        "29320"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "10U框式园区/数据中心核心交换机，RG-S7808C(搭配CM-X系列主控)"
+    },
+    {
+      "documentId": "ruijie-preview-29348-1",
+      "series": "RG-SG7008L",
+      "modelNames": [
+        "多业务融合一体机，RG-SG7008L(V2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/rg-sg7008l-v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29348",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29348/?field=PreviewFile",
+      "officialFileName": "RG-SG7008L(V2)多业务融合一体机产品彩页 - 浏览文件 - 07221111.pdf",
+      "expectedSha256": "9592fce5b046a1b99a213692a1424dedb8797353b88421928163307a256301de",
+      "matchTerms": [
+        "多业务融合一体机，RG-SG7008L(V2)",
+        "29348"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务融合一体机，RG-SG7008L(V2)"
+    },
+    {
+      "documentId": "ruijie-preview-29377-1",
+      "series": "RG-S2910-24GT4XS-UP-H",
+      "modelNames": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-UP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s291024gt4xsh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29377",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29377/?field=PreviewFile",
+      "officialFileName": "RG-S2910-H系列PoE交换机产品彩页 - 浏览文件 - 07081031.pdf",
+      "expectedSha256": "048ea0ec8de68f08b5c726e7cac9d59737a59b1b745ad8e17312573f2cf8134d",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-UP-H",
+        "29377"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电接入交换机，4个万兆上行口，RG-S2910-24GT4XS-UP-H"
+    },
+    {
+      "documentId": "ruijie-preview-29377-2",
+      "series": "RG-S2910-24GT4SFP-UP-H",
+      "modelNames": [
+        "24口千兆电接入交换机，4个千兆上行口，RG-S2910-24GT4SFP-UP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-jrjh/s291024guph/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29377",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29377/?field=PreviewFile",
+      "officialFileName": "RG-S2910-H系列PoE交换机产品彩页 - 浏览文件 - 07081031.pdf",
+      "expectedSha256": "048ea0ec8de68f08b5c726e7cac9d59737a59b1b745ad8e17312573f2cf8134d",
+      "matchTerms": [
+        "24口千兆电接入交换机，4个千兆上行口，RG-S2910-24GT4SFP-UP-H",
+        "29377"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口千兆电接入交换机，4个千兆上行口，RG-S2910-24GT4SFP-UP-H"
+    }
+  ]
+}

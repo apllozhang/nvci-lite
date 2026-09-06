@@ -2,7 +2,7 @@
   "schemaVersion": "1.1",
   "profileId": "ale_omniswitch",
   "vendorId": "ale",
-  "displayName": "ALE OmniSwitch 官方 Data sheet",
+  "displayName": "OmniSwitch 彩页",
   "enabled": true,
   "mode": "public_official_pdf_incremental",
   "officialDomains": [

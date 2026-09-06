@@ -1,0 +1,233 @@
+'use strict';
+
+/* 国际化字典：简中(zh-CN 原文基准)/繁中(zh-TW)/英(en)/法(fr)/西(es)/日(ja)。
+   t(key) 缺键回退 zh-CN；静态节点用 data-i18n / data-i18n-ph（placeholder）标注，
+   applyI18n() 扫描替换后由 app.js 重渲当前步骤。 */
+
+const I18N_LANGS = [
+  { code: 'zh-CN', label: '简体中文' },
+  { code: 'zh-TW', label: '繁體中文' },
+  { code: 'en', label: 'English' },
+  { code: 'fr', label: 'Français' },
+  { code: 'es', label: 'Español' },
+  { code: 'ja', label: '日本語' },
+];
+
+const I18N = {
+  'zh-CN': {
+    'nav.step1': '选品牌与型号', 'nav.step2': '采集彩页', 'nav.step3': '选对比产品', 'nav.step4': '分析报告', 'nav.step5': '彩页校验',
+    'common.save': '保存', 'common.cancel': '取消', 'common.close': '关闭', 'common.search': '搜索', 'common.all': '全部',
+    'common.perPage': '每页', 'common.view': '查看', 'common.expandAll': '展开全部', 'common.collapseAll': '收起全部',
+    'common.collapseTree': '收起侧栏', 'common.expandTree': '展开侧栏', 'common.pending': '待登记', 'common.collected': '已采集',
+    'common.manualCheck': '人工校验', 'common.operation': '操作', 'common.status': '状态', 'common.vendor': '品牌',
+    'common.series': '系列', 'common.model': '型号', 'common.pages': '页数', 'common.time': '检查时间', 'common.note': '备注',
+    'common.description': '产品描述', 'common.items': '条', 'common.trigger': '触发', 'common.mode': '模式', 'common.latest': '最新一轮', 'common.history': '历史轮次',
+    'common.restoreLatest': '× 恢复最新', 'common.showing': '当前显示：', 'common.rows': '条',
+    'tree.title': '品牌与产品线',
+    'step1.searchPh': '在当前产品线中搜索系列或型号…', 'step1.next': '下一步：采集', 'step1.selected': '已选', 'step1.docs': '份',
+    'step1.back': '← 返回向导', 'step1.docCount': '份', 'step1.noMatch': '没有匹配的资料', 'step1.pickFirst': '← 请先在左侧选择品牌和产品线',
+    'step2.title': '采集彩页', 'step2.start': '开始采集', 'step2.stop': '■ 停止', 'step2.continue': '继续采集（自动跳过已成功）',
+    'step2.next': '下一步：选对比 →', 'step2.back': '← 加选资料', 'step2.includePages': ' 同时采集产品页参数（Markdown，尽力而为）',
+    'step3.title': '选择拟对比的产品（≥2，跨品牌可混选）', 'step3.next': '下一步：分析', 'step3.back': '← 返回采集', 'step3.addMore': '＋ 回去补采',
+    'step3.empty': '还没有已采集的彩页，请回第 1、2 步先采集。',
+    'step4.title': 'AI 智能分析', 'step4.useAi': ' 用 AI 抽取参数并生成 Word 分析报告', 'step4.generate': '生成报告（Excel 参数对照 + Word 分析 / AI 材料包）',
+    'step4.history': '历史导出', 'step4.back': '← 重选对比对象', 'step4.restart': '↻ 从头开始',
+    'step5.title': '彩页资料探测校验', 'step5.full': '完整校验（HEAD + 变化下载 + SHA-256 建档比对）',
+    'step5.light': '轻量探测（仅 HEAD 元数据，不下载）', 'step5.allVendors': '全部品牌', 'step5.onlyFailed': '仅上次异常项',
+    'step5.start': '开始校验', 'step5.batchImport': '批量导入 PDF', 'step5.history': '历史校验', 'step5.legendTitle': '状态图例',
+    'chip.valid_unchanged': '有效未变', 'chip.baseline_matched': '基线一致', 'chip.manual_ok': '人工有效',
+    'chip.new_archived': '新建档', 'chip.link_ok': '可访问', 'chip.pending_review': '待核对', 'chip.updated': '已更新',
+    'chip.too_large': '超限', 'chip.vendor_throttled': '限流跳过', 'chip.paused': '暂缓', 'chip.manual_invalid': '人工失效',
+    'chip.manual_settled': '已裁定', 'chip.error': '异常',
+    'top.theme': '切换主题', 'top.lang': '语言', 'top.settings': '设置', 'top.aiOn': 'AI 已配置',
+    'settings.title': '设置', 'settings.storage': '存储', 'settings.pdfDir': 'PDF 存放路径（相对数据目录的子目录，留空为默认）',
+    'settings.pdfDirNote': '修改后重启容器生效；已有缓存建议保持默认或自行迁移。',
+    'settings.ai': 'AI 模型对接', 'settings.protocol': '协议', 'settings.baseUrl': 'Base URL', 'settings.model': '模型 ID',
+    'settings.visionModel': '视觉模型 ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': '已配置（保存可覆盖）',
+    'settings.saved': '设置已保存', 'settings.aiNote': '保存后立即生效（无需重启）；留空字段沿用环境变量。',
+    'lang.zh-CN': '简体中文', 'lang.zh-TW': '繁體中文', 'lang.en': 'English', 'lang.fr': 'Français', 'lang.es': 'Español', 'lang.ja': '日本語',
+  },
+};
+
+I18N['zh-TW'] = {
+  'nav.step1': '選品牌與型號', 'nav.step2': '採集彩頁', 'nav.step3': '選對比產品', 'nav.step4': '分析報告', 'nav.step5': '彩頁校驗',
+  'common.save': '儲存', 'common.cancel': '取消', 'common.close': '關閉', 'common.search': '搜尋', 'common.all': '全部',
+  'common.perPage': '每頁', 'common.view': '查看', 'common.expandAll': '展開全部', 'common.collapseAll': '收合全部',
+  'common.collapseTree': '收起側欄', 'common.expandTree': '展開側欄', 'common.pending': '待登記', 'common.collected': '已採集',
+  'common.manualCheck': '人工校驗', 'common.operation': '操作', 'common.status': '狀態', 'common.vendor': '品牌',
+  'common.series': '系列', 'common.model': '型號', 'common.pages': '頁數', 'common.time': '檢查時間', 'common.note': '備註',
+  'common.description': '產品描述', 'common.items': '條', 'common.trigger': '觸發', 'common.mode': '模式', 'common.latest': '最新一輪', 'common.history': '歷史輪次',
+  'common.restoreLatest': '× 恢復最新', 'common.showing': '當前顯示：', 'common.rows': '條',
+  'tree.title': '品牌與產品線',
+  'step1.searchPh': '在當前產品線中搜尋系列或型號…', 'step1.next': '下一步：採集', 'step1.selected': '已選', 'step1.docs': '份',
+  'step1.back': '← 返回嚮導', 'step1.docCount': '份', 'step1.noMatch': '沒有匹配的資料', 'step1.pickFirst': '← 請先在左側選擇品牌和產品線',
+  'step2.title': '採集彩頁', 'step2.start': '開始採集', 'step2.stop': '■ 停止', 'step2.continue': '繼續採集（自動跳過已成功）',
+  'step2.next': '下一步：選對比 →', 'step2.back': '← 加選資料', 'step2.includePages': ' 同時採集產品頁參數（Markdown，盡力而為）',
+  'step3.title': '選擇擬對比的產品（≥2，跨品牌可混選）', 'step3.next': '下一步：分析', 'step3.back': '← 返回採集', 'step3.addMore': '＋ 回去補採',
+  'step3.empty': '還沒有已採集的彩頁，請回第 1、2 步先採集。',
+  'step4.title': 'AI 智慧分析', 'step4.useAi': ' 用 AI 抽取參數並生成 Word 分析報告', 'step4.generate': '生成報告（Excel 參數對照 + Word 分析 / AI 材料包）',
+  'step4.history': '歷史匯出', 'step4.back': '← 重選對比物件', 'step4.restart': '↻ 從頭開始',
+  'step5.title': '彩頁資料探測校驗', 'step5.full': '完整校驗（HEAD + 變化下載 + SHA-256 建檔比對）',
+  'step5.light': '輕量探測（僅 HEAD 中繼資料，不下載）', 'step5.allVendors': '全部品牌', 'step5.onlyFailed': '僅上次異常項',
+  'step5.start': '開始校驗', 'step5.batchImport': '批次匯入 PDF', 'step5.history': '歷史校驗', 'step5.legendTitle': '狀態圖例',
+  'chip.valid_unchanged': '有效未變', 'chip.baseline_matched': '基線一致', 'chip.manual_ok': '人工有效',
+  'chip.new_archived': '新建檔', 'chip.link_ok': '可存取', 'chip.pending_review': '待核對', 'chip.updated': '已更新',
+  'chip.too_large': '超限', 'chip.vendor_throttled': '限流跳過', 'chip.paused': '暫緩', 'chip.manual_invalid': '人工失效',
+  'chip.manual_settled': '已裁定', 'chip.error': '異常',
+  'top.theme': '切換主題', 'top.lang': '語言', 'top.settings': '設定', 'top.aiOn': 'AI 已配置',
+  'settings.title': '設定', 'settings.storage': '儲存', 'settings.pdfDir': 'PDF 存放路徑（相對資料目錄的子目錄，留空為預設）',
+  'settings.pdfDirNote': '修改後重啟容器生效；已有快取建議保持預設或自行遷移。',
+  'settings.ai': 'AI 模型對接', 'settings.protocol': '協議', 'settings.baseUrl': 'Base URL', 'settings.model': '模型 ID',
+  'settings.visionModel': '視覺模型 ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': '已配置（儲存可覆蓋）',
+  'settings.saved': '設定已儲存', 'settings.aiNote': '儲存後立即生效（無需重啟）；留空欄位沿用環境變數。',
+};
+
+I18N['en'] = {
+  'nav.step1': 'Pick vendor & model', 'nav.step2': 'Collect', 'nav.step3': 'Pick comparison', 'nav.step4': 'Analyze', 'nav.step5': 'Verify',
+  'common.save': 'Save', 'common.cancel': 'Cancel', 'common.close': 'Close', 'common.search': 'Search', 'common.all': 'All',
+  'common.perPage': 'Per page', 'common.view': 'View', 'common.expandAll': 'Expand all', 'common.collapseAll': 'Collapse all',
+  'common.collapseTree': 'Collapse sidebar', 'common.expandTree': 'Expand sidebar', 'common.pending': 'To register', 'common.collected': 'Collected',
+  'common.manualCheck': 'Manual check', 'common.operation': 'Actions', 'common.status': 'Status', 'common.vendor': 'Vendor',
+  'common.series': 'Series', 'common.model': 'Model', 'common.pages': 'Pages', 'common.time': 'Checked at', 'common.note': 'Notes',
+  'common.description': 'Description', 'common.items': 'items', 'common.trigger': 'Trigger', 'common.mode': 'Mode', 'common.latest': 'Latest run', 'common.history': 'History run',
+  'common.restoreLatest': '× Back to latest', 'common.showing': 'Showing: ', 'common.rows': 'rows',
+  'tree.title': 'Vendors & product lines',
+  'step1.searchPh': 'Search series or model in this line…', 'step1.next': 'Next: Collect', 'step1.selected': 'Selected', 'step1.docs': 'docs',
+  'step1.back': '← Back to wizard', 'step1.docCount': 'docs', 'step1.noMatch': 'No matching documents', 'step1.pickFirst': '← Pick a vendor and line on the left',
+  'step2.title': 'Collect datasheets', 'step2.start': 'Start collecting', 'step2.stop': '■ Stop', 'step2.continue': 'Continue (skips succeeded)',
+  'step2.next': 'Next: Pick comparison →', 'step2.back': '← Add more docs', 'step2.includePages': ' Also fetch product pages (Markdown, best effort)',
+  'step3.title': 'Pick products to compare (≥2, cross-vendor OK)', 'step3.next': 'Next: Analyze', 'step3.back': '← Back to collect', 'step3.addMore': '＋ Collect more',
+  'step3.empty': 'No collected datasheets yet — collect in steps 1–2 first.',
+  'step4.title': 'AI analysis', 'step4.useAi': ' Extract params with AI and generate Word report', 'step4.generate': 'Generate (Excel + Word / AI pack)',
+  'step4.history': 'Past exports', 'step4.back': '← Re-pick products', 'step4.restart': '↻ Start over',
+  'step5.title': 'Datasheet probing & verification', 'step5.full': 'Full check (HEAD + download on change + SHA-256)',
+  'step5.light': 'Light probe (HEAD only, no download)', 'step5.allVendors': 'All vendors', 'step5.onlyFailed': 'Last failures only',
+  'step5.start': 'Start check', 'step5.batchImport': 'Bulk import PDFs', 'step5.history': 'Run history', 'step5.legendTitle': 'Status legend',
+  'chip.valid_unchanged': 'Unchanged', 'chip.baseline_matched': 'Baseline OK', 'chip.manual_ok': 'Manual OK',
+  'chip.new_archived': 'Archived', 'chip.link_ok': 'Reachable', 'chip.pending_review': 'Review', 'chip.updated': 'Updated',
+  'chip.too_large': 'Too large', 'chip.vendor_throttled': 'Throttled', 'chip.paused': 'Paused', 'chip.manual_invalid': 'Manual N/A',
+  'chip.manual_settled': 'Settled', 'chip.error': 'Error',
+  'top.theme': 'Toggle theme', 'top.lang': 'Language', 'top.settings': 'Settings', 'top.aiOn': 'AI ready',
+  'settings.title': 'Settings', 'settings.storage': 'Storage', 'settings.pdfDir': 'PDF directory (subfolder of data dir, empty = default)',
+  'settings.pdfDirNote': 'Takes effect after container restart; keep default unless you migrate the cache.',
+  'settings.ai': 'AI integration', 'settings.protocol': 'Protocol', 'settings.baseUrl': 'Base URL', 'settings.model': 'Model ID',
+  'settings.visionModel': 'Vision model ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': 'Configured (save to override)',
+  'settings.saved': 'Settings saved', 'settings.aiNote': 'Applies immediately (no restart); empty fields fall back to env vars.',
+};
+
+I18N['fr'] = {
+  'nav.step1': 'Marque & modèle', 'nav.step2': 'Collecte', 'nav.step3': 'Comparaison', 'nav.step4': 'Analyse', 'nav.step5': 'Vérification',
+  'common.save': 'Enregistrer', 'common.cancel': 'Annuler', 'common.close': 'Fermer', 'common.search': 'Rechercher', 'common.all': 'Tout',
+  'common.perPage': 'Par page', 'common.view': 'Voir', 'common.expandAll': 'Tout déplier', 'common.collapseAll': 'Tout replier',
+  'common.collapseTree': 'Replier le volet', 'common.expandTree': 'Déplier le volet', 'common.pending': 'À enregistrer', 'common.collected': 'Collecté',
+  'common.manualCheck': 'Vérif. manuelle', 'common.operation': 'Actions', 'common.status': 'Statut', 'common.vendor': 'Marque',
+  'common.series': 'Série', 'common.model': 'Modèle', 'common.pages': 'Pages', 'common.time': 'Vérifié le', 'common.note': 'Notes',
+  'common.description': 'Description', 'common.items': 'éléments', 'common.trigger': 'Déclencheur', 'common.mode': 'Mode', 'common.latest': 'Dernier passage', 'common.history': 'Passage historique',
+  'common.restoreLatest': '× Retour au dernier', 'common.showing': 'Affiché : ', 'common.rows': 'lignes',
+  'tree.title': 'Marques & gammes',
+  'step1.searchPh': 'Rechercher une série ou un modèle…', 'step1.next': 'Suivant : Collecte', 'step1.selected': 'Sélection', 'step1.docs': 'docs',
+  'step1.back': '← Retour à l’assistant', 'step1.docCount': 'docs', 'step1.noMatch': 'Aucun document trouvé', 'step1.pickFirst': '← Choisissez une marque à gauche',
+  'step2.title': 'Collecte des fiches', 'step2.start': 'Démarrer', 'step2.stop': '■ Arrêter', 'step2.continue': 'Continuer (ignore les réussis)',
+  'step2.next': 'Suivant : Comparaison →', 'step2.back': '← Ajouter des docs', 'step2.includePages': ' Récupérer aussi les pages produit (Markdown)',
+  'step3.title': 'Choisir les produits à comparer (≥2)', 'step3.next': 'Suivant : Analyse', 'step3.back': '← Retour collecte', 'step3.addMore': '＋ Collecter plus',
+  'step3.empty': 'Aucune fiche collectée — passez par les étapes 1–2.',
+  'step4.title': 'Analyse IA', 'step4.useAi': ' Extraction IA + rapport Word', 'step4.generate': 'Générer (Excel + Word / pack IA)',
+  'step4.history': 'Exports précédents', 'step4.back': '← Rechoisir', 'step4.restart': '↻ Recommencer',
+  'step5.title': 'Sondage & vérification des fiches', 'step5.full': 'Contrôle complet (HEAD + SHA-256)',
+  'step5.light': 'Sonde légère (HEAD seul)', 'step5.allVendors': 'Toutes marques', 'step5.onlyFailed': 'Échecs précédents',
+  'step5.start': 'Démarrer', 'step5.batchImport': 'Import PDF en lot', 'step5.history': 'Historique', 'step5.legendTitle': 'Légende des statuts',
+  'chip.valid_unchanged': 'Inchangé', 'chip.baseline_matched': 'Conforme', 'chip.manual_ok': 'OK manuel',
+  'chip.new_archived': 'Archivé', 'chip.link_ok': 'Accessible', 'chip.pending_review': 'À vérifier', 'chip.updated': 'Mis à jour',
+  'chip.too_large': 'Trop volumineux', 'chip.vendor_throttled': 'Limité', 'chip.paused': 'Suspendu', 'chip.manual_invalid': 'N/A manuel',
+  'chip.manual_settled': 'Traité', 'chip.error': 'Erreur',
+  'top.theme': 'Thème', 'top.lang': 'Langue', 'top.settings': 'Paramètres', 'top.aiOn': 'IA prête',
+  'settings.title': 'Paramètres', 'settings.storage': 'Stockage', 'settings.pdfDir': 'Dossier PDF (sous-dossier de data, vide = défaut)',
+  'settings.pdfDirNote': 'Effectif après redémarrage du conteneur.',
+  'settings.ai': 'Intégration IA', 'settings.protocol': 'Protocole', 'settings.baseUrl': 'Base URL', 'settings.model': 'ID modèle',
+  'settings.visionModel': 'ID modèle vision', 'settings.apiKey': 'Clé API', 'settings.apiKeyMasked': 'Configurée (enregistrer pour remplacer)',
+  'settings.saved': 'Paramètres enregistrés', 'settings.aiNote': 'Immédiat (sans redémarrage) ; les champs vides gardent les variables d’env.',
+};
+
+I18N['es'] = {
+  'nav.step1': 'Marca y modelo', 'nav.step2': 'Recolección', 'nav.step3': 'Comparación', 'nav.step4': 'Análisis', 'nav.step5': 'Verificación',
+  'common.save': 'Guardar', 'common.cancel': 'Cancelar', 'common.close': 'Cerrar', 'common.search': 'Buscar', 'common.all': 'Todo',
+  'common.perPage': 'Por página', 'common.view': 'Ver', 'common.expandAll': 'Desplegar todo', 'common.collapseAll': 'Plegar todo',
+  'common.collapseTree': 'Plegar panel', 'common.expandTree': 'Desplegar panel', 'common.pending': 'Por registrar', 'common.collected': 'Recolectado',
+  'common.manualCheck': 'Verif. manual', 'common.operation': 'Acciones', 'common.status': 'Estado', 'common.vendor': 'Marca',
+  'common.series': 'Serie', 'common.model': 'Modelo', 'common.pages': 'Págs.', 'common.time': 'Verificado', 'common.note': 'Notas',
+  'common.description': 'Descripción', 'common.items': 'elementos', 'common.trigger': 'Origen', 'common.mode': 'Modo', 'common.latest': 'Última pasada', 'common.history': 'Pasada histórica',
+  'common.restoreLatest': '× Volver a la última', 'common.showing': 'Mostrando: ', 'common.rows': 'filas',
+  'tree.title': 'Marcas y líneas',
+  'step1.searchPh': 'Buscar serie o modelo…', 'step1.next': 'Siguiente: Recolección', 'step1.selected': 'Seleccionados', 'step1.docs': 'docs',
+  'step1.back': '← Volver al asistente', 'step1.docCount': 'docs', 'step1.noMatch': 'Sin documentos', 'step1.pickFirst': '← Elija marca y línea a la izquierda',
+  'step2.title': 'Recolectar fichas', 'step2.start': 'Iniciar', 'step2.stop': '■ Detener', 'step2.continue': 'Continuar (omite logrados)',
+  'step2.next': 'Siguiente: Comparación →', 'step2.back': '← Añadir docs', 'step2.includePages': ' Obtener también páginas de producto (Markdown)',
+  'step3.title': 'Elegir productos a comparar (≥2)', 'step3.next': 'Siguiente: Análisis', 'step3.back': '← Volver a recolección', 'step3.addMore': '＋ Recolectar más',
+  'step3.empty': 'Aún no hay fichas recolectadas — use los pasos 1–2.',
+  'step4.title': 'Análisis IA', 'step4.useAi': ' Extracción IA + informe Word', 'step4.generate': 'Generar (Excel + Word / paquete IA)',
+  'step4.history': 'Exportaciones', 'step4.back': '← Elegir de nuevo', 'step4.restart': '↻ Reiniciar',
+  'step5.title': 'Sondeo y verificación de fichas', 'step5.full': 'Control completo (HEAD + SHA-256)',
+  'step5.light': 'Sonda ligera (solo HEAD)', 'step5.allVendors': 'Todas las marcas', 'step5.onlyFailed': 'Solo fallos previos',
+  'step5.start': 'Iniciar', 'step5.batchImport': 'Importar PDF en lote', 'step5.history': 'Historial', 'step5.legendTitle': 'Leyenda de estados',
+  'chip.valid_unchanged': 'Sin cambios', 'chip.baseline_matched': 'Línea base OK', 'chip.manual_ok': 'OK manual',
+  'chip.new_archived': 'Archivado', 'chip.link_ok': 'Accesible', 'chip.pending_review': 'A revisar', 'chip.updated': 'Actualizado',
+  'chip.too_large': 'Demasiado grande', 'chip.vendor_throttled': 'Limitado', 'chip.paused': 'En pausa', 'chip.manual_invalid': 'N/A manual',
+  'chip.manual_settled': 'Resuelto', 'chip.error': 'Error',
+  'top.theme': 'Tema', 'top.lang': 'Idioma', 'top.settings': 'Ajustes', 'top.aiOn': 'IA lista',
+  'settings.title': 'Ajustes', 'settings.storage': 'Almacenamiento', 'settings.pdfDir': 'Carpeta PDF (subcarpeta de data, vacío = por defecto)',
+  'settings.pdfDirNote': 'Surte efecto tras reiniciar el contenedor.',
+  'settings.ai': 'Integración IA', 'settings.protocol': 'Protocolo', 'settings.baseUrl': 'Base URL', 'settings.model': 'ID de modelo',
+  'settings.visionModel': 'ID modelo visión', 'settings.apiKey': 'Clave API', 'settings.apiKeyMasked': 'Configurada (guardar para reemplazar)',
+  'settings.saved': 'Ajustes guardados', 'settings.aiNote': 'Inmediato (sin reiniciar); los campos vacíos usan variables de entorno.',
+};
+
+I18N['ja'] = {
+  'nav.step1': 'ブランド・型番選択', 'nav.step2': '収集', 'nav.step3': '比較選択', 'nav.step4': '分析', 'nav.step5': '検証',
+  'common.save': '保存', 'common.cancel': 'キャンセル', 'common.close': '閉じる', 'common.search': '検索', 'common.all': 'すべて',
+  'common.perPage': '表示件数', 'common.view': '表示', 'common.expandAll': 'すべて展開', 'common.collapseAll': 'すべて折りたたむ',
+  'common.collapseTree': 'サイドバー格納', 'common.expandTree': 'サイドバー展開', 'common.pending': '未登録', 'common.collected': '収集済み',
+  'common.manualCheck': '手動確認', 'common.operation': '操作', 'common.status': '状態', 'common.vendor': 'ブランド',
+  'common.series': 'シリーズ', 'common.model': '型番', 'common.pages': 'ページ', 'common.time': '確認時刻', 'common.note': 'メモ',
+  'common.description': '製品説明', 'common.items': '件', 'common.trigger': '実行元', 'common.mode': 'モード', 'common.latest': '最新実行', 'common.history': '過去の実行',
+  'common.restoreLatest': '× 最新に戻る', 'common.showing': '表示中：', 'common.rows': '件',
+  'tree.title': 'ブランドと製品ライン',
+  'step1.searchPh': 'シリーズ・型番を検索…', 'step1.next': '次へ：収集', 'step1.selected': '選択', 'step1.docs': '件',
+  'step1.back': '← ウィザードへ戻る', 'step1.docCount': '件', 'step1.noMatch': '該当なし', 'step1.pickFirst': '← 左でブランドとラインを選択',
+  'step2.title': 'データシート収集', 'step2.start': '収集開始', 'step2.stop': '■ 停止', 'step2.continue': '再開（成功分はスキップ）',
+  'step2.next': '次へ：比較選択 →', 'step2.back': '← 資料を追加', 'step2.includePages': ' 製品ページも取得（Markdown、ベストエフォート）',
+  'step3.title': '比較する製品を選択（≥2、ブランド横断可）', 'step3.next': '次へ：分析', 'step3.back': '← 収集に戻る', 'step3.addMore': '＋ 追加収集',
+  'step3.empty': '収集済みデータシートがありません。手順 1–2 で先に収集してください。',
+  'step4.title': 'AI 分析', 'step4.useAi': ' AI でパラメータ抽出し Word レポート生成', 'step4.generate': '生成（Excel + Word / AI パック）',
+  'step4.history': '過去のエクスポート', 'step4.back': '← 選び直す', 'step4.restart': '↻ 最初から',
+  'step5.title': 'データシートのProbe・検証', 'step5.full': '完全チェック（HEAD + SHA-256）',
+  'step5.light': '軽量Probe（HEAD のみ）', 'step5.allVendors': '全ブランド', 'step5.onlyFailed': '前回の失敗のみ',
+  'step5.start': '開始', 'step5.batchImport': 'PDF 一括取込', 'step5.history': '実行履歴', 'step5.legendTitle': '状態凡例',
+  'chip.valid_unchanged': '変更なし', 'chip.baseline_matched': '基準一致', 'chip.manual_ok': '手動OK',
+  'chip.new_archived': '新規登録', 'chip.link_ok': '到達可', 'chip.pending_review': '要確認', 'chip.updated': '更新あり',
+  'chip.too_large': 'サイズ超過', 'chip.vendor_throttled': '制限中', 'chip.paused': '保留', 'chip.manual_invalid': '手動N/A',
+  'chip.manual_settled': '確定済み', 'chip.error': 'エラー',
+  'top.theme': 'テーマ切替', 'top.lang': '言語', 'top.settings': '設定', 'top.aiOn': 'AI 準備完了',
+  'settings.title': '設定', 'settings.storage': 'ストレージ', 'settings.pdfDir': 'PDF 保存先（data 配下のサブフォルダ、空欄で既定）',
+  'settings.pdfDirNote': 'コンテナ再起動後に有効。',
+  'settings.ai': 'AI 連携', 'settings.protocol': 'プロトコル', 'settings.baseUrl': 'Base URL', 'settings.model': 'モデル ID',
+  'settings.visionModel': 'ビジョンモデル ID', 'settings.apiKey': 'API キー', 'settings.apiKeyMasked': '設定済み（保存で上書き）',
+  'settings.saved': '設定を保存しました', 'settings.aiNote': '即時反映（再起動不要）。空欄は環境変数を引き継ぎます。',
+};
+
+const I18N_STATE = { lang: localStorage.getItem('nvci-lang') || 'zh-CN' };
+
+function t(key) {
+  return (I18N[I18N_STATE.lang] && I18N[I18N_STATE.lang][key])
+    || I18N['zh-CN'][key] || key;
+}
+
+function setLang(code) {
+  I18N_STATE.lang = code;
+  try { localStorage.setItem('nvci-lang', code); } catch { /* 忽略 */ }
+}
+
+function applyI18n(root = document) {
+  root.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
+  root.querySelectorAll('[data-i18n-ph]').forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
+  root.querySelectorAll('[data-i18n-title]').forEach((el) => { el.title = t(el.dataset.i18nTitle); });
+}

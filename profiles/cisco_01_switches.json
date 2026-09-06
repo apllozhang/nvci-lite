@@ -1,10 +1,10 @@
 {
   "schemaVersion": "2.2",
   "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
-  "profileId": "cisco_switches_exact_mapping_01",
+  "profileId": "cisco_01_switches",
   "vendorId": "cisco",
   "vendorName": "Cisco",
-  "displayName": "Cisco 交换机｜精确 Data sheet-PDF 映射 1",
+  "displayName": "交换机",
   "approvalStatus": "draft",
   "enabled": false,
   "mode": "public_official_pdf_incremental",
@@ -891,6 +891,329 @@
       "matchTerms": [
         "Nexus 3000",
         "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_01",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-731524.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-731524.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-731524.pdf",
+      "officialFileName": "datasheet-c78-731524.pdf",
+      "expectedSha256": "d499cbd8b2a71976155230cc1fb2933bd60db8cd39779c51fbae4e4ecd42cf2a",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_02",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/data_sheet_c78-729483.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/data_sheet_c78-729483.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/data_sheet_c78-729483.pdf",
+      "officialFileName": "data_sheet_c78-729483.pdf",
+      "expectedSha256": "b98a2712b693a9244a2f4c04888f45e79324f36b1782204ccea83443c9d39d2f",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_03",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3232c-switch/datasheet-c78-734883.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3232c-switch/datasheet-c78-734883.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3232c-switch/datasheet-c78-734883.pdf",
+      "officialFileName": "datasheet-c78-734883.pdf",
+      "expectedSha256": "5df42c9538b89377c2fb0a0722e66323ddabdf66bd1117bf2894b51506d96757",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_04",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740134.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740134.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740134.pdf",
+      "officialFileName": "datasheet-c78-740134.pdf",
+      "expectedSha256": "786e7877c664749e955bef84161f8a1be0258c038754e853ba1f575e0c841225",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_05",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3264q-switch/datasheet-c78-734905.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3264q-switch/datasheet-c78-734905.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3264q-switch/datasheet-c78-734905.pdf",
+      "officialFileName": "datasheet-c78-734905.pdf",
+      "expectedSha256": "4e6979146bd8e5dbf04cb2a761f30b46df481b7fabd29a2659f16240c7c03172",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_06",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741562.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741562.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741562.pdf",
+      "officialFileName": "datasheet-c78-741562.pdf",
+      "expectedSha256": "43345e9b726c111628fccfd5e8c9949a1f4d9a7ceb87922ee0346642b151e9b6",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_07",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740836.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740836.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740836.pdf",
+      "officialFileName": "datasheet-c78-740836.pdf",
+      "expectedSha256": "a87545bd9698f47f5a46ddf54d9f879fa62f15b9f02ecafb9b58e173add30e5e",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_08",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741557.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741557.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-741557.pdf",
+      "officialFileName": "datasheet-c78-741557.pdf",
+      "expectedSha256": "b261b88b5465ea0d9d7fee76222530847a3bc24519b3d17bf4cf891e2da394f1",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_09",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3548-switch/data_sheet_c78-707001.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3548-switch/data_sheet_c78-707001.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3548-switch/data_sheet_c78-707001.pdf",
+      "officialFileName": "data_sheet_c78-707001.pdf",
+      "expectedSha256": "0c0b833fabf16451300defacdb86fa39aee9d1901e8034e20f20247c5e72a414",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_10",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740345.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740345.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-740345.pdf",
+      "officialFileName": "datasheet-c78-740345.pdf",
+      "expectedSha256": "e1f479b213f3028c022782eb4c08ff71254838b47c92f5543a7b1dc2b02b8850",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_11",
+      "series": "Nexus 3000",
+      "modelNames": [
+        "Nexus 3000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-739189.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-739189.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/datasheet-c78-739189.pdf",
+      "officialFileName": "datasheet-c78-739189.pdf",
+      "expectedSha256": "1fa3e680f5936a2b9f1ab67cea19905dd18e2bbbb5fdba1e8d8357d6ded1e53a",
+      "matchTerms": [
+        "Nexus 3000",
+        "Nexus3000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_12",
+      "series": "Nexus 3550",
+      "modelNames": [
+        "Nexus 3550"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743875.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743875.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743875.pdf",
+      "officialFileName": "datasheet-c78-743875.pdf",
+      "expectedSha256": "ec0e3c9b592551bc599d7d998ca720f73935e3ba3a53b6b84e72b223469c4814",
+      "matchTerms": [
+        "Nexus 3550",
+        "Nexus3550"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_13",
+      "series": "Nexus 3550",
+      "modelNames": [
+        "Nexus 3550"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743963.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743963.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743963.pdf",
+      "officialFileName": "datasheet-c78-743963.pdf",
+      "expectedSha256": "7a997b762b11dee66b5df2e5d20d90093d4e2c69ec6f807eb42876c0881f1c43",
+      "matchTerms": [
+        "Nexus 3550",
+        "Nexus3550"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_14",
+      "series": "Nexus 3550",
+      "modelNames": [
+        "Nexus 3550"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/nexus-3550-f-program-app-platform-ds.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/nexus-3550-f-program-app-platform-ds.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/nexus-3550-f-program-app-platform-ds.pdf",
+      "officialFileName": "nexus-3550-f-program-app-platform-ds.pdf",
+      "expectedSha256": "109d6e3c80c25db9537258fb84f235e768c9ae5fb8bee7373e17722a5ac73c87",
+      "matchTerms": [
+        "Nexus 3550",
+        "Nexus3550"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_15",
+      "series": "Nexus 3550",
+      "modelNames": [
+        "Nexus 3550"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743831.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743831.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-743831.pdf",
+      "officialFileName": "datasheet-c78-743831.pdf",
+      "expectedSha256": "b46f4ac64a1ff62c7ab4a7189c6fefbafb4455eec3fdc1cd8bc967723f15bae0",
+      "matchTerms": [
+        "Nexus 3550",
+        "Nexus3550"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_16",
+      "series": "Nexus 3550",
+      "modelNames": [
+        "Nexus 3550"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-744762.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-744762.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3550-series/datasheet-c78-744762.pdf",
+      "officialFileName": "datasheet-c78-744762.pdf",
+      "expectedSha256": "8ad670f65246ac55694fa4784be97b371aa5221b510bee88982b2ba8247a2c3d",
+      "matchTerms": [
+        "Nexus 3550",
+        "Nexus3550"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_17",
+      "series": "Catalyst 1200",
+      "modelNames": [
+        "Catalyst 1200"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1200-series-switches/nb-06-cat1200-ser-data-sheet-cte-en.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1200-series-switches/nb-06-cat1200-ser-data-sheet-cte-en.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1200-series-switches/nb-06-cat1200-ser-data-sheet-cte-en.pdf",
+      "officialFileName": "nb-06-cat1200-ser-data-sheet-cte-en.pdf",
+      "expectedSha256": "2a9a09961ac73a5789c8e883d5ea1eeed04b8d2c0d14d83b14e276d90e668492",
+      "matchTerms": [
+        "Catalyst 1200",
+        "Catalyst1200"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_18",
+      "series": "Catalyst 1300",
+      "modelNames": [
+        "Catalyst 1300"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1300-series-switches/nb-06-cat1300-ser-data-sheet-cte-en.pdf",
+      "officialFileName": "nb-06-cat1300-ser-data-sheet-cte-en.pdf",
+      "expectedSha256": "d59b3ea79a12f9e7d0c2a06c7ee4fa49a74e820cd41c1da0d08c2d81c66c9dd1",
+      "matchTerms": [
+        "Catalyst 1300",
+        "Catalyst1300"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_2_19",
+      "series": "Cisco Business 110",
+      "modelNames": [
+        "Cisco Business 110"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/business-110-series-unmanaged-switches/datasheet-c78-744158.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/business-110-series-unmanaged-switches/datasheet-c78-744158.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/business-110-series-unmanaged-switches/datasheet-c78-744158.pdf",
+      "officialFileName": "datasheet-c78-744158.pdf",
+      "expectedSha256": "7756a56979e436dbb6d989685b1991f4b9617ab70e8535781be8969c375f8a4f",
+      "matchTerms": [
+        "Cisco Business 110",
+        "Business110"
       ],
       "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
     }

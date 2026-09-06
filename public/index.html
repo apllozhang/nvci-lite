@@ -15,13 +15,21 @@
       <span class="brand-name">NVCI<span class="lite">Lite</span></span>
     </div>
     <div class="steps" id="steps">
-      <div class="step active" data-step="1"><span class="no">1</span>选品牌与型号</div>
-      <div class="step" data-step="2"><span class="no">2</span>采集彩页</div>
-      <div class="step" data-step="3"><span class="no">3</span>选对比产品</div>
-      <div class="step" data-step="4"><span class="no">4</span>分析报告</div>
-      <div class="step" data-step="5"><span class="no">5</span>彩页校验</div>
+      <div class="step active" data-step="1"><span class="no">1</span><span data-i18n="nav.step1">选品牌与型号</span></div>
+      <div class="step" data-step="2"><span class="no">2</span><span data-i18n="nav.step2">采集彩页</span></div>
+      <div class="step" data-step="3"><span class="no">3</span><span data-i18n="nav.step3">选对比产品</span></div>
+      <div class="step" data-step="4"><span class="no">4</span><span data-i18n="nav.step4">分析报告</span></div>
+      <div class="step" data-step="5"><span class="no">5</span><span data-i18n="nav.step5">彩页校验</span></div>
     </div>
-    <div class="ai-badge" id="aiBadge">…</div>
+    <div class="top-tools">
+      <div class="ai-badge" id="aiBadge">…</div>
+      <button class="top-icon" id="themeBtn" data-i18n-title="top.theme" title="切换主题">🌙</button>
+      <div class="lang-wrap">
+        <button class="top-icon" id="langBtn" data-i18n-title="top.lang" title="语言">🌐</button>
+        <div class="lang-menu hidden" id="langMenu"></div>
+      </div>
+      <button class="top-icon" id="settingsBtn" data-i18n-title="top.settings" title="设置">⚙️</button>
+    </div>
     <div class="alert-bell" id="alertBell" title="彩页告警通知（厂商更新 / 来源异常）">
       <span class="bell-icon">🔔</span>
       <span class="alert-count hidden" id="alertCount">0</span>
@@ -38,10 +46,21 @@
     <!-- 步骤 1：品牌树 + 勾选表 + 已选托盘 -->
     <section id="step1" class="panel">
       <div class="wizard-grid">
+        <aside id="catalogTreeWrap" class="catalog-tree-wrap">
+        <div class="tree-head">
+          <span data-i18n="tree.title">品牌与产品线</span>
+          <span class="tree-head-btns">
+            <button class="tree-mini" id="expandAllBtn" data-i18n-title="common.expandAll" title="展开全部">⊞</button>
+            <button class="tree-mini" id="collapseAllBtn" data-i18n-title="common.collapseAll" title="收起全部">⊟</button>
+            <button class="tree-mini" id="treeCollapseBtn" data-i18n-title="common.collapseTree" title="收起侧栏">«</button>
+          </span>
+        </div>
         <aside id="catalogTree" class="catalog-tree" aria-label="品牌与产品线"></aside>
+      </aside>
+      <button id="treeExpandBtn" class="tree-expand-btn hidden" data-i18n-title="common.expandTree" title="展开侧栏">»</button>
         <div class="catalog-main">
           <div class="picker-bar">
-            <input type="search" id="docSearch" placeholder="在当前产品线中搜索系列或型号…">
+            <input type="search" id="docSearch" data-i18n-ph="step1.searchPh" placeholder="在当前产品线中搜索系列或型号…">
             <span class="muted" id="lineInfo"></span>
           </div>
           <div class="doc-table" id="docTable"></div>
@@ -57,7 +76,7 @@
     <!-- 步骤 2：采集（逐条 + 进度条） -->
     <section id="step2" class="panel hidden">
       <div class="panel-head">
-        <h2>采集彩页</h2>
+        <h2 data-i18n="step2.title">采集彩页</h2>
         <label class="check"><input type="checkbox" id="includePages"> 同时采集产品页参数（Markdown，尽力而为）</label>
       </div>
       <div class="panel-body">
@@ -71,8 +90,8 @@
       <div class="panel-footer">
         <button class="btn ghost" id="backToStep1">← 加选资料</button>
         <div class="footer-actions">
-          <button class="btn danger hidden" id="stopCollect">■ 停止</button>
-          <button class="btn primary" id="startCollect">开始采集</button>
+          <button class="btn danger hidden" id="stopCollect">■ <span data-i18n="step2.stop">停止</span></button>
+          <button class="btn primary" id="startCollect" data-i18n="step2.start">开始采集</button>
           <button class="btn primary hidden" id="toStep3">下一步：选对比 →</button>
         </div>
       </div>
@@ -80,7 +99,7 @@
 
     <!-- 步骤 3：选对比对象 -->
     <section id="step3" class="panel hidden">
-      <div class="panel-head"><h2>选择拟对比的产品（≥2，跨品牌可混选）</h2></div>
+      <div class="panel-head"><h2 data-i18n="step3.title">选择拟对比的产品（≥2，跨品牌可混选）</h2></div>
       <div class="panel-body">
         <div id="libraryList"></div>
       </div>
@@ -95,7 +114,7 @@
 
     <!-- 步骤 4：分析 -->
     <section id="step4" class="panel hidden">
-      <div class="panel-head"><h2>AI 智能分析</h2><div id="aiMode" class="muted"></div></div>
+      <div class="panel-head"><h2 data-i18n="step4.title">AI 智能分析</h2><div id="aiMode" class="muted"></div></div>
       <div class="panel-body">
         <div class="analyze-options" id="analyzeOptions">
           <label class="check"><input type="checkbox" id="useAi" checked> 用 AI 抽取参数并生成 Word 分析报告</label>
@@ -103,7 +122,7 @@
         </div>
         <button class="btn primary" id="startAnalyze">生成报告（Excel 参数对照 + Word 分析 / AI 材料包）</button>
         <div id="analyzeResult"></div>
-        <h3>历史导出</h3>
+        <h3 data-i18n="step4.history">历史导出</h3>
         <div id="exportList" class="export-list"></div>
       </div>
       <div class="panel-footer">
@@ -114,7 +133,7 @@
     <!-- 步骤 5：彩页资料探测校验（手动 + 定时，哈希建档比对） -->
     <section id="step5" class="panel hidden">
       <div class="panel-head">
-        <h2>彩页资料探测校验</h2>
+        <h2 data-i18n="step5.title">彩页资料探测校验</h2>
         <div class="muted" id="probeScheduleInfo"></div>
       </div>
       <div class="panel-body">
@@ -126,9 +145,9 @@
           <select id="probeScope" title="校验范围">
             <option value="all">全部品牌</option>
           </select>
-          <button class="btn primary" id="startProbe">开始校验</button>
-          <button class="btn" id="batchBtn">批量导入 PDF</button>
-          <button class="btn danger hidden" id="stopProbe">■ 停止</button>
+          <button class="btn primary" id="startProbe" data-i18n="step5.start">开始校验</button>
+          <button class="btn" id="batchBtn" data-i18n="step5.batchImport">批量导入 PDF</button>
+          <button class="btn danger hidden" id="stopProbe">■ <span data-i18n="step2.stop">停止</span></button>
         </div>
         <p class="muted small">遵循采集方法论：HTTPS 白名单断言、顺序请求、HEAD 优先；完整校验首次建档会下载全部彩页进入内容缓存（之后仅增量下载有变化的）。SHA-256 与基线或上次建档不一致时标记「厂商已更新」，告警不阻断。</p>
         <div id="probeProgressWrap" class="progress-wrap hidden">
@@ -152,7 +171,7 @@
           <div class="legend-pop hidden" id="legendPop"></div>
         </div>
         <div id="probeResults"></div>
-        <h3>历史校验</h3>
+        <h3 data-i18n="step5.history">历史校验</h3>
         <div id="probeRuns" class="probe-runs"></div>
       </div>
       <div class="panel-footer">
@@ -177,6 +196,33 @@
     <div class="dlg" id="manualDlg"></div>
   </div>
 
+  <!-- 设置对话框 -->
+  <div id="settingsMask" class="dlg-mask hidden">
+    <div class="dlg" id="settingsDlg">
+      <div class="dlg-head"><span data-i18n="settings.title">设置</span><button class="dlg-x" id="sClose">×</button></div>
+      <div class="dlg-body">
+        <div class="dlg-sec">
+          <div class="dlg-sec-title" data-i18n="settings.storage">存储</div>
+          <label class="dlg-label muted small" data-i18n="settings.pdfDir">PDF 存放路径（相对数据目录的子目录，留空为默认）</label>
+          <div class="dlg-row"><input type="text" id="sPdfDir" placeholder="cache/pdfs"><button class="btn primary" id="sSaveStorage" data-i18n="common.save">保存</button></div>
+          <div class="muted small" data-i18n="settings.pdfDirNote">修改后重启容器生效；已有缓存建议保持默认或自行迁移。</div>
+        </div>
+        <div class="dlg-sec">
+          <div class="dlg-sec-title" data-i18n="settings.ai">AI 模型对接</div>
+          <div class="dlg-row">
+            <select id="sProtocol"><option value="">env</option><option value="anthropic">anthropic</option><option value="openai">openai</option></select>
+            <input type="text" id="sBaseUrl" placeholder="Base URL">
+            <input type="text" id="sModel" placeholder="模型 ID">
+            <input type="text" id="sVisionModel" placeholder="视觉模型 ID">
+            <input type="password" id="sApiKey" placeholder="API Key" autocomplete="new-password">
+          </div>
+          <div class="dlg-row"><button class="btn primary" id="sSaveAi" data-i18n="common.save">保存</button><span class="muted small" id="sAiState"></span></div>
+          <div class="muted small" data-i18n="settings.aiNote">保存后立即生效（无需重启）；留空字段沿用环境变量。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 批量导入对话框 -->
   <div id="batchMask" class="dlg-mask hidden">
     <div class="dlg dlg-wide" id="batchDlg"></div>
@@ -185,6 +231,7 @@
   <!-- 全局提示 -->
   <div id="toastWrap" class="toast-wrap"></div>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

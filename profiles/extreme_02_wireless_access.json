@@ -1,10 +1,10 @@
 {
   "schemaVersion": "2.2",
   "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
-  "profileId": "extreme_wireless_access_datasheets",
+  "profileId": "extreme_02_wireless_access",
   "vendorId": "extreme",
   "vendorName": "Extreme Networks",
-  "displayName": "Extreme 02 Wireless Access｜已验证官方 Data Sheet",
+  "displayName": "02 无线接入",
   "approvalStatus": "draft",
   "enabled": false,
   "mode": "public_official_pdf_incremental",

@@ -1,0 +1,876 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "h3c_02_datacenter",
+  "vendorId": "h3c",
+  "vendorName": "新华三 H3C",
+  "displayName": "02 数据中心交换机",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.h3c.com",
+    "h3c.com",
+    "download.h3c.com"
+  ],
+  "trustedRedirectDomains": [
+    "dlaz.h3c.com"
+  ],
+  "sourcePolicy": "只复用准确产品页发现的 download.h3c.com 下载 ID；保留官方中文文件名、产品页关联、SHA-256 与跨类别归档规则。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "02 数据中心交换机",
+    "libraryRootName": "新华三产品彩页"
+  },
+  "subseries": {
+    "id": "h3c_1",
+    "name": "H3C 交换机已验证资料 1"
+  },
+  "productLinePath": [
+    "新华三产品彩页",
+    "01 交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "h3c_switch_2_06",
+      "series": "S7500E",
+      "modelNames": [
+        "S7000E"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S7500E/S7000E/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5125964",
+      "officialFileName": "H3C S7000E交换机产品彩页.pdf",
+      "expectedSha256": "b3662dc02b2972d071a4b58f7543101c010aa0ea77b143f09aeaa275806ab997",
+      "matchTerms": [
+        "S7500E",
+        "S7000E"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_08",
+      "series": "S10500",
+      "modelNames": [
+        "S9900E"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Core_Switch/S10500/S9900E/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5370436",
+      "officialFileName": "H3C S9900E系列以太网核心交换机.pdf",
+      "expectedSha256": "4287e665458b4d897a7eee916b07b3ef1af235adec88351bf5c172264cf74b1f",
+      "matchTerms": [
+        "S10500",
+        "S9900E"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_33",
+      "series": "S6800",
+      "modelNames": [
+        "S6800"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6800/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=7305735",
+      "officialFileName": "H3C S6800系列交换机产品彩页.pdf",
+      "expectedSha256": "77f1b1443e1533c5865303ad511b7277bdea5e66ea752c4e8df7a9ca4d186c37",
+      "matchTerms": [
+        "S6800",
+        "S6800"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_34",
+      "series": "S6800",
+      "modelNames": [
+        "S6890"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6890/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=7305744",
+      "officialFileName": "H3C S6890系列交换机产品彩页.pdf",
+      "expectedSha256": "23bfcaf592ad89a4ca3c4a49e887a3dabf645d8bb9003d3f6e77752bc2025ff8",
+      "matchTerms": [
+        "S6800",
+        "S6890"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_35",
+      "series": "S6800",
+      "modelNames": [
+        "S6860"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6860/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=7305749",
+      "officialFileName": "H3C S6860系列交换机产品彩页.pdf",
+      "expectedSha256": "9443aaa73e56b1e19c1916d99c9d332943a9af3c2875da8e79e320dce26fad17",
+      "matchTerms": [
+        "S6800",
+        "S6860"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_37",
+      "series": "S6500",
+      "modelNames": [
+        "S6520-EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6520-EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=7458536",
+      "officialFileName": "S6520-EI系列园区网万兆交换机彩页.pdf",
+      "expectedSha256": "bf1e4a4b59f77437d0b9664c7116086828ffacf8cf02edbb7230f2eebbe9fa17",
+      "matchTerms": [
+        "S6500",
+        "S6520-EI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_43",
+      "series": "S6500",
+      "modelNames": [
+        "S6525XE-HI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6525XE-HI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=8214926",
+      "officialFileName": "S6525XE-HI系列产品彩页.pdf",
+      "expectedSha256": "49aeffcf8e27dee98631afffc1b397b450d1484a254111132e5f935a1315238d",
+      "matchTerms": [
+        "S6500",
+        "S6525XE-HI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_01",
+      "series": "S10500",
+      "modelNames": [
+        "S9900X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Core_Switch/S10500/S9900X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9105762",
+      "officialFileName": "S9900X产品彩页.pdf",
+      "expectedSha256": "c2fde0bbd0152b4966df3c624b0b783c36800db11a9c169d7833fc5ff418b974",
+      "matchTerms": [
+        "S10500",
+        "S9900X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_13",
+      "series": "S6850",
+      "modelNames": [
+        "S6850"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Liquid_Cooled/S6850/S6850/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9870779",
+      "officialFileName": "H3C S6850系列液冷数据中心交换机彩页.pdf",
+      "expectedSha256": "d6862dfb28c2d39a3a930e61b241f75b8fe70186883a3031cf3f304ea4d7f4a5",
+      "matchTerms": [
+        "S6850",
+        "S6850"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_28",
+      "series": "S10500",
+      "modelNames": [
+        "S10500"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Core_Switch/S10500/S10500/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=10118961",
+      "officialFileName": "H3C S10500系列以太网核心交换机.pdf",
+      "expectedSha256": "f29f3f821dcbcf03ee1590939e0976385b7b0a753fb6cd5e8fad378ac8cc01b8",
+      "matchTerms": [
+        "S10500",
+        "S10500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_42",
+      "series": "S6500",
+      "modelNames": [
+        "S6520X-EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6500/S6520X-EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11609289",
+      "officialFileName": "S6520X-EI系列万兆交换机彩页.pdf",
+      "expectedSha256": "01330aadbba13954957e396cb382c29545804a5f324c82339305af4c6709a98a",
+      "matchTerms": [
+        "S6500",
+        "S6520X-EI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_43",
+      "series": "S6500",
+      "modelNames": [
+        "S6520X-HI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6500/S6520X-HI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11609350",
+      "officialFileName": "S6520X-HI系列万兆交换机彩页.pdf",
+      "expectedSha256": "61d3412f61ecfdea3a3b865da0c22f6339eda198cbd3b925f58f62972321f4b9",
+      "matchTerms": [
+        "S6500",
+        "S6520X-HI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_44",
+      "series": "S6500",
+      "modelNames": [
+        "S6520X-SI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6520X-SI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11609387",
+      "officialFileName": "S6520X-SI系列园区网万兆交换机彩页.pdf",
+      "expectedSha256": "99fbf7cea92fa9341a2ab657127825089a6e5aec2504c18ddf53e8dabc439b5d",
+      "matchTerms": [
+        "S6500",
+        "S6520X-SI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_49",
+      "series": "S6500",
+      "modelNames": [
+        "S6526XE_EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6526XE_EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11820205",
+      "officialFileName": "S6526XE-EI系列园区交换机彩页.pdf",
+      "expectedSha256": "d6148eb36590f724e3a050e4297385c6dd52bcd94f5c74165eff243903b4be3b",
+      "matchTerms": [
+        "S6500",
+        "S6526XE_EI",
+        "S6526XE"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_01",
+      "series": "S9800",
+      "modelNames": [
+        "S9820"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9820/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11888463",
+      "officialFileName": "H3C S9820-睿系列数据中心交换机彩页.pdf",
+      "expectedSha256": "0b25537927da9c082cba93f60642a7c16fcca3ede22e1506c8645530f9361fed",
+      "matchTerms": [
+        "S9800",
+        "S9820"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_15",
+      "series": "S7500E",
+      "modelNames": [
+        "S7500X-X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S7500E/S7500X-X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12381537",
+      "officialFileName": "S7500X-X系列以太网核心交换机官网彩页.pdf",
+      "expectedSha256": "eb81ad2422046d8fd7fad045836462f1f7466a4af3a9cad3a3d0c54fef8450e3",
+      "matchTerms": [
+        "S7500E",
+        "S7500X-X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_24",
+      "series": "S7500X",
+      "modelNames": [
+        "S7500X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S7500X/S7500X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12492706",
+      "officialFileName": "H3CS7500X系列高端多业务路由交换机产品彩页.pdf",
+      "expectedSha256": "9c24fb241bb1b5370db49ce20509fcbb3b693370335bc2209abf30a2fce90cff",
+      "matchTerms": [
+        "S7500X",
+        "S7500X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_28",
+      "series": "S9800",
+      "modelNames": [
+        "S9857"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9857/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12740494",
+      "officialFileName": "H3C S9857系列数据中心交换机彩页.pdf",
+      "expectedSha256": "2cb34f0a5f81d59295c54cc86cfe6391e517e46b1f40daa6433f87bcd62ae66d",
+      "matchTerms": [
+        "S9800",
+        "S9857"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_29",
+      "series": "S12500",
+      "modelNames": [
+        "S12500G-EF"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S12500/S12500G-EF/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12852562",
+      "officialFileName": "S12500G-EF系列AI智能核心交换机官网彩页.pdf",
+      "expectedSha256": "2090704eb53e07df29d87dc0d97c7b5ba4c5e1ef1a2d29534e350db25bb868ca",
+      "matchTerms": [
+        "S12500",
+        "S12500G-EF"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_40",
+      "series": "S12500",
+      "modelNames": [
+        "S12500AI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S12500/S12500AI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=13520079",
+      "officialFileName": "H3C S12500AI系列数据中心交换机产品彩页.pdf",
+      "expectedSha256": "bb7f24e5105dd53db5942db1088130118e0595633535fcbe6b7eae56735503a3",
+      "matchTerms": [
+        "S12500",
+        "S12500AI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_49",
+      "series": "S6500",
+      "modelNames": [
+        "S6526XE_HI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6526XE_HI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=13902129",
+      "officialFileName": "S6526XE-HI系列园区交换机彩页.pdf",
+      "expectedSha256": "95056971db06b7fbf55a3aa6d933941427fb8f53299933b0054a894453166e03",
+      "matchTerms": [
+        "S6500",
+        "S6526XE_HI",
+        "S6526XE"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_08",
+      "series": "S6500",
+      "modelNames": [
+        "S6520-SI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6520-SI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14435304",
+      "officialFileName": "H3C S6520-SI系列新一代万兆交换机.pdf",
+      "expectedSha256": "ea2cbf9121306e3f2286dbda8e4d5bc88fd84b64476ec01785ce8b4c6d1e04ad",
+      "matchTerms": [
+        "S6500",
+        "S6520-SI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_18",
+      "series": "S6500",
+      "modelNames": [
+        "S6530X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6530X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14717451",
+      "officialFileName": "S6530X系列园区交换机彩页.pdf",
+      "expectedSha256": "c3b8e16026ec30102483ffc536dfbf56631cff05446999258ab85637e76c002f",
+      "matchTerms": [
+        "S6500",
+        "S6530X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_31",
+      "series": "S9800",
+      "modelNames": [
+        "S9855"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9855/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15115594",
+      "officialFileName": "H3C S9855系列数据中心交换机彩页.pdf",
+      "expectedSha256": "8c1409c3242029337546fe8f6afe74cff62bc61cf281414f7e6a5004c225e328",
+      "matchTerms": [
+        "S9800",
+        "S9855"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_38",
+      "series": "S6800",
+      "modelNames": [
+        "S6855"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6855/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15332060",
+      "officialFileName": "H3C S6855-G系列数据中心交换机彩页.pdf",
+      "expectedSha256": "4628b3636221776bd16705f30ff2a575f673e9ff03dc4ea2bf43becb1204f2a5",
+      "matchTerms": [
+        "S6800",
+        "S6855"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_39",
+      "series": "S6500",
+      "modelNames": [
+        "S6520X-EI-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6520X-EI-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15370115",
+      "officialFileName": "H3C S6520X-EI-G系列交换机彩页.pdf",
+      "expectedSha256": "9b35e1053a82f9015bd99b3a354f1c586d2a02a27e543aea39015e2972c7db2d",
+      "matchTerms": [
+        "S6500",
+        "S6520X-EI-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_41",
+      "series": "S6800",
+      "modelNames": [
+        "S6813_S6812"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6813_S6812/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15381284",
+      "officialFileName": "H3C S6813_S6812系列数据中心以太网交换机产品彩页.pdf",
+      "expectedSha256": "39696f6d64bbe10429b2a10482f755e5c296a633c8bbd19195f74223929b469f",
+      "matchTerms": [
+        "S6800",
+        "S6813_S6812",
+        "S6813",
+        "S6812"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_44",
+      "series": "S12500",
+      "modelNames": [
+        "S12500G-AF"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S12500/S12500G-AF/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15446484",
+      "officialFileName": "H3C S12500G-AF智能融合核心交换机.pdf",
+      "expectedSha256": "cd321aa9da16c282f8febc21a7fe04fb39460d8e4da41f9acb1d3358bc62efc8",
+      "matchTerms": [
+        "S12500",
+        "S12500G-AF"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_45",
+      "series": "S6500",
+      "modelNames": [
+        "S6510"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6510/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15477950",
+      "officialFileName": "S6510系列以太网交换机彩页.pdf",
+      "expectedSha256": "81d055545bb2b7b367e4f67ec31486874f348f062e6175588c2cfd1d6bd12ff8",
+      "matchTerms": [
+        "S6500",
+        "S6510"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_02",
+      "series": "S7500E",
+      "modelNames": [
+        "S7300X_G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S7500E/S7300X_G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15879952",
+      "officialFileName": "H3C S7300X-G系列园区核心交换机.pdf",
+      "expectedSha256": "53511ad602e2084db8dc39fd54b3c85300a4cf7ff7f2b34207c425cd1be0f07e",
+      "matchTerms": [
+        "S7500E",
+        "S7300X_G",
+        "S7300X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_03",
+      "series": "S7500E",
+      "modelNames": [
+        "S7000X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S7500E/S7000X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15879953",
+      "officialFileName": "H3C LS-7000X系列园区核心交换机.pdf",
+      "expectedSha256": "de2cfda2f0faee80b270743b520ad94b94e96f5055350cd2bcea9eea2e4103d1",
+      "matchTerms": [
+        "S7500E",
+        "S7000X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_05",
+      "series": "S6800",
+      "modelNames": [
+        "S6880"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6880/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16009926",
+      "officialFileName": "H3C S6880系列数据中心交换机彩页.pdf",
+      "expectedSha256": "9a27ba114a5c423eb0a378661480ea768581c9ca712291fcf3ac1350cfd1a3c7",
+      "matchTerms": [
+        "S6800",
+        "S6880"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_07",
+      "series": "S12500",
+      "modelNames": [
+        "S12500"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S12500/S12500/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16044964",
+      "officialFileName": "H3C S12500X-AF云计算数据中心核心交换机产品彩页.pdf",
+      "expectedSha256": "d380265e72a9e046b0eae5021e9cf8b7b3755dbaa00f022e821d9257ac5f6a75",
+      "matchTerms": [
+        "S12500",
+        "S12500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_08",
+      "series": "S7500X",
+      "modelNames": [
+        "S7500X-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S7500X/S7500X-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16070813",
+      "officialFileName": "H3C S7500X-G系列交换机彩页.pdf",
+      "expectedSha256": "79be513ba655c042ca32e110a8b0688fd7f70c8143901a68c2427a9bd3659623",
+      "matchTerms": [
+        "S7500X",
+        "S7500X-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_14",
+      "series": "S10500",
+      "modelNames": [
+        "S10500X"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S10500/S10500X/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16120666",
+      "officialFileName": "H3C S10500X系列以太网核心交换机官网彩页.pdf",
+      "expectedSha256": "7fe0885fe0e44d743ee221dfa68483f86623408ae0e4d4d0d36eddde202780d8",
+      "matchTerms": [
+        "S10500",
+        "S10500X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_15",
+      "series": "S9800",
+      "modelNames": [
+        "S9828"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9828/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16134006",
+      "officialFileName": "H3C S9828系列数据中心交换机彩页.pdf",
+      "expectedSha256": "5151b283e5b25e865e8a4a9108945acde059218845ab8e5f11bd6de74df1365f",
+      "matchTerms": [
+        "S9800",
+        "S9828"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_16",
+      "series": "S9800",
+      "modelNames": [
+        "S9825"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9825/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16190073",
+      "officialFileName": "H3C S9825系列数据中心交换机彩页.pdf",
+      "expectedSha256": "f60a863da924e8ee7f168c868f4a1ef279302a4071e30b4a25887432282726af",
+      "matchTerms": [
+        "S9800",
+        "S9825"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_17",
+      "series": "S6500",
+      "modelNames": [
+        "S6550XE-HI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6550XE-HI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16204750",
+      "officialFileName": "S6550XE-HI系列产品彩页.pdf",
+      "expectedSha256": "a386a513d3b861d363fe64e04b0ca19dbc737d4625acc7cdff2304092a88bd6d",
+      "matchTerms": [
+        "S6500",
+        "S6550XE-HI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_19",
+      "series": "S6800",
+      "modelNames": [
+        "S6825"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6825/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16210860",
+      "officialFileName": "H3C S6825系列数据中心交换机彩页.pdf",
+      "expectedSha256": "d0f3785eb0575e4e9e636cab87370c82c05e6082638bffb2e53d7144c0af12d5",
+      "matchTerms": [
+        "S6800",
+        "S6825"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_41",
+      "series": "S6500",
+      "modelNames": [
+        "S6550X_HI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S6500/S6550X_HI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16457337",
+      "officialFileName": "S6550X-HI系列交换机彩页.pdf",
+      "expectedSha256": "631ce1186091c6e1f69a42083a562dbf939ee2c06bfcab6a05e67abd2256848a",
+      "matchTerms": [
+        "S6500",
+        "S6550X_HI",
+        "S6550X"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_44",
+      "series": "S12500",
+      "modelNames": [
+        "S12500R"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Core_Switch/S12500/S12500R/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16530877",
+      "officialFileName": "H3C S12500R交换路由器产品彩页.pdf",
+      "expectedSha256": "76ae464f4d71b8530a69e6437c74dd8a3cd38187671fd606ebfc5009f268f574",
+      "matchTerms": [
+        "S12500",
+        "S12500R"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_45",
+      "series": "S7500E",
+      "modelNames": [
+        "S7500E"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Aggregation_Switch/S7500E/S7500E/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16561200",
+      "officialFileName": "H3C S7500E系列高端多业务路由交换机产品彩页.pdf",
+      "expectedSha256": "e0cbf83a9d238972ed241836e1eab477599a784f91601f66db0e4244da00581b",
+      "matchTerms": [
+        "S7500E",
+        "S7500E"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_46",
+      "series": "S6800",
+      "modelNames": [
+        "S6805"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6805/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16561217",
+      "officialFileName": "H3C S6805系列数据中心交换机彩页.pdf",
+      "expectedSha256": "c7fc6df34dc902d2e973ca47b46719a0d7681085ed698b55bb166e9a74ab0a41",
+      "matchTerms": [
+        "S6800",
+        "S6805"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_49",
+      "series": "S9800",
+      "modelNames": [
+        "S9850"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9850/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16590112",
+      "officialFileName": "H3C S9850系列数据中心交换机彩页.pdf",
+      "expectedSha256": "e6b9990682360d132a4d15458cbc5deb1984e3eb989ad566573633ba55834485",
+      "matchTerms": [
+        "S9800",
+        "S9850"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_50",
+      "series": "S9800",
+      "modelNames": [
+        "S9800_G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9800_G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16590114",
+      "officialFileName": "H3C S9800-G系列数据中心交换机彩页.pdf",
+      "expectedSha256": "45130d4e8ee8c3e9b0e8961f33ca9849f601f30bba1eba363acbdac3c3176e62",
+      "matchTerms": [
+        "S9800",
+        "S9800_G",
+        "S9800"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_7_01",
+      "series": "S6800",
+      "modelNames": [
+        "S6850"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Access_Switch/S6800/S6850/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16591804",
+      "officialFileName": "H3C S6850系列数据中心交换机彩页.pdf",
+      "expectedSha256": "cf6b15e7993426922a777bf959b185f86e2d439f47128d0ff9335453c05f5913",
+      "matchTerms": [
+        "S6800",
+        "S6850"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_7_02",
+      "series": "S9800",
+      "modelNames": [
+        "S9827"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Data_Center_Switch/Aggregation_Switch/S9800/S9827/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16595821",
+      "officialFileName": "H3C S9827系列数据中心交换机彩页.pdf",
+      "expectedSha256": "17b41a49404ed33998ac9cc0e01f9d01e5d75eb9a1df8411887172b996e3f4c7",
+      "matchTerms": [
+        "S9800",
+        "S9827"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_7_03",
+      "series": "S10500",
+      "modelNames": [
+        "S10500X-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Core_Switch/S10500/S10500X-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16614958",
+      "officialFileName": "S10500X-G系列以太网核心交换机官网彩页.pdf",
+      "expectedSha256": "200f1cb74a127c094e11f7e88e306b11a11ca90a0d0674dff7ec6c6c830c6a56",
+      "matchTerms": [
+        "S10500",
+        "S10500X-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    }
+  ]
+}

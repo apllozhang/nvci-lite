@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_04_routers",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "04 路由器",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "04 路由器",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-3659-1",
+      "series": "RG-RSR7704",
+      "modelNames": [
+        "RG-RSR7704"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/7704/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3659",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3659/?field=PreviewFile",
+      "officialFileName": "RG-RSR77系列万兆核心分布式路由器产品彩页 - 浏览文件 - 01041126.pdf",
+      "expectedSha256": "9f63e57471696bc007e711f25d7840bdee33db2596c8147c55c9d28e2ae40f7c",
+      "matchTerms": [
+        "RG-RSR7704",
+        "3659"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-RSR7704"
+    },
+    {
+      "documentId": "ruijie-preview-3659-2",
+      "series": "RG-RSR7708",
+      "modelNames": [
+        "RG-RSR7708"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/7708/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3659",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3659/?field=PreviewFile",
+      "officialFileName": "RG-RSR77系列万兆核心分布式路由器产品彩页 - 浏览文件 - 01041126.pdf",
+      "expectedSha256": "9f63e57471696bc007e711f25d7840bdee33db2596c8147c55c9d28e2ae40f7c",
+      "matchTerms": [
+        "RG-RSR7708",
+        "3659"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-RSR7708"
+    },
+    {
+      "documentId": "ruijie-preview-3659-3",
+      "series": "RG-RSR7716",
+      "modelNames": [
+        "RG-RSR7716"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/7716/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3659",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3659/?field=PreviewFile",
+      "officialFileName": "RG-RSR77系列万兆核心分布式路由器产品彩页 - 浏览文件 - 01041126.pdf",
+      "expectedSha256": "9f63e57471696bc007e711f25d7840bdee33db2596c8147c55c9d28e2ae40f7c",
+      "matchTerms": [
+        "RG-RSR7716",
+        "3659"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-RSR7716"
+    },
+    {
+      "documentId": "ruijie-preview-3660-1",
+      "series": "RG-RSR-16M",
+      "modelNames": [
+        "模块化多业务框式核心骨干路由器，2个主控板插槽，8个线卡插槽，32个业务板插槽，RG-RSR-16M"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/rsr16m/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=3660",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-3660/?field=PreviewFile",
+      "officialFileName": "RG-RSR-M系列核心骨干路由器产品彩页 - 浏览文件 - 01041126.pdf",
+      "expectedSha256": "ff6983fd60ebed13c80b70f572c554736326be9ee1a23a04394fd73d5238c79a",
+      "matchTerms": [
+        "模块化多业务框式核心骨干路由器，2个主控板插槽，8个线卡插槽，32个业务板插槽，RG-RSR-16M",
+        "3660"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "模块化多业务框式核心骨干路由器，2个主控板插槽，8个线卡插槽，32个业务板插槽，RG-RSR-16M"
+    },
+    {
+      "documentId": "ruijie-preview-15712-1",
+      "series": "RG-RSR10-X-07L",
+      "modelNames": [
+        "7口千兆多业务企业级接入路由器，3个WAN口，4个LAN口，RG-RSR10-X-07L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-zxwllyq/rsr10xl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=15712",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-15712/?field=PreviewFile",
+      "officialFileName": "RG-RSR-X-L系列新一代中小网络路由器产品彩页 - 浏览文件 - 01121027.pdf",
+      "expectedSha256": "301da8327b20c0f0e72760e2b7f1045d30cf543b345c55ced564809f49105a1d",
+      "matchTerms": [
+        "7口千兆多业务企业级接入路由器，3个WAN口，4个LAN口，RG-RSR10-X-07L",
+        "15712"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "7口千兆多业务企业级接入路由器，3个WAN口，4个LAN口，RG-RSR10-X-07L"
+    },
+    {
+      "documentId": "ruijie-preview-15712-2",
+      "series": "RG-RSR20-X-28L",
+      "modelNames": [
+        "28口多业务中小网络盒式接入路由器，4个千兆WAN口，24个千兆LAN口，RG-RSR20-X-28L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-zxwllyq/rsr20xl/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=15712",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-15712/?field=PreviewFile",
+      "officialFileName": "RG-RSR-X-L系列新一代中小网络路由器产品彩页 - 浏览文件 - 01121027.pdf",
+      "expectedSha256": "301da8327b20c0f0e72760e2b7f1045d30cf543b345c55ced564809f49105a1d",
+      "matchTerms": [
+        "28口多业务中小网络盒式接入路由器，4个千兆WAN口，24个千兆LAN口，RG-RSR20-X-28L",
+        "15712"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "28口多业务中小网络盒式接入路由器，4个千兆WAN口，24个千兆LAN口，RG-RSR20-X-28L"
+    },
+    {
+      "documentId": "ruijie-preview-21349-1",
+      "series": "RG-RSR30-XA-24",
+      "modelNames": [
+        "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hjly/rsr30xa24/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21349",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21349/?field=PreviewFile",
+      "officialFileName": "RG-RSR30-XA系列路由器产品彩页 - 浏览文件 - 04071554.pdf",
+      "expectedSha256": "28d95c7fd70228517dd7e9d3a5ec0ea6cce4444ab3515b57d9f329fbc149155c",
+      "matchTerms": [
+        "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24",
+        "21349"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口多业务盒式汇聚路由器，16个千兆电口，8个万兆光口，RG-RSR30-XA-24"
+    },
+    {
+      "documentId": "ruijie-preview-25964-1",
+      "series": "RG-RSR50-XA-08",
+      "modelNames": [
+        "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hjly/rsr50xa08/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=25964",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-25964/?field=PreviewFile",
+      "officialFileName": "RG-RSR50-XA系列路由器产品彩页 - 浏览文件 - 05141142.pdf",
+      "expectedSha256": "3b8a8e65c964c3a7a838f818808ae639ee8f3ec1cbb40e6ad1ef2588ae5cbdeb",
+      "matchTerms": [
+        "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08",
+        "25964"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务分布式框式汇聚路由器，2个主控板插槽，8个业务板插槽，RG-RSR50-XA-08"
+    },
+    {
+      "documentId": "ruijie-preview-28562-1",
+      "series": "RG-RSR20-X1-28",
+      "modelNames": [
+        "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-X1-28"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-jrly/rsr20x128/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28562",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28562/?field=PreviewFile",
+      "officialFileName": "RG-RSR20-X1系列多业务接入路由器产品彩页 - 浏览文件 - 09191536.pdf",
+      "expectedSha256": "11eeb4de36f075abf32ab572e05d092c6338bee7ff35e24e2090587524bbf779",
+      "matchTerms": [
+        "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-X1-28",
+        "28562"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-X1-28"
+    },
+    {
+      "documentId": "ruijie-preview-28562-2",
+      "series": "RG-RSR20-X1-52",
+      "modelNames": [
+        "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-X1-52"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-jrly/rsr20x152/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28562",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28562/?field=PreviewFile",
+      "officialFileName": "RG-RSR20-X1系列多业务接入路由器产品彩页 - 浏览文件 - 09191536.pdf",
+      "expectedSha256": "11eeb4de36f075abf32ab572e05d092c6338bee7ff35e24e2090587524bbf779",
+      "matchTerms": [
+        "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-X1-52",
+        "28562"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-X1-52"
+    },
+    {
+      "documentId": "ruijie-preview-28592-1",
+      "series": "RG-RSR20-XA-24",
+      "modelNames": [
+        "24口多业务盒式接入路由器，12个WAN口，12个LAN口，RG-RSR20-XA-24"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-jrly/rsr20xa24/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28592",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28592/?field=PreviewFile",
+      "officialFileName": "RG-RSR20-XA系列多业务接入路由器产品彩页 - 浏览文件 - 10151754.pdf",
+      "expectedSha256": "945b4169a1d85b7520431c65fc1fb44cfe34057195f9478eddf98585d5e47c20",
+      "matchTerms": [
+        "24口多业务盒式接入路由器，12个WAN口，12个LAN口，RG-RSR20-XA-24",
+        "28592"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口多业务盒式接入路由器，12个WAN口，12个LAN口，RG-RSR20-XA-24"
+    },
+    {
+      "documentId": "ruijie-preview-28592-2",
+      "series": "RG-RSR20-XA-36",
+      "modelNames": [
+        "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-XA-36"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-jrly/rsr20xa36/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28592",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28592/?field=PreviewFile",
+      "officialFileName": "RG-RSR20-XA系列多业务接入路由器产品彩页 - 浏览文件 - 10151754.pdf",
+      "expectedSha256": "945b4169a1d85b7520431c65fc1fb44cfe34057195f9478eddf98585d5e47c20",
+      "matchTerms": [
+        "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-XA-36",
+        "28592"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "36口多业务盒式接入路由器，12个WAN口，24个LAN口，RG-RSR20-XA-36"
+    },
+    {
+      "documentId": "ruijie-preview-28592-3",
+      "series": "RG-RSR20-XA-54",
+      "modelNames": [
+        "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-XA-54"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-jrly/rsr20xa54/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28592",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28592/?field=PreviewFile",
+      "officialFileName": "RG-RSR20-XA系列多业务接入路由器产品彩页 - 浏览文件 - 10151754.pdf",
+      "expectedSha256": "945b4169a1d85b7520431c65fc1fb44cfe34057195f9478eddf98585d5e47c20",
+      "matchTerms": [
+        "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-XA-54",
+        "28592"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "54口多业务盒式接入路由器，6个WAN口，48个LAN口，RG-RSR20-XA-54"
+    },
+    {
+      "documentId": "ruijie-preview-29358-1",
+      "series": "RG-RSR77-XA-03",
+      "modelNames": [
+        "多业务核心路由器，5U框式， RG-RSR77-XA-03"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/77xa03/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29358",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29358/?field=PreviewFile",
+      "officialFileName": "RG-RSR77-XA系列核心全业务路由器产品彩页(版本号：1.2)(版本号：1.2)(版本号：1.2)(版本号：1.2) - 浏览文件 - 07271420.pdf",
+      "expectedSha256": "fab73e489dd95e0cdc603e69f2c32fe265aae3544b5f8dfcf1638e793e31d5a5",
+      "matchTerms": [
+        "多业务核心路由器，5U框式， RG-RSR77-XA-03",
+        "29358"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务核心路由器，5U框式， RG-RSR77-XA-03"
+    },
+    {
+      "documentId": "ruijie-preview-29358-2",
+      "series": "RG-RSR77-XA-08",
+      "modelNames": [
+        "多业务核心路由器，10U框式，RG-RSR77-XA-08"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ly-hxly/77xa08/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29358",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29358/?field=PreviewFile",
+      "officialFileName": "RG-RSR77-XA系列核心全业务路由器产品彩页(版本号：1.2)(版本号：1.2)(版本号：1.2)(版本号：1.2) - 浏览文件 - 07271420.pdf",
+      "expectedSha256": "fab73e489dd95e0cdc603e69f2c32fe265aae3544b5f8dfcf1638e793e31d5a5",
+      "matchTerms": [
+        "多业务核心路由器，10U框式，RG-RSR77-XA-08",
+        "29358"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务核心路由器，10U框式，RG-RSR77-XA-08"
+    }
+  ]
+}

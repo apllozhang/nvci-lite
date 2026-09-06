@@ -4,7 +4,7 @@
   "profileId": "hpe_aruba_cx_switches",
   "vendorId": "hpe",
   "vendorName": "HPE Networking",
-  "displayName": "HPE Aruba CX 交换机｜已验证官方 Data sheet",
+  "displayName": "Aruba CX 交换机",
   "approvalStatus": "draft",
   "enabled": false,
   "mode": "public_official_pdf_incremental",

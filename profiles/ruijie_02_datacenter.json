@@ -1,0 +1,2177 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_02_datacenter",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "02 数据中心交换机",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "02 数据中心交换机",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-16453-1",
+      "series": "RG-S6220-48XT4QXS",
+      "modelNames": [
+        "RG-S6220-48XT4QXS数据中心与云计算交换机"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/48xt4qxs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16453",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16453/?field=PreviewFile",
+      "officialFileName": "RG-S6220系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05271055.pdf",
+      "expectedSha256": "83d7d9644a76e561b6977c89d00d9623e9688862caa49dd6f807c7ac95935e61",
+      "matchTerms": [
+        "RG-S6220-48XT4QXS数据中心与云计算交换机",
+        "16453"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-S6220-48XT4QXS数据中心与云计算交换机"
+    },
+    {
+      "documentId": "ruijie-preview-27088-1",
+      "series": "RG-N18006-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+    },
+    {
+      "documentId": "ruijie-preview-27088-2",
+      "series": "RG-N18010-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n1801/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+    },
+    {
+      "documentId": "ruijie-preview-27088-3",
+      "series": "RG-N18018-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18018x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+    },
+    {
+      "documentId": "ruijie-preview-27088-4",
+      "series": "RG-S6231-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-5",
+      "series": "RG-S6231-48XT8CQ",
+      "modelNames": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xt8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-6",
+      "series": "RG-S6232-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623248xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-7",
+      "series": "RG-S6250-48XS8CQ",
+      "modelNames": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s625048xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-8",
+      "series": "RG-S6501-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650148vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-9",
+      "series": "RG-S6510-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651048vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-27088-10",
+      "series": "RG-S6510-4C",
+      "modelNames": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s65104c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27088",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27088/?field=PreviewFile",
+      "officialFileName": "锐捷万兆系列光模块产品彩页 - 浏览文件 - 06041754.pdf",
+      "expectedSha256": "671ba2061292f3eb03cbd4404f09d6416ae36ce8980fcc378ec168b52f9549c7",
+      "matchTerms": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C",
+        "27088"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28383-1",
+      "series": "RG-S6000C-48GT4XS-E",
+      "modelNames": [
+        "数据中心千兆管理网交换机，RG-S6000C-48GT4XS-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s6000c484e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28383",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28383/?field=PreviewFile",
+      "officialFileName": "RG-S6000C-48GT4XS-E数据中心与云计算交换机产品彩页 - 浏览文件 - 08111411.pdf",
+      "expectedSha256": "6afbd4a2d45c9992fc3624c712303368635c7a5da6aa0f9c132b052c22fc9f89",
+      "matchTerms": [
+        "数据中心千兆管理网交换机，RG-S6000C-48GT4XS-E",
+        "28383"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心千兆管理网交换机，RG-S6000C-48GT4XS-E"
+    },
+    {
+      "documentId": "ruijie-preview-28466-1",
+      "series": "RG-S6940-18OC20F4",
+      "modelNames": [
+        "新一代高性能、高密度800G交换机，RG-S6940-18OC20F4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/rgs694018oc20f4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28466",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28466/?field=PreviewFile",
+      "officialFileName": "RG-S6900AI系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05211139.pdf",
+      "expectedSha256": "31249eb06c59705610a202a9876e8f5c1780c002effce2416f142d95bf151ac5",
+      "matchTerms": [
+        "新一代高性能、高密度800G交换机，RG-S6940-18OC20F4",
+        "28466"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代高性能、高密度800G交换机，RG-S6940-18OC20F4"
+    },
+    {
+      "documentId": "ruijie-preview-28494-1",
+      "series": "RG-S6120-20XS4VS2QXS-L",
+      "modelNames": [
+        "24口万兆三层网管型核心汇聚网络交换机（含4个25G光口，向下兼容10G），2*40G上行口，RG-S6120-20XS4VS2QXS-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-zxwljj/s6120l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28494",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28494/?field=PreviewFile",
+      "officialFileName": "RG-S6120-L新一代万兆以太网交换机产品彩页 - 浏览文件 - 09051401.pdf",
+      "expectedSha256": "e78dc9bcf5cb719f98ceae048ec4bd6dc7b5b2d801ce05a6f364fa3009b1b526",
+      "matchTerms": [
+        "24口万兆三层网管型核心汇聚网络交换机（含4个25G光口，向下兼容10G），2*40G上行口，RG-S6120-20XS4VS2QXS-L",
+        "28494"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "24口万兆三层网管型核心汇聚网络交换机（含4个25G光口，向下兼容10G），2*40G上行口，RG-S6120-20XS4VS2QXS-L"
+    },
+    {
+      "documentId": "ruijie-preview-28526-1",
+      "series": "RG-S6501-32CQ",
+      "modelNames": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6501-32CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650132cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28526",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28526/?field=PreviewFile",
+      "officialFileName": "RG-S6501-32CQ数据中心与云计算交换机产品彩页 - 浏览文件 - 09121517.pdf",
+      "expectedSha256": "448fc378c1662c6fb1fbd99e5eaab59f31317306cf2827c8f49905330f26a25d",
+      "matchTerms": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6501-32CQ",
+        "28526"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6501-32CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28658-1",
+      "series": "RG-S6520-64CQ",
+      "modelNames": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s652064cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28658",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28658/?field=PreviewFile",
+      "officialFileName": "RG-S6520系列数据中心与云计算交换机产品彩页 - 浏览文件 - 10171724.pdf",
+      "expectedSha256": "56a100a8d0f94256fb2f9731bc2ea0e64cdfd9c848cc64a480960cc202b75f9c",
+      "matchTerms": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ",
+        "28658"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28660-1",
+      "series": "RG-S6980-128DC",
+      "modelNames": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6980128dc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28660",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28660/?field=PreviewFile",
+      "officialFileName": "RG-S6980-128DC数据中心与云计算交换机产品彩页 - 浏览文件 - 10171725.pdf",
+      "expectedSha256": "2bf972f41b40fb4b376c82b93a3b10c985ef8c32dd1933437636940ced293700",
+      "matchTerms": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC",
+        "28660"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+    },
+    {
+      "documentId": "ruijie-preview-28662-1",
+      "series": "RG-S6990-128QC",
+      "modelNames": [
+        "新一代高性能、高密度盒式交换机RG-S6990-128QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6990128qc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28662",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28662/?field=PreviewFile",
+      "officialFileName": "RG-S6990-128QC数据中心与云计算交换机产品彩页 - 浏览文件 - 10171720.pdf",
+      "expectedSha256": "2e8688c3fee27a819f128e0d6ed9a3d8cb02d03a8bca50f1bcd1e984b18202be",
+      "matchTerms": [
+        "新一代高性能、高密度盒式交换机RG-S6990-128QC",
+        "28662"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代高性能、高密度盒式交换机RG-S6990-128QC"
+    },
+    {
+      "documentId": "ruijie-preview-28668-1",
+      "series": "RG-S6980-64QC",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698064qcjxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28668/?field=PreviewFile",
+      "officialFileName": "RG-S6980-64QC数据中心与云计算交换机产品彩页 - 浏览文件 - 10171727.pdf",
+      "expectedSha256": "0779830e56b6f5abc2197d4b139e2b59796aa4b7992b9d0b5f15463503a3aa92",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC",
+        "28668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+    },
+    {
+      "documentId": "ruijie-preview-28668-2",
+      "series": "RG-S6981-64QC2VS",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698164qc2vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28668/?field=PreviewFile",
+      "officialFileName": "RG-S6980-64QC数据中心与云计算交换机产品彩页 - 浏览文件 - 10171727.pdf",
+      "expectedSha256": "0779830e56b6f5abc2197d4b139e2b59796aa4b7992b9d0b5f15463503a3aa92",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS",
+        "28668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+    },
+    {
+      "documentId": "ruijie-preview-28681-1",
+      "series": "RG-S6920-4C",
+      "modelNames": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69204cxf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28681",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28681/?field=PreviewFile",
+      "officialFileName": "RG-S6920-4C数据中心与云计算交换机产品彩页 - 浏览文件 - 10271804.pdf",
+      "expectedSha256": "03665f85eeb70ebaeda4ffbb572b1b5095c34474896fbe20bdf061fd40fb57ec",
+      "matchTerms": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C",
+        "28681"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28705-1",
+      "series": "RG-N18018-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/18018xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28705-2",
+      "series": "RG-N18006-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28705-3",
+      "series": "RG-N18010-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18010xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28705-4",
+      "series": "RG-S6910-3C",
+      "modelNames": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69103c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+    },
+    {
+      "documentId": "ruijie-preview-28705-5",
+      "series": "RG-S6920-4C",
+      "modelNames": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69204cxf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28705-6",
+      "series": "RG-S6930-2C",
+      "modelNames": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69302c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+    },
+    {
+      "documentId": "ruijie-preview-28705-7",
+      "series": "RG-S6980-128DC",
+      "modelNames": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6980128dc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+    },
+    {
+      "documentId": "ruijie-preview-28705-8",
+      "series": "RG-S6980-64QC",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698064qcjxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+    },
+    {
+      "documentId": "ruijie-preview-28705-9",
+      "series": "RG-S6981-64QC2VS",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698164qc2vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+    },
+    {
+      "documentId": "ruijie-preview-28705-10",
+      "series": "RG-S6580-48CQ8QC",
+      "modelNames": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s6580/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+    },
+    {
+      "documentId": "ruijie-preview-28705-11",
+      "series": "RG-S6580-24DC8QC",
+      "modelNames": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s658024dc8qc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28705",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28705/?field=PreviewFile",
+      "officialFileName": "锐捷400G系列光模块产品彩页 - 浏览文件 - 10311553.pdf",
+      "expectedSha256": "46e3d9babe6ef8dc006d17233ccc4307c4df1f6998b97c43c11c02e6b332fe05",
+      "matchTerms": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC",
+        "28705"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+    },
+    {
+      "documentId": "ruijie-preview-28707-1",
+      "series": "RG-N18018-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/18018xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28707-2",
+      "series": "RG-N18006-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+    },
+    {
+      "documentId": "ruijie-preview-28707-3",
+      "series": "RG-N18006-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28707-4",
+      "series": "RG-N18010-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n1801/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+    },
+    {
+      "documentId": "ruijie-preview-28707-5",
+      "series": "RG-N18010-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18010xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28707-6",
+      "series": "RG-N18018-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18018x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+    },
+    {
+      "documentId": "ruijie-preview-28707-7",
+      "series": "RG-S6910-3C",
+      "modelNames": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69103c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+    },
+    {
+      "documentId": "ruijie-preview-28707-8",
+      "series": "RG-S6920-4C",
+      "modelNames": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69204cxf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28707-9",
+      "series": "RG-S6930-2C",
+      "modelNames": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69302c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+    },
+    {
+      "documentId": "ruijie-preview-28707-10",
+      "series": "RG-S6980-128DC",
+      "modelNames": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6980128dc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+    },
+    {
+      "documentId": "ruijie-preview-28707-11",
+      "series": "RG-S6980-64QC",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698064qcjxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+    },
+    {
+      "documentId": "ruijie-preview-28707-12",
+      "series": "RG-S6981-64QC2VS",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698164qc2vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+    },
+    {
+      "documentId": "ruijie-preview-28707-13",
+      "series": "RG-S6231-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-14",
+      "series": "RG-S6231-48XT8CQ",
+      "modelNames": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xt8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-15",
+      "series": "RG-S6232-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623248xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-16",
+      "series": "RG-S6250-48XS8CQ",
+      "modelNames": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s625048xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-17",
+      "series": "RG-S6501-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650148vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-18",
+      "series": "RG-S6510-32CQ",
+      "modelNames": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651032cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-19",
+      "series": "RG-S6510-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651048vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-20",
+      "series": "RG-S6510-4C",
+      "modelNames": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s65104c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28707-21",
+      "series": "RG-S6520-64CQ",
+      "modelNames": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s652064cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28707-22",
+      "series": "RG-S6580-48CQ8QC",
+      "modelNames": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s6580/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+    },
+    {
+      "documentId": "ruijie-preview-28707-23",
+      "series": "RG-S6580-24DC8QC",
+      "modelNames": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s658024dc8qc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28707",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28707/?field=PreviewFile",
+      "officialFileName": "锐捷100G系列光模块产品彩页 - 浏览文件 - 10311551.pdf",
+      "expectedSha256": "0bed8cbe26f3670135c49fb9dcf0bc6843a109776c5cb741125b26be2d90639a",
+      "matchTerms": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC",
+        "28707"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+    },
+    {
+      "documentId": "ruijie-preview-28708-1",
+      "series": "RG-N18018-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/18018xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28708-2",
+      "series": "RG-N18006-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+    },
+    {
+      "documentId": "ruijie-preview-28708-3",
+      "series": "RG-N18006-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28708-4",
+      "series": "RG-N18010-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n1801/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+    },
+    {
+      "documentId": "ruijie-preview-28708-5",
+      "series": "RG-N18010-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18010xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+    },
+    {
+      "documentId": "ruijie-preview-28708-6",
+      "series": "RG-N18018-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18018x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+    },
+    {
+      "documentId": "ruijie-preview-28708-7",
+      "series": "RG-S6910-3C",
+      "modelNames": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69103c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+    },
+    {
+      "documentId": "ruijie-preview-28708-8",
+      "series": "RG-S6920-4C",
+      "modelNames": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69204cxf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28708-9",
+      "series": "RG-S6930-2C",
+      "modelNames": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69302c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+    },
+    {
+      "documentId": "ruijie-preview-28708-10",
+      "series": "RG-S6980-128DC",
+      "modelNames": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6980128dc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+    },
+    {
+      "documentId": "ruijie-preview-28708-11",
+      "series": "RG-S6980-64QC",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698064qcjxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+    },
+    {
+      "documentId": "ruijie-preview-28708-12",
+      "series": "RG-S6981-64QC2VS",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698164qc2vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+    },
+    {
+      "documentId": "ruijie-preview-28708-13",
+      "series": "RG-S6231-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-14",
+      "series": "RG-S6231-48XT8CQ",
+      "modelNames": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xt8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-15",
+      "series": "RG-S6232-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623248xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-16",
+      "series": "RG-S6250-48XS8CQ",
+      "modelNames": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s625048xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-17",
+      "series": "RG-S6501-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650148vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-18",
+      "series": "RG-S6510-32CQ",
+      "modelNames": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651032cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-19",
+      "series": "RG-S6510-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651048vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28708-20",
+      "series": "RG-S6510-4C",
+      "modelNames": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s65104c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28708-21",
+      "series": "RG-S6520-64CQ",
+      "modelNames": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s652064cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28708",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28708/?field=PreviewFile",
+      "officialFileName": "锐捷40G系列光模块产品彩页 - 浏览文件 - 05221534.pdf",
+      "expectedSha256": "67a9641898384cd7cb0904b69b0169c706e3660f32bcad63cacb4b38043a01a3",
+      "matchTerms": [
+        "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ",
+        "28708"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密接入交换机，100G上行（向下兼容40G），RG-S6520-64CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28709-1",
+      "series": "RG-S6501-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650148vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28709",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28709/?field=PreviewFile",
+      "officialFileName": "锐捷25G系列光模块产品彩页 - 浏览文件 - 10311549.pdf",
+      "expectedSha256": "224c17e2beb945da98f1cf377fb4fe7c4780d0024201540f041912754207613a",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ",
+        "28709"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28709-2",
+      "series": "RG-S6510-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651048vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28709",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28709/?field=PreviewFile",
+      "officialFileName": "锐捷25G系列光模块产品彩页 - 浏览文件 - 10311549.pdf",
+      "expectedSha256": "224c17e2beb945da98f1cf377fb4fe7c4780d0024201540f041912754207613a",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ",
+        "28709"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28709-3",
+      "series": "RG-S6510-4C",
+      "modelNames": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s65104c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28709",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28709/?field=PreviewFile",
+      "officialFileName": "锐捷25G系列光模块产品彩页 - 浏览文件 - 10311549.pdf",
+      "expectedSha256": "224c17e2beb945da98f1cf377fb4fe7c4780d0024201540f041912754207613a",
+      "matchTerms": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C",
+        "28709"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28746-1",
+      "series": "RG-S6930-2C",
+      "modelNames": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69302c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28746",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28746/?field=PreviewFile",
+      "officialFileName": "RG-S6930-2C数据中心与云计算交换机产品彩页 - 浏览文件 - 11271102.pdf",
+      "expectedSha256": "7e4fb8ed283beb22c8cd5a1e0c4fc488f4678531753c5837cc8b1bd2dcd45f56",
+      "matchTerms": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C",
+        "28746"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+    },
+    {
+      "documentId": "ruijie-preview-28758-1",
+      "series": "RG-S6110-48MG4VS2QXS-UP",
+      "modelNames": [
+        "新一代48口5G多速率交换机，40G上行，RG-S6110-48MG4VS2QXS-UP"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s611048mg4vs2qxsup/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28758",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28758/?field=PreviewFile",
+      "officialFileName": "RG-S6100系列多速率交换机彩页 - 浏览文件 - 12041406.pdf",
+      "expectedSha256": "b899dd0a0c57ee6334717dbec4a4bcc3fbde00503564f751588e5080bb55064f",
+      "matchTerms": [
+        "新一代48口5G多速率交换机，40G上行，RG-S6110-48MG4VS2QXS-UP",
+        "28758"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代48口5G多速率交换机，40G上行，RG-S6110-48MG4VS2QXS-UP"
+    },
+    {
+      "documentId": "ruijie-preview-28758-2",
+      "series": "RG-S6120-24XMG4XS4VS-UP-H",
+      "modelNames": [
+        "新一代24口万兆多速率交换机，25G上行，RG-S6120-24XMG4XS4VS-UP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s612024xmg4xs4vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28758",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28758/?field=PreviewFile",
+      "officialFileName": "RG-S6100系列多速率交换机彩页 - 浏览文件 - 12041406.pdf",
+      "expectedSha256": "b899dd0a0c57ee6334717dbec4a4bcc3fbde00503564f751588e5080bb55064f",
+      "matchTerms": [
+        "新一代24口万兆多速率交换机，25G上行，RG-S6120-24XMG4XS4VS-UP-H",
+        "28758"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代24口万兆多速率交换机，25G上行，RG-S6120-24XMG4XS4VS-UP-H"
+    },
+    {
+      "documentId": "ruijie-preview-28758-3",
+      "series": "RG-S6120-48XMG4VS2QXS-UP-H",
+      "modelNames": [
+        "新一代48口万兆多速率交换机，40G上行，RG-S6120-48XMG4VS2QXS-UP-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s612048xmg4vs2qxsuph/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28758",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28758/?field=PreviewFile",
+      "officialFileName": "RG-S6100系列多速率交换机彩页 - 浏览文件 - 12041406.pdf",
+      "expectedSha256": "b899dd0a0c57ee6334717dbec4a4bcc3fbde00503564f751588e5080bb55064f",
+      "matchTerms": [
+        "新一代48口万兆多速率交换机，40G上行，RG-S6120-48XMG4VS2QXS-UP-H",
+        "28758"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代48口万兆多速率交换机，40G上行，RG-S6120-48XMG4VS2QXS-UP-H"
+    },
+    {
+      "documentId": "ruijie-preview-28830-1",
+      "series": "RG-S6510-4C",
+      "modelNames": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s65104c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28830",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28830/?field=PreviewFile",
+      "officialFileName": "RG-S6510-4C数据中心与云计算交换机产品彩页 - 浏览文件 - 12161045.pdf",
+      "expectedSha256": "cba7f02cd4573c938f4757b8b7d1d544e19bd9ef3bada10fad8277cebce7c2ad",
+      "matchTerms": [
+        "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C",
+        "28830"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密插卡式接入交换机，支持100G/25GE线卡，RG-S6510-4C"
+    },
+    {
+      "documentId": "ruijie-preview-28849-1",
+      "series": "RG-S6501-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s650148vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28849",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28849/?field=PreviewFile",
+      "officialFileName": "RG-S6501-48VS8CQ数据中心与云计算交换机产品彩页 - 浏览文件 - 12161108.pdf",
+      "expectedSha256": "0285946a08ef59396ee1586afb86b363f87d01d307e05d853ca59cc947acb49b",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ",
+        "28849"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6501-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28952-1",
+      "series": "RG-S6231-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28952",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28952/?field=PreviewFile",
+      "officialFileName": "RG-S6200系列数据中心与云计算交换机产品彩页 - 浏览文件 - 01261431.pdf",
+      "expectedSha256": "1afe6c0944cf48e00959542f3397d9d94a38cde196bd6e65aca36df22a200f41",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ",
+        "28952"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28952-2",
+      "series": "RG-S6231-48XT8CQ",
+      "modelNames": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623148xt8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28952",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28952/?field=PreviewFile",
+      "officialFileName": "RG-S6200系列数据中心与云计算交换机产品彩页 - 浏览文件 - 01261431.pdf",
+      "expectedSha256": "1afe6c0944cf48e00959542f3397d9d94a38cde196bd6e65aca36df22a200f41",
+      "matchTerms": [
+        "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ",
+        "28952"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆电三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6231-48XT8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28952-3",
+      "series": "RG-S6232-48XS8CQ",
+      "modelNames": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s623248xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28952",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28952/?field=PreviewFile",
+      "officialFileName": "RG-S6200系列数据中心与云计算交换机产品彩页 - 浏览文件 - 01261431.pdf",
+      "expectedSha256": "1afe6c0944cf48e00959542f3397d9d94a38cde196bd6e65aca36df22a200f41",
+      "matchTerms": [
+        "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ",
+        "28952"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口万兆三层数据中心TOR接入交换机，100G上行（支持向下兼容），RG-S6232-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-28952-4",
+      "series": "RG-S6250-48XS8CQ",
+      "modelNames": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s625048xs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28952",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28952/?field=PreviewFile",
+      "officialFileName": "RG-S6200系列数据中心与云计算交换机产品彩页 - 浏览文件 - 01261431.pdf",
+      "expectedSha256": "1afe6c0944cf48e00959542f3397d9d94a38cde196bd6e65aca36df22a200f41",
+      "matchTerms": [
+        "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ",
+        "28952"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心万兆高密接入交换机，100G上行（向下兼容40G），RG-S6250-48XS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29032-1",
+      "series": "RG-S6150-24VS8CQ-X",
+      "modelNames": [
+        "新一代24口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-24VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/24cs8cqx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29032",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29032/?field=PreviewFile",
+      "officialFileName": "RG-S6150-X系列新一代高性能万兆交换机产品彩页 - 浏览文件 - 03171617.pdf",
+      "expectedSha256": "0dd63029ac27b9d716ad48eb00e01ab379c8aebc65ecc649a41d7216aff2041b",
+      "matchTerms": [
+        "新一代24口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-24VS8CQ-X",
+        "29032"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代24口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-24VS8CQ-X"
+    },
+    {
+      "documentId": "ruijie-preview-29032-2",
+      "series": "RG-S6150-48VS8CQ-X",
+      "modelNames": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-48VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/48vs8cqx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29032",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29032/?field=PreviewFile",
+      "officialFileName": "RG-S6150-X系列新一代高性能万兆交换机产品彩页 - 浏览文件 - 03171617.pdf",
+      "expectedSha256": "0dd63029ac27b9d716ad48eb00e01ab379c8aebc65ecc649a41d7216aff2041b",
+      "matchTerms": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-48VS8CQ-X",
+        "29032"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6150-48VS8CQ-X"
+    },
+    {
+      "documentId": "ruijie-preview-29056-1",
+      "series": "RG-S6120-20XS4VS2QXS",
+      "modelNames": [
+        "20口万兆（兼容2.5G）三层核心汇聚网络交换机，4个25G光口（向下兼容10G），40G上行，RG-S6120-20XS4VS2QXS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/s612020xs4vs2qxs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29056",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29056/?field=PreviewFile",
+      "officialFileName": "RG-S6120系列融合万兆交换机产品彩页 - 浏览文件 - 03271153.pdf",
+      "expectedSha256": "7532af974557e973926c73e6abc3634e2db1a58fafd862b9b3a7273cb8d3b34d",
+      "matchTerms": [
+        "20口万兆（兼容2.5G）三层核心汇聚网络交换机，4个25G光口（向下兼容10G），40G上行，RG-S6120-20XS4VS2QXS",
+        "29056"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "20口万兆（兼容2.5G）三层核心汇聚网络交换机，4个25G光口（向下兼容10G），40G上行，RG-S6120-20XS4VS2QXS"
+    },
+    {
+      "documentId": "ruijie-preview-29059-1",
+      "series": "RG-S6910-3C",
+      "modelNames": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69103c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29059",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29059/?field=PreviewFile",
+      "officialFileName": "RG-S6910-3C数据中心与云计算交换机产品彩页 - 浏览文件 - 03271146.pdf",
+      "expectedSha256": "a1bfeb82250b881ff3bf6cbbffe7f96b2a47d4636e661f75ff0e1eac5b22a62e",
+      "matchTerms": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C",
+        "29059"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+    },
+    {
+      "documentId": "ruijie-preview-29068-1",
+      "series": "RG-S6910-3C",
+      "modelNames": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69103c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密模块化核心交换机（向下兼容40G），4U高度，RG-S6910-3C"
+    },
+    {
+      "documentId": "ruijie-preview-29068-2",
+      "series": "RG-S6920-4C",
+      "modelNames": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69204cxf/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心100G插卡式交换机，支持100G/400G线卡，RG-S6920-4C"
+    },
+    {
+      "documentId": "ruijie-preview-29068-3",
+      "series": "RG-S6930-2C",
+      "modelNames": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69302c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心高密插卡式核心交换机，支持100G/200G线卡，RG-S6930-2C"
+    },
+    {
+      "documentId": "ruijie-preview-29068-4",
+      "series": "RG-S6980-128DC",
+      "modelNames": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6980128dc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "128口200G数据中心盒式核心交换机，4U高度，RG-S6980-128DC"
+    },
+    {
+      "documentId": "ruijie-preview-29068-5",
+      "series": "RG-S6980-64QC",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698064qcjxh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6980-64QC"
+    },
+    {
+      "documentId": "ruijie-preview-29068-6",
+      "series": "RG-S6981-64QC2VS",
+      "modelNames": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s698164qc2vs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29068",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29068/?field=PreviewFile",
+      "officialFileName": "锐捷200G系列光模块产品彩页 - 浏览文件 - 04271719.pdf",
+      "expectedSha256": "e1fc76e30c155ea480e59367861c9af8da3d3f82b49cf41e81e753ebc859c711",
+      "matchTerms": [
+        "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS",
+        "29068"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "64口400G数据中心盒式核心交换机，4U高度，RG-S6981-64QC2VS"
+    },
+    {
+      "documentId": "ruijie-preview-29134-1",
+      "series": "RG-S6990-64OC2XS",
+      "modelNames": [
+        "AIGC智算场景高密度64口800G盒式交换机，RG-S6990-64OC2XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s699064oc2xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29134",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29134/?field=PreviewFile",
+      "officialFileName": "RG-S6990-64OC2XS数据中心与云计算交换机产品彩页 - 浏览文件 - 04161037.pdf",
+      "expectedSha256": "05029ea5219c7dc77ed1a2c4501e594e16aecc61035aa32b9aa00f0aaf8050eb",
+      "matchTerms": [
+        "AIGC智算场景高密度64口800G盒式交换机，RG-S6990-64OC2XS",
+        "29134"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "AIGC智算场景高密度64口800G盒式交换机，RG-S6990-64OC2XS"
+    },
+    {
+      "documentId": "ruijie-preview-29209-1",
+      "series": "RG-N18018-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/18018xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29209",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29209/?field=PreviewFile",
+      "officialFileName": "RG-N18000-XH系列数据中心核心交换机 - 浏览文件 - 05082001.pdf",
+      "expectedSha256": "f6c51415f258366b59df4b40d8bc7e755af6e2e6b63f2d4a4fb9b64db4ecff7c",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH",
+        "29209"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，16业务插槽，RG-N18018-XH"
+    },
+    {
+      "documentId": "ruijie-preview-29209-2",
+      "series": "RG-N18006-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29209",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29209/?field=PreviewFile",
+      "officialFileName": "RG-N18000-XH系列数据中心核心交换机 - 浏览文件 - 05082001.pdf",
+      "expectedSha256": "f6c51415f258366b59df4b40d8bc7e755af6e2e6b63f2d4a4fb9b64db4ecff7c",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH",
+        "29209"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持40G/100G线卡，4业务插槽，RG-N18006-XH"
+    },
+    {
+      "documentId": "ruijie-preview-29209-3",
+      "series": "RG-N18010-XH",
+      "modelNames": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18010xh/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29209",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29209/?field=PreviewFile",
+      "officialFileName": "RG-N18000-XH系列数据中心核心交换机 - 浏览文件 - 05082001.pdf",
+      "expectedSha256": "f6c51415f258366b59df4b40d8bc7e755af6e2e6b63f2d4a4fb9b64db4ecff7c",
+      "matchTerms": [
+        "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH",
+        "29209"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心网络高密框式核心交换机，支持100G/400G线卡，8业务插槽，RG-N18010-XH"
+    },
+    {
+      "documentId": "ruijie-preview-29210-1",
+      "series": "RG-S6921-4C",
+      "modelNames": [
+        "新一代高性能、高密度插卡式交换机，RG-S6921-4C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s69214c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29210",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29210/?field=PreviewFile",
+      "officialFileName": "RG-S6921-4C数据中心与云计算交换机产品彩页 - 浏览文件 - 05081928.pdf",
+      "expectedSha256": "66d60336bc5053327a83a72205bc97e8e8b800c9da09cce382cce8e87c9693c1",
+      "matchTerms": [
+        "新一代高性能、高密度插卡式交换机，RG-S6921-4C",
+        "29210"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代高性能、高密度插卡式交换机，RG-S6921-4C"
+    },
+    {
+      "documentId": "ruijie-preview-29211-1",
+      "series": "RG-S6580-48CQ8QC",
+      "modelNames": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s6580/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29211",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29211/?field=PreviewFile",
+      "officialFileName": "RG-S6580系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05081957.pdf",
+      "expectedSha256": "c40e9fb105728b79e720bf3e3047ea372a4834317a3a0b1f280263085b2ddf37",
+      "matchTerms": [
+        "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC",
+        "29211"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心100G高密盒式接入交换机，400G上行（向下兼容100G），RG-S6580-48CQ8QC"
+    },
+    {
+      "documentId": "ruijie-preview-29211-2",
+      "series": "RG-S6580-24DC8QC",
+      "modelNames": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s658024dc8qc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29211",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29211/?field=PreviewFile",
+      "officialFileName": "RG-S6580系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05081957.pdf",
+      "expectedSha256": "c40e9fb105728b79e720bf3e3047ea372a4834317a3a0b1f280263085b2ddf37",
+      "matchTerms": [
+        "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC",
+        "29211"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代数据中心200G盒式接入交换机，400G上行（向下兼容100G），RG-S6580-24DC8QC"
+    },
+    {
+      "documentId": "ruijie-preview-29212-1",
+      "series": "RG-S6510-32CQ",
+      "modelNames": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651032cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29212",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29212/?field=PreviewFile",
+      "officialFileName": "RG-S6510系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05081950.pdf",
+      "expectedSha256": "d06d9315a85a4320744244b5ad7222a9d8e2cc17c6a0a65aded7d0ddba6c851c",
+      "matchTerms": [
+        "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ",
+        "29212"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "32口100G数据中心盒式接入交换机，支持向下兼容40G，RG-S6510-32CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29212-2",
+      "series": "RG-S6510-48VS8CQ",
+      "modelNames": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxjr/s651048vs8cq/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29212",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29212/?field=PreviewFile",
+      "officialFileName": "RG-S6510系列数据中心与云计算交换机产品彩页 - 浏览文件 - 05081950.pdf",
+      "expectedSha256": "d06d9315a85a4320744244b5ad7222a9d8e2cc17c6a0a65aded7d0ddba6c851c",
+      "matchTerms": [
+        "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ",
+        "29212"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "48口25G数据中心盒式接入交换机，100G上行（支持向下兼容），RG-S6510-48VS8CQ"
+    },
+    {
+      "documentId": "ruijie-preview-29286-1",
+      "series": "RG-N18006-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18006x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29286",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29286/?field=PreviewFile",
+      "officialFileName": "RG-N18000-X系列云架构数据中心核心交换机产品彩页 - 浏览文件 - 06150141.pdf",
+      "expectedSha256": "029dc9f5de469527c8abc11fbced54ee43fcb58448a77a282c29699f11f610f2",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X",
+        "29286"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，4业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18006-X"
+    },
+    {
+      "documentId": "ruijie-preview-29286-2",
+      "series": "RG-N18010-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n1801/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29286",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29286/?field=PreviewFile",
+      "officialFileName": "RG-N18000-X系列云架构数据中心核心交换机产品彩页 - 浏览文件 - 06150141.pdf",
+      "expectedSha256": "029dc9f5de469527c8abc11fbced54ee43fcb58448a77a282c29699f11f610f2",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X",
+        "29286"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，8业务插槽，支持10G/40G/100G/200G/400G线卡，RG-N18010-X"
+    },
+    {
+      "documentId": "ruijie-preview-29286-3",
+      "series": "RG-N18018-X",
+      "modelNames": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18018x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29286",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29286/?field=PreviewFile",
+      "officialFileName": "RG-N18000-X系列云架构数据中心核心交换机产品彩页 - 浏览文件 - 06150141.pdf",
+      "expectedSha256": "029dc9f5de469527c8abc11fbced54ee43fcb58448a77a282c29699f11f610f2",
+      "matchTerms": [
+        "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X",
+        "29286"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "数据中心网络高密框式核心交换机，16业务插槽，支持10G/40G/100G/200G线卡，RG-N18018-X"
+    },
+    {
+      "documentId": "ruijie-preview-29442-1",
+      "series": "RG-S6990-128QC2XS",
+      "modelNames": [
+        "AIGC智算场景128口400G高密度盒式交换机，RG-S6990-128QC2XS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/s6990128qc2xs/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29442",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29442/?field=PreviewFile",
+      "officialFileName": "RG-S6990-128QC2XS数据中心与云计算交换机产品彩页 - 浏览文件 - 08051719.pdf",
+      "expectedSha256": "452464493d1c2e1cbbe733d3b6ee2e379076c7b87e12bf61ef2a61be7ddc9e90",
+      "matchTerms": [
+        "AIGC智算场景128口400G高密度盒式交换机，RG-S6990-128QC2XS",
+        "29442"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "AIGC智算场景128口400G高密度盒式交换机，RG-S6990-128QC2XS"
+    },
+    {
+      "documentId": "ruijie-preview-29448-1",
+      "series": "RG-N18010-E",
+      "modelNames": [
+        "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/n18010e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29448",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29448/?field=PreviewFile",
+      "officialFileName": "RG-N18000-E(Newton)系列新一代融合核心交换机产品彩页 - 浏览文件 - 07211413.pdf",
+      "expectedSha256": "15b69d73aec2c80fdb44d2caf36be5550919f9bf8d6ea6ff2d7c386bfa2a6b29",
+      "matchTerms": [
+        "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E",
+        "29448"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E"
+    },
+    {
+      "documentId": "ruijie-preview-29448-2",
+      "series": "RG-N18014-E",
+      "modelNames": [
+        "高密度大缓存云架构网络核心交换机，14U框式，RG-N18014-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hxjh/n18014e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29448",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29448/?field=PreviewFile",
+      "officialFileName": "RG-N18000-E(Newton)系列新一代融合核心交换机产品彩页 - 浏览文件 - 07211413.pdf",
+      "expectedSha256": "15b69d73aec2c80fdb44d2caf36be5550919f9bf8d6ea6ff2d7c386bfa2a6b29",
+      "matchTerms": [
+        "高密度大缓存云架构网络核心交换机，14U框式，RG-N18014-E",
+        "29448"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高密度大缓存云架构网络核心交换机，14U框式，RG-N18014-E"
+    },
+    {
+      "documentId": "ruijie-preview-29448-3",
+      "series": "RG-N18010-E",
+      "modelNames": [
+        "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-shjzhx-sjzxhx/n18010e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29448",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29448/?field=PreviewFile",
+      "officialFileName": "RG-N18000-E(Newton)系列新一代融合核心交换机产品彩页 - 浏览文件 - 07211413.pdf",
+      "expectedSha256": "15b69d73aec2c80fdb44d2caf36be5550919f9bf8d6ea6ff2d7c386bfa2a6b29",
+      "matchTerms": [
+        "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E",
+        "29448"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高密度大缓存云架构网络核心交换机，10U框式，RG-N18010-E"
+    },
+    {
+      "documentId": "ruijie-preview-29525-1",
+      "series": "RG-S6160-28VS8CQ-X",
+      "modelNames": [
+        "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/RG-S6160-28VS8CQ-X/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代28口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-28VS8CQ-X"
+    },
+    {
+      "documentId": "ruijie-preview-29525-2",
+      "series": "RG-S6160-48VS8CQ-X",
+      "modelNames": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/rg-s6160-48vs8cq-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代48口万兆全光三层核心汇聚网络交换机，100G上行，RG-S6160-48VS8CQ-X"
+    },
+    {
+      "documentId": "ruijie-preview-29525-3",
+      "series": "RG-S6160-48XMG4VS2CQ-UP-X",
+      "modelNames": [
+        "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/jh-yqw-hjjh/rg-s6160-48xmg4vs2cq-uo-x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29525",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29525/?field=PreviewFile",
+      "officialFileName": "RG-S6160-X系列高性能万兆交换机产品彩页 - 浏览文件 - 08051712.pdf",
+      "expectedSha256": "1f8c4317b1ae6cf86dc10dba9cbd38a329e413e7d8ffbc66cc13a95ffbe79180",
+      "matchTerms": [
+        "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X",
+        "29525"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X"
+    }
+  ]
+}

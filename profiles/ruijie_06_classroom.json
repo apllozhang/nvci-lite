@@ -1,0 +1,665 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_06_classroom",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "06 云课堂与计算",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "06 云课堂与计算",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-16100-1",
+      "series": "RG-CT3100C-G2",
+      "modelNames": [
+        "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100C-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct3100cg2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=16100",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-16100/?field=PreviewFile",
+      "officialFileName": "行业渠道专属产品云桌面-云课堂TCI终端RG-CT3100C-G2 - 浏览文件 - 03301404.pdf",
+      "expectedSha256": "aab901faa40210a28a512c6ce243162594fe4f5792c7d44419b7ff33b75b0206",
+      "matchTerms": [
+        "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100C-G2",
+        "16100"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100C-G2"
+    },
+    {
+      "documentId": "ruijie-preview-21576-1",
+      "series": "RG-CT7900",
+      "modelNames": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7900/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21576",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21576/?field=PreviewFile",
+      "officialFileName": "RG-CT7900整机产品彩页 - 浏览文件 - 05211156.pdf",
+      "expectedSha256": "44354272faf3508120642651d08f7315f96f27bd71c9e7710c13c00a7acc59d3",
+      "matchTerms": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900",
+        "21576"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷应用全融合整机，高性能8核心处理器，RG-CT7900"
+    },
+    {
+      "documentId": "ruijie-preview-21597-1",
+      "series": "RG-CT5300C",
+      "modelNames": [
+        "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21597",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21597/?field=PreviewFile",
+      "officialFileName": "RG-CT5300C IDV云终端 产品彩页 - 浏览文件 - 05220957.pdf",
+      "expectedSha256": "64eabd2f162ec992166ebfbbc27b258716e8cd14273d5cf3e706882dd10502a2",
+      "matchTerms": [
+        "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C",
+        "21597"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，第六代英特尔i3处理器，8G+256G，Wi-Fi版，RG-CT5300C"
+    },
+    {
+      "documentId": "ruijie-preview-21602-1",
+      "series": "RG-CT1006",
+      "modelNames": [
+        "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1006/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21602",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21602/?field=PreviewFile",
+      "officialFileName": "RG-CT1006 VDI云终端产品彩页 - 浏览文件 - 05271058.pdf",
+      "expectedSha256": "2b46232bfa3204fd464f911e2a93a5f14c6f1159f94bd8e8be7df4252ed2e505",
+      "matchTerms": [
+        "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006",
+        "21602"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷VDI应用创新云终端，高性能四核处理器，RG-CT1006"
+    },
+    {
+      "documentId": "ruijie-preview-21668-1",
+      "series": "RG-CT5200-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5200g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代奔腾处理器，RG-CT5200-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21668-2",
+      "series": "RG-CT5300-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21668-3",
+      "series": "RG-CT5500-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5500g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21668-4",
+      "series": "RG-CT5700-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5700g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21668",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21668/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT5000-G4系列云终端计算机产品彩页 - 浏览文件 - 06041148.pdf",
+      "expectedSha256": "44a3035c2e92350c3035830f41be2c8646331e26d1e9b5f62bf19e6069919e1c",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4",
+        "21668"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代i7处理器，RG-CT5700-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21669-1",
+      "series": "RG-CT6300-G4",
+      "modelNames": [
+        "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6300g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21669",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21669/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT6000-G4系列一体机产品彩页 - 浏览文件 - 06041146.pdf",
+      "expectedSha256": "250057cde47bcfd6f5d0d7e63ee426b7a13eccc62d61e886f796802098d4e30e",
+      "matchTerms": [
+        "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4",
+        "21669"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21669-2",
+      "series": "RG-CT6500-G4",
+      "modelNames": [
+        "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6500g4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21669",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21669/?field=PreviewFile",
+      "officialFileName": "云桌面RG-CT6000-G4系列一体机产品彩页 - 浏览文件 - 06041146.pdf",
+      "expectedSha256": "250057cde47bcfd6f5d0d7e63ee426b7a13eccc62d61e886f796802098d4e30e",
+      "matchTerms": [
+        "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4",
+        "21669"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21670-1",
+      "series": "RG-CT5200C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5200cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel® 奔腾® 金牌处理器，RG-CT5200C-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21670-2",
+      "series": "RG-CT5300C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5300cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代i3处理器，RG-CT5300C-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21670-3",
+      "series": "RG-CT5500C-G4",
+      "modelNames": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct5500cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21670",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21670/?field=PreviewFile",
+      "officialFileName": "RG-CT5000C-G4系列云终端产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "31be4576e15d9ef97625a91bcdd5c247180b0a734b5cccc48fe6585876b6d877",
+      "matchTerms": [
+        "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4",
+        "21670"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷IDV云终端，Intel第十二代i5处理器，RG-CT5500C-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21671-1",
+      "series": "RG-CT6300C-G4",
+      "modelNames": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6300cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21671",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21671/?field=PreviewFile",
+      "officialFileName": "RG-CT6000C-G4系列云一体机产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "5a5deccf9cb0a4f1a5ab1a5b15e7c5dff356fc785c94430a6d04600adbf10ef2",
+      "matchTerms": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4",
+        "21671"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷桌面云一体机电脑，第十二代英特尔i3处理器，23.8英寸，RG-CT6300C-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21671-2",
+      "series": "RG-CT6500C-G4",
+      "modelNames": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct6500cg4/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21671",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21671/?field=PreviewFile",
+      "officialFileName": "RG-CT6000C-G4系列云一体机产品彩页 - 浏览文件 - 06041145.pdf",
+      "expectedSha256": "5a5deccf9cb0a4f1a5ab1a5b15e7c5dff356fc785c94430a6d04600adbf10ef2",
+      "matchTerms": [
+        "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4",
+        "21671"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷桌面云一体机电脑，第十二代英特尔i5处理器，23.8英寸，RG-CT6500C-G4"
+    },
+    {
+      "documentId": "ruijie-preview-21673-1",
+      "series": "RG-CT7800-1000",
+      "modelNames": [
+        "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/CT78001000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21673",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21673/?field=PreviewFile",
+      "officialFileName": "RG-CT7800-1000终端计算机产品彩页 - 浏览文件 - 06041147.pdf",
+      "expectedSha256": "70f1c49177f3e108b049b9b2d297cf113e79dcbea4a720fcabaab06de57f75ea",
+      "matchTerms": [
+        "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000",
+        "21673"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷应用全融合终端计算机，高性能8核心处理器，RG-CT7800-1000"
+    },
+    {
+      "documentId": "ruijie-preview-21701-1",
+      "series": "RG-CPK1000",
+      "modelNames": [
+        "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-pj/cpk1000/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21701",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21701/?field=PreviewFile",
+      "officialFileName": "RG-CPK1000 有线键鼠产品彩页 - 浏览文件 - 06071608.pdf",
+      "expectedSha256": "1cb6280e2f792271c117cd0e46d6e4d0364e16ef307dec4ace8817f90d9d638d",
+      "matchTerms": [
+        "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000",
+        "21701"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷有线键鼠套装，人体工学 防泼溅 全键盘，RG-CPK1000"
+    },
+    {
+      "documentId": "ruijie-preview-21751-1",
+      "series": "RG-CT7529",
+      "modelNames": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7529/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21751",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21751/?field=PreviewFile",
+      "officialFileName": "RG-CT7529系列云终端产品彩页 - 浏览文件 - 06141513.pdf",
+      "expectedSha256": "4ddcd1fcd6dd37d97a946f22a068297293b6e2025d7a3a23b9d3c4b92fb284ca",
+      "matchTerms": [
+        "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529",
+        "21751"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷应用全融合整机，高性能8核心处理器，RG-CT7529"
+    },
+    {
+      "documentId": "ruijie-preview-22464-1",
+      "series": "RG-CS7010",
+      "modelNames": [
+        "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs7010/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22464/?field=PreviewFile",
+      "officialFileName": "RG-CS7010云服务器产品彩页 - 浏览文件 - 12311511.pdf",
+      "expectedSha256": "fd30c9837f5f3a416b0455c1db7ff229130046de92180795d01649e8e0fca7c1",
+      "matchTerms": [
+        "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010",
+        "22464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷2U机架式云服务器，2颗AMD Rome/Milan处理器，带载60台云终端，RG-CS7010"
+    },
+    {
+      "documentId": "ruijie-preview-26988-1",
+      "series": "RG-CT7528",
+      "modelNames": [
+        "锐捷X86架构应用创新TCI云终端，RG-CT7528"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7528/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=26988",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-26988/?field=PreviewFile",
+      "officialFileName": "RG-CT7528系列终端计算机产品彩页 - 浏览文件 - 05140936.pdf",
+      "expectedSha256": "b06de097af416d2b7ba40bf217c2a4c785cefb11e9b2912a37748a3d27aa7da6",
+      "matchTerms": [
+        "锐捷X86架构应用创新TCI云终端，RG-CT7528",
+        "26988"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷X86架构应用创新TCI云终端，RG-CT7528"
+    },
+    {
+      "documentId": "ruijie-preview-27004-1",
+      "series": "RG-CS6000-G2",
+      "modelNames": [
+        "锐捷高性能双路服务器，1-2颗英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs6000g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27004",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27004/?field=PreviewFile",
+      "officialFileName": "RG-CS6000-G2 云服务器产品彩页 - 浏览文件 - 05201002.pdf",
+      "expectedSha256": "fd8dcb5bce80475d888314132881196a095ed2e56486e1176be63ebbf31a4715",
+      "matchTerms": [
+        "锐捷高性能双路服务器，1-2颗英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G2",
+        "27004"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能双路服务器，1-2颗英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G2"
+    },
+    {
+      "documentId": "ruijie-preview-28482-1",
+      "series": "RG-CS1020",
+      "modelNames": [
+        "锐捷超融合纯IDV云服务器，1颗处理器，RG-CS1020"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs1020/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28482",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28482/?field=PreviewFile",
+      "officialFileName": "RG-CS1020云服务器产品彩页 - 浏览文件 - 09011643.pdf",
+      "expectedSha256": "1428dedba20a35d7dd01ea77ae6110797154c3a4935e880c31ba28812a13cac5",
+      "matchTerms": [
+        "锐捷超融合纯IDV云服务器，1颗处理器，RG-CS1020",
+        "28482"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷超融合纯IDV云服务器，1颗处理器，RG-CS1020"
+    },
+    {
+      "documentId": "ruijie-preview-28829-1",
+      "series": "RG-CT7539",
+      "modelNames": [
+        "锐捷应用全融合终端计算机，RG-CT7539"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct7539/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28829",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28829/?field=PreviewFile",
+      "officialFileName": "RG-CT7539系列终端计算机产品彩页 - 浏览文件 - 12181627.pdf",
+      "expectedSha256": "a244f48f6d39ba1e59851ef946a4764c7ddfc153716abbaebe8c64952afd3bc3",
+      "matchTerms": [
+        "锐捷应用全融合终端计算机，RG-CT7539",
+        "28829"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷应用全融合终端计算机，RG-CT7539"
+    },
+    {
+      "documentId": "ruijie-preview-28871-1",
+      "series": "RG-CS5020-G2",
+      "modelNames": [
+        "锐捷2U高性能云服务器，2颗处理器，RG-CS5020-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-bgzmyzj/RG-CS5020-G2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28871",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28871/?field=PreviewFile",
+      "officialFileName": "RG-CS5020-G2云服务器产品彩页 - 浏览文件 - 12181600.pdf",
+      "expectedSha256": "f527ff2408775ef3780aecc9dfd8715e81a66243559d47db4bb54030c7ae5cda",
+      "matchTerms": [
+        "锐捷2U高性能云服务器，2颗处理器，RG-CS5020-G2",
+        "28871"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷2U高性能云服务器，2颗处理器，RG-CS5020-G2"
+    },
+    {
+      "documentId": "ruijie-preview-28872-1",
+      "series": "RG-CS6000A-G3",
+      "modelNames": [
+        "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000A-G3"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs6000ag3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28872",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28872/?field=PreviewFile",
+      "officialFileName": "RG-CS6000A-G3云服务器产品彩页 - 浏览文件 - 12181551.pdf",
+      "expectedSha256": "0f4a79e91afc1e7c18599746e94629036d52807d53ef55c3268bfab9dc2f244c",
+      "matchTerms": [
+        "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000A-G3",
+        "28872"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000A-G3"
+    },
+    {
+      "documentId": "ruijie-preview-28873-1",
+      "series": "RG-CS6000-G3",
+      "modelNames": [
+        "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G3"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs6000g3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28873",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28873/?field=PreviewFile",
+      "officialFileName": "RG-CS6000-G3云服务器产品彩页 - 浏览文件 - 12181547.pdf",
+      "expectedSha256": "cf08c687b25d102b6d25af3a8e4bf80379ddb3922c8c158fc7e22d8532d02bfe",
+      "matchTerms": [
+        "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G3",
+        "28873"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能双路服务器，2颗五代英特尔® 至强® 可扩展处理器，2U机架式，RG-CS6000-G3"
+    },
+    {
+      "documentId": "ruijie-preview-28874-1",
+      "series": "RG-CS7015A-G2",
+      "modelNames": [
+        "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015A-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs7015ag2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28874",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28874/?field=PreviewFile",
+      "officialFileName": "RG-CS7015A-G2云服务器产品彩页 - 浏览文件 - 12181603.pdf",
+      "expectedSha256": "316afd115aff4af2f1a2e742415728e35c9f2cdf1af0eaa814c45b05b4665345",
+      "matchTerms": [
+        "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015A-G2",
+        "28874"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015A-G2"
+    },
+    {
+      "documentId": "ruijie-preview-28877-1",
+      "series": "RG-CS7015-G2",
+      "modelNames": [
+        "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-yktzjbzb/cs7015g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28877",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28877/?field=PreviewFile",
+      "officialFileName": "RG-CS7015-G2云服务器产品彩页 - 浏览文件 - 12231443.pdf",
+      "expectedSha256": "1c8de4797e2fbcc0b9514ace019ae1ac73f7973158fe778ebf7c6263858cdc6a",
+      "matchTerms": [
+        "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015-G2",
+        "28877"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能GPU云服务器，2颗AMD处理器，2U机架式，RG-CS7015-G2"
+    },
+    {
+      "documentId": "ruijie-preview-29101-1",
+      "series": "RG-CT3100-G2",
+      "modelNames": [
+        "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct3100g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29101",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29101/?field=PreviewFile",
+      "officialFileName": "RG-CT3100-G2系列终端产品彩页 - 浏览文件 - 04171455.pdf",
+      "expectedSha256": "2e8c427efcc10a05dd833eb71626957b6b4b99fd409fd20f7b4584bb427949ff",
+      "matchTerms": [
+        "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100-G2",
+        "29101"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷云课堂终端，英特尔Jasper Lake处理器，RG-CT3100-G2"
+    },
+    {
+      "documentId": "ruijie-preview-29199-1",
+      "series": "RG-CS7025",
+      "modelNames": [
+        "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-bgzmyzj/cs7025/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29199",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29199/?field=PreviewFile",
+      "officialFileName": "RG-CS7025云服务器产品彩页 - 浏览文件 - 05061157.pdf",
+      "expectedSha256": "9d77835c4d939ea844470fcb4ccc72ab9a232857695d17526dafc3dcdf8e1110",
+      "matchTerms": [
+        "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025",
+        "29199"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025"
+    },
+    {
+      "documentId": "ruijie-preview-29387-1",
+      "series": "RG-CS7025-G2",
+      "modelNames": [
+        "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-bgzmyzj/RG-CS7025-G2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29387",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29387/?field=PreviewFile",
+      "officialFileName": "RG-CS7025-G2云服务器产品彩页 - 浏览文件 - 06261003.pdf",
+      "expectedSha256": "f615fcd258759d8137f1b7faf64b4ba5ef59311b147fc746782bac5e95a56431",
+      "matchTerms": [
+        "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025-G2",
+        "29387"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷高性能GPU云服务器，2颗C86处理器，2U机架式，RG-CS7025-G2"
+    },
+    {
+      "documentId": "ruijie-preview-29473-1",
+      "series": "RG-CT1000-G2",
+      "modelNames": [
+        "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1000g2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29473",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29473/?field=PreviewFile",
+      "officialFileName": "RG-CT1000-G2 VDI云终端产品彩页 - 浏览文件 - 07301602.pdf",
+      "expectedSha256": "3923d62b7980f7b5ed0c228a951d92c685c7b1c0f114d40c3d4b36357e4a5b55",
+      "matchTerms": [
+        "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2",
+        "29473"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷VDI云终端，ARM A55高端处理器，RG-CT1000-G2"
+    },
+    {
+      "documentId": "ruijie-preview-29476-1",
+      "series": "RG-CT1120",
+      "modelNames": [
+        "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhd/ct1120/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29476",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29476/?field=PreviewFile",
+      "officialFileName": "RG-CT1120终端产品彩页 - 浏览文件 - 07301607.pdf",
+      "expectedSha256": "b17c16990c4a9544fdd94ea1559f1867d0df7ddf9ac67f4d4cf0df08d9cd1755",
+      "matchTerms": [
+        "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120",
+        "29476"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷VDI云终端，Intel jasper lake处理器，RG-CT1120"
+    },
+    {
+      "documentId": "ruijie-preview-29477-1",
+      "series": "RG-CS1020S",
+      "modelNames": [
+        "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/ykt-zhj-bgzmyzj/cs1020s/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29477",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29477/?field=PreviewFile",
+      "officialFileName": "RG-CS1020S云服务器产品彩页 - For Preview - 08111028.pdf",
+      "expectedSha256": "2bcbea67b6e2daaa3652e92abe4e3e169fd08fbfae005b46b58f27701447b7b9",
+      "matchTerms": [
+        "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S",
+        "29477"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S"
+    }
+  ]
+}

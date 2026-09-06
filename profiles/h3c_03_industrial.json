@@ -1,0 +1,855 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "h3c_03_industrial",
+  "vendorId": "h3c",
+  "vendorName": "新华三 H3C",
+  "displayName": "03 工业与行业网络",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.h3c.com",
+    "h3c.com",
+    "download.h3c.com"
+  ],
+  "trustedRedirectDomains": [
+    "dlaz.h3c.com"
+  ],
+  "sourcePolicy": "只复用准确产品页发现的 download.h3c.com 下载 ID；保留官方中文文件名、产品页关联、SHA-256 与跨类别归档规则。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "03 工业与行业网络",
+    "libraryRootName": "新华三产品彩页"
+  },
+  "subseries": {
+    "id": "h3c_1",
+    "name": "H3C 交换机已验证资料 1"
+  },
+  "productLinePath": [
+    "新华三产品彩页",
+    "01 交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "h3c_switch_1_23",
+      "series": "EPCN",
+      "modelNames": [
+        "CB304A"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/EPON/H3C_EPCN/EPCN/CB304A/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=1847443",
+      "officialFileName": "Aolynk CB304 网桥终端产品彩页.pdf",
+      "expectedSha256": "30fd05c55653b91f51a7fa0441ee135cb5363153d5cc7272653dbc23cba517b0",
+      "matchTerms": [
+        "EPCN",
+        "CB304A"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_02",
+      "series": "EPCN",
+      "modelNames": [
+        "CC702E"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/EPON/H3C_EPCN/EPCN/CC702E/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=4832506",
+      "officialFileName": "CC702E产品彩页.pdf",
+      "expectedSha256": "1f3a108c2d84922146ff8058c506e929bcf49d660970b5ea9ec7355999c6ca27",
+      "matchTerms": [
+        "EPCN",
+        "CC702E"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_2_11",
+      "series": "MS",
+      "modelNames": [
+        "MS4024P-PWR-EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4024P-PWR-EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5408298",
+      "officialFileName": "H3C+MS4024P-PWR-EI新一代全千兆MS系列安防PoE交换机+产品彩页.pdf",
+      "expectedSha256": "546bcc3162d43d2999ef6899d89f2526c67f62c1b1cb0cd9d54e1389e4502544",
+      "matchTerms": [
+        "MS",
+        "MS4024P-PWR-EI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_16",
+      "series": "IE4300",
+      "modelNames": [
+        "IE4300"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4300/IE4300/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9933998",
+      "officialFileName": "H3C IE4300 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "bd50c45aa5477cb35ef854bdf58e29405f98c2122a1bb89dfd18875188452591",
+      "matchTerms": [
+        "IE4300",
+        "IE4300"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_17",
+      "series": "IE4120U",
+      "modelNames": [
+        "IE4120U"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4120U/IE4120U/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9934205",
+      "officialFileName": "H3C IE4120U系列导轨式无管理工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "4f6b2de476a4e684a225ec67ff67d0e4e6374be38462aae48e113d4ccacf8650",
+      "matchTerms": [
+        "IE4120U",
+        "IE4120U"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_20",
+      "series": "IE4320S",
+      "modelNames": [
+        "IE4320S"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320S/IE4320S/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9969542",
+      "officialFileName": "H3C IE4320S 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "862d1e9fb2cfd8234d502882bfd3c6879d7de4869bb2ac805ff73b08d2b49ab1",
+      "matchTerms": [
+        "IE4320S",
+        "IE4320S"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_21",
+      "series": "IE4320_Intellect",
+      "modelNames": [
+        "IE4320_Intellect"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320_Intellect/IE4320_Intellect/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9969543",
+      "officialFileName": "H3C IE4320 智能变电站系列工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "88d84856322332ad39a178f2a749f4f0b8583b88541a69e7d9b6a9073830fbb4",
+      "matchTerms": [
+        "IE4320_Intellect",
+        "IE4320",
+        "IE4320_Intellect",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_22",
+      "series": "Safety_Network",
+      "modelNames": [
+        "IE4320-IS"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Safety_Network_Switch/Safety_Network/IE4320-IS/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9969546",
+      "officialFileName": "H3C IE4320-IS 系列本安板卡工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "36dcd155157ffaba73078ea547be610dd77e88eb74665d5fe15b9aaf68244075",
+      "matchTerms": [
+        "Safety_Network",
+        "IE4320-IS"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_24",
+      "series": "Safety_Network",
+      "modelNames": [
+        "IE4520-IS"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Safety_Network_Switch/Safety_Network/IE4520-IS/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9980586",
+      "officialFileName": "H3C IE4520-IS系列本安板卡工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "47a7b076fc7a28d579903edd17a34fb64c7f9880e95e992740e5fee2c538bb94",
+      "matchTerms": [
+        "Safety_Network",
+        "IE4520-IS"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_29",
+      "series": "IE4520",
+      "modelNames": [
+        "IE4520"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Modular_Switch/IE4520/IE4520/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=10137641",
+      "officialFileName": "H3C IE4520 系列模块化工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "ab7bf25bfda43bbcabd5a435c9e2b04819adbaf0f1a3ef0ce7cadbd1209c462f",
+      "matchTerms": [
+        "IE4520",
+        "IE4520"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_31",
+      "series": "IE4320_TSN",
+      "modelNames": [
+        "IE4320"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4320_TSN/IE4320/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=10654019",
+      "officialFileName": "H3C IE4320 系列TSN导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "1ff4d6abafde30c6263fcb4e7c90f379d29fda784d264744b829061f012c2c30",
+      "matchTerms": [
+        "IE4320_TSN",
+        "IE4320",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_32",
+      "series": "GMK",
+      "modelNames": [
+        "40G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/40G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=10994778",
+      "officialFileName": "H3C 40G系列光模块产品彩页.pdf",
+      "expectedSha256": "bab10172aaab43e104aa57e702b7544366fd21723c485226972b94c154fe292e",
+      "matchTerms": [
+        "GMK",
+        "40G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_33",
+      "series": "MS",
+      "modelNames": [
+        "MS4000"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4000/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11010053",
+      "officialFileName": "H3C MS4000系列新一代MS安防交换机彩页.pdf",
+      "expectedSha256": "d240fcb3ca9bb103e73028f14f3619fc3f54687e4dd15a6780c6a00eaa15917b",
+      "matchTerms": [
+        "MS",
+        "MS4000"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_34",
+      "series": "IE4500_G",
+      "modelNames": [
+        "IE4500_G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Modular_Switch/IE4500_G/IE4500_G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11087271",
+      "officialFileName": "H3C IE4500-G 系列模块化工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "37c9fd594fcd6308cafd544e470314f965c9fcd1ceb125faa72ddcc1c7098a01",
+      "matchTerms": [
+        "IE4500_G",
+        "IE4500",
+        "IE4500_G",
+        "IE4500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_37",
+      "series": "MS",
+      "modelNames": [
+        "MS4620"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4620/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11297717",
+      "officialFileName": "H3C MS4620系列新一代MS安防交换机彩页.pdf",
+      "expectedSha256": "ae5474c90bed4fcc3b3c059a3f391f114c7a13ad127cba83e8aafe968c61fc52",
+      "matchTerms": [
+        "MS",
+        "MS4620"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_38",
+      "series": "MS",
+      "modelNames": [
+        "MS4100-LI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4100-LI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11297722",
+      "officialFileName": "H3C MS4100-LI系列轻管理安防交换机彩页.pdf",
+      "expectedSha256": "0678be15d9c3934ea667f7206b3abcfd5e0b0358c4092e329b4a007cc39dbf15",
+      "matchTerms": [
+        "MS",
+        "MS4100-LI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_40",
+      "series": "IE4300U",
+      "modelNames": [
+        "IE4300U"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4300U/IE4300U/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11338216",
+      "officialFileName": "H3C IE4300U系列导轨式无管理工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "71f1024841e9d3ac3cb2b6c5b379d1921ee6d42ec5b6b0685979e7ef505be6a3",
+      "matchTerms": [
+        "IE4300U",
+        "IE4300U"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_41",
+      "series": "IE4120U",
+      "modelNames": [
+        "IE4120U"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4120U/IE4120U/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11607623",
+      "officialFileName": "H3C IE4120U系列机架式无管理工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "9532373aac5c46dbda7f432eaba68a4b9d460ffe8ac645e59506244a1ef314f2",
+      "matchTerms": [
+        "IE4120U",
+        "IE4120U"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_46",
+      "series": "IE4100",
+      "modelNames": [
+        "IE4100"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4100/IE4100/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11625522",
+      "officialFileName": "H3C IE4100 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "d826e95b5c540bf5e1a91664947873997ee2893299bf03f624070541da819040",
+      "matchTerms": [
+        "IE4100",
+        "IE4100"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_3_50",
+      "series": "GMK",
+      "modelNames": [
+        "25G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/25G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11885021",
+      "officialFileName": "H3C 25G光模块彩页.pdf",
+      "expectedSha256": "bf02191dd3c7f02d55a846b05c711fe92b2ea6766b10313055e0d21bca5320dc",
+      "matchTerms": [
+        "GMK",
+        "25G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_05",
+      "series": "GMK",
+      "modelNames": [
+        "200G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/200G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12210956",
+      "officialFileName": "H3C 200G光模块彩页.pdf",
+      "expectedSha256": "6fa083df3bbb120eb8bb0b045d2d75e1d075621727821799cf2e65c72d40b8ee",
+      "matchTerms": [
+        "GMK",
+        "200G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_12",
+      "series": "GMK",
+      "modelNames": [
+        "10G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/10G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12301437",
+      "officialFileName": "H3C 10G光模块彩页.pdf",
+      "expectedSha256": "e85a3d7beaffa05803318484d4891b59447702d0aa20f6943b2b96517910544c",
+      "matchTerms": [
+        "GMK",
+        "10G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_13",
+      "series": "GMK",
+      "modelNames": [
+        "100M"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/100M/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12306524",
+      "officialFileName": "H3C 百兆光模块彩页.pdf",
+      "expectedSha256": "63033f676e268925982654dbe9aeecb7ebc9032586668cdc1c1a346bb1951463",
+      "matchTerms": [
+        "GMK",
+        "100M"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_14",
+      "series": "GMK",
+      "modelNames": [
+        "400G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/400G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12343681",
+      "officialFileName": "H3C 400G光模块彩页.pdf",
+      "expectedSha256": "fc03f7040534d42752d5bbee30d8187312a5c34781da07e047ae56c804724dab",
+      "matchTerms": [
+        "GMK",
+        "400G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_26",
+      "series": "GMK",
+      "modelNames": [
+        "800G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/800G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12675517",
+      "officialFileName": "H3C 800G光模块彩页.pdf",
+      "expectedSha256": "bc908bd34a393a174008b91699389829beb384b5aaa9084c966f648eecf6904b",
+      "matchTerms": [
+        "GMK",
+        "800G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_30",
+      "series": "MS",
+      "modelNames": [
+        "MS4500V2"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4500V2/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12894103",
+      "officialFileName": "H3C MS4500V2系列新一代MS安防交换机彩页.pdf",
+      "expectedSha256": "f4d739c515a378a7a626e703f9b3f7aad9d8ac858660548cd1d0b8d92c3f27e9",
+      "matchTerms": [
+        "MS",
+        "MS4500V2",
+        "MS4500V"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_31",
+      "series": "MS",
+      "modelNames": [
+        "MS4320V3"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4320V3/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12894120",
+      "officialFileName": "MS4320V3系列新一代MS安防交换机彩页.pdf",
+      "expectedSha256": "6b1a35394ed75d1bbbcb424a1475569a634d0e5696865e825b84a1021d86ba3b",
+      "matchTerms": [
+        "MS",
+        "MS4320V3",
+        "MS4320V"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_32",
+      "series": "MS",
+      "modelNames": [
+        "MS4100v2-EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4100v2-EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=12894131",
+      "officialFileName": "H3C MS4100V2-EI系列WEB管理安防交换机彩页.pdf",
+      "expectedSha256": "5ffe85a3dc5b9d18a7de6f0fa87da02b803fde44c6f2b7a0d791facd84c278bd",
+      "matchTerms": [
+        "MS",
+        "MS4100v2-EI",
+        "MS4100v"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_38",
+      "series": "IE4320",
+      "modelNames": [
+        "IE4320"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4320/IE4320/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=13322541",
+      "officialFileName": "H3C IE4320 系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "7815b20d61a39ec4ba72011a17300c880f40f7d0b583fa0f0e93a0fa7298f39b",
+      "matchTerms": [
+        "IE4320",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_41",
+      "series": "MS",
+      "modelNames": [
+        "MS4300V2"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4300V2/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=13541699",
+      "officialFileName": "MS4300V2系列新一代MS安防交换机彩页.pdf",
+      "expectedSha256": "d98e73c33299490ed40501ba4e0fc5eae37ba56fedd5352a30724750e1a9ec6a",
+      "matchTerms": [
+        "MS",
+        "MS4300V2",
+        "MS4300V"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_4_50",
+      "series": "IE4320_G",
+      "modelNames": [
+        "IE4320_G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320_G/IE4320_G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=13912545",
+      "officialFileName": "H3C IE4320-G 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "6f6bd7646835025469277c0b41e4109cf5e4b5b85908e4641bf89f9fe1c5b6fd",
+      "matchTerms": [
+        "IE4320_G",
+        "IE4320",
+        "IE4320_G",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_01",
+      "series": "MS",
+      "modelNames": [
+        "MS4100v2"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4100v2/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14000889",
+      "officialFileName": "H3C MS4100v2系列WEB管理安防交换机彩页.pdf",
+      "expectedSha256": "68345532dc216d0c00735ecbb58dd3e851d1bc7a10d08be344ec60206016b120",
+      "matchTerms": [
+        "MS",
+        "MS4100v2",
+        "MS4100v"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_02",
+      "series": "IE4500_TSN",
+      "modelNames": [
+        "IE4500_TSN"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Modular_Switch/IE4500_TSN/IE4500_TSN/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14053569",
+      "officialFileName": "H3C IE4500-TSN系列模块化工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "4e881d7f834d3bd3c9340956360e86334d42e62c70f9ce62b027ef06101a27c0",
+      "matchTerms": [
+        "IE4500_TSN",
+        "IE4500",
+        "IE4500_TSN",
+        "IE4500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_03",
+      "series": "IE4500_TSN",
+      "modelNames": [
+        "IE4500_TSN"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4500_TSN/IE4500_TSN/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14053573",
+      "officialFileName": "H3C IE4500-TSN系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "a0b88d038c7a57235967dc9f17f690081120f5d09b13214e2d46b129b86442e3",
+      "matchTerms": [
+        "IE4500_TSN",
+        "IE4500",
+        "IE4500_TSN",
+        "IE4500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_04",
+      "series": "Safety_Network",
+      "modelNames": [
+        "IE4500_TSN_IS"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Safety_Network_Switch/Safety_Network/IE4500_TSN_IS/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14053597",
+      "officialFileName": "H3C IE4500-TSN-IS系列本安板卡工业以太网产品彩页.pdf",
+      "expectedSha256": "b85c8f396ea829eecc0890d309bf3459b518af6fd3bba2252f50b773a7b1762c",
+      "matchTerms": [
+        "Safety_Network",
+        "IE4500_TSN_IS",
+        "IE4500"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_05",
+      "series": "GMK",
+      "modelNames": [
+        "1G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/1G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14316049",
+      "officialFileName": "H3C 千兆光模块彩页.pdf",
+      "expectedSha256": "5e7cb28049a8326cc2437c86be33cbe21517ee50dbba64538d7a9622b8d53665",
+      "matchTerms": [
+        "GMK",
+        "1G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_09",
+      "series": "IE4500-G",
+      "modelNames": [
+        "IE4500-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4500-G/IE4500-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14536787",
+      "officialFileName": "H3C IE4500-G 系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "825f2b15cc83a0e50bb38354a5a67192fe68ae3bc27ea45c3f655136fbda22cd",
+      "matchTerms": [
+        "IE4500-G",
+        "IE4500-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_10",
+      "series": "IE4300",
+      "modelNames": [
+        "IE4300"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4300/IE4300/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14619545",
+      "officialFileName": "H3C IE4300 系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "0bb21fad36904bd1483db048361b3a0287f916e54ceb83d45b029eaf9edfe756",
+      "matchTerms": [
+        "IE4300",
+        "IE4300"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_11",
+      "series": "IE4100",
+      "modelNames": [
+        "IE4100"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4100/IE4100/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14619548",
+      "officialFileName": "H3C IE4100 系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "13019f96e27c4e26200ec8214545a47a56bcb6c0fddef305350b46ccfe894e5f",
+      "matchTerms": [
+        "IE4100",
+        "IE4100"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_14",
+      "series": "IE4320",
+      "modelNames": [
+        "IE4320"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320/IE4320/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14672357",
+      "officialFileName": "H3C IE4320 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "5fd2ef59b5a8203c4f1297576f94e023f99704a7631188b2a98be3745eb9b80c",
+      "matchTerms": [
+        "IE4320",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_15",
+      "series": "IE4320",
+      "modelNames": [
+        "IE4320_EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4320/IE4320_EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14688983",
+      "officialFileName": "H3C IE4320-EI 系列导轨式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "826f572c69fd95ff46dc2fbccaed005805823accbd5d3aeaa770d27fa140ebc7",
+      "matchTerms": [
+        "IE4320",
+        "IE4320_EI",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_23",
+      "series": "IE4500-G",
+      "modelNames": [
+        "IE4500-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4500-G/IE4500-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14829054",
+      "officialFileName": "H3C IE4500-G 系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "9543680781fbaae98b523a4e6ba79f6d2087ec1cabecf8c33719ebc4c809fe4c",
+      "matchTerms": [
+        "IE4500-G",
+        "IE4500-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_24",
+      "series": "GMK",
+      "modelNames": [
+        "100G_50G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/ZHBX/GMK/GMK/100G_50G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=14947507",
+      "officialFileName": "H3C 100G_50G系列光模块产品彩页.pdf",
+      "expectedSha256": "781d8897609c547bb9fba03d991b6a7e887d753762c9365805727bed28009433",
+      "matchTerms": [
+        "GMK",
+        "100G_50G",
+        "100G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_27",
+      "series": "MS",
+      "modelNames": [
+        "MS4000-EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Park_Switches/Access_Switch/MS/MS4000-EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15058643",
+      "officialFileName": "H3C MS4000-EI 系列智慧安防交换机 产品彩页.pdf",
+      "expectedSha256": "873adbfa22f056df8940b88ccaf720942a89e826cda975eb460bb88f6e41d478",
+      "matchTerms": [
+        "MS",
+        "MS4000-EI"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_5_43",
+      "series": "IE4320",
+      "modelNames": [
+        "IE4320_EI"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320/IE4320_EI/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=15428276",
+      "officialFileName": "H3C IE4320-EI  系列机架式工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "b1c511613d498a2c9e38c677d0b80bd5e246a90d5a9c15828e2dec2d71569e42",
+      "matchTerms": [
+        "IE4320",
+        "IE4320_EI",
+        "IE4320"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    },
+    {
+      "documentId": "h3c_switch_6_28",
+      "series": "IE4520-G",
+      "modelNames": [
+        "IE4520-G"
+      ],
+      "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Modular_Switch/IE4520-G/IE4520-G/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=16363677",
+      "officialFileName": "H3C IE4520-G 系列模块化工业以太网交换机产品彩页.pdf",
+      "expectedSha256": "ce561b01d141ac3e4d5e2d2c21f0e8cc541fabd1c6bd46ee5ca55e91cd3d8193",
+      "matchTerms": [
+        "IE4520-G",
+        "IE4520-G"
+      ],
+      "evidencePolicy": "h3c_product_page_to_download_id_pdf"
+    }
+  ]
+}

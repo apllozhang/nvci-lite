@@ -119,7 +119,7 @@ function renderTree() {
     const open = state.expanded.has(vendor.vendorId);
     const lines = vendor.productLines.map((line) => `
       <button class="tree-line ${line.profileId === state.currentProfileId ? 'active' : ''}" data-vendor="${esc(vendor.vendorId)}" data-profile="${esc(line.profileId)}">
-        <span class="tree-line-name">${esc(line.displayName)}</span><span class="tree-count">${line.documentCount}</span>
+        <span class="tree-line-name">${esc(line.displayName)}</span>${line.documentCount ? `<span class="tree-count">${line.documentCount}</span>` : `<span class="tree-count pending-tag">${t('common.pending')}</span>`}
       </button>`).join('');
     return `<div class="tree-brand">
       <button class="tree-brand-btn ${open ? 'open' : ''}" data-vendor="${esc(vendor.vendorId)}">
@@ -158,48 +158,63 @@ function renderTree() {
 
 function renderDocTable(filter = '') {
   const line = currentLine();
-  if (!line) { $('docTable').innerHTML = '<div class="muted empty">← 请先在左侧选择品牌和产品线</div>'; $('lineInfo').textContent = ''; return; }
+  if (!line) { $('docTable').innerHTML = `<div class="muted empty">${t('step1.pickFirst')}</div>`; $('lineInfo').textContent = ''; return; }
   const needle = filter.trim().toLowerCase();
   const docs = line.documents.filter((doc) => !needle
-    || `${doc.series} ${doc.modelNames.join(' ')} ${doc.officialFileName}`.toLowerCase().includes(needle));
-  $('lineInfo').textContent = `${vendorOf(state.currentVendorId).vendorName} · ${line.displayName} · ${line.documents.length} 份`;
-  $('docTable').innerHTML = docs.map((doc) => docRowHtml(doc)).join('') || '<div class="muted empty">没有匹配的资料</div>';
-  bindDocRows($('docTable'));
-}
-
-function docRowHtml(doc) {
-  const checked = state.selected.has(doc.documentId);
-  const collected = state.collected.has(doc.documentId);
-  return `<label class="doc-row ${checked ? 'checked' : ''}" data-id="${esc(doc.documentId)}">
-    <input type="checkbox" ${checked ? 'checked' : ''}>
-    <span class="doc-series">${esc(doc.series)}</span>
-    <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-    ${collected ? '<span class="tag">已采集</span>' : ''}
-    ${doc.pdfUrl ? '<span class="tag dim">PDF</span>' : ''}
-    ${doc.productPageUrl ? '<span class="tag dim">产品页</span>' : ''}
-  </label>`;
-}
-
-function bindDocRows(container) {
-  container.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', (event) => {
-    const id = row.dataset.id;
-    const line = currentLine();
-    const doc = line.documents.find((d) => d.documentId === id);
-    if (state.selected.has(id)) state.selected.delete(id); else state.selected.set(id, doc);
-    row.classList.toggle('checked', state.selected.has(id));
-    row.querySelector('input').checked = state.selected.has(id);
-    updateTray();
+    || `${doc.series} ${doc.modelNames.join(' ')} ${doc.officialFileName} ${doc.description || ''}`.toLowerCase().includes(needle));
+  $('lineInfo').textContent = `${vendorOf(state.currentVendorId).vendorName} · ${line.displayName} · ${line.documents.length} ${t('step1.docCount')}`;
+  if (!line.documents.length) {
+    $('docTable').innerHTML = `<div class="muted empty">${t('common.pending')} · ${esc(line.displayName)}<br><span class="small">${t('step1.pickFirst')}</span></div>`;
+    return;
+  }
+  if (!docs.length) { $('docTable').innerHTML = `<div class="muted empty">${t('step1.noMatch')}</div>`; return; }
+  const rows = docs.map((doc) => {
+    const checked = state.selected.has(doc.documentId);
+    const collected = state.collected.has(doc.documentId);
+    const tags = [
+      collected ? `<span class="badge st-pos">● ${t('common.collected')}</span>` : '',
+      doc.pdfUrl ? '<span class="tag dim">PDF</span>' : '',
+      doc.productPageUrl ? '<span class="tag dim">WEB</span>' : '',
+    ].filter(Boolean).join(' ');
+    return `<tr class="doc-tr ${checked ? 'checked' : ''}" data-id="${esc(doc.documentId)}">
+      <td><input type="checkbox" ${checked ? 'checked' : ''}></td>
+      <td>${esc(doc.series)}</td>
+      <td class="mono">${esc(doc.modelNames.join('、') || '—')}</td>
+      <td>${tags}</td>
+      <td class="doc-desc" title="${esc(doc.description || '')}">${esc(doc.description || '')}</td>
+    </tr>`;
+  }).join('');
+  $('docTable').innerHTML = `
+    <table class="probe-table doc-table">
+      <thead><tr>
+        <th></th><th>${t('common.series')}</th><th>${t('common.model')}</th>
+        <th>${t('common.status')}</th><th>${t('common.description')}</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  enhanceResizable($('docTable'), 'catalog');
+  $('docTable').querySelectorAll('.doc-tr').forEach((tr) => tr.addEventListener('click', (event) => {
+    if (event.target.tagName === 'INPUT') return;
+    toggleDocSelect(tr.dataset.id);
+  }));
+  $('docTable').querySelectorAll('.doc-tr input').forEach((input) => input.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleDocSelect(input.closest('.doc-tr').dataset.id);
   }));
 }
 
-function refreshRowById(documentId) {
-  const row = document.querySelector(`#docTable .doc-row[data-id="${CSS.escape(documentId)}"]`);
-  if (row) {
-    row.classList.toggle('checked', state.selected.has(documentId));
-    const input = row.querySelector('input');
-    if (input) input.checked = state.selected.has(documentId);
-  }
+function toggleDocSelect(documentId) {
+  const line = currentLine();
+  const doc = line && line.documents.find((d) => d.documentId === documentId);
+  if (!doc) return;
+  if (state.selected.has(documentId)) state.selected.delete(documentId);
+  else state.selected.set(documentId, doc);
+  renderDocTable($('docSearch').value);
+  updateTray();
 }
+
+
+
 
 function updateTray() {
   $('selCount').textContent = state.selected.size;
@@ -450,23 +465,23 @@ const PROBE_SEVERITY = {
 
 // 状态元数据：短标签 + 形状前缀（色弱双通道）+ 样式类，与 docs/UI美化设计方案.md 3.1 表一致
 const PROBE_CHIP_META = {
-  valid_unchanged: { short: '有效未变', shape: '●', cls: 'st-pos' },
-  baseline_matched: { short: '基线一致', shape: '●', cls: 'st-pos' },
-  manual_ok: { short: '人工有效', shape: '●', cls: 'st-pos' },
-  new_archived: { short: '新建档', shape: '○', cls: 'st-info' },
-  link_ok: { short: '可访问', shape: '○', cls: 'st-info' },
-  pending_review: { short: '待核对', shape: '○', cls: 'st-info' },
-  updated: { short: '已更新', shape: '▲', cls: 'st-warn' },
-  too_large: { short: '超限', shape: '▲', cls: 'st-warn' },
-  vendor_throttled: { short: '限流跳过', shape: '—', cls: 'st-neutral' },
-  paused: { short: '暂缓', shape: '—', cls: 'st-neutral' },
-  manual_invalid: { short: '人工失效', shape: '—', cls: 'st-neutral' },
-  manual_settled: { short: '已裁定', shape: '—', cls: 'st-neutral' },
-  unreachable: { short: '异常', shape: '■', cls: 'st-err' },
-  redirect_broken: { short: '异常', shape: '■', cls: 'st-err' },
-  not_pdf: { short: '异常', shape: '■', cls: 'st-err' },
-  corrupt: { short: '异常', shape: '■', cls: 'st-err' },
-  network_error: { short: '异常', shape: '■', cls: 'st-err' },
+  valid_unchanged: { key: 'chip.valid_unchanged', shape: '●', cls: 'st-pos' },
+  baseline_matched: { key: 'chip.baseline_matched', shape: '●', cls: 'st-pos' },
+  manual_ok: { key: 'chip.manual_ok', shape: '●', cls: 'st-pos' },
+  new_archived: { key: 'chip.new_archived', shape: '○', cls: 'st-info' },
+  link_ok: { key: 'chip.link_ok', shape: '○', cls: 'st-info' },
+  pending_review: { key: 'chip.pending_review', shape: '○', cls: 'st-info' },
+  updated: { key: 'chip.updated', shape: '▲', cls: 'st-warn' },
+  too_large: { key: 'chip.too_large', shape: '▲', cls: 'st-warn' },
+  vendor_throttled: { key: 'chip.vendor_throttled', shape: '—', cls: 'st-neutral' },
+  paused: { key: 'chip.paused', shape: '—', cls: 'st-neutral' },
+  manual_invalid: { key: 'chip.manual_invalid', shape: '—', cls: 'st-neutral' },
+  manual_settled: { key: 'chip.manual_settled', shape: '—', cls: 'st-neutral' },
+  unreachable: { key: 'chip.error', shape: '■', cls: 'st-err' },
+  redirect_broken: { key: 'chip.error', shape: '■', cls: 'st-err' },
+  not_pdf: { key: 'chip.error', shape: '■', cls: 'st-err' },
+  corrupt: { key: 'chip.error', shape: '■', cls: 'st-err' },
+  network_error: { key: 'chip.error', shape: '■', cls: 'st-err' },
 };
 // 五种错误态在芯片上合并为一个「异常」筛选（__error）
 const PROBE_ERROR_SET = new Set(['unreachable', 'redirect_broken', 'not_pdf', 'corrupt', 'network_error']);
@@ -508,7 +523,7 @@ function renderProbeSchedule(schedule, totals, labels) {
   const chips = [{ key: '', short: '全部', shape: '', cls: 'st-all', count: allCount, title: '显示全部状态' }];
   for (const [key, count] of groups) {
     const meta = key === '__error'
-      ? { short: '异常', cls: 'st-err', title: '不可达 / 跳转越界 / 非PDF / 无法解析 / 网络异常' }
+      ? { key: 'chip.error', cls: 'st-err', title: '不可达 / 跳转越界 / 非PDF / 无法解析 / 网络异常' }
       : PROBE_CHIP_META[key];
     if (meta) chips.push({ key, count, title: labels[key] || meta.short, ...meta });
   }
@@ -591,6 +606,7 @@ function pageList(current, pages) {
 const COL_DEFAULTS = {
   results: ['100px', '96px', '150px', '60px', '54px', '132px', '112px', null, '84px'],
   history: ['128px', '84px', '70px', '76px', null, '70px'],
+  catalog: ['38px', '160px', '210px', '120px', null],
 };
 const COL_MIN_PX = 56;
 
@@ -738,7 +754,7 @@ function renderProbeResults(results) {
   const bodyRows = pageRows.map((row) => {
     const current = probe.currentState[row.documentId];
     const display = displayStatusOf(row);
-    const meta = PROBE_CHIP_META[display] || { short: probe.statusLabels[display] || display, shape: '', cls: 'st-neutral' };
+    const meta = PROBE_CHIP_META[display] || { key: display, shape: '', cls: 'st-neutral' };
     const changed = display !== row.probeStatus;
     const sha = current?.sha256 || row.sha256;
     const sizeText = sha ? `SHA ${esc(String(sha).slice(0, 10))}…` : (row.contentLength ? fmtBytes(row.contentLength) : '—');
@@ -752,7 +768,7 @@ function renderProbeResults(results) {
     ].filter(Boolean).join(' ');
     const timeText = String(row.checkedAt).slice(0, 16).replace('T', ' ');
     return `<tr>
-      <td><span class="badge ${meta.cls}" title="${esc(probe.statusLabels[display] || display)}">${meta.shape} ${esc(meta.short)}</span></td>
+      <td><span class="badge ${meta.cls}" title="${esc(probe.statusLabels[display] || display)}">${meta.shape} ${esc(t(meta.key))}</span></td>
       <td>${esc(row.vendorName)}</td>
       <td title="${esc(row.officialFileName || '')}">${esc(row.series)}</td>
       <td>${row.httpStatus || '—'}</td>
@@ -782,8 +798,8 @@ function renderProbeResults(results) {
     ${renderRunCaption()}
     <table class="probe-table">
       <thead><tr>
-        ${th('status', '状态')}${th('vendor', '品牌')}${th('series', '系列')}${th('http', 'HTTP')}${th('pages', '页数')}<th>大小 / SHA-256</th>${th('time', '检查时间')}
-        <th>备注</th><th>操作</th>
+        ${th('status', t('common.status'))}${th('vendor', t('common.vendor'))}${th('series', t('common.series'))}<th>HTTP</th>${th('pages', t('common.pages'))}<th>SHA-256</th>${th('time', t('common.time'))}
+        <th>${t('common.note')}</th><th>${t('common.operation')}</th>
       </tr></thead>
       <tbody>${bodyRows || '<tr><td colspan="9" class="muted empty">没有符合筛选条件的记录</td></tr>'}</tbody>
     </table>
@@ -874,8 +890,8 @@ function renderRunsTable() {
   $('probeRuns').innerHTML = `
     <table class="probe-table">
       <thead><tr>
-        ${th('startedAt', '开始时间')}${th('trigger', '触发方式')}${th('mode', '模式')}${th('count', '资料数')}${th('status', '状态')}
-        <th>操作</th>
+        ${th('startedAt', t('common.time'))}${th('trigger', t('common.trigger'))}${th('mode', t('common.mode'))}${th('count', t('common.items'))}${th('status', t('common.status'))}
+        <th>${t('common.operation')}</th>
       </tr></thead>
       <tbody>${bodyRows || '<tr><td colspan="6" class="muted empty">暂无历史校验</td></tr>'}</tbody>
     </table>
@@ -1323,6 +1339,83 @@ async function runBatchUpload() {
   await afterManualAction();
 }
 
+/* ---------- 顶栏三件套：主题 / 语言 / 设置 ---------- */
+
+function initTheme() {
+  const saved = localStorage.getItem('nvci-theme') || 'light';
+  document.body.classList.toggle('theme-dark', saved === 'dark');
+  $('themeBtn').textContent = saved === 'dark' ? '☀️' : '🌙';
+}
+
+function toggleTheme() {
+  const dark = !document.body.classList.contains('theme-dark');
+  document.body.classList.toggle('theme-dark', dark);
+  localStorage.setItem('nvci-theme', dark ? 'dark' : 'light');
+  $('themeBtn').textContent = dark ? '☀️' : '🌙';
+}
+
+function buildLangMenu() {
+  $('langMenu').innerHTML = I18N_LANGS.map((lang) =>
+    `<button class="lang-item ${I18N_STATE.lang === lang.code ? 'active' : ''}" data-lang="${lang.code}">${lang.label}</button>`).join('');
+  $('langMenu').querySelectorAll('.lang-item').forEach((btn) => btn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    setLang(btn.dataset.lang);
+    $('langMenu').classList.add('hidden');
+    applyI18n();
+    buildLangMenu();
+    refreshUI();
+    toast('info', I18N[I18N_STATE.lang] ? btn.textContent : btn.textContent, 1800);
+  }));
+}
+
+function refreshUI() {
+  applyI18n();
+  renderTree();
+  renderDocTable($('docSearch').value);
+  updateTray();
+  if (state.step === 2) renderCollectSummary();
+  if (state.step === 3) renderLibrary();
+  if (state.step === 4) { renderAiMode(); loadExports(); }
+  if (state.step === 5) { renderProbe(); }
+}
+
+async function openSettings() {
+  try {
+    const view = await api('/api/settings');
+    $('sPdfDir').value = view.storage.pdfSubdir || '';
+    $('sProtocol').value = view.ai.protocol || '';
+    $('sBaseUrl').value = view.ai.baseUrl || '';
+    $('sModel').value = view.ai.model || '';
+    $('sVisionModel').value = view.ai.visionModel || '';
+    $('sApiKey').value = '';
+    $('sApiKey').placeholder = view.ai.apiKeyConfigured ? t('settings.apiKeyMasked') : 'API Key';
+    $('sAiState').textContent = view.ai.apiKeyConfigured ? `● ${t('top.aiOn')}` : '';
+  } catch (error) { toast('error', error.message); }
+  $('settingsMask').classList.remove('hidden');
+}
+
+async function saveSettings(patch) {
+  try {
+    const payload = await api('/api/settings', { method: 'PUT', body: JSON.stringify(patch) });
+    toast('success', t('settings.saved'));
+    if (patch.ai) {
+      const status = await api('/api/ai-status');
+      state.aiStatus = status;
+      $('aiBadge').textContent = status.configured ? `AI · ${status.model}` : 'AI ✕';
+      $('aiBadge').classList.toggle('on', status.configured);
+    }
+    return payload;
+  } catch (error) { toast('error', error.message); }
+}
+
+/* ---------- 侧栏收拢 / 展开收起全部 ---------- */
+
+function applyTreeCollapsed(collapsed) {
+  document.querySelector('.wizard-grid')?.classList.toggle('tree-collapsed', collapsed);
+  $('treeExpandBtn').classList.toggle('hidden', !collapsed);
+  localStorage.setItem('nvci-tree-collapsed', collapsed ? '1' : '0');
+}
+
 /* ---------- 登录与初始化 ---------- */
 
 async function init() {
@@ -1352,8 +1445,10 @@ async function boot() {
   $('aiBadge').classList.toggle('on', state.aiStatus.configured);
   // 默认展开第一个品牌并选中其第一条产品线
   if (state.catalog.vendors.length) {
-    state.currentVendorId = state.catalog.vendors[0].vendorId;
-    state.currentProfileId = state.catalog.vendors[0].productLines[0].profileId;
+    const first = state.catalog.vendors[0];
+    const withDocs = first.productLines.find((line) => line.documentCount > 0) || first.productLines[0];
+    state.currentVendorId = first.vendorId;
+    state.currentProfileId = withDocs.profileId;
     state.expanded.add(state.currentVendorId);
   }
   renderTree();
@@ -1362,6 +1457,10 @@ async function boot() {
   refreshStepBar();
   refreshAlerts();
   setInterval(refreshAlerts, 60000);
+  applyI18n();
+  initTheme();
+  buildLangMenu();
+  applyTreeCollapsed(localStorage.getItem('nvci-tree-collapsed') === '1');
 }
 
 $('loginBtn').addEventListener('click', async () => {
@@ -1401,6 +1500,27 @@ document.addEventListener('click', (event) => {
   $('alertPanel').classList.add('hidden');
 });
 $('batchBtn').addEventListener('click', openBatchDlg);
+$('themeBtn').addEventListener('click', toggleTheme);
+$('langBtn').addEventListener('click', (event) => { event.stopPropagation(); $('langMenu').classList.toggle('hidden'); });
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.lang-wrap')) $('langMenu')?.classList.add('hidden');
+});
+$('settingsBtn').addEventListener('click', openSettings);
+$('sClose').addEventListener('click', () => $('settingsMask').classList.add('hidden'));
+$('settingsMask').addEventListener('click', (event) => { if (event.target === $('settingsMask')) $('settingsMask').classList.add('hidden'); });
+$('sSaveStorage').addEventListener('click', () => saveSettings({ storage: { pdfSubdir: $('sPdfDir').value.trim() } }));
+$('sSaveAi').addEventListener('click', () => saveSettings({ ai: {
+  protocol: $('sProtocol').value, baseUrl: $('sBaseUrl').value.trim(),
+  model: $('sModel').value.trim(), visionModel: $('sVisionModel').value.trim(),
+  apiKey: $('sApiKey').value.trim(),
+} }));
+$('expandAllBtn').addEventListener('click', () => {
+  state.expanded = new Set(state.catalog.vendors.map((v) => v.vendorId));
+  renderTree();
+});
+$('collapseAllBtn').addEventListener('click', () => { state.expanded.clear(); renderTree(); });
+$('treeCollapseBtn').addEventListener('click', () => applyTreeCollapsed(true));
+$('treeExpandBtn').addEventListener('click', () => applyTreeCollapsed(false));
 $('manualMask').addEventListener('click', (event) => { if (event.target === $('manualMask')) closeManualDlg(); });
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !$('manualMask').classList.contains('hidden')) closeManualDlg(); });
 $('probeBack').addEventListener('click', () => goStep(1));

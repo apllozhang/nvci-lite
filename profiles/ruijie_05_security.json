@@ -1,0 +1,521 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_05_security",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "05 安全与管理网关",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "05 安全与管理网关",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-17026-1",
+      "series": "RG-eLog",
+      "modelNames": [
+        "锐捷日志系统，RG-eLog"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-dsjaq/elogyj/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=17026",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-17026/?field=PreviewFile",
+      "officialFileName": "RG-eLog锐捷日志系统-产品彩页 - 浏览文件 - 11241529.pdf",
+      "expectedSha256": "77da60b33265dfacb62f6f60a472decc8d12f368e3563767700ffcd47bb2480d",
+      "matchTerms": [
+        "锐捷日志系统，RG-eLog",
+        "17026"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "锐捷日志系统，RG-eLog"
+    },
+    {
+      "documentId": "ruijie-preview-17300-1",
+      "series": "RG-WALL1600-M6600E",
+      "modelNames": [
+        "全新下一代防火墙，高性能、全功能、安全防护专家，RG-WALL 1600-M6600E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600m6600e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=17300",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-17300/?field=PreviewFile",
+      "officialFileName": "RG-WALL1600-M6600E全新下一代防火墙产品彩页 - 浏览文件 - 12071517.pdf",
+      "expectedSha256": "fc4d02e04c0fd6a60e43eff3ed92f9e4b85cbf3240b482bc4b1e652c9e15032f",
+      "matchTerms": [
+        "全新下一代防火墙，高性能、全功能、安全防护专家，RG-WALL 1600-M6600E",
+        "17300"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "全新下一代防火墙，高性能、全功能、安全防护专家，RG-WALL 1600-M6600E"
+    },
+    {
+      "documentId": "ruijie-preview-28292-1",
+      "series": "RG-WALL1600-Z5000-G10",
+      "modelNames": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600z5000g10/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28292",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28292/?field=PreviewFile",
+      "officialFileName": "网络安全产品事业部【产品彩页】锐捷新一代防火墙RG-WALL 1600-Z5000-G10 产品彩页 - 浏览文件 - 07210929.pdf",
+      "expectedSha256": "76141e13a09f2261e5239e512996bc71a5f917d5729cc038ae0922d1489574b0",
+      "matchTerms": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10",
+        "28292"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10"
+    },
+    {
+      "documentId": "ruijie-preview-28522-1",
+      "series": "RG-UAC6000-U3100",
+      "modelNames": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3100"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/uac6000u3100/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28522",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28522/?field=PreviewFile",
+      "officialFileName": "RG-UAC 6000系列应用管理网关产品彩页 - 浏览文件 - 09121100.pdf",
+      "expectedSha256": "5cff82bed2366283256dc23aa8d00940aafb6abcb2a6712670a188f85093330a",
+      "matchTerms": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3100",
+        "28522"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3100"
+    },
+    {
+      "documentId": "ruijie-preview-28522-2",
+      "series": "RG-UAC6000-U3210",
+      "modelNames": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3210"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/uac6000u3210/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28522",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28522/?field=PreviewFile",
+      "officialFileName": "RG-UAC 6000系列应用管理网关产品彩页 - 浏览文件 - 09121100.pdf",
+      "expectedSha256": "5cff82bed2366283256dc23aa8d00940aafb6abcb2a6712670a188f85093330a",
+      "matchTerms": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3210",
+        "28522"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UAC6000系列应用管理网关，RG-UAC 6000-U3210"
+    },
+    {
+      "documentId": "ruijie-preview-28522-3",
+      "series": "RG-UAC6000-X20ME",
+      "modelNames": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X20ME"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/uac6000x20me/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28522",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28522/?field=PreviewFile",
+      "officialFileName": "RG-UAC 6000系列应用管理网关产品彩页 - 浏览文件 - 09121100.pdf",
+      "expectedSha256": "5cff82bed2366283256dc23aa8d00940aafb6abcb2a6712670a188f85093330a",
+      "matchTerms": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X20ME",
+        "28522"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UAC6000系列应用管理网关，RG-UAC 6000-X20ME"
+    },
+    {
+      "documentId": "ruijie-preview-28522-4",
+      "series": "RG-UAC6000-X300D",
+      "modelNames": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X300D"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/uac6000x300d/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28522",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28522/?field=PreviewFile",
+      "officialFileName": "RG-UAC 6000系列应用管理网关产品彩页 - 浏览文件 - 09121100.pdf",
+      "expectedSha256": "5cff82bed2366283256dc23aa8d00940aafb6abcb2a6712670a188f85093330a",
+      "matchTerms": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X300D",
+        "28522"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UAC6000系列应用管理网关，RG-UAC 6000-X300D"
+    },
+    {
+      "documentId": "ruijie-preview-28522-5",
+      "series": "RG-UAC6000-X60M",
+      "modelNames": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X60M"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-sjl/uac6000x60m/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28522",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28522/?field=PreviewFile",
+      "officialFileName": "RG-UAC 6000系列应用管理网关产品彩页 - 浏览文件 - 09121100.pdf",
+      "expectedSha256": "5cff82bed2366283256dc23aa8d00940aafb6abcb2a6712670a188f85093330a",
+      "matchTerms": [
+        "RG-UAC6000系列应用管理网关，RG-UAC 6000-X60M",
+        "28522"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-UAC6000系列应用管理网关，RG-UAC 6000-X60M"
+    },
+    {
+      "documentId": "ruijie-preview-29460-1",
+      "series": "RG-WALL1600-Z8600-G20",
+      "modelNames": [
+        "Z系列新一代防火墙，10个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8600-G20"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wallz8600g20/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，10个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8600-G20",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，10个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8600-G20"
+    },
+    {
+      "documentId": "ruijie-preview-29460-2",
+      "series": "RG-WALL1600-Z8620",
+      "modelNames": [
+        "Z系列新一代防火墙，6个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8620"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wallz8620/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，6个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8620",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，6个10G光，16千兆电，2个插槽，RG-WALL 1600-Z8620"
+    },
+    {
+      "documentId": "ruijie-preview-29460-3",
+      "series": "RG-WALL1600-Z8680",
+      "modelNames": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，10个插槽，RG-WALL 1600-Z8680"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wallz8680/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，10个插槽，RG-WALL 1600-Z8680",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，12个10G光，16千兆电，10个插槽，RG-WALL 1600-Z8680"
+    },
+    {
+      "documentId": "ruijie-preview-29460-4",
+      "series": "RG-WALL1600-Z5000-G10",
+      "modelNames": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600z5000g10/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，12个10G光，16千兆电，2个插槽，RG-WALL 1600-Z5000-G10"
+    },
+    {
+      "documentId": "ruijie-preview-29460-5",
+      "series": "RG-WALL1600-Z5000-D05",
+      "modelNames": [
+        "Z系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-Z5000-D05"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600z5000d05/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-Z5000-D05",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-Z5000-D05"
+    },
+    {
+      "documentId": "ruijie-preview-29460-6",
+      "series": "RG-WALL1600-Z5000-D10",
+      "modelNames": [
+        "Z系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-Z5000-D10"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600z5000d10/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-Z5000-D10",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-Z5000-D10"
+    },
+    {
+      "documentId": "ruijie-preview-29460-7",
+      "series": "RG-WALL1600-Z3000-03",
+      "modelNames": [
+        "Z系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-Z3000-03"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600z300003/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29460/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-Z系列锐捷网络新一代防火墙产品彩页 - 浏览文件 - 07301340.pdf",
+      "expectedSha256": "333bd5f654f4a28ea79c648d971361e2e2cd7bf0ad48837bd0340145c9bc5cf3",
+      "matchTerms": [
+        "Z系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-Z3000-03",
+        "29460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Z系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-Z3000-03"
+    },
+    {
+      "documentId": "ruijie-preview-29464-1",
+      "series": "RG-WALL1600-CF6000-05V2",
+      "modelNames": [
+        "CF系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-CF6000-05 V2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600cf600005v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29464/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-CF系列新一代防火墙产品彩页 - 浏览文件 - 07301418.pdf",
+      "expectedSha256": "05ffdd62fd726f86fe82daebf71ce5b38242690797fe44ab30fbe987c0ff3763",
+      "matchTerms": [
+        "CF系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-CF6000-05 V2",
+        "29464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "CF系列新一代防火墙，2个万兆光，2个千兆光，2个2.5G电，8个千兆电，RG-WALL 1600-CF6000-05 V2"
+    },
+    {
+      "documentId": "ruijie-preview-29464-2",
+      "series": "RG-WALL1600-CF6000-01V2",
+      "modelNames": [
+        "CF系列新一代防火墙，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-01 V2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-wgl/wall1600cf600001v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29464/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-CF系列新一代防火墙产品彩页 - 浏览文件 - 07301418.pdf",
+      "expectedSha256": "05ffdd62fd726f86fe82daebf71ce5b38242690797fe44ab30fbe987c0ff3763",
+      "matchTerms": [
+        "CF系列新一代防火墙，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-01 V2",
+        "29464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "CF系列新一代防火墙，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-01 V2"
+    },
+    {
+      "documentId": "ruijie-preview-29464-3",
+      "series": "RG-WALL1600-CF6000-10V2",
+      "modelNames": [
+        "CF系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-CF6000-10 V2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-fhq/wall1600cf600010v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29464/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-CF系列新一代防火墙产品彩页 - 浏览文件 - 07301418.pdf",
+      "expectedSha256": "05ffdd62fd726f86fe82daebf71ce5b38242690797fe44ab30fbe987c0ff3763",
+      "matchTerms": [
+        "CF系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-CF6000-10 V2",
+        "29464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "CF系列新一代防火墙，4个万兆光，4个千兆光，4个2.5G电，16个千兆电，RG-WALL 1600-CF6000-10 V2"
+    },
+    {
+      "documentId": "ruijie-preview-29464-4",
+      "series": "RG-WALL1600-CF6000-03V2",
+      "modelNames": [
+        "CF系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-03 V2"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-fhq/wall1600cf600003v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29464",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29464/?field=PreviewFile",
+      "officialFileName": "RG-WALL 1600-CF系列新一代防火墙产品彩页 - 浏览文件 - 07301418.pdf",
+      "expectedSha256": "05ffdd62fd726f86fe82daebf71ce5b38242690797fe44ab30fbe987c0ff3763",
+      "matchTerms": [
+        "CF系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-03 V2",
+        "29464"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "CF系列新一代防火墙，2个万兆光，2个千兆光，8个千兆电，RG-WALL 1600-CF6000-03 V2"
+    },
+    {
+      "documentId": "ruijie-preview-29465-1",
+      "series": "RG-CMG6000-06",
+      "modelNames": [
+        "多功能安全网关，“多合一”出口设备RG-CMG6000-06"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600006/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，“多合一”出口设备RG-CMG6000-06",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，“多合一”出口设备RG-CMG6000-06"
+    },
+    {
+      "documentId": "ruijie-preview-29465-2",
+      "series": "RG-CMG6000-09",
+      "modelNames": [
+        "多功能安全网关，“多合一”出口设备RG-CMG6000-09"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600009/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，“多合一”出口设备RG-CMG6000-09",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，“多合一”出口设备RG-CMG6000-09"
+    },
+    {
+      "documentId": "ruijie-preview-29465-3",
+      "series": "RG-CMG6000-03-L",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-03-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600003l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-03-L",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，多合一出口设备RG-CMG6000-03-L"
+    },
+    {
+      "documentId": "ruijie-preview-29465-4",
+      "series": "RG-CMG6000-02",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-02"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600002/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-02",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，多合一出口设备RG-CMG6000-02"
+    },
+    {
+      "documentId": "ruijie-preview-29465-5",
+      "series": "RG-CMG6000-01-P",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-01-P"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-zhwg/cmg600001p/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-01-P",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，多合一出口设备RG-CMG6000-01-P"
+    },
+    {
+      "documentId": "ruijie-preview-29465-6",
+      "series": "RG-CMG6000-09-E",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-09-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-aqwg/cmg600009e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-09-E",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，多合一出口设备RG-CMG6000-09-E"
+    },
+    {
+      "documentId": "ruijie-preview-29465-7",
+      "series": "RG-CMG6000-06-E",
+      "modelNames": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-06-E"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/aq-hyjx-aqwg/cmg600006e/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29465",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29465/?field=PreviewFile",
+      "officialFileName": "RG-CMG6000 系列多功能安全网关产品彩页-V1.1 - 浏览文件 - 07301343.pdf",
+      "expectedSha256": "8b655f2ebb7de8b107ca8e347177b54a75e034b94408ce34b02d8afa8f103beb",
+      "matchTerms": [
+        "多功能安全网关，多合一出口设备RG-CMG6000-06-E",
+        "29465"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多功能安全网关，多合一出口设备RG-CMG6000-06-E"
+    }
+  ]
+}

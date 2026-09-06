@@ -30,8 +30,12 @@ test('旧版 schema（ale）兼容：vendorName 有回退、文档可检索', ()
   const ale = catalog.vendors.find((vendor) => vendor.vendorId === 'ale');
   assert.ok(ale, '应包含 ALE');
   assert.equal(ale.vendorName, 'ALE');
-  assert.ok(ale.productLines[0].documents.length === 15, 'ALE OmniSwitch 应有 15 条资料');
-  const found = findDocuments([ale.productLines[0].documents[0].documentId]);
+  const omniswitch = ale.productLines.find((line) => line.displayName === 'OmniSwitch 彩页');
+  assert.ok(omniswitch && omniswitch.documents.length === 15, 'ALE OmniSwitch 应有 15 条资料');
+  // 占位产品线（待登记）应可见但无资料
+  const placeholder = ale.productLines.find((line) => line.documentCount === 0);
+  assert.ok(placeholder, '应包含待登记占位产品线');
+  const found = findDocuments([omniswitch.documents[0].documentId]);
   assert.equal(found.length, 1);
 });
 

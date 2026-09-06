@@ -503,3 +503,74 @@ h3 { font-size: 15px; margin: 12px 0 0; }
 .col-resize-handle:hover::after, .col-resize-handle.dragging::after { background: var(--ale-purple-500); }
 body.col-dragging { cursor: col-resize; user-select: none; }
 body.col-dragging .col-resize-handle::after { background: var(--ale-purple-500); }
+
+/* ================= 品牌树：树头控制 / 侧栏收拢 / 待登记 ================= */
+.catalog-tree-wrap { display: flex; flex-direction: column; min-height: 0; }
+.tree-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px; border-bottom: 1px solid var(--line-soft);
+  font-size: 13px; font-weight: 700; color: var(--ale-purple-700);
+  background: var(--surface-soft); position: sticky; top: 0; z-index: 3;
+}
+.tree-head-btns { display: flex; gap: 4px; }
+.tree-mini {
+  width: 24px; height: 24px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--surface); color: var(--ink-500); cursor: pointer; font-size: 13px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.tree-mini:hover { border-color: var(--ale-purple-500); color: var(--ale-purple-600); }
+.pending-tag { background: var(--neutral-bg, #EFEFEA); color: var(--ink-500); font-size: 11px; padding: 1px 8px; border-radius: 10px; }
+.wizard-grid.tree-collapsed #catalogTreeWrap { display: none; }
+.tree-expand-btn {
+  position: absolute; left: 0; top: 90px; z-index: 8;
+  width: 22px; height: 56px; border: 1px solid var(--line); border-left: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--surface); color: var(--ale-purple-600); cursor: pointer; font-size: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.tree-expand-btn:hover { background: var(--ale-purple-100); }
+.wizard-grid { position: relative; }
+
+/* ================= 第1步资料表格 ================= */
+.doc-table tbody tr { cursor: pointer; }
+.doc-table tbody tr.checked { background: var(--ale-purple-100); }
+.doc-table tbody tr.checked td:first-child { box-shadow: inset 3px 0 0 var(--ale-purple-600); }
+.doc-table .doc-desc { color: var(--ink-500); font-size: 12.5px; }
+
+/* ================= 顶栏三件套 ================= */
+.top-tools { display: flex; align-items: center; gap: 8px; }
+.top-icon {
+  width: 34px; height: 34px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface); font-size: 16px; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: border-color var(--motion-fast), background var(--motion-fast);
+}
+.top-icon:hover { border-color: var(--ale-purple-500); background: var(--ale-purple-100); }
+.lang-wrap { position: relative; }
+.lang-menu {
+  position: absolute; right: 0; top: 42px; z-index: 50;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md); padding: 4px; min-width: 130px;
+}
+.lang-item {
+  display: block; width: 100%; text-align: left; padding: 7px 12px; border: none; border-radius: 6px;
+  background: none; font-size: 13px; color: var(--ink-900); cursor: pointer;
+}
+.lang-item:hover { background: var(--ale-purple-100); }
+.lang-item.active { color: var(--ale-purple-600); font-weight: 700; }
+
+/* ================= 暗色主题（token 级覆盖） ================= */
+body.theme-dark {
+  --bg: #16151a; --card: #1f1d25; --surface: #1f1d25; --surface-soft: #26242e;
+  --line: #3a3744; --line-soft: #312f3a;
+  --ink-900: #ece9f3; --ink-700: #c9c5d4; --ink-500: #97939f;
+  --ale-purple-100: #2e2740; --ale-purple-500: #9a7cc9; --ale-purple-600: #8465b8; --ale-purple-700: #6b489d;
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 35%);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 50%);
+}
+body.theme-dark .probe-table thead th { background: #26242e; box-shadow: 0 2px 0 rgb(0 0 0 / 30%); }
+body.theme-dark .chip { background: var(--surface); }
+body.theme-dark .top-icon, body.theme-dark .tree-mini, body.theme-dark .lang-item { color: var(--ink-900); }
+body.theme-dark .progress-bar { background: #312f3a; }
+body.theme-dark .alert-panel { background: var(--surface); }
+body.theme-dark .dlg { background: var(--surface); }

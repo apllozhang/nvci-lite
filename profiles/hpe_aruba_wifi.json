@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "2.2",
+  "vendorId": "hpe",
+  "vendorName": "HPE Networking",
+  "profileId": "hpe_aruba_wifi",
+  "displayName": "Aruba 无线网络",
+  "productLine": {
+    "name": "Aruba 无线网络"
+  },
+  "officialDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "trustedRedirectDomains": [],
+  "sources": []
+}

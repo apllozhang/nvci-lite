@@ -1,0 +1,1205 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "ruijie_03_wireless",
+  "vendorId": "ruijie",
+  "vendorName": "锐捷网络",
+  "displayName": "03 无线网络",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.ruijie.com.cn",
+    "ruijie.com.cn",
+    "yx.ruijie.com.cn"
+  ],
+  "trustedRedirectDomains": [
+    "zlkfile.oss-cn-beijing.aliyuncs.com"
+  ],
+  "sourcePolicy": "仅使用准确产品页关联的公开匿名 PreviewFile；不得枚举资源 ID、猜测签名 URL或绕过登录。若 PreviewFile 路径失效，停止并转入路径复核。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "01",
+    "name": "03 无线网络",
+    "libraryRootName": "锐捷网络产品彩页"
+  },
+  "subseries": {
+    "id": "previewfile_1",
+    "name": "锐捷公开 PreviewFile 1"
+  },
+  "productLinePath": [
+    "锐捷网络产品彩页",
+    "01 公开彩页"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "ruijie-preview-2449-1",
+      "series": "RG-AP120-S",
+      "modelNames": [
+        "RG-AP120-S面板型无线接入点"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap120s/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=2449",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-2449/?field=PreviewFile",
+      "officialFileName": "RG-AP120-S面板型无线接入点产品彩页 - 浏览文件 - 12281812.pdf",
+      "expectedSha256": "ff49a3c8d8ebd1f8c595bf9fa20eb33a4f09ca0abab02617e9a728158885ec95",
+      "matchTerms": [
+        "RG-AP120-S面板型无线接入点",
+        "2449"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-AP120-S面板型无线接入点"
+    },
+    {
+      "documentId": "ruijie-preview-2561-1",
+      "series": "RG-AP620-H",
+      "modelNames": [
+        "RG-AP620-H(C)室外大功率无线接入点"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/620hc/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=2561",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-2561/?field=PreviewFile",
+      "officialFileName": "RG-AP620-H(C)室外802.11n无线接入点产品彩页 - 浏览文件 - 12281819.pdf",
+      "expectedSha256": "be7f4d3511ea5d7a8b180413e0afc119f889f75fa855e2403bd9b22f00cf2099",
+      "matchTerms": [
+        "RG-AP620-H(C)室外大功率无线接入点",
+        "2561"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-AP620-H(C)室外大功率无线接入点"
+    },
+    {
+      "documentId": "ruijie-preview-2564-1",
+      "series": "RG-AP740-I",
+      "modelNames": [
+        "RG-AP740-I(C)室内802.11ac无线接入点"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap740ic/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=2564",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-2564/?field=PreviewFile",
+      "officialFileName": "RG-AP740-I(C)室内802.11acWave2无线接入点产品彩页 - 浏览文件 - 12281833.pdf",
+      "expectedSha256": "dea3395bea79f3fe61b8f1ea8a78e671ac9755de0bc7773eee6bbf2fef2c33e7",
+      "matchTerms": [
+        "RG-AP740-I(C)室内802.11ac无线接入点",
+        "2564"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-AP740-I(C)室内802.11ac无线接入点"
+    },
+    {
+      "documentId": "ruijie-preview-2575-1",
+      "series": "RG-WS5708",
+      "modelNames": [
+        "RG-WS5708企业级无线控制器"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/5708/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=2575",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-2575/?field=PreviewFile",
+      "officialFileName": "RG-WS5708万兆无线控制器产品彩页 - 浏览文件 - 01041113.pdf",
+      "expectedSha256": "a9125988fc941ef85dd41f19174a4aa25aa1afc6fe1ef2c39aad873d4d6b9d67",
+      "matchTerms": [
+        "RG-WS5708企业级无线控制器",
+        "2575"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "RG-WS5708企业级无线控制器"
+    },
+    {
+      "documentId": "ruijie-preview-17361-1",
+      "series": "RG-WS6108",
+      "modelNames": [
+        "高性能企业级千兆AC无线控制器，RG-WS6108"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/6108/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=17361",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-17361/?field=PreviewFile",
+      "officialFileName": "RG-WS6108高性能无线控制器产品彩页 - 浏览文件 - 11241454.pdf",
+      "expectedSha256": "2858643a9ba6970ae0f1b5607bfcf07fed36c1e092248a30f2d6c615429305aa",
+      "matchTerms": [
+        "高性能企业级千兆AC无线控制器，RG-WS6108",
+        "17361"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级千兆AC无线控制器，RG-WS6108"
+    },
+    {
+      "documentId": "ruijie-preview-19897-1",
+      "series": "RG-AP820-L",
+      "modelNames": [
+        "Wi-Fi 6双射频2.400Gbps通用级放装型无线AP，RG-AP820-L(V2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wifi6/ap820lv2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19897",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19897/?field=PreviewFile",
+      "officialFileName": "RG-AP820-L(V2) 802.11ax 双射频通用级放装型无线接入点产品彩页 - 浏览文件 - 07061728.pdf",
+      "expectedSha256": "b5ecabf7b3cc3bea733d9dd50c080d2136f6c0bbb0c03d66f56b22c7a0ab01d9",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.400Gbps通用级放装型无线AP，RG-AP820-L(V2)",
+        "19897"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.400Gbps通用级放装型无线AP，RG-AP820-L(V2)"
+    },
+    {
+      "documentId": "ruijie-preview-19900-1",
+      "series": "RG-AP850",
+      "modelNames": [
+        "Wi-Fi 6三射频6.067Gbps增强级室内高密无线接入点，RG-AP850(DA)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wifi6/ap850da/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19900",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19900/?field=PreviewFile",
+      "officialFileName": "RG-AP850(DA) 802.11ax三射频无线接入点产品彩页 - 浏览文件 - 07061726.pdf",
+      "expectedSha256": "89baaac62e8b21257215ab135fbca9622ae16602823fee8e15d8c17a593bac58",
+      "matchTerms": [
+        "Wi-Fi 6三射频6.067Gbps增强级室内高密无线接入点，RG-AP850(DA)",
+        "19900"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6三射频6.067Gbps增强级室内高密无线接入点，RG-AP850(DA)"
+    },
+    {
+      "documentId": "ruijie-preview-19901-1",
+      "series": "RG-AP850-A",
+      "modelNames": [
+        "Wi-Fi 6三射频3.267Gbps室内高密放装型无线接入点，RG-AP850-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnafz/ap850a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19901",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19901/?field=PreviewFile",
+      "officialFileName": "RG-AP850-A 802.11ax 三射频无线接入点产品彩页 - 浏览文件 - 07061726.pdf",
+      "expectedSha256": "1e3ae87484e1d8bbf6250698aa68051ee170e7cfe092cb6138d538600199143e",
+      "matchTerms": [
+        "Wi-Fi 6三射频3.267Gbps室内高密放装型无线接入点，RG-AP850-A",
+        "19901"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6三射频3.267Gbps室内高密放装型无线接入点，RG-AP850-A"
+    },
+    {
+      "documentId": "ruijie-preview-19914-1",
+      "series": "RG-AP130-G-A",
+      "modelNames": [
+        "Wi-Fi 5双射频1.167Gbps室内86面板无线AP，RG-AP130-G-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaqm/ap130ga/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19914",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19914/?field=PreviewFile",
+      "officialFileName": "RG-AP130-G-A 802. 11ac薄款千兆面板无线接入点产品彩页 - 浏览文件 - 07101431.pdf",
+      "expectedSha256": "ff589a5c03d393880a50e51603d4ab873887d08aaec9289e5122cd0d054af082",
+      "matchTerms": [
+        "Wi-Fi 5双射频1.167Gbps室内86面板无线AP，RG-AP130-G-A",
+        "19914"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频1.167Gbps室内86面板无线AP，RG-AP130-G-A"
+    },
+    {
+      "documentId": "ruijie-preview-19916-1",
+      "series": "RG-AP130-X",
+      "modelNames": [
+        "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi5/ap130x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19916",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19916/?field=PreviewFile",
+      "officialFileName": "RG-AP130-X嵌入式系列无线接入点产品彩页 - 浏览文件 - 07101440.pdf",
+      "expectedSha256": "7890287a82670d9409d5cfc4aaf17fa2d1d643cba7af076385ad43cf2f90b22e",
+      "matchTerms": [
+        "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X",
+        "19916"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X"
+    },
+    {
+      "documentId": "ruijie-preview-19916-2",
+      "series": "RG-AP130-X",
+      "modelNames": [
+        "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap130x/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19916",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19916/?field=PreviewFile",
+      "officialFileName": "RG-AP130-X嵌入式系列无线接入点产品彩页 - 浏览文件 - 07101440.pdf",
+      "expectedSha256": "7890287a82670d9409d5cfc4aaf17fa2d1d643cba7af076385ad43cf2f90b22e",
+      "matchTerms": [
+        "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X",
+        "19916"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频1.167Gbps室内嵌入式无线接入点，RG-AP130-X"
+    },
+    {
+      "documentId": "ruijie-preview-19922-1",
+      "series": "RG-AP180-L-A",
+      "modelNames": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP180-L-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaqm/ap180la/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19922",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19922/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L-A 802.11ax双射频A系列超薄面板型无线接入点产品彩页 - 浏览文件 - 07071457.pdf",
+      "expectedSha256": "e6010e725509579080ea44adaa14123c74c9607d3eb80dc764eeafc9d27dbf7e",
+      "matchTerms": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP180-L-A",
+        "19922"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP180-L-A"
+    },
+    {
+      "documentId": "ruijie-preview-19925-1",
+      "series": "RG-AP180-L",
+      "modelNames": [
+        "Wi-Fi 6双射频1.775Gbps室内面板型无线接入点，RG-AP180-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19925",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19925/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L 802.11ax双射频通用级超薄面板型无线接入点产品彩页 - 浏览文件 - 07121508.pdf",
+      "expectedSha256": "12a61ca3bfccca13efb5f35b2a6b31288be16d23c726707b44d851b29cb68dbb",
+      "matchTerms": [
+        "Wi-Fi 6双射频1.775Gbps室内面板型无线接入点，RG-AP180-L",
+        "19925"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频1.775Gbps室内面板型无线接入点，RG-AP180-L"
+    },
+    {
+      "documentId": "ruijie-preview-19926-1",
+      "series": "RG-AP630",
+      "modelNames": [
+        "Wi-Fi 5双射频2.533Gbps室外增强型无线基站，RG-AP630(IDA2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap630ida2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19926",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19926/?field=PreviewFile",
+      "officialFileName": "RG-AP630(IDA2)室外智能型大功率802.11ac无线基站接入设备产品彩页 - 浏览文件 - 07121509.pdf",
+      "expectedSha256": "377a202231a85c2ef04d4c210ee375bd479736620d60e0b0b026ddeb9cfd20b3",
+      "matchTerms": [
+        "Wi-Fi 5双射频2.533Gbps室外增强型无线基站，RG-AP630(IDA2)",
+        "19926"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频2.533Gbps室外增强型无线基站，RG-AP630(IDA2)"
+    },
+    {
+      "documentId": "ruijie-preview-19935-1",
+      "series": "RG-AP680-IO",
+      "modelNames": [
+        "Wi-Fi 6 双射频5.95Gbps增强级室外高功率无线AP，10G光口，RG-AP680-IO"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap680io/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19935",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19935/?field=PreviewFile",
+      "officialFileName": "RG-AP680-IO Wi-Fi 6 双射频增强级工业型无线接入点产品彩页 - 浏览文件 - 07071456.pdf",
+      "expectedSha256": "dbdefb67f5a7d34c033ae2f7e79e5069c5a78a9b8b5dcd35867cf2580d4287da",
+      "matchTerms": [
+        "Wi-Fi 6 双射频5.95Gbps增强级室外高功率无线AP，10G光口，RG-AP680-IO",
+        "19935"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6 双射频5.95Gbps增强级室外高功率无线AP，10G光口，RG-AP680-IO"
+    },
+    {
+      "documentId": "ruijie-preview-19936-1",
+      "series": "RG-AP680-PIS",
+      "modelNames": [
+        "Wi-Fi 6双射频5.375Gbps轨道交通车载无线接入点，RG-AP680-PIS"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-gdjt/ap680pis/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19936",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19936/?field=PreviewFile",
+      "officialFileName": "RG-AP680-PIS Wi-Fi 6 双射频智能无线接入点产品彩页 - 浏览文件 - 07071451.pdf",
+      "expectedSha256": "c3743b363e48ddc5e69602f32a03a7a33e6fe7e569c694a4dc2e276abb4667e9",
+      "matchTerms": [
+        "Wi-Fi 6双射频5.375Gbps轨道交通车载无线接入点，RG-AP680-PIS",
+        "19936"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频5.375Gbps轨道交通车载无线接入点，RG-AP680-PIS"
+    },
+    {
+      "documentId": "ruijie-preview-19946-1",
+      "series": "RG-APD-M",
+      "modelNames": [
+        "Wi-Fi 6双射频2.689Gbps物联网智分单元，6个物联网口，12个射频OUT口，RG-APD-M(EX)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-ydyh/apdmex/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19946",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19946/?field=PreviewFile",
+      "officialFileName": "锐捷网络医疗新一代零漫游解决方案产品彩页 - For Preview - 02141137.pdf",
+      "expectedSha256": "d534c3e0a8f96a2070c881a4ebf6e9472094bc567803a454ba7e36d68f77d672",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.689Gbps物联网智分单元，6个物联网口，12个射频OUT口，RG-APD-M(EX)",
+        "19946"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.689Gbps物联网智分单元，6个物联网口，12个射频OUT口，RG-APD-M(EX)"
+    },
+    {
+      "documentId": "ruijie-preview-19947-1",
+      "series": "RG-AP720-L",
+      "modelNames": [
+        "Wi-Fi 5双射频1.167Gbps室内放装型无线接入点，RG-AP720-L"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/720l/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19947",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19947/?field=PreviewFile",
+      "officialFileName": "RG-AP720-L 802.11ac Wave2双射频无线接入点产品彩页 - 浏览文件 - 07070948.pdf",
+      "expectedSha256": "124c69eeada076a6a16dbdbf7397962371aed8f534a5b98fb19e2d213a77d611",
+      "matchTerms": [
+        "Wi-Fi 5双射频1.167Gbps室内放装型无线接入点，RG-AP720-L",
+        "19947"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频1.167Gbps室内放装型无线接入点，RG-AP720-L"
+    },
+    {
+      "documentId": "ruijie-preview-19958-1",
+      "series": "RG-AP680-CD-A",
+      "modelNames": [
+        "Wi-Fi 6 双射频2.975Gbps室外无线AP，2.5G光口，RG-AP680-CD-A(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnasw/ap680cdav3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=19958",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-19958/?field=PreviewFile",
+      "officialFileName": "RG-AP680-CD-A(V3) Wi-Fi 6双射频通用级工业型无线接入点产品彩页 - 浏览文件 - 07171012.pdf",
+      "expectedSha256": "e38d3cbe9c336cd84dbb189121c337d4a56c2aae5facde9e9bc3f9b2cca2a597",
+      "matchTerms": [
+        "Wi-Fi 6 双射频2.975Gbps室外无线AP，2.5G光口，RG-AP680-CD-A(V3)",
+        "19958"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6 双射频2.975Gbps室外无线AP，2.5G光口，RG-AP680-CD-A(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-20042-1",
+      "series": "RG-AP130-H",
+      "modelNames": [
+        "Wi-Fi 5双射频733Mbps室内86面板无线AP，RG-AP130-H"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/RG-AP130-H/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20042",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20042/?field=PreviewFile",
+      "officialFileName": "RG-AP130-H Wi-Fi 5 双射频轻量级超薄面板型无线接入点产品彩页 - 浏览文件 - 07132048.pdf",
+      "expectedSha256": "0d96796e6220e369507bf0cdd3f0b6f6efca9e774dc403a22286f13721f61514",
+      "matchTerms": [
+        "Wi-Fi 5双射频733Mbps室内86面板无线AP，RG-AP130-H",
+        "20042"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5双射频733Mbps室内86面板无线AP，RG-AP130-H"
+    },
+    {
+      "documentId": "ruijie-preview-20096-1",
+      "series": "RG-AP180-L-A",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-L-A(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaqm/ap180lav3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20096",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20096/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L-A(V3) Wi-Fi 6双射频超薄面板型无线接入点产品彩页 - 浏览文件 - 07212000.pdf",
+      "expectedSha256": "09e901d47cf707fb632e8c1cd5791dbd2a23f425083d0516766ddfb7d4629da4",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-L-A(V3)",
+        "20096"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-L-A(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-20634-1",
+      "series": "RG-WS7204-A",
+      "modelNames": [
+        "多业务万兆企业级无线控制器，RG-WS7204-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaac/ws7204a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20634",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20634/?field=PreviewFile",
+      "officialFileName": "RG-WS7204-A高性能无线控制器产品彩页 - 浏览文件 - 11091510.pdf",
+      "expectedSha256": "2e515cc15f6086f37262ee0f3f4aad19dd19c1f9ba18d5f39971cc0e21c19ea2",
+      "matchTerms": [
+        "多业务万兆企业级无线控制器，RG-WS7204-A",
+        "20634"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务万兆企业级无线控制器，RG-WS7204-A"
+    },
+    {
+      "documentId": "ruijie-preview-20635-1",
+      "series": "RG-WS7208-A",
+      "modelNames": [
+        "多业务万兆企业级无线控制器，RG-WS7208-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaac/wa7208a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=20635",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-20635/?field=PreviewFile",
+      "officialFileName": "RG-WS7208-A高性能无线控制器产品彩页 - 浏览文件 - 11091508.pdf",
+      "expectedSha256": "5c53a24571fd88bd0f502d8ad1391139c77be4181ef7b2d577e6653998ac4602",
+      "matchTerms": [
+        "多业务万兆企业级无线控制器，RG-WS7208-A",
+        "20635"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务万兆企业级无线控制器，RG-WS7208-A"
+    },
+    {
+      "documentId": "ruijie-preview-21032-1",
+      "series": "RG-WS6008",
+      "modelNames": [
+        "高性能企业级千兆AC无线控制器，RG-WS6008"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/ws6008/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21032",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21032/?field=PreviewFile",
+      "officialFileName": "RG-WS6008高性能无线控制器产品彩页 - 浏览文件 - 01191546.pdf",
+      "expectedSha256": "9f65d7cbf23f921c196e125404b6910fb3c66e42f87b56e656ec30d1b4fbbb5f",
+      "matchTerms": [
+        "高性能企业级千兆AC无线控制器，RG-WS6008",
+        "21032"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级千兆AC无线控制器，RG-WS6008"
+    },
+    {
+      "documentId": "ruijie-preview-21077-1",
+      "series": "RG-AP730-I",
+      "modelNames": [
+        "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi5/ap730i/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21077",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21077/?field=PreviewFile",
+      "officialFileName": "RG-AP730-I三射频802.11ac Wave2无线接入点产品彩页 - 浏览文件 - 02061738.pdf",
+      "expectedSha256": "46c51a33bf8ef3252fd2e6cb1b64cc63f778b367310aef11803f68da6db173c9",
+      "matchTerms": [
+        "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I",
+        "21077"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I"
+    },
+    {
+      "documentId": "ruijie-preview-21077-2",
+      "series": "RG-AP730-I",
+      "modelNames": [
+        "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap730i/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21077",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21077/?field=PreviewFile",
+      "officialFileName": "RG-AP730-I三射频802.11ac Wave2无线接入点产品彩页 - 浏览文件 - 02061738.pdf",
+      "expectedSha256": "46c51a33bf8ef3252fd2e6cb1b64cc63f778b367310aef11803f68da6db173c9",
+      "matchTerms": [
+        "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I",
+        "21077"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 5三射频2.600Gbps放装无线接入点AP，RG-AP730-I"
+    },
+    {
+      "documentId": "ruijie-preview-21233-1",
+      "series": "RG-AP850-AR",
+      "modelNames": [
+        "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/ap850arv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21233",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21233/?field=PreviewFile",
+      "officialFileName": "RG-AP850-AR(V3) Wi-Fi 6 四射频通用级高密放装型AR系列无线接入点产品彩页 - 浏览文件 - 03191405.pdf",
+      "expectedSha256": "43ad89111722ddd49c8bbdc894503eca054cd69f616b52a9fb9f84166dc2d58f",
+      "matchTerms": [
+        "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)",
+        "21233"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21233-2",
+      "series": "RG-AP850-AR",
+      "modelNames": [
+        "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap850arv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21233",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21233/?field=PreviewFile",
+      "officialFileName": "RG-AP850-AR(V3) Wi-Fi 6 四射频通用级高密放装型AR系列无线接入点产品彩页 - 浏览文件 - 03191405.pdf",
+      "expectedSha256": "43ad89111722ddd49c8bbdc894503eca054cd69f616b52a9fb9f84166dc2d58f",
+      "matchTerms": [
+        "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)",
+        "21233"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6四射频6.242Gbps放装型AR系列无线AP，内置AI Radio，RG-AP850-AR(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21234-1",
+      "series": "RG-WS7005-A",
+      "modelNames": [
+        "多业务千兆企业级无线控制器，RG-WS7005-A(V2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaac/ws7005av2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21234",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21234/?field=PreviewFile",
+      "officialFileName": "RG-WS7005-A(V2) 多业务无线控制器产品彩页 - 浏览文件 - 03191402.pdf",
+      "expectedSha256": "226fdfd32ec928617a1e4f5cd74c338f0dde0e122c92909280ddd9a810c118a6",
+      "matchTerms": [
+        "多业务千兆企业级无线控制器，RG-WS7005-A(V2)",
+        "21234"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "多业务千兆企业级无线控制器，RG-WS7005-A(V2)"
+    },
+    {
+      "documentId": "ruijie-preview-21749-1",
+      "series": "RG-AP180",
+      "modelNames": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180w/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21749",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21749/?field=PreviewFile",
+      "officialFileName": "RG-AP180(W) Wi-Fi 6 双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 06141653.pdf",
+      "expectedSha256": "6c1535afcd068bd2e93269105473f7fad4f54147c84499a89d8cd4c3bfa0c25d",
+      "matchTerms": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)",
+        "21749"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，千兆网口，RG-AP180(W)"
+    },
+    {
+      "documentId": "ruijie-preview-21753-1",
+      "series": "RG-WS6816",
+      "modelNames": [
+        "高性能企业级万兆AC无线控制器，RG-WS6816"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/6816/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21753",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21753/?field=PreviewFile",
+      "officialFileName": "RG-WS6816高性能无线控制器产品彩页 - 浏览文件 - 06171208.pdf",
+      "expectedSha256": "6f92d2c16f2983f438cfff1409ad13706402932a9c3defdc8c542694f4dcadb6",
+      "matchTerms": [
+        "高性能企业级万兆AC无线控制器，RG-WS6816",
+        "21753"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级万兆AC无线控制器，RG-WS6816"
+    },
+    {
+      "documentId": "ruijie-preview-21813-1",
+      "series": "RG-AP820-L",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/ap820lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21813",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21813/?field=PreviewFile",
+      "officialFileName": "RG-AP820-L(V3) Wi-Fi 6 双射频放装型无线接入点产品彩页 - 浏览文件 - 06251453.pdf",
+      "expectedSha256": "03c142ee599336081c74cb99acd331066137610dbeeac6a08fd390fb745f37cd",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+        "21813"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21813-2",
+      "series": "RG-AP820-L",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wifi6/ap820lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21813",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21813/?field=PreviewFile",
+      "officialFileName": "RG-AP820-L(V3) Wi-Fi 6 双射频放装型无线接入点产品彩页 - 浏览文件 - 06251453.pdf",
+      "expectedSha256": "03c142ee599336081c74cb99acd331066137610dbeeac6a08fd390fb745f37cd",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)",
+        "21813"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820-L(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21860-1",
+      "series": "RG-AP180-L",
+      "modelNames": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi6/ap180lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21860",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21860/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L(V3) Wi-Fi 6双射频超薄面板型无线接入点产品彩页 - 浏览文件 - 07051555.pdf",
+      "expectedSha256": "5f4bab9aa4a7968b63ffc0fd3f869f447a902335f7f6dfd2a743f9cccc4788fd",
+      "matchTerms": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+        "21860"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-21860-2",
+      "series": "RG-AP180-L",
+      "modelNames": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180lv3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=21860",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-21860/?field=PreviewFile",
+      "officialFileName": "RG-AP180-L(V3) Wi-Fi 6双射频超薄面板型无线接入点产品彩页 - 浏览文件 - 07051555.pdf",
+      "expectedSha256": "5f4bab9aa4a7968b63ffc0fd3f869f447a902335f7f6dfd2a743f9cccc4788fd",
+      "matchTerms": [
+        "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)",
+        "21860"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6 双射频2.975Gbps室内面板型无线接入点，RG-AP180-L(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-22324-1",
+      "series": "RG-AP820C",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/ap820c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22324",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22324/?field=PreviewFile",
+      "officialFileName": "RG-AP820C  Wi-Fi 6双射频通用级放装型无线接入点产品彩页  - 浏览文件 - 11151656.pdf",
+      "expectedSha256": "d78174595333417456a4c25a5e80126ec666977ec938835e98b30d912a1fe01d",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+        "22324"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+    },
+    {
+      "documentId": "ruijie-preview-22324-2",
+      "series": "RG-AP820C",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap820c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=22324",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-22324/?field=PreviewFile",
+      "officialFileName": "RG-AP820C  Wi-Fi 6双射频通用级放装型无线接入点产品彩页  - 浏览文件 - 11151656.pdf",
+      "expectedSha256": "d78174595333417456a4c25a5e80126ec666977ec938835e98b30d912a1fe01d",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C",
+        "22324"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps放装无线接入点AP，RG-AP820C"
+    },
+    {
+      "documentId": "ruijie-preview-24756-1",
+      "series": "RG-AP840-AR",
+      "modelNames": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi6/rgap840ar/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24756",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24756/?field=PreviewFile",
+      "officialFileName": "RG-AP840-ARWi-Fi 6三射频增强级高密放装型无线接入点产品彩页 - 浏览文件 - 03271622.pdf",
+      "expectedSha256": "00144a3fe681abb82b26ad70342a8be5a744d012a9e051a5fce88614f162834d",
+      "matchTerms": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+        "24756"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+    },
+    {
+      "documentId": "ruijie-preview-24756-2",
+      "series": "RG-AP840-AR",
+      "modelNames": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/rgap840ar/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=24756",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-24756/?field=PreviewFile",
+      "officialFileName": "RG-AP840-ARWi-Fi 6三射频增强级高密放装型无线接入点产品彩页 - 浏览文件 - 03271622.pdf",
+      "expectedSha256": "00144a3fe681abb82b26ad70342a8be5a744d012a9e051a5fce88614f162834d",
+      "matchTerms": [
+        "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR",
+        "24756"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6三射频5.375Gbps放装型AR系列无线AP，内置Al Radio，RG-AP840-AR"
+    },
+    {
+      "documentId": "ruijie-preview-27094-1",
+      "series": "RG-WS7110C",
+      "modelNames": [
+        "高性能企业级万兆AC无线控制器，RG-WS7110C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/ws7110c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=27094",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-27094/?field=PreviewFile",
+      "officialFileName": "RG-WS7110C 高性能无线控制器产品彩页 - 浏览文件 - 06261515.pdf",
+      "expectedSha256": "1f9a15cad4c604da85dde0267db38379d908587e63f42cf4f779f461df6858d2",
+      "matchTerms": [
+        "高性能企业级万兆AC无线控制器，RG-WS7110C",
+        "27094"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级万兆AC无线控制器，RG-WS7110C"
+    },
+    {
+      "documentId": "ruijie-preview-28242-1",
+      "series": "RG-AP680-O",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps室外无线接入点，RG-AP680-O(P)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap680op/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28242",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28242/?field=PreviewFile",
+      "officialFileName": "RG-AP680-O(P) Wi-Fi 6双射频通用级室外型无线接入点产品彩页 - 浏览文件 - 07031828.pdf",
+      "expectedSha256": "6aa316137aef504e6db863b2ed1948ae05574be5611386ac9217c134e0d31286",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps室外无线接入点，RG-AP680-O(P)",
+        "28242"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps室外无线接入点，RG-AP680-O(P)"
+    },
+    {
+      "documentId": "ruijie-preview-28323-1",
+      "series": "RG-WS7110",
+      "modelNames": [
+        "高性能企业级万兆AC无线控制器，RG-WS7110"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/ws7110/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28323",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28323/?field=PreviewFile",
+      "officialFileName": "RG-WS7110高性能无线控制器产品彩页 - 浏览文件 - 07241856.pdf",
+      "expectedSha256": "ed3e34634f1188eabe9f55c16980801fe2ca3cd1fdde5c7a759cad8d6c19e55a",
+      "matchTerms": [
+        "高性能企业级万兆AC无线控制器，RG-WS7110",
+        "28323"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级万兆AC无线控制器，RG-WS7110"
+    },
+    {
+      "documentId": "ruijie-preview-28352-1",
+      "series": "RG-AP194-A",
+      "modelNames": [
+        "Wi-Fi 7 双射频3.57Gbps面板型无线AP， RG-AP194-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaqm/ap194a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28352",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28352/?field=PreviewFile",
+      "officialFileName": "RG-AP194-A Wi-Fi 7双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 07301139.pdf",
+      "expectedSha256": "1021cc4c7ec2c7abf85b6f137ba39e0cd5542dc0264acf5cd9a6f479fa7eb496",
+      "matchTerms": [
+        "Wi-Fi 7 双射频3.57Gbps面板型无线AP， RG-AP194-A",
+        "28352"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7 双射频3.57Gbps面板型无线AP， RG-AP194-A"
+    },
+    {
+      "documentId": "ruijie-preview-28380-1",
+      "series": "RG-WS7816C",
+      "modelNames": [
+        "高性能企业级万兆AC无线网络控制器，RG-WS7816C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/ws7816c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28380",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28380/?field=PreviewFile",
+      "officialFileName": "RG-WS7816C 高性能无线控制器产品彩页 - 浏览文件 - 08081747.pdf",
+      "expectedSha256": "fa1adae25dba0f29eb2e5262ee96a6cd9fe395a94b6e1aebb067fc08f2f57a37",
+      "matchTerms": [
+        "高性能企业级万兆AC无线网络控制器，RG-WS7816C",
+        "28380"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级万兆AC无线网络控制器，RG-WS7816C"
+    },
+    {
+      "documentId": "ruijie-preview-28381-1",
+      "series": "RG-WS6816C",
+      "modelNames": [
+        "高性能企业级万兆AC无线网络控制器，RG-WS6816C"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/ws6816c/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28381",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28381/?field=PreviewFile",
+      "officialFileName": "RG-WS6816C 高性能无线控制器产品彩页 - 浏览文件 - 08081746.pdf",
+      "expectedSha256": "3b818ecab10eb028b79a7ab94f27fd1eb13deef561b03fbdd3b2e11b6add9426",
+      "matchTerms": [
+        "高性能企业级万兆AC无线网络控制器，RG-WS6816C",
+        "28381"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能企业级万兆AC无线网络控制器，RG-WS6816C"
+    },
+    {
+      "documentId": "ruijie-preview-28460-1",
+      "series": "RG-AP170",
+      "modelNames": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP170"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi6/ap170/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28460",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28460/?field=PreviewFile",
+      "officialFileName": "RG-AP170 Wi-Fi 6 双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 08271852.pdf",
+      "expectedSha256": "b072ea1bbad9d4e095244c8622731aa5a830d961352223ecd193c43a597d6eb1",
+      "matchTerms": [
+        "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP170",
+        "28460"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频1.775Gbps室内86面板型无线AP，RG-AP170"
+    },
+    {
+      "documentId": "ruijie-preview-28585-1",
+      "series": "RG-AP680-AR",
+      "modelNames": [
+        "Wi-Fi 6四射频11.617Gbps增强级室外高密无线AP，10G光口，RG-AP680-AR"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-chjhbsh-gdjt/ap680ar/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28585",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28585/?field=PreviewFile",
+      "officialFileName": "RG-AP680-AR Wi-Fi 6四射频增强级高密工业型AR系列无线接入点产品彩页 - 浏览文件 - 10091108.pdf",
+      "expectedSha256": "092c11042beb996aa92a8d4cedd3d751faa2050b76ec78c22b1084e0d0b61dbf",
+      "matchTerms": [
+        "Wi-Fi 6四射频11.617Gbps增强级室外高密无线AP，10G光口，RG-AP680-AR",
+        "28585"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6四射频11.617Gbps增强级室外高密无线AP，10G光口，RG-AP680-AR"
+    },
+    {
+      "documentId": "ruijie-preview-28698-1",
+      "series": "RG-AP9220",
+      "modelNames": [
+        "Wi-Fi 7双射频3.57Gbps放装无线接入点AP，RG-AP9220(V2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi7/ap9220v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28698",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28698/?field=PreviewFile",
+      "officialFileName": "RG-AP9220(V2) Wi-Fi 7双射频通用级放装型无线接入点 - 浏览文件 - 10291523.pdf",
+      "expectedSha256": "4b05b09f75bce58a5d6d97d1c69944c0b48958be0f14cf428f99ed92ff03a6d2",
+      "matchTerms": [
+        "Wi-Fi 7双射频3.57Gbps放装无线接入点AP，RG-AP9220(V2)",
+        "28698"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频3.57Gbps放装无线接入点AP，RG-AP9220(V2)"
+    },
+    {
+      "documentId": "ruijie-preview-28794-1",
+      "series": "RG-AP1920",
+      "modelNames": [
+        "Wi-Fi 7双射频3.57Gbps室内面板型无线接入点，RG-AP1920(V2)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi7/ap1920v2/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28794",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28794/?field=PreviewFile",
+      "officialFileName": "RG-AP1920(V2) Wi-Fi 7 双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 12021447.pdf",
+      "expectedSha256": "2d3bea002ccd16d5d68ebb5103f7949545c8136fae59497229aa76b7ed587c95",
+      "matchTerms": [
+        "Wi-Fi 7双射频3.57Gbps室内面板型无线接入点，RG-AP1920(V2)",
+        "28794"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频3.57Gbps室内面板型无线接入点，RG-AP1920(V2)"
+    },
+    {
+      "documentId": "ruijie-preview-28941-1",
+      "series": "RG-AP9250-R",
+      "modelNames": [
+        "Wi-Fi 7四射频6.452Gbps内置AI Radio，放装型AR系列无线AP，RG-AP9250-R"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi7/ap9250r/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28941",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28941/?field=PreviewFile",
+      "officialFileName": "RG-AP9250-R Wi-Fi 7四射频增强级放装型AR系列无线接入点产品彩页 - 浏览文件 - 02091725.pdf",
+      "expectedSha256": "7ce1a04d2b57925cbcdb4f8e14b2c487b3e5b9a420a44265f761a76ad19df739",
+      "matchTerms": [
+        "Wi-Fi 7四射频6.452Gbps内置AI Radio，放装型AR系列无线AP，RG-AP9250-R",
+        "28941"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7四射频6.452Gbps内置AI Radio，放装型AR系列无线AP，RG-AP9250-R"
+    },
+    {
+      "documentId": "ruijie-preview-28949-1",
+      "series": "RG-WIE7202",
+      "modelNames": [
+        "智能无线AC，RG-WIE7202"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-wxkzhq/wie7202/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=28949",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-28949/?field=PreviewFile",
+      "officialFileName": "RG-WIE7202 无线智控一体机产品彩页 - 浏览文件 - 02091550.pdf",
+      "expectedSha256": "05799eb14910090945787bd6ab47fae150d65831c823ed337b10a91b4d89303d",
+      "matchTerms": [
+        "智能无线AC，RG-WIE7202",
+        "28949"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "智能无线AC，RG-WIE7202"
+    },
+    {
+      "documentId": "ruijie-preview-29025-1",
+      "series": "RG-AP180",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi6/ap180v3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29025",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29025/?field=PreviewFile",
+      "officialFileName": "RG-AP180(V3) Wi-Fi 6双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 03111002.pdf",
+      "expectedSha256": "23538481cd3cc19d53232ae213f99c6c7e3de51f99d9852e1e48f4a9c5f92405",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)",
+        "29025"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-29025-2",
+      "series": "RG-AP180",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap/ap180v3/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29025",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29025/?field=PreviewFile",
+      "officialFileName": "RG-AP180(V3) Wi-Fi 6双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 03111002.pdf",
+      "expectedSha256": "23538481cd3cc19d53232ae213f99c6c7e3de51f99d9852e1e48f4a9c5f92405",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)",
+        "29025"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps室内86面板型无线接入点，RG-AP180(V3)"
+    },
+    {
+      "documentId": "ruijie-preview-29069-1",
+      "series": "RG-AP690-A",
+      "modelNames": [
+        "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnasw/ap690a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29069",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29069/?field=PreviewFile",
+      "officialFileName": "RG-AP690-A Wi-Fi 7双射频通用级室外型无线接入点产品彩页 - 浏览文件 - 04281453.pdf",
+      "expectedSha256": "4d9036b0d372a33bb53756442c7e63f1ed69562897a69f87ae33ad0342d6b3ae",
+      "matchTerms": [
+        "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A",
+        "29069"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A"
+    },
+    {
+      "documentId": "ruijie-preview-29069-2",
+      "series": "RG-AP690-A",
+      "modelNames": [
+        "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap690a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29069",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29069/?field=PreviewFile",
+      "officialFileName": "RG-AP690-A Wi-Fi 7双射频通用级室外型无线接入点产品彩页 - 浏览文件 - 04281453.pdf",
+      "expectedSha256": "4d9036b0d372a33bb53756442c7e63f1ed69562897a69f87ae33ad0342d6b3ae",
+      "matchTerms": [
+        "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A",
+        "29069"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频室外全向天线无线AP，RG-AP690-A"
+    },
+    {
+      "documentId": "ruijie-preview-29070-1",
+      "series": "RG-AP690D-A",
+      "modelNames": [
+        "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnasw/ap690da/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29070",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29070/?field=PreviewFile",
+      "officialFileName": "RG-AP690D-A Wi-Fi 7双射频通用级室外型无线接入点产品彩页 - 浏览文件 - 04281505.pdf",
+      "expectedSha256": "a53da1d985c6ada74c917c22b27606eb3e5d067c1eb3afc9aac41fe126812fe8",
+      "matchTerms": [
+        "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A",
+        "29070"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A"
+    },
+    {
+      "documentId": "ruijie-preview-29070-2",
+      "series": "RG-AP690D-A",
+      "modelNames": [
+        "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap690da/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29070",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29070/?field=PreviewFile",
+      "officialFileName": "RG-AP690D-A Wi-Fi 7双射频通用级室外型无线接入点产品彩页 - 浏览文件 - 04281505.pdf",
+      "expectedSha256": "a53da1d985c6ada74c917c22b27606eb3e5d067c1eb3afc9aac41fe126812fe8",
+      "matchTerms": [
+        "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A",
+        "29070"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7双射频室外定向天线无线AP，RG-AP690D-A"
+    },
+    {
+      "documentId": "ruijie-preview-29077-1",
+      "series": "RG-AP180-S",
+      "modelNames": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-S"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-qmxap-wifi6/ap180s/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29077",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29077/?field=PreviewFile",
+      "officialFileName": "RG-AP180-S Wi-Fi 6 双射频通用级面板型无线接入点产品彩页 - 浏览文件 - 04011803.pdf",
+      "expectedSha256": "f21a1f7365fb6f7d324d6e77f390d5e7052e3fa5323ed23ee480ab033d85d323",
+      "matchTerms": [
+        "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-S",
+        "29077"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 6双射频2.975Gbps室内86面板型无线AP，RG-AP180-S"
+    },
+    {
+      "documentId": "ruijie-preview-29322-1",
+      "series": "RG-AP9520-RDX",
+      "modelNames": [
+        "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd-wifi7/ap9520rdx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29322",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29322/?field=PreviewFile",
+      "officialFileName": "RG-AP9520-RDX Wi-Fi 7三射频增强级放装型无线接入点产品彩页 - 浏览文件 - 06071851.pdf",
+      "expectedSha256": "9bb8c2941b3d579bf6cc3fc14bdd46aaa2526b083bedf2a50904ac8b1b826a3a",
+      "matchTerms": [
+        "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX",
+        "29322"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX"
+    },
+    {
+      "documentId": "ruijie-preview-29322-3",
+      "series": "RG-AP9520-RDX",
+      "modelNames": [
+        "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-fzhxwxjrd/ap9520rdx/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29322",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29322/?field=PreviewFile",
+      "officialFileName": "RG-AP9520-RDX Wi-Fi 7三射频增强级放装型无线接入点产品彩页 - 浏览文件 - 06071851.pdf",
+      "expectedSha256": "9bb8c2941b3d579bf6cc3fc14bdd46aaa2526b083bedf2a50904ac8b1b826a3a",
+      "matchTerms": [
+        "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX",
+        "29322"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7三射频6.453Gbps放装型AR系列无线AP，内置AI Radio，RG-AP9520-RDX"
+    },
+    {
+      "documentId": "ruijie-preview-29433-1",
+      "series": "RG-WS7224-A",
+      "modelNames": [
+        "高性能万兆无线AC控制器，RG-WS7224-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaac/ws7224a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29433",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29433/?field=PreviewFile",
+      "officialFileName": "RG-WS7220-A系列高性能无线控制器产品彩页 - 浏览文件 - 07281150.pdf",
+      "expectedSha256": "e006ceabec0579c92a975b289abf8aaffac40f9f2196990a408d7cc2b00594cb",
+      "matchTerms": [
+        "高性能万兆无线AC控制器，RG-WS7224-A",
+        "29433"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能万兆无线AC控制器，RG-WS7224-A"
+    },
+    {
+      "documentId": "ruijie-preview-29433-2",
+      "series": "RG-WS7228-A",
+      "modelNames": [
+        "高性能万兆无线AC控制器，RG-WS7228-A"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-cjnaac/ws7228a/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29433",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29433/?field=PreviewFile",
+      "officialFileName": "RG-WS7220-A系列高性能无线控制器产品彩页 - 浏览文件 - 07281150.pdf",
+      "expectedSha256": "e006ceabec0579c92a975b289abf8aaffac40f9f2196990a408d7cc2b00594cb",
+      "matchTerms": [
+        "高性能万兆无线AC控制器，RG-WS7228-A",
+        "29433"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "高性能万兆无线AC控制器，RG-WS7228-A"
+    },
+    {
+      "documentId": "ruijie-preview-29462-1",
+      "series": "RG-AP950-AR-RU",
+      "modelNames": [
+        "一机一网方案放装型无线远端模块，Wi-Fi 7三射频6.453Gbps，RG-AP950-AR-RU"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-cjna-yjywwxydmk/ap950arru/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29462",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29462/?field=PreviewFile",
+      "officialFileName": "RG-AP950-AR-RU Wi-Fi 7三射频增强级放装型无线远端模块产品彩页 - 浏览文件 - 07281156.pdf",
+      "expectedSha256": "aadf162abec4800dada5f8c7f477978cce129c4d7fc927483ff0e37d4237af31",
+      "matchTerms": [
+        "一机一网方案放装型无线远端模块，Wi-Fi 7三射频6.453Gbps，RG-AP950-AR-RU",
+        "29462"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "一机一网方案放装型无线远端模块，Wi-Fi 7三射频6.453Gbps，RG-AP950-AR-RU"
+    },
+    {
+      "documentId": "ruijie-preview-29488-1",
+      "series": "RG-AP6981",
+      "modelNames": [
+        "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981"
+      ],
+      "productPageUrl": "https://www.ruijie.com.cn/cp/wx-swap/ap6981/",
+      "materialPageUrl": "https://www.ruijie.com.cn/cp/resources/?id=29488",
+      "pdfUrl": "https://yx.ruijie.com.cn/yx/download/1-29488/?field=PreviewFile",
+      "officialFileName": "RG-AP6981 Wi-Fi 7三射频通用级室外型无线接入点产品彩页 - 浏览文件 - 08102026.pdf",
+      "expectedSha256": "f21b74e7f7990759744a400bf8487e7a560d50a015b1faefb739b5f3e1a3c348",
+      "matchTerms": [
+        "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981",
+        "29488"
+      ],
+      "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
+      "description": "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981"
+    }
+  ]
+}

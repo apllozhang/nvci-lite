@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "2.2",
+  "vendorId": "ale",
+  "vendorName": "ALE",
+  "profileId": "ale_omniaccess",
+  "displayName": "OmniAccess 无线接入",
+  "productLine": {
+    "name": "OmniAccess 无线接入"
+  },
+  "officialDomains": [
+    "www.al-enterprise.com",
+    "al-enterprise.com"
+  ],
+  "trustedRedirectDomains": [],
+  "sources": []
+}
