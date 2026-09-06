@@ -19,5 +19,8 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "ssh2": "^1.17.0"
   }
 }

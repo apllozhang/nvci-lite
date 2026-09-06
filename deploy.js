@@ -2,13 +2,13 @@
 
 // NVCI Lite 部署工具：SSH 到 fnOS NAS，打包上传、Docker Compose 构建、健康检查。
 // 用法：node deploy.js probe|push|status|logs
-// ssh2 复用 ../tools/node_modules，避免重复安装。
+// ssh2 为本仓库 devDependency（旧版曾复用 ../tools，该共享目录已清理）。
 
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { execSync } = require('child_process');
-const { Client } = require(path.join(__dirname, '..', 'tools', 'node_modules', 'ssh2'));
+const { Client } = require('ssh2');
 
 const CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'deploy.config.json'), 'utf8'));
 const PROJECT_DIR = __dirname;
