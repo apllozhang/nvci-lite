@@ -9,3 +9,7 @@ deploy.config.json
 .DS_Store
 Thumbs.db
 ._*
+# 本地复核与工作文档（含内网信息，不入公开仓库）
+/第二轮复核报告.md
+/NVCI-lite_参数准确性提升方案*.md
+/round2-verify.xlsx

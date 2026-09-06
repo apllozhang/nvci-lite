@@ -44,7 +44,7 @@ npm start
 | `PORT` | 监听端口 | `8788` |
 | `NVCI_LITE_DATA_DIR` | 数据目录（缓存/索引/导出） | `./data` |
 | `NVCI_LITE_PASSWORD` | 访问口令（不设则本机免登录） | 空 |
-| `NVCI_LITE_PROFILES_DIR` | 品牌目录来源（原 NVCI bundled-profiles） | `../NVCI/automation/bundled-profiles` |
+| `NVCI_LITE_PROFILES_DIR` | 品牌目录来源 | 仓库自带 `./profiles`（旧版回退 `../NVCI/automation/bundled-profiles`） |
 | `NVCI_LITE_AI_BASE` | AI 接口地址（见下方两种协议） | 空 |
 | `NVCI_LITE_AI_KEY` | API Key | 空 |
 | `NVCI_LITE_AI_MODEL` | 模型名 | `glm-4.6` |
@@ -137,7 +137,7 @@ node deploy.js status  # 查看容器状态
 node deploy.js logs    # 查看日志
 ```
 
-当前部署：`http://10.20.30.203:8789`（8788 已被 sonic-pm-academy 占用）。部署脚本会自动把 `../NVCI/automation/bundled-profiles` 打包为 `profiles/` 上传，Docker 内通过 `NVCI_LITE_PROFILES_DIR=/app/profiles` 读取。
+当前部署：`http://10.20.30.203:8789`（8788 已被 sonic-pm-academy 占用）。资料目录已收编进仓库 `profiles/`（27 个产品线文件、957 条来源），Docker 内通过 `NVCI_LITE_PROFILES_DIR=/app/profiles` 挂载只读。
 
 ## 边界
 
