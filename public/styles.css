@@ -493,12 +493,14 @@ h3 { font-size: 15px; margin: 12px 0 0; }
 .probe-table td { word-break: break-word; overflow-wrap: anywhere; }
 .probe-table td.mono { word-break: break-all; }
 .col-resize-handle {
-  position: absolute; top: 0; right: -4px; width: 9px; height: 100%;
-  cursor: col-resize; z-index: 6; user-select: none;
+  /* 完全置于 th 内部（th 有 overflow:hidden，向外悬挑会被裁掉导致不可点） */
+  position: absolute; top: 0; bottom: 0; right: 0; width: 10px;
+  cursor: col-resize; z-index: 7; user-select: none; touch-action: none;
 }
 .col-resize-handle::after {
+  /* 常显淡紫指示线：让"可拖拽"可被发现，悬停/拖拽中加深 */
   content: ''; position: absolute; top: 22%; bottom: 22%; right: 3px; width: 2px;
-  background: transparent; border-radius: 1px;
+  background: rgb(126 92 180 / 22%); border-radius: 1px;
 }
 .col-resize-handle:hover::after, .col-resize-handle.dragging::after { background: var(--ale-purple-500); }
 body.col-dragging { cursor: col-resize; user-select: none; }
@@ -574,3 +576,16 @@ body.theme-dark .top-icon, body.theme-dark .tree-mini, body.theme-dark .lang-ite
 body.theme-dark .progress-bar { background: #312f3a; }
 body.theme-dark .alert-panel { background: var(--surface); }
 body.theme-dark .dlg { background: var(--surface); }
+
+/* ================= 暗色主题补全：输入控件 / 复选框 / 提示条 ================= */
+body.theme-dark input:not([type="checkbox"]):not([type="radio"]),
+body.theme-dark select,
+body.theme-dark textarea {
+  background: var(--surface); color: var(--ink-900);
+  border-color: var(--line);
+}
+body.theme-dark input::placeholder, body.theme-dark textarea::placeholder { color: var(--ink-500); }
+body.theme-dark .toast { background: #2e2b38; box-shadow: var(--shadow-md); }
+input[type="checkbox"] { accent-color: var(--ale-purple-600); }
+/* 文件选择与拖放区 */
+body.theme-dark .batch-row, body.theme-dark .collect-row { background: var(--surface); border-color: var(--line); }

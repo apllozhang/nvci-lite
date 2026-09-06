@@ -623,29 +623,31 @@ const COL_RERENDER = {
   history: () => renderRunsTable(),
 };
 
-function startColDrag(event, table, cols, index, saved, tableId) {
+function startColDrag(event, table, cols, ths, index, saved, tableId) {
   event.preventDefault();
   event.stopPropagation();
   const handle = event.currentTarget;
-  // 首次拖拽：把当前所有列冻结为像素宽度（含弹性列），表转为可横向扩展
-  const total = cols.reduce((sum, col) => sum + col.clientWidth, 0);
-  cols.forEach((col) => { col.style.width = `${col.clientWidth}px`; });
-  table.style.width = `${total}px`;
+  // 首次拖拽：从 th 实测宽度冻结全部列（col.clientWidth 跨浏览器不可靠），表转为可横向扩展
+  const widths = ths.map((th) => Math.round(th.getBoundingClientRect().width));
+  cols.forEach((col, i) => { col.style.width = `${widths[i]}px`; });
+  const baseTotal = widths.reduce((sum, w) => sum + w, 0);
+  table.style.width = `${baseTotal}px`;
   const startX = event.clientX;
-  const startWidth = cols[index].clientWidth;
+  const startWidth = widths[index];
+  const parentWidth = table.parentElement ? table.parentElement.clientWidth : 0;
   handle.classList.add('dragging');
   document.body.classList.add('col-dragging');
   const onMove = (move) => {
     const width = Math.max(COL_MIN_PX, startWidth + (move.clientX - startX));
     cols[index].style.width = `${width}px`;
-    table.style.width = `${Math.max(table.parentElement.clientWidth, cols.reduce((sum, col) => sum + col.clientWidth, 0))}px`;
+    table.style.width = `${Math.max(parentWidth, baseTotal - startWidth + width)}px`;
   };
   const onUp = () => {
     document.removeEventListener('mousemove', onMove);
     document.removeEventListener('mouseup', onUp);
     handle.classList.remove('dragging');
     document.body.classList.remove('col-dragging');
-    saved[index] = `${cols[index].clientWidth}px`;
+    saved[index] = cols[index].style.width;
     saveColWidths(tableId, saved);
   };
   document.addEventListener('mousemove', onMove);
@@ -675,7 +677,7 @@ function enhanceResizable(container, tableId) {
     const handle = document.createElement('div');
     handle.className = 'col-resize-handle';
     handle.title = '拖动调整列宽 · 双击恢复默认';
-    handle.addEventListener('mousedown', (event) => startColDrag(event, table, cols, index, saved, tableId));
+    handle.addEventListener('mousedown', (event) => startColDrag(event, table, cols, ths, index, saved, tableId));
     handle.addEventListener('click', (event) => event.stopPropagation()); // 避免误触排序
     handle.addEventListener('dblclick', (event) => {
       event.stopPropagation();
@@ -1500,6 +1502,7 @@ document.addEventListener('click', (event) => {
   $('alertPanel').classList.add('hidden');
 });
 $('batchBtn').addEventListener('click', openBatchDlg);
+initTheme();
 $('themeBtn').addEventListener('click', toggleTheme);
 $('langBtn').addEventListener('click', (event) => { event.stopPropagation(); $('langMenu').classList.toggle('hidden'); });
 document.addEventListener('click', (event) => {
