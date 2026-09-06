@@ -585,6 +585,96 @@ function pageList(current, pages) {
   return out;
 }
 
+/* ---------- 表格通用：默认自动换行，列宽可拖拽调整（结果表/历史表） ---------- */
+
+// 各表默认列宽（px）；null = 弹性列吃掉剩余宽度
+const COL_DEFAULTS = {
+  results: ['100px', '96px', '150px', '60px', '54px', '132px', '112px', null, '84px'],
+  history: ['128px', '84px', '70px', '76px', null, '70px'],
+};
+const COL_MIN_PX = 56;
+
+const colWidthKey = (id) => `nvci-colw-${id}`;
+function loadColWidths(id) {
+  try { return JSON.parse(localStorage.getItem(colWidthKey(id))) || {}; } catch { return {}; }
+}
+function saveColWidths(id, widths) {
+  try { localStorage.setItem(colWidthKey(id), JSON.stringify(widths)); } catch { /* 隐私模式等场景静默 */ }
+}
+// 双击手柄恢复默认：清记忆并重渲当前表
+const COL_RERENDER = {
+  results: () => renderProbeResults(probe.lastResults),
+  history: () => renderRunsTable(),
+};
+
+function startColDrag(event, table, cols, index, saved, tableId) {
+  event.preventDefault();
+  event.stopPropagation();
+  const handle = event.currentTarget;
+  // 首次拖拽：把当前所有列冻结为像素宽度（含弹性列），表转为可横向扩展
+  const total = cols.reduce((sum, col) => sum + col.clientWidth, 0);
+  cols.forEach((col) => { col.style.width = `${col.clientWidth}px`; });
+  table.style.width = `${total}px`;
+  const startX = event.clientX;
+  const startWidth = cols[index].clientWidth;
+  handle.classList.add('dragging');
+  document.body.classList.add('col-dragging');
+  const onMove = (move) => {
+    const width = Math.max(COL_MIN_PX, startWidth + (move.clientX - startX));
+    cols[index].style.width = `${width}px`;
+    table.style.width = `${Math.max(table.parentElement.clientWidth, cols.reduce((sum, col) => sum + col.clientWidth, 0))}px`;
+  };
+  const onUp = () => {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    handle.classList.remove('dragging');
+    document.body.classList.remove('col-dragging');
+    saved[index] = `${cols[index].clientWidth}px`;
+    saveColWidths(tableId, saved);
+  };
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+}
+
+function enhanceResizable(container, tableId) {
+  const table = container && container.querySelector('table.probe-table');
+  if (!table) return;
+  const defaults = COL_DEFAULTS[tableId] || [];
+  const saved = loadColWidths(tableId);
+  // 横向滚动容器（每次渲染都是新表，不会重复包裹）
+  const wrap = document.createElement('div');
+  wrap.className = 'table-scroll';
+  table.parentNode.insertBefore(wrap, table);
+  wrap.appendChild(table);
+  // 列组：已存宽度 > 默认宽度 > 弹性
+  const ths = [...table.querySelectorAll('thead th')];
+  const colgroup = document.createElement('colgroup');
+  const cols = ths.map((th, index) => {
+    const col = document.createElement('col');
+    const width = saved[index] || defaults[index];
+    if (width) col.style.width = width;
+    colgroup.appendChild(col);
+    return col;
+  });
+  table.prepend(colgroup);
+  table.style.tableLayout = 'fixed';
+  // 每个表头右缘挂拖拽手柄（sticky th 自带定位上下文）
+  ths.forEach((th, index) => {
+    const handle = document.createElement('div');
+    handle.className = 'col-resize-handle';
+    handle.title = '拖动调整列宽 · 双击恢复默认';
+    handle.addEventListener('mousedown', (event) => startColDrag(event, table, cols, index, saved, tableId));
+    handle.addEventListener('click', (event) => event.stopPropagation()); // 避免误触排序
+    handle.addEventListener('dblclick', (event) => {
+      event.stopPropagation();
+      saveColWidths(tableId, {});
+      COL_RERENDER[tableId] && COL_RERENDER[tableId]();
+    });
+    th.appendChild(handle);
+  });
+}
+
+
 /* 轮次横条：当前表格显示的是哪一轮 */
 function renderRunCaption() {
   const c = probe.currentRunInfo;
@@ -702,6 +792,7 @@ function renderProbeResults(results) {
       <tbody>${bodyRows || '<tr><td colspan="9" class="muted empty">没有符合筛选条件的记录</td></tr>'}</tbody>
     </table>
     <div class="pager pager-bottom"><div class="pager-btns">${pagerBtns}</div></div>`;
+  enhanceResizable($('probeResults'), 'results');
 
   const rcLatest = $('rcLatest');
   if (rcLatest) rcLatest.addEventListener('click', () => { loadLatestRun(); });
@@ -806,6 +897,7 @@ function renderRunsTable() {
       <span class="muted small">明细仅保留最近 5 轮，更早轮次只可看摘要</span>
     </div>`;
 
+  enhanceResizable($('probeRuns'), 'history');
   $('probeRuns').querySelectorAll('th.sortable').forEach((el) => el.addEventListener('click', () => {
     const key = el.dataset.sort;
     if (history.sort.key === key) history.sort.dir = history.sort.dir === 'asc' ? 'desc' : 'asc';

@@ -483,3 +483,20 @@ h3 { font-size: 15px; margin: 12px 0 0; }
 .badge.st-warn { background: #FFEFE8; color: var(--warn); }
 .badge.st-err { background: #FBEAEE; color: var(--fail); }
 .badge.st-neutral { background: #EFEFEA; color: var(--ink-700); }
+
+/* ================= 表格通用：列宽可拖拽 + 文字自动换行 ================= */
+.table-scroll { overflow-x: auto; }
+.probe-table { min-width: 100%; width: 100%; }
+.probe-table td { word-break: break-word; overflow-wrap: anywhere; }
+.probe-table td.mono { word-break: break-all; }
+.col-resize-handle {
+  position: absolute; top: 0; right: -4px; width: 9px; height: 100%;
+  cursor: col-resize; z-index: 6; user-select: none;
+}
+.col-resize-handle::after {
+  content: ''; position: absolute; top: 22%; bottom: 22%; right: 3px; width: 2px;
+  background: transparent; border-radius: 1px;
+}
+.col-resize-handle:hover::after, .col-resize-handle.dragging::after { background: var(--ale-purple-500); }
+body.col-dragging { cursor: col-resize; user-select: none; }
+body.col-dragging .col-resize-handle::after { background: var(--ale-purple-500); }
