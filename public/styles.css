@@ -590,5 +590,7 @@ input[type="checkbox"] { accent-color: var(--ale-purple-600); }
 /* 文件选择与拖放区 */
 body.theme-dark .batch-row, body.theme-dark .collect-row { background: var(--surface); border-color: var(--line); }
 
-/* 第1步资料表：短表不用 sticky（滚动时悬浮表头会脱离表体，视觉错位） */
-.doc-table thead th { position: static; box-shadow: none; }
+/* 第1步资料表：短表不用 sticky（滚动时悬浮表头会脱离表体，视觉错位）。
+   注意用 relative 而非 static：static 会让表头内的拖拽手柄（绝对定位）失去
+   锚点、全部漂到外层容器右缘，导致列宽不可拖——真实踩坑。 */
+.doc-table thead th { position: relative; box-shadow: none; }
