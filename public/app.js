@@ -641,12 +641,8 @@ function enhanceResizable(container, tableId) {
   if (!table) return;
   const defaults = COL_DEFAULTS[tableId] || [];
   const saved = loadColWidths(tableId);
-  // 横向滚动容器（每次渲染都是新表，不会重复包裹）
-  const wrap = document.createElement('div');
-  wrap.className = 'table-scroll';
-  table.parentNode.insertBefore(wrap, table);
-  wrap.appendChild(table);
-  // 列组：已存宽度 > 默认宽度 > 弹性
+  // 注意：不能给表套 overflow-x 容器——sticky 表头在有滚动框的祖先里会失效（竖向粘性被劫持）。
+  // 拖宽后表格超出容器时由页面级横向滚动兜底。
   const ths = [...table.querySelectorAll('thead th')];
   const colgroup = document.createElement('colgroup');
   const cols = ths.map((th, index) => {

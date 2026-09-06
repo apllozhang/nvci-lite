@@ -38,6 +38,7 @@
   --warn-dot: var(--ale-orange);
   --muted: var(--ink-500);
   --border: var(--line);
+  --ok-bg: #E6F7F5; --info-bg: #E5F3FA; --warn-bg: #FFEFE8; --err-bg: #FBEAEE; --neutral-bg: #EFEFEA;
   --font-sans: "Trebuchet MS", "Noto Sans SC", "Microsoft YaHei", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -88,7 +89,7 @@ body {
 
 /* 主区与面板 */
 main { max-width: 1280px; margin: 24px auto; padding: 0 16px; }
-.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: visible; box-shadow: var(--shadow-sm); }
 .panel-head {
   display: flex; align-items: baseline; justify-content: space-between;
   padding: 16px 20px 0; flex-wrap: wrap; gap: 8px;
@@ -364,13 +365,15 @@ h3 { font-size: 15px; margin: 12px 0 0; }
 .batch-status { text-align: right; }
 
 /* ---------- 校验结果表格：排序 + 分页 ---------- */
-.probe-table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--card); }
+.probe-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; background: var(--surface); }
 .probe-table th, .probe-table td { padding: 8px 10px; text-align: left; vertical-align: top; }
 .probe-table thead th {
-  border-bottom: 2px solid var(--border); font-weight: 600; white-space: nowrap;
+  border-bottom: 2px solid var(--line); font-weight: 600; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
   background: var(--surface-soft); user-select: none;
+  box-shadow: 0 2px 0 rgb(32 25 46 / 6%);
 }
-.probe-table tbody tr { border-bottom: 1px dashed var(--border); }
+.probe-table tbody td { border-bottom: 1px solid var(--line-soft); }
 .probe-table tbody tr:hover { background: rgb(241 236 247 / 45%); }
 .probe-table th.sortable { cursor: pointer; }
 .probe-table th.sortable:hover { color: var(--primary); }
