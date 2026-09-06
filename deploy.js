@@ -67,14 +67,20 @@ function sftpWrite(conn, content, remotePath) {
   });
 }
 
-// 每次部署前把 bundled-profiles 刷新到项目 profiles/ 目录，随包上传
+// profiles 已收编进仓库（27 个产品线文件）。仅当旧版 ../NVCI 工作区仍存在时才做
+// 同步刷新；否则直接使用仓库自带版本——绝不先删后拷，防止源目录缺失时清空 profiles/。
 function refreshProfiles() {
   const source = path.join(PROJECT_DIR, '..', 'NVCI', 'automation', 'bundled-profiles');
   const target = path.join(PROJECT_DIR, 'profiles');
-  fs.rmSync(target, { recursive: true, force: true });
+  const targetCount = fs.existsSync(target)
+    ? fs.readdirSync(target).filter((name) => name.endsWith('.json')).length : 0;
+  if (!fs.existsSync(source)) {
+    console.log(`profiles：使用仓库自带 ${targetCount} 个产品线文件（未发现 ../NVCI 旧工作区）`);
+    return;
+  }
   fs.cpSync(source, target, { recursive: true });
   const count = fs.readdirSync(target).filter((name) => name.endsWith('.json')).length;
-  console.log(`profiles 刷新：${count} 个厂商配置`);
+  console.log(`profiles 刷新：${count} 个厂商配置（来源 ../NVCI）`);
 }
 
 function packTar() {
