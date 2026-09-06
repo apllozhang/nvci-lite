@@ -120,10 +120,17 @@
           <label class="check"><input type="checkbox" id="useAi" checked> 用 AI 抽取参数并生成 Word 分析报告</label>
           <p class="muted small" id="aiHint"></p>
         </div>
+        <details id="thresholdBox" class="threshold-box">
+          <summary id="thresholdSummary" data-i18n="thr.title">项目门槛（可选）</summary>
+          <p class="muted small" id="thresholdHint" data-i18n="thr.hint">不填门槛只报告差异；判定由程序按「满足 / 不满足 / 未知」三态计算，未知（取值待核对、未找到、单位不可比）不按不满足处理。</p>
+          <div id="thresholdRows"></div>
+          <button type="button" class="btn ghost" id="thresholdAdd" data-i18n="thr.add">＋ 添加门槛</button>
+        </details>
         <button class="btn primary" id="startAnalyze">生成报告（Excel 参数对照 + Word 分析 / AI 材料包）</button>
         <div id="analyzeResult"></div>
         <h3 id="matrixTitle" class="hidden" data-i18n="matrix.title">参数对照矩阵</h3>
         <div class="muted small hidden" id="matrixHint" data-i18n="matrix.hint">点击「待核对」或「✓ 人工核对」单元格：查看全部候选与原文，选定或修正后保存。确认绑定彩页 SHA-256，下次分析自动采用；彩页更新后自动失效。</div>
+        <div id="thresholdResult" class="hidden"></div>
         <div id="matrixMeta" class="matrix-meta hidden"></div>
         <div id="matrixWrap"></div>
         <h3 data-i18n="step4.history">历史导出</h3>

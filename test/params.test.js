@@ -127,8 +127,8 @@ test('冲突保留：规则 128 与 AI 256 不一致时保留双方候选并标�
   const field = merged[0];
   assert.equal(field.source, 'rule', '高证据级别胜出');
   assert.equal(field.status, 'pending_review', '冲突时胜出值也降为待核对');
-  assert.match(field.reviewNote, /128gbit\/s/, '候选一（规则值，归一化）保留在批注');
-  assert.match(field.reviewNote, /256gbit\/s/, '候选二（AI 值，归一化）保留在批注');
+  assert.match(field.reviewNote, /128Gbit\/s/, '候选一（规则值）保留在批注');
+  assert.match(field.reviewNote, /256Gbit\/s/, '候选二（AI 值）保留在批注');
   assert.ok(Array.isArray(field.candidates) && field.candidates.length === 2, 'candidates 保留双方');
   // 第三候选（与胜出值同来源同值）不得清除冲突（第二轮复核复现：256→128 序列）
   const seq1 = mergeParams(
@@ -141,14 +141,33 @@ test('冲突保留：规则 128 与 AI 256 不一致时保留双方候选并标�
     seq1,
   );
   assert.equal(seq2[0].status, 'pending_review', '第三个同值候选不得把冲突自动恢复为 ok');
-  assert.match(seq2[0].reviewNote, /256gbit\/s/, '256 候选仍保留');
-  assert.match(seq2[0].reviewNote, /128gbit\/s/, '128 候选仍在');
+  assert.match(seq2[0].reviewNote, /256Gbit\/s/, '256 候选仍保留');
+  assert.match(seq2[0].reviewNote, /128Gbit\/s/, '128 候选仍在');
   // 取值一致（仅单位写法差异归一化后相同）不算冲突
   const same = mergeParams(
     [{ key: 'poe', value: '370 W', quote: 'q', status: 'ok', source: 'ai' }],
     [{ key: 'poe', value: '370W', quote: 'q', status: 'ok', source: 'rule' }],
   );
   assert.equal(same[0].status, 'ok', '归一化后同值不触发冲突');
+});
+
+test('单位换算等价（T08）：1.28Tbit/s 与 1280Gbit/s 不算冲突', () => {
+  const { mergeParams } = require('../lib/params');
+  const merged = mergeParams(
+    [{ key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '1280Gbit/s', quote: 'q', status: 'ok', source: 'ai' }],
+    [{ key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '1.28Tbit/s', quote: 'q', status: 'ok', source: 'rule' }],
+  );
+  assert.equal(merged[0].status, 'ok', '同量纲换算等价不触发待核对');
+  assert.equal(merged[0].source, 'rule', '规则高证据级别胜出');
+});
+
+test('限定词不因换算等价被吞并：≤60W 与 60W 保持互异冲突（方案 §5.3）', () => {
+  const { mergeParams } = require('../lib/params');
+  const merged = mergeParams(
+    [{ key: 'poe_budget', label: 'PoE 总功率', group: '供电', value: '≤60W', quote: 'q', status: 'ok', source: 'ai' }],
+    [{ key: 'poe_budget', label: 'PoE 总功率', group: '供电', value: '60W', quote: 'q', status: 'ok', source: 'rule' }],
+  );
+  assert.equal(merged[0].status, 'pending_review', '上限语义不得与精确值合并');
 });
 
 test('模板初始化：双方都无参数时矩阵仍含全部固定字段行', () => {

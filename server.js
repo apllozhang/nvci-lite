@@ -18,6 +18,9 @@ const vision = require('./lib/vision');
 const { FAILED_STATES, MANUAL_SETTLED, ProbeRunner, ProbeState, PROBE_STATE_LABELS, classifyCollectRow, startScheduleLoop } = require('./lib/probe');
 const settings = require('./lib/settings');
 const confirm = require('./lib/confirm');
+const aiCache = require('./lib/ai-cache');
+const thresholds = require('./lib/thresholds');
+const { FIELD_TEMPLATE } = require('./lib/params');
 
 const PORT = Number(process.env.PORT || 8788);
 const DATA_DIR = process.env.NVCI_LITE_DATA_DIR || path.join(__dirname, 'data');
@@ -330,6 +333,11 @@ app.get('/api/catalog', (req, res) => {
   res.json(loadCatalog());
 });
 
+// 固定字段字典：第 4 步门槛编辑器的字段下拉来源（方案 §5.1）
+app.get('/api/field-template', auth, (_req, res) => {
+  res.json({ fields: FIELD_TEMPLATE.map(({ key, label, group }) => ({ key, label, group })) });
+});
+
 app.get('/api/ai-status', (req, res) => {
   const config = ai.aiConfig();
   res.json({ configured: config.configured, model: config.configured ? config.model : '', mode: config.configured ? 'auto' : 'material_pack' });
@@ -445,6 +453,17 @@ app.post('/api/analyze', auth, async (req, res) => {
   if (missing.length) return res.status(400).json({ error: `以下产品尚未采集：${missing.join('、')}` });
   const documents = documentIds.map((id) => library.get(id));
 
+  // 采购门槛（方案 §4.4/§9.2）：最多 5 条，{fieldKey, op(ge/gt/le/lt), value}
+  const rawThresholds = Array.isArray(req.body?.thresholds) ? req.body.thresholds.slice(0, 5) : [];
+  const thresholdList = [];
+  for (const item of rawThresholds) {
+    const fieldKey = String(item?.fieldKey || '').trim();
+    const op = String(item?.op || '').trim();
+    const value = String(item?.value || '').trim().slice(0, 40);
+    if (!fieldKey || !thresholds.THRESHOLD_OPS[op] || !value) continue;
+    thresholdList.push({ fieldKey, op, value });
+  }
+
   try {
     const extractions = [];
     for (const doc of documents) {
@@ -455,15 +474,25 @@ app.post('/api/analyze', auth, async (req, res) => {
     const paramsByDoc = await Promise.all(extractions.map(async (entry) => {
       let params = extractParamsByRules(entry.extraction);
       if (useAi && ai.isConfigured()) {
-        try {
-          const aiParams = await ai.extractParamsWithAi(
-            documents.find((doc) => doc.documentId === entry.documentId),
-            entry.extraction,
-          );
-          // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
-          params = mergeParams(aiParams, params);
-        } catch (error) {
-          entry.aiExtractError = String(error.message || error);
+        const doc = documents.find((item) => item.documentId === entry.documentId);
+        // 抽取缓存（方案 §8.2）：彩页 SHA-256 + 模型 + 提示词版本一致时复用，不重复调 AI
+        const cacheKey = aiCache.cacheKey({
+          documentId: doc.documentId, sha256: doc.sha256,
+          model: ai.aiConfig().model, promptRev: ai.EXTRACT_PROMPT_REV,
+        });
+        const cached = aiCache.getCached(DATA_DIR, cacheKey);
+        if (cached) {
+          entry.aiFromCache = true;
+          params = mergeParams(cached, params);
+        } else {
+          try {
+            const aiParams = await ai.extractParamsWithAi(doc, entry.extraction);
+            aiCache.putCached(DATA_DIR, cacheKey, aiParams);
+            // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
+            params = mergeParams(aiParams, params);
+          } catch (error) {
+            entry.aiExtractError = String(error.message || error);
+          }
         }
       }
       // 视觉兜底：文字层薄弱的彩页（扫描件/图片型）渲染页面图走视觉模型补参数
@@ -496,6 +525,8 @@ app.post('/api/analyze', auth, async (req, res) => {
     const wantedIds = new Set(documentIds);
     const confirmations = confirm.loadConfirmations(DATA_DIR).filter((item) => wantedIds.has(item.documentId));
     const confirmedStats = confirm.applyConfirmations(matrix, confirmations);
+    // 采购门槛三态判定（方案 §9.2）：在人工确认生效后计算，确认值按已核对参与判定
+    if (thresholdList.length) matrix.thresholds = thresholds.evaluateThresholds(matrix, thresholdList);
     const incompleteDocs = [];
     for (const entry of extractions) {
       const reasons = [];
@@ -548,10 +579,11 @@ app.post('/api/analyze', auth, async (req, res) => {
     }
 
     const aiErrors = extractions.filter((entry) => entry.aiExtractError).map((entry) => ({ documentId: entry.documentId, error: entry.aiExtractError }));
+    const aiCachedCount = extractions.filter((entry) => entry.aiFromCache).length;
     const visionUsed = extractions.filter((entry) => entry.visionUsed).length;
     const visionErrors = extractions.filter((entry) => entry.visionError).map((entry) => ({ documentId: entry.documentId, error: entry.visionError }));
     const paramPendingCount = matrix.groups.reduce((sum, group) => sum + group.fields.filter((field) => Object.values(field.values).some((cell) => cell.status === 'pending_review')).length, 0);
-    res.json({ ok: true, documents: documents.map((doc) => ({ documentId: doc.documentId, label: `${doc.vendorName} ${doc.series}` })), paramFieldCount: matrix.groups.reduce((sum, group) => sum + group.fields.length, 0), paramPendingCount, confirmedCount: confirmedStats.applied, staleConfirmationCount: confirmedStats.stale, visionUsed, visionErrors, aiErrors, files, matrix: { documents: matrix.documents, groups: matrix.groups, meta: matrix.meta } });
+    res.json({ ok: true, documents: documents.map((doc) => ({ documentId: doc.documentId, label: `${doc.vendorName} ${doc.series}` })), paramFieldCount: matrix.groups.reduce((sum, group) => sum + group.fields.length, 0), paramPendingCount, confirmedCount: confirmedStats.applied, staleConfirmationCount: confirmedStats.stale, aiCachedCount, visionUsed, visionErrors, aiErrors, files, matrix: { documents: matrix.documents, groups: matrix.groups, meta: matrix.meta, thresholds: matrix.thresholds || [] } });
   } catch (error) {
     res.status(500).json({ error: `分析失败：${String(error.message || error)}` });
   }

@@ -12,6 +12,8 @@ const state = {
   library: [],           // 服务端已采集清单
   cmpSel: new Set(),     // 对比勾选
   matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
+  thresholds: [],        // 项目门槛行 {fieldKey, op, value}
+  fieldTemplate: null,   // 固定字段字典（门槛下拉），进入第 4 步时加载
   collecting: false,
   aborted: false,
 };
@@ -93,7 +95,7 @@ async function goStep(step) {
   refreshStepBar();
   if (step === 2) renderCollectSummary();
   if (step === 3) renderLibrary();
-  if (step === 4) { renderAiMode(); loadExports(); renderMatrix(); }
+  if (step === 4) { renderAiMode(); loadExports(); loadFieldTemplate(); renderMatrix(); }
   if (step === 5) renderProbe();
 }
 
@@ -382,6 +384,93 @@ async function renderLibrary() {
   }));
 }
 
+/* ---------- 步骤 4：项目门槛（三态判定，方案 §4.4/§9.2） ---------- */
+
+const THRESHOLD_OP_OPTIONS = [
+  { value: 'ge', label: () => t('thr.ge') },
+  { value: 'gt', label: () => t('thr.gt') },
+  { value: 'le', label: () => t('thr.le') },
+  { value: 'lt', label: () => t('thr.lt') },
+];
+
+async function loadFieldTemplate() {
+  renderThresholdRows();
+  if (state.fieldTemplate) return;
+  try {
+    const payload = await api('/api/field-template');
+    state.fieldTemplate = payload.fields || [];
+    renderThresholdRows();
+  } catch { /* 字典加载失败不阻断分析：行内仍可手填 */ }
+}
+
+function addThresholdRow() {
+  if (state.thresholds.length >= 5) { toast('warn', t('thr.limit')); return; }
+  const firstField = state.fieldTemplate?.[0];
+  state.thresholds.push({ fieldKey: firstField ? firstField.key : 'downlink_ports', op: 'ge', value: '' });
+  renderThresholdRows();
+}
+
+function removeThresholdRow(index) {
+  state.thresholds.splice(index, 1);
+  renderThresholdRows();
+}
+
+function renderThresholdRows() {
+  const box = $('thresholdRows');
+  if (!state.thresholds.length) { box.innerHTML = ''; return; }
+  const fieldOptions = (selected) => (state.fieldTemplate || [])
+    .map((field) => `<option value="${esc(field.key)}" ${field.key === selected ? 'selected' : ''}>${esc(field.label)}</option>`).join('');
+  const opOptions = (selected) => THRESHOLD_OP_OPTIONS
+    .map((op) => `<option value="${op.value}" ${op.value === selected ? 'selected' : ''}>${esc(op.label())}</option>`).join('');
+  box.innerHTML = state.thresholds.map((row, index) => `
+    <div class="thr-row" data-index="${index}">
+      <select class="thr-field">${fieldOptions(row.fieldKey)}</select>
+      <select class="thr-op">${opOptions(row.op)}</select>
+      <input type="text" class="thr-value" maxlength="40" placeholder="${esc(t('thr.valuePh'))}" value="${esc(row.value)}">
+      <button type="button" class="btn ghost thr-del" title="${esc(t('thr.remove'))}">×</button>
+    </div>`).join('');
+  box.querySelectorAll('.thr-row').forEach((el) => {
+    const index = Number(el.dataset.index);
+    el.querySelector('.thr-field').addEventListener('change', (event) => { state.thresholds[index].fieldKey = event.target.value; });
+    el.querySelector('.thr-op').addEventListener('change', (event) => { state.thresholds[index].op = event.target.value; });
+    el.querySelector('.thr-value').addEventListener('input', (event) => { state.thresholds[index].value = event.target.value; });
+    el.querySelector('.thr-del').addEventListener('click', () => removeThresholdRow(index));
+  });
+}
+
+function thresholdPayload() {
+  return state.thresholds
+    .map((row) => ({ fieldKey: row.fieldKey, op: row.op, value: row.value.trim() }))
+    .filter((row) => row.fieldKey && row.value);
+}
+
+const THRESHOLD_VERDICT_META = {
+  pass: { text: () => t('thr.pass'), cls: 'th-pass' },
+  fail: { text: () => t('thr.fail'), cls: 'th-fail' },
+  unknown: { text: () => t('thr.unknown'), cls: 'th-unknown' },
+};
+
+function renderThresholdResult(rows) {
+  const box = $('thresholdResult');
+  if (!rows || !rows.length || !state.matrix) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+  const docs = state.matrix.documents;
+  const head = `<thead><tr><th>${esc(t('thr.resultField'))}</th>${docs.map((doc) => `<th title="${esc(doc.label)}">${esc(doc.label)}</th>`).join('')}</tr></thead>`;
+  const body = rows.map((row) => `<tr>
+    <td class="thr-label">${esc(row.fieldLabel)} ${esc(row.opLabel)} ${esc(row.value)}</td>
+    ${docs.map((doc) => {
+      const result = row.results[doc.documentId] || { verdict: 'unknown', reason: '—' };
+      const meta = THRESHOLD_VERDICT_META[result.verdict] || THRESHOLD_VERDICT_META.unknown;
+      const detail = result.reason || result.basis || '';
+      return `<td class="${meta.cls}" title="${esc(detail)}">${esc(meta.text())}${detail ? `<span class="muted small"> · ${esc(detail)}</span>` : ''}</td>`;
+    }).join('')}
+  </tr>`).join('');
+  box.innerHTML = `
+    <div class="thr-result-title">${esc(t('thr.result'))}</div>
+    <table class="matrix-table thr-table">${head}<tbody>${body}</tbody></table>
+    <p class="muted small">${esc(t('thr.staleHint'))}</p>`;
+  box.classList.remove('hidden');
+}
+
 /* ---------- 步骤 4：分析 ---------- */
 
 function renderAiMode() {
@@ -404,16 +493,22 @@ async function startAnalyze() {
   $('analyzeResult').innerHTML = '';
   state.matrix = null;
   renderMatrix();
+  renderThresholdResult(null);
   try {
     const payload = await api('/api/analyze', {
       method: 'POST',
-      body: JSON.stringify({ documentIds: [...state.cmpSel], useAi: $('useAi').checked && !$('useAi').disabled }),
+      body: JSON.stringify({
+        documentIds: [...state.cmpSel],
+        useAi: $('useAi').checked && !$('useAi').disabled,
+        thresholds: thresholdPayload(),
+      }),
     });
     const wordFailed = payload.files.some((file) => file.kind === 'word_failed');
     const confirmedNote = payload.confirmedCount ? `，人工已确认 ${payload.confirmedCount} 项` : '';
     const staleNote = payload.staleConfirmationCount ? `，${payload.staleConfirmationCount} 项旧确认因彩页更新失效` : '';
+    const cachedNote = payload.aiCachedCount ? `，AI 抽取缓存命中 ${payload.aiCachedCount} 份` : '';
     $('analyzeResult').innerHTML = `
-      <div class="analyze-ok">✔ 完成：对齐 ${payload.paramFieldCount} 个参数字段${payload.aiErrors?.length ? `（${payload.aiErrors.length} 个型号 AI 抽取失败已用规则兜底）` : ''}${confirmedNote}${staleNote}</div>
+      <div class="analyze-ok">✔ 完成：对齐 ${payload.paramFieldCount} 个参数字段${payload.aiErrors?.length ? `（${payload.aiErrors.length} 个型号 AI 抽取失败已用规则兜底）` : ''}${confirmedNote}${staleNote}${cachedNote}</div>
       ${payload.files.map((file) => file.kind === 'word_failed'
         ? `<div class="warn">Word 生成失败：${esc(file.error)}（Excel 与材料包仍可用）</div>`
         : `<a class="file-card" href="/api/exports/${encodeURIComponent(file.fileName)}" download>
@@ -423,6 +518,7 @@ async function startAnalyze() {
            </a>`).join('')}`;
     state.matrix = payload.matrix || null;
     renderMatrix();
+    renderThresholdResult(payload.matrix?.thresholds);
     if (wordFailed) toast('warn', '报告已生成，但 Word 部分失败（详见页面说明）', 6000);
     else toast('success', '报告生成完成，可点击文件下载');
     loadExports();
@@ -1588,7 +1684,7 @@ function refreshUI() {
   updateTray();
   if (state.step === 2) renderCollectSummary();
   if (state.step === 3) renderLibrary();
-  if (state.step === 4) { renderAiMode(); loadExports(); renderMatrix(); }
+  if (state.step === 4) { renderAiMode(); loadExports(); loadFieldTemplate(); renderMatrix(); }
   if (state.step === 5) { renderProbe(); }
 }
 
@@ -1736,6 +1832,7 @@ $('expandAllBtn').addEventListener('click', () => {
   state.expanded = new Set(state.catalog.vendors.map((v) => v.vendorId));
   renderTree();
 });
+$('thresholdAdd').addEventListener('click', addThresholdRow);
 $('collapseAllBtn').addEventListener('click', () => { state.expanded.clear(); renderTree(); });
 $('treeCollapseBtn').addEventListener('click', () => applyTreeCollapsed(true));
 $('treeExpandBtn').addEventListener('click', () => applyTreeCollapsed(false));

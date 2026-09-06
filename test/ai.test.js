@@ -210,6 +210,9 @@ test('值-引用一致性反例矩阵：单位不一致 / 数字截断 / 否定�
       ['MAC 地址表 16K', '16K entries', 'ok', '合法：单位与数字一致（附加词不否定）'],
       ['包转发率 126Mpps', '126 mpps', 'ok', '合法：大小写与空格'],
       ['不支持 IPv6 路由', '不支持 IPv6 路由', 'ok', '合法：双方都否定'],
+      ['交换容量 1.28Tbit/s', '1280Gbit/s', 'ok', '合法：同量纲单位换算等价（T08）'],
+      ['Switching capacity 1280 Gbit/s', '1.28Tbit/s', 'ok', '合法：反向换算等价（T08）'],
+      ['交换容量 1.28Tbit/s', '1.28Gbit/s', 'pending_review', '换算不得放行量纲错误：G 与 T 差三个数量级'],
     ];
     for (const [quote, value, expected, name] of cases) {
       const payload = JSON.stringify({ params: [

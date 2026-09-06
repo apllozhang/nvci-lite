@@ -627,3 +627,19 @@ td.is-manual { color: var(--ink-900); }
 .cand-src { font-weight: 400; }
 .cand-quote { margin-top: 4px; font-size: 12px; color: var(--ink-700); background: var(--surface-soft); border-left: 3px solid var(--ale-teal); padding: 5px 8px; border-radius: 0 6px 6px 0; white-space: pre-wrap; word-break: break-word; }
 body.theme-dark td.mx-click:hover { background: #2c3340; }
+
+/* ================= 第4步：项目门槛编辑器与判定结果 ================= */
+.threshold-box { border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; margin: 10px 0; background: var(--surface-soft); }
+.threshold-box summary { cursor: pointer; font-weight: 600; font-size: 13.5px; color: var(--ink-900); user-select: none; }
+.threshold-box[open] summary { margin-bottom: 6px; }
+.thr-row { display: flex; gap: 8px; align-items: center; margin: 6px 0; flex-wrap: wrap; }
+.thr-row select, .thr-row input { padding: 6px 9px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; background: var(--surface); color: var(--ink-900); }
+.thr-field { min-width: 150px; }
+.thr-op { min-width: 104px; }
+.thr-value { width: 220px; }
+.thr-del { padding: 4px 10px; }
+.thr-result-title { font-weight: 700; font-size: 14px; margin: 14px 0 6px; color: var(--ink-900); }
+.thr-label { font-weight: 600; white-space: nowrap; }
+.thr-table td.th-pass { color: var(--ok); font-weight: 600; }
+.thr-table td.th-fail { color: var(--fail); font-weight: 600; }
+.thr-table td.th-unknown { color: var(--muted); font-style: italic; }
