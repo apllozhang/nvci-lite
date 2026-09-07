@@ -527,6 +527,9 @@ body.col-dragging .col-resize-handle::after { background: var(--ale-purple-500);
 .tree-mini:hover { border-color: var(--ale-purple-500); color: var(--ale-purple-600); }
 .pending-tag { background: var(--neutral-bg, #EFEFEA); color: var(--ink-500); font-size: 11px; padding: 1px 8px; border-radius: 10px; }
 .wizard-grid.tree-collapsed #catalogTreeWrap { display: none; }
+/* 折叠时收成单列：display:none 的侧栏不占轨道后，主区域若仍按两轨道自动放置
+   会落进 250px 第一列被压扁（表格挤成一条）。单轨道让主区域铺满整行。 */
+.wizard-grid.tree-collapsed { grid-template-columns: 1fr; }
 .tree-expand-btn {
   position: absolute; left: 0; top: 90px; z-index: 8;
   width: 22px; height: 56px; border: 1px solid var(--line); border-left: none;
