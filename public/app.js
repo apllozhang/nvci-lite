@@ -24,7 +24,11 @@ const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '
 async function api(path, options = {}) {
   const response = await fetch(path, { headers: { 'Content-Type': 'application/json' }, ...options });
   const payload = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(payload.error || `HTTP ${response.status}`);
+  if (!response.ok) {
+    const error = new Error(payload.error || `HTTP ${response.status}`);
+    error.payload = payload; // 校验类错误带 errors[] 逐条展示
+    throw error;
+  }
   return payload;
 }
 
@@ -122,8 +126,9 @@ function renderTree() {
     const open = state.expanded.has(vendor.vendorId);
     const lines = vendor.productLines.map((line) => `
       <button class="tree-line ${line.profileId === state.currentProfileId ? 'active' : ''}" data-vendor="${esc(vendor.vendorId)}" data-profile="${esc(line.profileId)}">
-        <span class="tree-line-name">${esc(line.displayName)}</span>${line.documentCount ? `<span class="tree-count">${line.documentCount}</span>` : `<span class="tree-count pending-tag">${t('common.pending')}</span>`}
-      </button>`).join('');
+        <span class="tree-line-name">${esc(line.displayName)}${line.custom ? `<span class="tree-custom-tag" title="${esc(t('profile.customTip'))}">${esc(t('profile.customTag'))}</span>` : ''}</span>${line.documentCount ? `<span class="tree-count">${line.documentCount}</span>` : `<span class="tree-count pending-tag">${t('common.pending')}</span>`}
+      </button>
+      ${line.custom ? `<span class="tree-line-ops" data-profile="${esc(line.profileId)}"><button class="tree-op edit" data-op="edit" title="${esc(t('common.edit'))}">✎</button><button class="tree-op del" data-op="del" title="${esc(t('common.delete'))}">×</button></span>` : ''}`).join('');
     return `<div class="tree-brand">
       <button class="tree-brand-btn ${open ? 'open' : ''}" data-vendor="${esc(vendor.vendorId)}">
         <span class="tree-arrow">${open ? '▾' : '▸'}</span>
@@ -156,6 +161,13 @@ function renderTree() {
     state.expanded.add(btn.dataset.vendor);
     renderTree();
     renderDocTable($('docSearch').value);
+  }));
+  // 自定义产品线：编辑带出表单，删除需确认（内置产品线无此操作按钮）
+  tree.querySelectorAll('.tree-op').forEach((btn) => btn.addEventListener('click', async (event) => {
+    event.stopPropagation();
+    const profileId = btn.closest('.tree-line-ops').dataset.profile;
+    if (btn.dataset.op === 'edit') await openProfileDlg(profileId);
+    else await removeCustomProfile(profileId);
   }));
 }
 
@@ -748,6 +760,193 @@ async function clearConfirm(columnId, paramKey) {
   } catch (error) {
     toast('error', `${t('matrix.clearFailed')}：${error.message}`, 6000);
   }
+}
+
+/* ---------- 自定义厂商/产品线来源（彩页归档，方法论见 README） ---------- */
+
+// 条目编辑区状态：[{ modelNames, pdfUrl, officialFileName, productPageUrl }]
+state.profileEntries = [];
+
+function profileEntryRow(entry, index) {
+  return `<div class="pf-entry" data-idx="${index}">
+    <div class="pf-entry-head"><span class="pf-idx">#${index + 1}</span><button class="btn ghost pf-entry-x" data-idx="${index}" title="${esc(t('common.delete'))}">×</button></div>
+    <div class="dlg-row"><input type="text" class="pf-models" maxlength="500" placeholder="${esc(t('profile.modelsPh'))}" value="${esc(entry.modelNames || '')}"></div>
+    <div class="dlg-row"><input type="url" class="pf-pdf" maxlength="500" placeholder="${esc(t('profile.pdfPh'))}" value="${esc(entry.pdfUrl || '')}"></div>
+    <div class="dlg-row two">
+      <input type="text" class="pf-file" maxlength="200" placeholder="${esc(t('profile.filePh'))}" value="${esc(entry.officialFileName || '')}">
+      <input type="url" class="pf-page" maxlength="500" placeholder="${esc(t('profile.pagePh'))}" value="${esc(entry.productPageUrl || '')}">
+    </div>
+  </div>`;
+}
+
+function renderProfileEntries() {
+  const wrap = $('pfEntries');
+  if (!wrap) return;
+  wrap.innerHTML = state.profileEntries.length
+    ? state.profileEntries.map(profileEntryRow).join('')
+    : `<div class="muted small">${esc(t('profile.emptyEntries'))}</div>`;
+  wrap.querySelectorAll('.pf-entry input').forEach((input) => {
+    input.addEventListener('input', () => {
+      const idx = Number(input.closest('.pf-entry').dataset.idx);
+      const field = { 'pf-models': 'modelNames', 'pf-pdf': 'pdfUrl', 'pf-file': 'officialFileName', 'pf-page': 'productPageUrl' }[input.className.split(' ')[0]];
+      if (field) state.profileEntries[idx][field] = input.value;
+    });
+  });
+  wrap.querySelectorAll('.pf-entry-x').forEach((btn) => btn.addEventListener('click', () => {
+    state.profileEntries.splice(Number(btn.dataset.idx), 1);
+    renderProfileEntries();
+  }));
+}
+
+function collectProfileForm() {
+  return {
+    vendorId: $('pfVendorId').value.trim(),
+    vendorName: $('pfVendorName').value.trim(),
+    productLineName: $('pfLine').value.trim(),
+    subseriesName: $('pfSub').value.trim(),
+    officialDomains: $('pfDomains').value.trim(),
+    trustedRedirectDomains: $('pfRedirect').value.trim(),
+    profileId: $('profileDlg').dataset.profileId || '',
+    sources: state.profileEntries.map((entry) => ({ ...entry })),
+  };
+}
+
+// 打开弹窗：profileId 省略 = 新建；传入 = 编辑已有自定义来源（拉原始 JSON 回填）
+async function openProfileDlg(profileId = '') {
+  let profile = null;
+  if (profileId) {
+    try {
+      const payload = await api('/api/profiles');
+      profile = payload.profiles.find((item) => item.profileId === profileId) || null;
+    } catch { /* 拉取失败按新建处理 */ }
+    if (!profile) { toast('error', t('profile.loadFailed')); return; }
+  }
+  const vendors = (state.catalog?.vendors || [])
+    .map((vendor) => `<option value="${esc(vendor.vendorId)}">${esc(vendor.vendorName)}</option>`).join('');
+  $('profileDlg').innerHTML = `
+    <div class="dlg-head"><span>${esc(profileId ? t('profile.editTitle') : t('profile.title'))}</span><button class="dlg-x" id="pfClose">×</button></div>
+    <div class="dlg-body">
+      <div class="dlg-sec">
+        <div class="dlg-sec-title">${esc(t('profile.secBase'))}</div>
+        <div class="dlg-row two">
+          <input type="text" id="pfVendorId" maxlength="64" list="pfVendorIds" placeholder="${esc(t('profile.vendorIdPh'))}" value="${esc(profile?.vendorId || '')}"><datalist id="pfVendorIds">${vendors}</datalist>
+          <input type="text" id="pfVendorName" maxlength="80" placeholder="${esc(t('profile.vendorNamePh'))}" value="${esc(profile?.vendorName || '')}">
+        </div>
+        <div class="dlg-row two">
+          <input type="text" id="pfLine" maxlength="80" placeholder="${esc(t('profile.linePh'))}" value="${esc(profile?.productLine?.name || '')}">
+          <input type="text" id="pfSub" maxlength="120" placeholder="${esc(t('profile.subPh'))}" value="${esc(profile?.subseries?.name || '')}">
+        </div>
+        <div class="dlg-row"><input type="text" id="pfDomains" maxlength="400" placeholder="${esc(t('profile.domainsPh'))}" value="${esc((profile?.officialDomains || []).join(', '))}"></div>
+        <div class="dlg-row"><input type="text" id="pfRedirect" maxlength="400" placeholder="${esc(t('profile.redirectPh'))}" value="${esc((profile?.trustedRedirectDomains || []).join(', '))}"></div>
+        <p class="muted small">${esc(t('profile.domainNote'))}</p>
+      </div>
+      <div class="dlg-sec">
+        <div class="dlg-sec-title">${esc(t('profile.secEntries'))}</div>
+        <div id="pfEntries" class="pf-entries"></div>
+        <button class="btn ghost" id="pfAddEntry">＋ ${esc(t('profile.addEntry'))}</button>
+      </div>
+      <div class="dlg-sec">
+        <div class="dlg-sec-title">${esc(t('profile.secCheck'))}</div>
+        <div id="pfCheckResult"></div>
+        <button class="btn ghost" id="pfCheck">🔍 ${esc(t('profile.sampleCheck'))}</button>
+        <p class="muted small">${esc(t('profile.checkNote'))}</p>
+      </div>
+    </div>
+    <div class="dlg-foot">
+      <div class="spacer"></div>
+      <button class="btn ghost" id="pfCancel">${esc(t('common.cancel'))}</button>
+      <button class="btn primary" id="pfSave">${esc(t('profile.save'))}</button>
+    </div>`;
+  state.profileEntries = profile?.sources?.map((source) => ({
+    modelNames: (source.modelNames || []).join(', '),
+    pdfUrl: source.pdfUrl || '',
+    officialFileName: source.officialFileName || '',
+    productPageUrl: source.productPageUrl || '',
+  })) || [{ modelNames: '', pdfUrl: '', officialFileName: '', productPageUrl: '' }];
+  $('profileDlg').dataset.profileId = profileId;
+  renderProfileEntries();
+  $('pfAddEntry').addEventListener('click', () => { state.profileEntries.push({ modelNames: '', pdfUrl: '', officialFileName: '', productPageUrl: '' }); renderProfileEntries(); });
+  $('pfClose').addEventListener('click', closeProfileDlg);
+  $('pfCancel').addEventListener('click', closeProfileDlg);
+  $('pfCheck').addEventListener('click', sampleCheckProfile);
+  $('pfSave').addEventListener('click', saveProfile);
+  $('profileMask').classList.remove('hidden');
+}
+
+function closeProfileDlg() {
+  $('profileMask').classList.add('hidden');
+  $('profileDlg').innerHTML = '';
+  $('profileDlg').dataset.profileId = '';
+}
+
+async function sampleCheckProfile() {
+  const result = $('pfCheckResult');
+  if (!result) return;
+  result.innerHTML = `<div class="muted small">${esc(t('profile.checking'))}</div>`;
+  try {
+    const payload = await api('/api/profiles/sample-check', { method: 'POST', body: JSON.stringify(collectProfileForm()) });
+    result.innerHTML = payload.results.map((item) => `
+      <div class="${item.ok ? 'analyze-ok' : 'error'} small">
+        ${item.ok ? '✔' : '✘'} ${esc(item.series || item.documentId)}：${esc(item.detail)}
+      </div>`).join('') + (payload.ok
+      ? `<div class="analyze-ok small">${esc(t('profile.sampleOk'))}</div>`
+      : `<div class="warn small">${esc(t('profile.sampleFail'))}</div>`);
+  } catch (error) {
+    const errors = Array.isArray(error.payload?.errors) ? error.payload.errors : [];
+    result.innerHTML = errors.map((line) => `<div class="error small">✘ ${esc(line)}</div>`).join('')
+      || `<div class="error small">${esc(error.message)}</div>`;
+  }
+}
+
+async function saveProfile() {
+  try {
+    await api('/api/profiles', { method: 'POST', body: JSON.stringify(collectProfileForm()) });
+    toast('success', t('profile.saved'));
+    closeProfileDlg();
+    await reloadCatalog();
+  } catch (error) {
+    const errors = Array.isArray(error.payload?.errors) ? error.payload.errors : [];
+    toast('error', `${t('profile.saveFailed')}：${errors.length ? errors[0] : error.message}`, 8000);
+    if (errors.length) {
+      const result = $('pfCheckResult');
+      if (result) result.innerHTML = errors.map((line) => `<div class="error small">✘ ${esc(line)}</div>`).join('');
+    }
+  }
+}
+
+async function removeCustomProfile(profileId) {
+  const line = state.catalog.vendors.flatMap((v) => v.productLines).find((l) => l.profileId === profileId);
+  if (!confirm(`${t('profile.deleteConfirm')}${line ? `「${line.displayName}」` : ''}`)) return;
+  try {
+    await api(`/api/profiles/${encodeURIComponent(profileId)}`, { method: 'DELETE' });
+    toast('info', t('profile.deleted'));
+    if (state.currentProfileId === profileId) state.currentProfileId = '';
+    await reloadCatalog();
+  } catch (error) {
+    toast('error', `${t('profile.deleteFailed')}：${error.message}`);
+  }
+}
+
+// 目录重载：保留当前选中与展开状态（自定义来源增删后调用）
+async function reloadCatalog() {
+  const catalog = await api('/api/catalog');
+  const keepVendor = state.currentVendorId;
+  const keepProfile = state.currentProfileId;
+  state.catalog = catalog;
+  if (keepVendor && vendorOf(keepVendor)) {
+    state.currentVendorId = keepVendor;
+    const lines = vendorOf(keepVendor).productLines;
+    state.currentProfileId = lines.some((l) => l.profileId === keepProfile) ? keepProfile : (lines[0]?.profileId || '');
+  }
+  renderTree();
+  renderDocTable($('docSearch').value);
+}
+
+function initProfileDialog() {
+  const btn = $('addProfileBtn');
+  if (btn) btn.addEventListener('click', () => openProfileDlg());
+  const mask = $('profileMask');
+  if (mask) mask.addEventListener('click', (event) => { if (event.target === mask) closeProfileDlg(); });
 }
 
 async function loadExports() {
@@ -1782,6 +1981,7 @@ async function boot() {
   updateTray();
   refreshStepBar();
   refreshAlerts();
+  initProfileDialog();
   setInterval(refreshAlerts, 60000);
   applyI18n();
   initTheme();

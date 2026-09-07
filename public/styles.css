@@ -648,3 +648,40 @@ body.theme-dark td.mx-click:hover { background: #2c3340; }
 .thr-table td.th-pass { color: var(--ok); font-weight: 600; }
 .thr-table td.th-fail { color: var(--fail); font-weight: 600; }
 .thr-table td.th-unknown { color: var(--muted); font-style: italic; }
+
+/* ================= 自定义厂商/产品线彩页归档（方法论：官方域名白名单 + 样本检查） ================= */
+.add-profile-btn {
+  margin: 6px 10px 10px; padding: 7px 10px; border: 1px dashed var(--primary);
+  border-radius: 8px; background: transparent; color: var(--primary);
+  font-size: 12.5px; cursor: pointer; text-align: center; transition: all .15s;
+}
+.add-profile-btn:hover { background: var(--ale-purple-100); }
+.catalog-tree-wrap { display: flex; flex-direction: column; }
+#catalogTree { flex: 1; overflow-y: auto; }
+
+/* 自定义产品线标记 + 行内编辑/删除操作 */
+.tree-custom-tag {
+  display: inline-block; margin-left: 5px; padding: 0 4px; border-radius: 4px;
+  font-size: 10px; border: 1px solid var(--primary); color: var(--primary); vertical-align: middle;
+}
+.tree-line-ops { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); display: flex; gap: 2px; opacity: 0; transition: opacity .12s; }
+.tree-line { position: relative; }
+.tree-line:hover + .tree-line-ops, .tree-line-ops:hover { opacity: 1; }
+.tree-op {
+  border: none; background: var(--surface); border-radius: 5px; cursor: pointer;
+  width: 20px; height: 20px; line-height: 1; font-size: 12px; color: var(--muted);
+  box-shadow: 0 0 0 1px var(--line);
+}
+.tree-op:hover { color: var(--primary); }
+.tree-op.del:hover { color: var(--fail); }
+
+/* 来源表单弹窗：条目卡片式编辑 */
+.pf-entries { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow-y: auto; padding: 2px; }
+.pf-entry {
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  display: flex; flex-direction: column; gap: 6px; background: var(--surface);
+}
+.pf-entry-head { display: flex; align-items: center; justify-content: space-between; }
+.pf-idx { font-size: 11px; font-weight: 700; color: var(--muted); }
+.pf-entry-x { padding: 0 8px; font-size: 14px; line-height: 1.4; }
+.pf-entry .dlg-row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }

@@ -42,3 +42,36 @@ test('旧版 schema（ale）兼容：vendorName 有回退、文档可检索', ()
 test('findDocuments 忽略未知 ID', () => {
   assert.deepEqual(findDocuments(['not_exist_id']), []);
 });
+
+test('自定义来源叠加：新厂商归入目录并带 custom 标记，冲突条目跳过并警告', () => {
+  const fs = require('fs');
+  const os = require('os');
+  const path = require('path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'nvci-custom-'));
+  // 取内置真实存在的 documentId 制造冲突（内置基准不可覆盖）
+  const builtinId = loadCatalog().vendors
+    .flatMap((vendor) => vendor.productLines.flatMap((line) => line.documents.map((doc) => doc.documentId)))[0];
+  // 一个新厂商来源 + 一条与内置冲突的 documentId
+  fs.writeFileSync(path.join(dir, 'juniper_ex4300.json'), JSON.stringify({
+    schemaVersion: '2.2-lite', custom: true,
+    profileId: 'juniper_switches_ex4300', vendorId: 'juniper', vendorName: 'Juniper Networks',
+    displayName: 'Juniper EX4300 官方资料', officialDomains: ['www.juniper.net'],
+    productLine: { id: 'switches', name: '交换机', libraryRootName: 'Juniper产品彩页' },
+    subseries: { id: 'ex4300', name: 'EX4300' },
+    sources: [
+      { documentId: 'juniper_ex4300_1', series: 'EX4300', modelNames: ['EX4300-24T', 'EX4300-48T'], pdfUrl: 'https://www.juniper.net/a.pdf', officialFileName: 'a.pdf' },
+      { documentId: builtinId, series: '冲突', modelNames: ['X'], pdfUrl: 'https://www.juniper.net/b.pdf', officialFileName: 'b.pdf' },
+    ],
+  }), 'utf8');
+  const catalog = loadCatalog(undefined, dir);
+  const juniper = catalog.vendors.find((vendor) => vendor.vendorId === 'juniper');
+  assert.ok(juniper, '新厂商应出现在目录');
+  assert.equal(juniper.vendorName, 'Juniper Networks');
+  const line = juniper.productLines[0];
+  assert.equal(line.custom, true, '自定义产品线带 custom 标记');
+  assert.equal(line.documentCount, 1, '冲突条目被跳过，仅 1 条生效');
+  assert.ok(catalog.warnings.some((w) => w.includes(builtinId)), '冲突记入 warnings');
+  const found = findDocuments(['juniper_ex4300_1'], undefined, dir);
+  assert.equal(found.length, 1, '自定义条目可被采集检索');
+  fs.rmSync(dir, { recursive: true, force: true });
+});
