@@ -232,3 +232,41 @@ test('值-引用一致性反例矩阵：单位不一致 / 数字截断 / 否定�
     }
   });
 });
+
+test('extractParamsWithAi（T05）：targetModel 注入提示词，输出携带 modelScope 与 seriesWide', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    let capturedBody = '';
+    const payload = JSON.stringify({ params: [
+      { key: 'downlink_ports', label: '下行端口数', group: '端口', value: '24', quote: 'S5731-S24 24 端口', page: 1, seriesWide: false },
+      { key: 'operating_temp', label: '工作温度', group: '环境适应', value: '0°C 至 45°C', quote: '工作温度 0°C 至 45°C', page: 1, seriesWide: true },
+    ] });
+    const mockFetch = async (_url, options) => {
+      capturedBody = String(options.body || '');
+      return {
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: payload }] }),
+      };
+    };
+    const extraction = {
+      pageCount: 1,
+      pages: [{ page: 1, lines: ['S5731-S24 24 端口', '工作温度 0°C 至 45°C'] }],
+      fullText: 'S5731-S24 24 端口\n工作温度 0°C 至 45°C',
+    };
+    const params = await ai.extractParamsWithAi(
+      { vendorName: '华为', series: 'S5731-S', modelNames: ['S5731-S24', 'S5731-S48'] },
+      extraction,
+      { fetchImpl: mockFetch, targetModel: 'S5731-S24' },
+    );
+    assert.match(capturedBody, /目标型号：S5731-S24/, '目标型号应注入用户提示词并说明归属规则');
+    const byKey = new Map(params.map((param) => [param.key, param]));
+    assert.equal(byKey.get('downlink_ports').modelScope, 'S5731-S24', 'cell 记录归属目标型号');
+    assert.equal(byKey.get('downlink_ports').seriesWide, false);
+    assert.equal(byKey.get('operating_temp').seriesWide, true, 'AI 全系列通用标记透传到 cell');
+  });
+});

@@ -562,19 +562,25 @@ function renderMatrix() {
 }
 
 function matrixCellHtml(field, doc) {
-  const cell = field.values[doc.documentId];
+  // 列键用 columnId（T05 型号分列：同一彩页多型号各占一列），单列时与 documentId 相同
+  const columnId = doc.columnId || doc.documentId;
+  const cell = field.values[columnId];
   if (!cell) return '<td class="mx-cell"></td>';
   const manual = cell.source === 'manual' && cell.manual;
-  const clickable = cell.status === 'pending_review' || manual || cell.staleConfirmation;
+  const clickable = cell.status === 'pending_review' || manual || cell.staleConfirmation || cell.unattributed;
   const marker = manual
     ? `<span class="mx-manual" title="${esc(t('matrix.confirmedMark'))}">✓</span>`
     : cell.status === 'pending_review' ? '<span class="mx-pend">○</span>' : '';
+  // 系列值（T05）：值来自整份彩页（规则/视觉抽取或 AI 全系列判定），未验证归属到本型号
+  const seriesMark = cell.unattributed && !manual
+    ? `<span class="mx-series" title="${esc(t('matrix.seriesNote'))}">${esc(t('matrix.seriesVal'))}</span>`
+    : '';
   const text = (cell.status === 'ok' || cell.status === 'pending_review') && cell.value
     ? esc(cell.value)
     : `<span class="muted">（${esc(MATRIX_STATUS_TEXT[cell.status] ? MATRIX_STATUS_TEXT[cell.status]() : cell.status)}）</span>`;
   const staleMark = cell.staleConfirmation ? '<span class="mx-stale" title="stale">!</span>' : '';
   const cls = ['mx-cell', manual ? 'is-manual' : '', cell.status === 'pending_review' ? 'is-pending' : ''].filter(Boolean).join(' ');
-  return `<td class="${cls}${clickable ? ' mx-click' : ''}"${clickable ? ` data-doc="${esc(doc.documentId)}" data-key="${esc(field.key)}"` : ''}>${marker}${staleMark}${text}</td>`;
+  return `<td class="${cls}${clickable ? ' mx-click' : ''}"${clickable ? ` data-doc="${esc(columnId)}" data-key="${esc(field.key)}"` : ''}>${marker}${staleMark}${seriesMark}${text}</td>`;
 }
 
 function updateMatrixMeta() {
@@ -584,7 +590,7 @@ function updateMatrixMeta() {
   for (const group of state.matrix.groups) {
     for (const field of group.fields) {
       for (const doc of state.matrix.documents) {
-        const cell = field.values[doc.documentId];
+        const cell = field.values[doc.columnId || doc.documentId];
         if (!cell) continue;
         if (cell.status === 'pending_review') pending += 1;
         if (cell.source === 'manual' && cell.manual) confirmed += 1;
@@ -599,20 +605,20 @@ function updateMatrixMeta() {
   ].filter(Boolean).join(' ');
 }
 
-function findMatrixCell(documentId, paramKey) {
+function findMatrixCell(columnId, paramKey) {
   for (const group of state.matrix.groups) {
     for (const field of group.fields) {
       if (field.key !== paramKey) continue;
-      const doc = state.matrix.documents.find((entry) => entry.documentId === documentId);
+      const doc = state.matrix.documents.find((entry) => (entry.columnId || entry.documentId) === columnId);
       if (!doc) return null;
-      return { field, doc, cell: field.values[documentId] || null };
+      return { field, doc, cell: field.values[columnId] || null };
     }
   }
   return null;
 }
 
-async function openConfirmDlg(documentId, paramKey) {
-  const hit = findMatrixCell(documentId, paramKey);
+async function openConfirmDlg(columnId, paramKey) {
+  const hit = findMatrixCell(columnId, paramKey);
   if (!hit || !hit.cell) return;
   const { field, doc, cell } = hit;
   const candidates = Array.isArray(cell.candidates) && cell.candidates.length
@@ -634,11 +640,17 @@ async function openConfirmDlg(documentId, paramKey) {
   const manualHtml = cell.manual
     ? `<div class="analyze-ok small">${esc(t('matrix.confirmedMark'))}：${esc(cell.value)} · ${esc(cell.manual.confirmedAt ? cell.manual.confirmedAt.slice(0, 16).replace('T', ' ') : '')}${cell.manual.model ? ` · ${esc(t('common.model'))} ${esc(cell.manual.model)}` : ''}${cell.manual.note ? ` · ${esc(cell.manual.note)}` : ''}</div>`
     : '';
+  // 型号归属提示（T05）：系列值未经型号归属验证 / seriesWide 为 AI 判定的全系列通用值
+  const scopeHtml = cell.unattributed
+    ? `<div class="warn small">${cell.seriesWide ? esc(t('matrix.seriesWideNote')) : esc(t('matrix.seriesNote'))}</div>`
+    : '';
   const models = (doc.modelNames || []).map((name) => `<option value="${esc(name)}">`).join('');
+  // 型号列（doc.model 非空）确认默认绑定该型号；已有确认沿用其型号，系列列留空
+  const defaultModel = cell.manual?.model || doc.model || '';
   $('confirmDlg').innerHTML = `
     <div class="dlg-head"><span>${esc(doc.label)} · ${esc(field.label)}</span><button class="dlg-x" id="cfClose">×</button></div>
     <div class="dlg-body">
-      ${staleHtml}${manualHtml}
+      ${staleHtml}${manualHtml}${scopeHtml}
       <div class="dlg-sec">
         <div class="dlg-sec-title">${esc(t('matrix.candidates'))}</div>
         <div class="cand-list">${candHtml}</div>
@@ -646,7 +658,7 @@ async function openConfirmDlg(documentId, paramKey) {
       <div class="dlg-sec">
         <div class="dlg-sec-title">${esc(t('matrix.value'))}</div>
         <div class="dlg-row"><input type="text" id="cfValue" maxlength="200" placeholder="${esc(t('matrix.valuePh'))}" value="${esc(cell.value || '')}"></div>
-        <div class="dlg-row"><input type="text" id="cfModel" maxlength="100" list="cfModels" placeholder="${esc(t('matrix.modelPh'))}" value="${esc(cell.manual?.model || '')}"><datalist id="cfModels">${models}</datalist></div>
+        <div class="dlg-row"><input type="text" id="cfModel" maxlength="100" list="cfModels" placeholder="${esc(t('matrix.modelPh'))}" value="${esc(defaultModel)}"><datalist id="cfModels">${models}</datalist></div>
         <div class="dlg-row"><input type="text" id="cfNote" maxlength="500" placeholder="${esc(t('matrix.notePh'))}" value="${esc(cell.manual?.note || '')}"></div>
       </div>
       <p class="muted small">${esc(t('matrix.bindNote'))}</p>
@@ -666,8 +678,8 @@ async function openConfirmDlg(documentId, paramKey) {
   });
   $('cfClose').addEventListener('click', closeConfirmDlg);
   $('cfCancel').addEventListener('click', closeConfirmDlg);
-  $('cfClear').addEventListener('click', () => clearConfirm(documentId, paramKey));
-  $('cfSave').addEventListener('click', () => saveConfirm(documentId, paramKey));
+  $('cfClear').addEventListener('click', () => clearConfirm(columnId, paramKey));
+  $('cfSave').addEventListener('click', () => saveConfirm(columnId, paramKey));
   $('confirmMask').classList.remove('hidden');
   $('cfValue').focus();
 }
@@ -677,26 +689,28 @@ function closeConfirmDlg() {
   $('confirmDlg').innerHTML = '';
 }
 
-async function saveConfirm(documentId, paramKey) {
+async function saveConfirm(columnId, paramKey) {
   const value = $('cfValue').value.trim();
   if (!value) { toast('warn', t('matrix.valueRequired')); return; }
+  const hit = findMatrixCell(columnId, paramKey);
+  // 型号列上的确认默认绑定该型号（输入留空时兜底），避免存出匹配不到任何列的系列级确认
+  const model = $('cfModel').value.trim() || hit?.doc.model || '';
   try {
     await api('/api/confirmations', {
       method: 'POST',
       body: JSON.stringify({
-        documentId,
+        documentId: hit?.doc.documentId,
         paramKey,
         value,
-        model: $('cfModel').value.trim(),
+        model,
         note: $('cfNote').value.trim(),
       }),
     });
-    const hit = findMatrixCell(documentId, paramKey);
     if (hit?.cell) {
       hit.cell.value = value;
       hit.cell.status = 'ok';
       hit.cell.source = 'manual';
-      hit.cell.manual = { confirmedAt: new Date().toISOString(), model: $('cfModel').value.trim(), note: $('cfNote').value.trim() };
+      hit.cell.manual = { confirmedAt: new Date().toISOString(), model, note: $('cfNote').value.trim() };
       hit.cell.staleConfirmation = null;
     }
     renderMatrix();
@@ -707,10 +721,12 @@ async function saveConfirm(documentId, paramKey) {
   }
 }
 
-async function clearConfirm(documentId, paramKey) {
+async function clearConfirm(columnId, paramKey) {
+  const hit = findMatrixCell(columnId, paramKey);
+  // 确认键含 model（T05）：按生效确认记录的型号精确删除，避免误删同彩页其他型号的确认
+  const model = hit?.cell?.manual?.model || hit?.doc.model || '';
   try {
-    await api(`/api/confirmations?documentId=${encodeURIComponent(documentId)}&paramKey=${encodeURIComponent(paramKey)}`, { method: 'DELETE' });
-    const hit = findMatrixCell(documentId, paramKey);
+    await api(`/api/confirmations?documentId=${encodeURIComponent(hit?.doc.documentId || '')}&paramKey=${encodeURIComponent(paramKey)}&model=${encodeURIComponent(model)}`, { method: 'DELETE' });
     if (hit?.cell) {
       const snapshot = hit.cell.preConfirm;
       delete hit.cell.manual;
@@ -720,6 +736,7 @@ async function clearConfirm(documentId, paramKey) {
         hit.cell.status = snapshot.status;
         hit.cell.source = snapshot.source;
         hit.cell.reviewNote = snapshot.reviewNote;
+        if ('unattributed' in snapshot) hit.cell.unattributed = snapshot.unattributed;
       } else {
         hit.cell.status = 'pending_review';
         hit.cell.reviewNote = '';

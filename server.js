@@ -9,7 +9,7 @@ const { loadCatalog, findDocuments } = require('./lib/catalog');
 const { collectDocument, hashBuffer, inspectPdf, nowIso } = require('./lib/downloader');
 const { Store } = require('./lib/store');
 const { extractPdfText } = require('./lib/pdf-text');
-const { extractParamsByRules, buildMatrix, mergeParams } = require('./lib/params');
+const { extractParamsByRules, buildMatrix, buildModelColumnParams, mergeParams } = require('./lib/params');
 const ai = require('./lib/ai');
 const { buildExcel, buildWordDocx, buildMaterialPack } = require('./lib/report');
 const { fetchPageMarkdown } = require('./lib/page-markdown');
@@ -26,6 +26,9 @@ const PORT = Number(process.env.PORT || 8788);
 const DATA_DIR = process.env.NVCI_LITE_DATA_DIR || path.join(__dirname, 'data');
 const PASSWORD = process.env.NVCI_LITE_PASSWORD || '';
 const MAX_COLLECT = 50;
+// T05 型号分列上限：彩页明确覆盖 2~该数个型号时每型号独立一列；更多型号（长尾全系列彩页）
+// 拆列导致矩阵过宽且单型号可抽值稀疏，保持单列，型号归属交由人工确认对话框标注
+const MAX_MODEL_COLUMNS = 4;
 
 const store = new Store(DATA_DIR);
 settings.init(DATA_DIR);
@@ -396,7 +399,8 @@ app.post('/api/confirmations', auth, (req, res) => {
 });
 
 app.delete('/api/confirmations', auth, (req, res) => {
-  const removed = confirm.removeConfirmation(DATA_DIR, String(req.query.documentId || ''), String(req.query.paramKey || ''));
+  // model 参与确认键（T05）：同彩页不同型号的确认互不干扰；旧客户端不传 model 视为系列级
+  const removed = confirm.removeConfirmation(DATA_DIR, String(req.query.documentId || ''), String(req.query.paramKey || ''), String(req.query.model || ''));
   res.json({ ok: removed });
 });
 
@@ -471,57 +475,77 @@ app.post('/api/analyze', auth, async (req, res) => {
       extractions.push({ documentId: doc.documentId, label: `${doc.vendorName} ${doc.series}`, extraction });
     }
 
-    const paramsByDoc = await Promise.all(extractions.map(async (entry) => {
-      let params = extractParamsByRules(entry.extraction);
-      if (useAi && ai.isConfigured()) {
-        const doc = documents.find((item) => item.documentId === entry.documentId);
-        // 抽取缓存（方案 §8.2）：彩页 SHA-256 + 模型 + 提示词版本一致时复用，不重复调 AI
-        const cacheKey = aiCache.cacheKey({
-          documentId: doc.documentId, sha256: doc.sha256,
-          model: ai.aiConfig().model, promptRev: ai.EXTRACT_PROMPT_REV,
-        });
-        const cached = aiCache.getCached(DATA_DIR, cacheKey);
-        if (cached) {
-          entry.aiFromCache = true;
-          params = mergeParams(cached, params);
-        } else {
-          try {
-            const aiParams = await ai.extractParamsWithAi(doc, entry.extraction);
-            aiCache.putCached(DATA_DIR, cacheKey, aiParams);
-            // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
-            params = mergeParams(aiParams, params);
-          } catch (error) {
-            entry.aiExtractError = String(error.message || error);
-          }
-        }
-      }
-      // 视觉兜底：文字层薄弱的彩页（扫描件/图片型）渲染页面图走视觉模型补参数
+    const columnsByDoc = await Promise.all(extractions.map(async (entry) => {
+      const doc = documents.find((item) => item.documentId === entry.documentId);
+      const ruleParams = extractParamsByRules(entry.extraction);
+      // 视觉兜底（系列级，无型号归属）：文字层薄弱的彩页（扫描件/图片型）渲染页面图走视觉模型补参数
       const visionCfg = vision.visionConfig();
+      let visionParams = null;
       if (useAi && ai.isConfigured() && visionCfg.mode !== 'off' && vision.isWeakText(entry.extraction)) {
         try {
-          const document = documents.find((doc) => doc.documentId === entry.documentId);
-          const pdfBuffer = store.readPdf(document.sha256);
-          const visionParams = await vision.extractParamsWithVision(document, pdfBuffer, { dpi: visionCfg.dpi, maxPages: visionCfg.maxPages });
+          const pdfBuffer = store.readPdf(doc.sha256);
+          visionParams = await vision.extractParamsWithVision(doc, pdfBuffer, { dpi: visionCfg.dpi, maxPages: visionCfg.maxPages });
           entry.visionUsed = visionParams.length > 0;
-          params = mergeParams(visionParams, params);
         } catch (error) {
           entry.visionError = String(error.message || error);
         }
       }
-      return { documentId: entry.documentId, label: entry.label, params };
+      // 抽取缓存（方案 §8.2）：彩页 SHA-256 + 模型 + 提示词版本 + 目标型号一致时复用，不重复调 AI
+      const extractForTarget = async (targetModel) => {
+        const key = aiCache.cacheKey({
+          documentId: doc.documentId, sha256: doc.sha256,
+          model: ai.aiConfig().model, promptRev: ai.EXTRACT_PROMPT_REV, targetModel,
+        });
+        const cached = aiCache.getCached(DATA_DIR, key);
+        if (cached) {
+          entry.aiFromCache = true;
+          return cached;
+        }
+        const aiParams = await ai.extractParamsWithAi(doc, entry.extraction, { targetModel });
+        aiCache.putCached(DATA_DIR, key, aiParams);
+        return aiParams;
+      };
+      // T05 型号分列：AI 可用且彩页明确覆盖 2~MAX_MODEL_COLUMNS 个型号时，每个型号独立一列。
+      // AI 按目标型号归属抽取；规则/视觉系列值经 buildModelColumnParams 标 unattributed
+      // （型号归属未验证，界面提示「系列值」），防止系列值静默冒充型号值。
+      if (useAi && ai.isConfigured() && Array.isArray(doc.modelNames)
+        && doc.modelNames.length >= 2 && doc.modelNames.length <= MAX_MODEL_COLUMNS) {
+        const seriesParams = visionParams ? mergeParams(visionParams, ruleParams) : ruleParams;
+        const columns = [];
+        for (const targetModel of doc.modelNames) {
+          const label = `${entry.label} ${targetModel}`;
+          try {
+            const aiParams = await extractForTarget(targetModel);
+            columns.push({ documentId: entry.documentId, model: targetModel, label, params: buildModelColumnParams(aiParams, seriesParams) });
+          } catch (error) {
+            entry.aiExtractError = String(error.message || error);
+            // AI 失败降级：整列只剩系列值（均标 unattributed），归属交由人工核对
+            columns.push({ documentId: entry.documentId, model: targetModel, label, params: seriesParams });
+          }
+        }
+        return columns;
+      }
+      let params = ruleParams;
+      if (useAi && ai.isConfigured()) {
+        try {
+          // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
+          params = mergeParams(await extractForTarget(''), params);
+        } catch (error) {
+          entry.aiExtractError = String(error.message || error);
+        }
+      }
+      if (visionParams) params = mergeParams(visionParams, params);
+      return [{ documentId: entry.documentId, model: '', label: entry.label, params }];
     }));
 
     // 固定字段模板初始化：关键字段没抽到也要显示为「未找到」，不完整审阅的原因随矩阵传递
-    const matrix = buildMatrix(paramsByDoc, { initTemplate: true });
-    // 人工核对确认生效：绑定文档 SHA-256，彩页未更新时确认值直接进入矩阵与导出
-    matrix.documents = documents.map((doc) => ({
-      documentId: doc.documentId,
-      label: `${doc.vendorName} ${doc.series}`,
-      sha256: doc.sha256,
-      modelNames: doc.modelNames || [],
-      vendorName: doc.vendorName,
-      series: doc.series,
-    }));
+    const matrix = buildMatrix(columnsByDoc.flat(), { initTemplate: true });
+    // 列元数据注入（保留 buildMatrix 产出的 columnId/model/label）：sha256 供人工确认版本判定
+    const docById = new Map(documents.map((doc) => [doc.documentId, doc]));
+    matrix.documents = matrix.documents.map((column) => {
+      const doc = docById.get(column.documentId);
+      return { ...column, sha256: doc.sha256, modelNames: doc.modelNames || [], vendorName: doc.vendorName, series: doc.series };
+    });
     const wantedIds = new Set(documentIds);
     const confirmations = confirm.loadConfirmations(DATA_DIR).filter((item) => wantedIds.has(item.documentId));
     const confirmedStats = confirm.applyConfirmations(matrix, confirmations);

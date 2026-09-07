@@ -615,6 +615,8 @@ td.is-manual { color: var(--ink-900); }
 .mx-manual { color: var(--ok); font-weight: 700; margin-right: 5px; }
 .mx-pend { color: var(--ale-blue); margin-right: 5px; }
 .mx-stale { color: var(--warn); font-weight: 700; margin-right: 4px; }
+/* 系列值（T05 型号分列）：值来自整份彩页，型号归属未验证 */
+.mx-series { color: var(--warn); font-size: 10px; border: 1px solid currentColor; border-radius: 3px; padding: 0 3px; margin-right: 5px; white-space: nowrap; }
 
 .dlg-foot { display: flex; gap: 8px; align-items: center; padding: 12px 18px; border-top: 1px solid var(--line-soft); }
 .dlg .spacer { flex: 1; }

@@ -183,3 +183,67 @@ test('模板初始化：双方都无参数时矩阵仍含全部固定字段行',
     assert.equal(field.values.b.status, 'not_disclosed');
   }
 });
+
+test('型号列组装（T05）：AI 型号归属值补齐，规则系列值标 unattributed，等价值视为归属已验证', () => {
+  const { buildModelColumnParams } = require('../lib/params');
+  const modelAiParams = [
+    { key: 'downlink_ports', label: '下行端口数', group: '端口', value: '24', quote: 'S5731-S24 24×10/100/1000BASE-T', page: 2, status: 'ok', source: 'ai', modelScope: 'S5731-S24' },
+    { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '598Gbit/s', quote: '交换容量 598Gbit/s', page: 2, status: 'ok', source: 'ai', seriesWide: true },
+  ];
+  const seriesParams = [
+    { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '598Gbit/s', quote: '交换容量：598Gbit/s', page: 1, status: 'ok', source: 'rule' },
+    { key: 'operating_temp', label: '工作温度', group: '环境适应', value: '-5°C 至 45°C', quote: '工作温度 -5°C 至 45°C', page: 1, status: 'ok', source: 'rule' },
+  ];
+  const byKey = new Map(buildModelColumnParams(modelAiParams, seriesParams).map((param) => [param.key, param]));
+  assert.equal(byKey.get('downlink_ports').source, 'ai', 'AI 型号归属独有键直接补齐');
+  assert.equal(byKey.get('downlink_ports').unattributed, false, 'AI 值型号归属明确');
+  assert.equal(byKey.get('switching_capacity').unattributed, false, '规则系列值与 AI 型号值等价：归属已验证');
+  assert.equal(byKey.get('switching_capacity').seriesWide, true, 'AI 全系列通用标记保留');
+  assert.equal(byKey.get('operating_temp').unattributed, true, '规则独有系列值：型号归属未验证');
+});
+
+test('型号列组装（T05）：AI 型号值与规则系列值互异仍标待核对（不放松冲突裁决）', () => {
+  const { buildModelColumnParams } = require('../lib/params');
+  const merged = buildModelColumnParams(
+    [{ key: 'poe_budget', label: 'PoE 总功率', group: '供电', value: '370W', quote: 'PoE 370W', page: 2, status: 'ok', source: 'ai' }],
+    [{ key: 'poe_budget', label: 'PoE 总功率', group: '供电', value: '500W', quote: 'PoE 500W', page: 1, status: 'ok', source: 'rule' }],
+  );
+  assert.equal(merged[0].status, 'pending_review', '型号值与系列值互异：保留冲突交人工裁决');
+  assert.equal(merged[0].unattributed, true, '胜出的系列值归属未验证');
+  assert.ok(merged[0].candidates.length >= 2, '双方候选保留');
+});
+
+test('型号列组装（T05）：视觉兜底系列值同样标 unattributed', () => {
+  const { buildModelColumnParams } = require('../lib/params');
+  const merged = buildModelColumnParams([], [
+    { key: 'mac_table', label: 'MAC 地址表', group: '转发性能', value: '16K', quote: 'MAC 16K', page: 1, status: 'ok', source: 'vision' },
+  ]);
+  assert.equal(merged[0].source, 'vision');
+  assert.equal(merged[0].unattributed, true, '视觉值全页扫描无型号归属');
+});
+
+test('矩阵拆列（T05）：同一彩页多型号各占一列，型号值不得串列，四态按列补齐', () => {
+  const entries = [
+    { documentId: 'doc1', model: 'S5731-S24', label: '华为 S5731-S S5731-S24', params: [
+      { key: 'downlink_ports', label: '下行端口数', group: '端口', value: '24', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+    ] },
+    { documentId: 'doc1', model: 'S5731-S48', label: '华为 S5731-S S5731-S48', params: [
+      { key: 'downlink_ports', label: '下行端口数', group: '端口', value: '48', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+      { key: 'poe_budget', label: 'PoE 总功率', group: '供电', value: '380W', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+    ] },
+    { documentId: 'doc2', label: 'H3C S5120', params: extractParamsByRules(makeExtraction(H3C_LINES)) },
+  ];
+  const matrix = buildMatrix(entries);
+  assert.deepEqual(
+    matrix.documents.map((doc) => doc.columnId),
+    ['doc1#S5731-S24', 'doc1#S5731-S48', 'doc2'],
+    'columnId 按型号生成，系列列保持 documentId',
+  );
+  const fields = matrix.groups.flatMap((group) => group.fields);
+  const ports = fields.find((field) => field.key === 'downlink_ports');
+  assert.equal(ports.values['doc1#S5731-S24'].value, '24');
+  assert.equal(ports.values['doc1#S5731-S48'].value, '48');
+  assert.equal(ports.values.doc2.status, 'not_disclosed', 'H3C 样例无下行端口数字段');
+  const poe = fields.find((field) => field.key === 'poe_budget');
+  assert.equal(poe.values['doc1#S5731-S24'].status, 'not_disclosed', 'S24 列不得继承 S48 的 PoE 值（值与列归属正确，T05 验收）');
+});
