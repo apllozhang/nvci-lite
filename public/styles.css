@@ -656,17 +656,14 @@ body.theme-dark td.mx-click:hover { background: #2c3340; }
   font-size: 12.5px; cursor: pointer; text-align: center; transition: all .15s;
 }
 .add-profile-btn:hover { background: var(--ale-purple-100); }
-.catalog-tree-wrap { display: flex; flex-direction: column; }
-#catalogTree { flex: 1; overflow-y: auto; }
 
-/* 自定义产品线标记 + 行内编辑/删除操作 */
+/* 自定义产品线标记 + 行内编辑/删除操作（行内 flex 子项，悬停行时浮现） */
 .tree-custom-tag {
   display: inline-block; margin-left: 5px; padding: 0 4px; border-radius: 4px;
   font-size: 10px; border: 1px solid var(--primary); color: var(--primary); vertical-align: middle;
 }
-.tree-line-ops { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); display: flex; gap: 2px; opacity: 0; transition: opacity .12s; }
-.tree-line { position: relative; }
-.tree-line:hover + .tree-line-ops, .tree-line-ops:hover { opacity: 1; }
+.tree-line-ops { display: flex; gap: 2px; opacity: 0; transition: opacity .12s; }
+.tree-line:hover .tree-line-ops, .tree-line-ops:focus-within { opacity: 1; }
 .tree-op {
   border: none; background: var(--surface); border-radius: 5px; cursor: pointer;
   width: 20px; height: 20px; line-height: 1; font-size: 12px; color: var(--muted);

@@ -125,10 +125,10 @@ function renderTree() {
     const total = vendor.productLines.reduce((sum, line) => sum + line.documentCount, 0);
     const open = state.expanded.has(vendor.vendorId);
     const lines = vendor.productLines.map((line) => `
-      <button class="tree-line ${line.profileId === state.currentProfileId ? 'active' : ''}" data-vendor="${esc(vendor.vendorId)}" data-profile="${esc(line.profileId)}">
+      <div class="tree-line ${line.profileId === state.currentProfileId ? 'active' : ''}" role="button" tabindex="0" data-vendor="${esc(vendor.vendorId)}" data-profile="${esc(line.profileId)}">
         <span class="tree-line-name">${esc(line.displayName)}${line.custom ? `<span class="tree-custom-tag" title="${esc(t('profile.customTip'))}">${esc(t('profile.customTag'))}</span>` : ''}</span>${line.documentCount ? `<span class="tree-count">${line.documentCount}</span>` : `<span class="tree-count pending-tag">${t('common.pending')}</span>`}
-      </button>
-      ${line.custom ? `<span class="tree-line-ops" data-profile="${esc(line.profileId)}"><button class="tree-op edit" data-op="edit" title="${esc(t('common.edit'))}">✎</button><button class="tree-op del" data-op="del" title="${esc(t('common.delete'))}">×</button></span>` : ''}`).join('');
+        ${line.custom ? `<span class="tree-line-ops"><button class="tree-op edit" data-op="edit" title="${esc(t('common.edit'))}">✎</button><button class="tree-op del" data-op="del" title="${esc(t('common.delete'))}">×</button></span>` : ''}
+      </div>`).join('');
     return `<div class="tree-brand">
       <button class="tree-brand-btn ${open ? 'open' : ''}" data-vendor="${esc(vendor.vendorId)}">
         <span class="tree-arrow">${open ? '▾' : '▸'}</span>
@@ -155,17 +155,23 @@ function renderTree() {
     }
     renderTree();
   }));
-  tree.querySelectorAll('.tree-line').forEach((btn) => btn.addEventListener('click', () => {
-    state.currentVendorId = btn.dataset.vendor;
-    state.currentProfileId = btn.dataset.profile;
-    state.expanded.add(btn.dataset.vendor);
-    renderTree();
-    renderDocTable($('docSearch').value);
-  }));
+  tree.querySelectorAll('.tree-line').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.currentVendorId = btn.dataset.vendor;
+      state.currentProfileId = btn.dataset.profile;
+      state.expanded.add(btn.dataset.vendor);
+      renderTree();
+      renderDocTable($('docSearch').value);
+    });
+    // div[role=button] 需补键盘激活（原生 button 的等价行为）
+    btn.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); btn.click(); }
+    });
+  });
   // 自定义产品线：编辑带出表单，删除需确认（内置产品线无此操作按钮）
   tree.querySelectorAll('.tree-op').forEach((btn) => btn.addEventListener('click', async (event) => {
     event.stopPropagation();
-    const profileId = btn.closest('.tree-line-ops').dataset.profile;
+    const profileId = btn.closest('.tree-line').dataset.profile;
     if (btn.dataset.op === 'edit') await openProfileDlg(profileId);
     else await removeCustomProfile(profileId);
   }));
