@@ -13,3 +13,5 @@ Thumbs.db
 /第二轮复核报告.md
 /NVCI-lite_参数准确性提升方案*.md
 /round2-verify.xlsx
+# 截图类验证产物不入库
+test/*.png

@@ -43,7 +43,10 @@
       "expectedSha256": "4f44c6633388fc1b8c97307ca12a191209860fc4cffed68fcc9e3dbc3a9fd12a",
       "knownEtag": "59f900c8d5ab49eb9d20dbd13d3b4e36",
       "officialFileName": "omniswitch_2260-datasheet-4f44c6633388.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 2260"
+      ]
     },
     {
       "documentId": "ale-omniswitch_2360-datasheet-8e099dc019e7",
@@ -53,7 +56,10 @@
       "expectedSha256": "8e099dc019e778fc41a9ccfd5c574b11690ff2b6ae718abc11222757070fc999",
       "knownEtag": "19c1935d5f9844d8963c2dd904c4a766",
       "officialFileName": "omniswitch_2360-datasheet-8e099dc019e7.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 2360"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6360-datasheet-490549ac5e61",
@@ -63,7 +69,10 @@
       "expectedSha256": "490549ac5e6167bed3b845acd4a700454c3a94ab26fc840a939a2b6b7c371e38",
       "knownEtag": "e1ca612c23184d1da46e04617e8d860d",
       "officialFileName": "omniswitch_6360-datasheet-490549ac5e61.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6360"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6370-datasheet-ed521666417b",
@@ -73,7 +82,10 @@
       "expectedSha256": "ed521666417be2aa3c3a3d2b67fa00a54ffc57fb583d1de3b873c0e78afdd540",
       "knownEtag": "87de2d80161340908cf353241eeec432",
       "officialFileName": "omniswitch_6370-datasheet-ed521666417b.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6370"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6465-datasheet-9dcfeff8abd3",
@@ -83,7 +95,10 @@
       "expectedSha256": "9dcfeff8abd306d100cb0f0c0d7bc5013da046e1a900e8d6f463ffeed5884c0d",
       "knownEtag": "9115f51c9f1d40d69bd09704bc0317d5",
       "officialFileName": "omniswitch_6465-datasheet-9dcfeff8abd3.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6465"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6465t-datasheet-cf8e61ce1129",
@@ -93,7 +108,10 @@
       "expectedSha256": "cf8e61ce112989f53c87e43e72c37d615ac12dbdcaa89363e36c10bb8115ca1a",
       "knownEtag": "f3fc0716cd544f72a49bcd5301e6c06e",
       "officialFileName": "omniswitch_6465t-datasheet-cf8e61ce1129.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6465T"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6560_e-datasheet-9085fff0e638",
@@ -103,7 +121,11 @@
       "expectedSha256": "9085fff0e63854645a224a2930897dd7b28f8cf59934659dc02c2d94ebc42493",
       "knownEtag": "c6f4c7a396154ee9b9937c96667f1086",
       "officialFileName": "omniswitch_6560_e-datasheet-9085fff0e638.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6560",
+        "OmniSwitch 6560E"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6570m-datasheet-acb23e6f5f6f",
@@ -113,7 +135,10 @@
       "expectedSha256": "acb23e6f5f6f3274d47fd2b5fbb72c509bdc01bcdda9dbe2978e2e966108bb43",
       "knownEtag": "f4b2b2278a8f4831938c298ab32e5f77",
       "officialFileName": "omniswitch_6570m-datasheet-acb23e6f5f6f.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6570M"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6575-datasheet-cd8912ee6690",
@@ -123,7 +148,10 @@
       "expectedSha256": "cd8912ee66907a59811ab9c0d91e94d29edbb3f8004856f1aa66296a9616b034",
       "knownEtag": "51780185b5dd417f9e319172d12097a6",
       "officialFileName": "omniswitch_6575-datasheet-cd8912ee6690.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6575"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6860-datasheet-77d4c073e25b",
@@ -133,7 +161,10 @@
       "expectedSha256": "77d4c073e25bb6adae8697cebb12f5c061fdd5fb58b8f2fba29843f6ac4e66b8",
       "knownEtag": "64bb8b556c604959b21dbb7b4437623f",
       "officialFileName": "omniswitch_6860-datasheet-77d4c073e25b.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6860"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6865-datasheet-a856e04ea7ab",
@@ -143,7 +174,10 @@
       "expectedSha256": "a856e04ea7ab15dd64b79fa8b96ad54dd859e98e900cf787fda58cfcdc372918",
       "knownEtag": "9b80af89c572450ba8efd6f979e4e6e5",
       "officialFileName": "omniswitch_6865-datasheet-a856e04ea7ab.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6865"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6870-datasheet-2acbcd853a02",
@@ -153,7 +187,10 @@
       "expectedSha256": "2acbcd853a026be334ac502aaed0b2be372cab79a23db0ee27322fedbf4c24ba",
       "knownEtag": "ae139f7cfabc46358b7d328d09e43f32",
       "officialFileName": "omniswitch_6870-datasheet-2acbcd853a02.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6870"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6900-datasheet-bfbdfffddffc",
@@ -163,7 +200,10 @@
       "expectedSha256": "bfbdfffddffc33cfd455dfd0855b3b7136bd6b56151f7cbeaf4c951fa142b1ec",
       "knownEtag": "9f694d89bb934b55bfae3b5a13ed4c86",
       "officialFileName": "omniswitch_6900-datasheet-bfbdfffddffc.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6900"
+      ]
     },
     {
       "documentId": "ale-omniswitch_6920-datasheet-58f2fb732571",
@@ -173,7 +213,10 @@
       "expectedSha256": "58f2fb7325717079fc66b8dd763244a50ae51e3c5f94bd844566b14c446992ce",
       "knownEtag": "9bd3d19cf11948b5aec908eb3bcd9a19",
       "officialFileName": "omniswitch_6920-datasheet-58f2fb732571.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 6920"
+      ]
     },
     {
       "documentId": "ale-omniswitch_9900-datasheet-f0817d153cbd",
@@ -183,7 +226,10 @@
       "expectedSha256": "f0817d153cbdfd1793fe9e2bdf806cb3570f3b3225883d64b92ca7f79c683489",
       "knownEtag": "ff62d852e7974379924dd7848dc86b4b",
       "officialFileName": "omniswitch_9900-datasheet-f0817d153cbd.pdf",
-      "evidencePolicy": "official_datasheet_and_embedded_order_information"
+      "evidencePolicy": "official_datasheet_and_embedded_order_information",
+      "modelNames": [
+        "OmniSwitch 9900"
+      ]
     }
   ],
   "bundledRevision": "2026-08-19-r3"

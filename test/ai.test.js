@@ -233,8 +233,7 @@ test('值-引用一致性反例矩阵：单位不一致 / 数字截断 / 否定�
   });
 });
 
-test('extractParamsWithAi（T05）：targetModel 注入提示词，输出携带 modelScope 与 seriesWide', async () => {
-  const ai = require('../lib/ai');
+test('extractParamsWithAi（T05）：targetModel 注入提示词，输出携带 modelScope 与 seriesWide', async () => {  const ai = require('../lib/ai');
   await withEnv({
     NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
     NVCI_LITE_AI_KEY: 'test-key',
@@ -268,5 +267,85 @@ test('extractParamsWithAi（T05）：targetModel 注入提示词，输出携带 
     assert.equal(byKey.get('downlink_ports').modelScope, 'S5731-S24', 'cell 记录归属目标型号');
     assert.equal(byKey.get('downlink_ports').seriesWide, false);
     assert.equal(byKey.get('operating_temp').seriesWide, true, 'AI 全系列通用标记透传到 cell');
+  });
+});
+
+test('key 同义词（实战验收）：验收实测的分裂 key 归一到字典键', () => {
+  const { normalizeKey } = require('../lib/value-normalize');
+  assert.equal(normalizeKey('chassis_size'), 'chassis_dimensions');
+  assert.equal(normalizeKey('chassis_dimension'), 'chassis_dimensions');
+  assert.equal(normalizeKey('switching_arch'), 'switching_architecture');
+  assert.equal(normalizeKey('switch_architecture'), 'switching_architecture');
+  assert.equal(normalizeKey('hw_redundancy'), 'power_redundancy');
+  assert.equal(normalizeKey('m_lag'), 'mlag');
+  assert.equal(normalizeKey('service_slots'), 'business_slots');
+  assert.equal(normalizeKey('weight'), 'empty_weight');
+  assert.equal(normalizeKey('downlink_ports'), 'downlink_ports', '字典键原样保留');
+});
+
+test('长彩页分段抽取（验收实战：ALE 全量输入返空）：按页边界分段、跨段合并、归一化', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    const calls = [];
+    const mockFetch = async (_url, options) => {
+      const body = JSON.parse(options.body);
+      const userContent = body.messages[0].content; // anthropic：system 独立字段，messages 仅 user 一条
+      calls.push(userContent);
+      const payload = userContent.includes('第 1/')
+        ? JSON.stringify({ params: [
+            { key: 'switching_capacity', label: '交换容量', group: '转发性能', value: '953Tbps', quote: '交换容量 953Tbps', page: 1 },
+          ] })
+        : JSON.stringify({ params: [
+            { key: 'chassis_size', label: '机箱尺寸', group: '物理规格', value: '483x985x438mm', quote: '483x985x438mm', page: 3 },
+            { key: 'downlink_ports', label: '下行端口数', group: '端口', value: '24', quote: '24 端口', page: 3 },
+          ] });
+      return { ok: true, status: 200, json: async () => ({ content: [{ type: 'text', text: payload }] }) };
+    };
+    // 8 页 × ~6K 字 ≈ 48K 字符 > 单段 28K → 分段；引用分别在第 1 页与第 3 页，验证跨段全页校验
+    const pages = Array.from({ length: 8 }, (_, i) => ({ page: i + 1, lines: [`第${i + 1}页填充`.padEnd(6000, '数'), i === 0 ? '交换容量 953Tbps' : '', i === 2 ? '483x985x438mm 24 端口' : ''] }));
+    const extraction = { pageCount: 8, pages, fullText: pages.flatMap((p) => p.lines).join('\n') };
+    const params = await ai.extractParamsWithAi(
+      { vendorName: '华为', series: 'CE16800', modelNames: [] },
+      extraction,
+      { fetchImpl: mockFetch },
+    );
+    assert.ok(calls.length >= 2, `超长彩页应分段调用（实际 ${calls.length} 段）`);
+    for (const seg of calls) assert.ok(seg.includes('段。只抽取本段文本'), '每段提示词带分段说明');
+    assert.ok(calls.some((seg) => seg.includes('【第 1 页】')), '首页被覆盖');
+    assert.ok(calls.some((seg) => seg.includes('【第 8 页】')), '末页被覆盖');
+    assert.ok(!calls.some((seg) => seg.includes('【第 1 页】') && seg.includes('【第 8 页】')), '页边界切段：单段不同时含首尾页');
+    const byKey = new Map(params.map((p) => [p.key, p]));
+    assert.equal(byKey.get('switching_capacity').value, '953Tbps', '段 1 参数保留');
+    assert.equal(byKey.get('switching_capacity').status, 'ok', '跨段引用按全页校验命中');
+    assert.equal(byKey.get('chassis_dimensions').value, '483x985x438mm', '段 2 参数保留且 chassis_size 归一');
+    assert.equal(byKey.get('downlink_ports').value, '24');
+  });
+});
+
+test('长彩页分段抽取：部分段失败仍返回成功段，全失败才抛错', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    let callIndex = 0;
+    const mockFetch = async () => {
+      callIndex += 1;
+      if (callIndex === 1) throw new Error('AI 接口 HTTP 500：段一失败');
+      return { ok: true, status: 200, json: async () => ({ content: [{ type: 'text', text: JSON.stringify({ params: [
+        { key: 'mac_table', label: 'MAC 地址表', group: '转发性能', value: '16K', quote: 'MAC 16K', page: 2 },
+      ] }) }] }) };
+    };
+    const pages = Array.from({ length: 6 }, (_, i) => ({ page: i + 1, lines: [`第${i + 1}页填充`.padEnd(3000, '数'), i === 1 ? 'MAC 16K' : ''] }));
+    const extraction = { pageCount: 6, pages, fullText: pages.flatMap((p) => p.lines).join('\n') };
+    const params = await ai.extractParamsWithAi({ vendorName: 'V', series: 'S', modelNames: [] }, extraction, { fetchImpl: mockFetch });
+    assert.equal(params.find((p) => p.key === 'mac_table').value, '16K', '段一失败不拖垮整体，段二结果保留');
   });
 });

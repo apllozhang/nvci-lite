@@ -247,3 +247,24 @@ test('矩阵拆列（T05）：同一彩页多型号各占一列，型号值不�
   const poe = fields.find((field) => field.key === 'poe_budget');
   assert.equal(poe.values['doc1#S5731-S24'].status, 'not_disclosed', 'S24 列不得继承 S48 的 PoE 值（值与列归属正确，T05 验收）');
 });
+
+test('矩阵层 key 归一化兜底（实战验收）：旧缓存携带分裂 key 也能并成一行', () => {
+  const entries = [
+    { documentId: 'a', label: 'A', params: [
+      { key: 'chassis_size', label: '机箱尺寸', group: '物理规格', value: '483x985x438', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+    ] },
+    { documentId: 'b', label: 'B', params: [
+      { key: 'chassis_dimension', label: '机箱尺寸', group: '物理规格', value: '483x985x703', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+    ] },
+    { documentId: 'c', label: 'C', params: [
+      { key: 'chassis_dimensions', label: '机箱尺寸', group: '物理规格', value: '483x1144x1436', quote: 'q', page: 1, status: 'ok', source: 'ai' },
+    ] },
+  ];
+  const matrix = buildMatrix(entries);
+  const dims = matrix.groups.flatMap((g) => g.fields).filter((f) => /机箱/.test(f.label));
+  assert.equal(dims.length, 1, '三种分裂 key 并成一行');
+  assert.equal(dims[0].key, 'chassis_dimensions');
+  assert.equal(dims[0].values.a.value, '483x985x438');
+  assert.equal(dims[0].values.b.value, '483x985x703');
+  assert.equal(dims[0].values.c.value, '483x1144x1436');
+});
