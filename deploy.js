@@ -85,7 +85,9 @@ function refreshProfiles() {
 
 function packTar() {
   const out = path.join(os.tmpdir(), `nvci-lite-deploy-${Date.now()}.tgz`);
-  const excludes = ['./node_modules', './node_modules/*', './data', './data/*', './deploy.config.json', './start.bat'];
+  // 排除 .env：远端 .env 由 deploy.config.env 生成、在解压前写入；
+  // 若本地 .env 进包，解压会覆盖刚写好的远端配置（口令/AI Key 全部被本地开发值顶掉）
+  const excludes = ['./node_modules', './node_modules/*', './data', './data/*', './deploy.config.json', './.env', './start.bat'];
   // --force-local：GNU tar 会把 "C:\..." 里的盘符冒号误判为远程主机名
   execSync(`tar --force-local -czf "${out}" -C "${PROJECT_DIR}" ${excludes.map((item) => `--exclude "${item}"`).join(' ')} .`, { stdio: 'pipe' });
   const megabytes = (fs.statSync(out).size / 1024 / 1024).toFixed(2);
