@@ -69,3 +69,34 @@ test('轮转：超出 keep 数删除最旧', () => {
   const left = listBackupFiles(dir);
   assert.ok(left[0] > left[left.length - 1] === false, '保持文件名排序（时间序）');
 });
+
+test('脱敏（评审 R5）：settings.json 的 ai.apiKey 不进备份，redacted 留痕，恢复后回落 env', () => {
+  const dir = tempDataDir();
+  fs.writeFileSync(path.join(dir, 'settings.json'), JSON.stringify({
+    storage: { pdfSubdir: '' },
+    ai: { protocol: 'openai', baseUrl: 'https://api.example.com/v4', model: 'glm-4.6', visionModel: '', apiKey: 'SECRET-KEY-VALUE' },
+  }), 'utf8');
+  const result = createBackup(dir);
+  assert.deepEqual(result.redacted, ['settings.json:ai.apiKey'], '脱敏清单留痕');
+  const bundle = JSON.parse(fs.readFileSync(result.outPath, 'utf8'));
+  const restoredSettings = JSON.parse(bundle.files['settings.json']);
+  assert.equal(restoredSettings.ai.apiKey, '', '备份内密钥为空串（恢复后回落环境变量）');
+  assert.equal(restoredSettings.ai.model, 'glm-4.6', '非敏感字段保留');
+  assert.ok(!JSON.stringify(bundle).includes('SECRET-KEY-VALUE'), 'bundle 全文不含密钥明文');
+  // 恢复落盘同样无密钥
+  restoreBackup(dir, 'latest');
+  const onDisk = JSON.parse(fs.readFileSync(path.join(dir, 'settings.json'), 'utf8'));
+  assert.equal(onDisk.ai.apiKey, '');
+});
+
+test('恢复路径穿越（评审 §4.3）：bundle 内 ../ 相对路径必须拒绝且不落盘', () => {
+  const dir = tempDataDir();
+  createBackup(dir);
+  const evilName = listBackupFiles(dir)[0];
+  const evilPath = path.join(dir, 'backups', evilName);
+  const bundle = JSON.parse(fs.readFileSync(evilPath, 'utf8'));
+  bundle.files['../evil.json'] = '{"hacked":true}';
+  fs.writeFileSync(evilPath, JSON.stringify(bundle), 'utf8');
+  assert.throws(() => restoreBackup(dir, evilName), /越界/, '路径越界必须抛错');
+  assert.ok(!fs.existsSync(path.join(dir, '..', 'evil.json')), '越界文件未写盘');
+});

@@ -53,6 +53,7 @@ npm start
 | `NVCI_LITE_PROBE_SCHEDULE` | 定时校验触发时刻（每日，容器 TZ） | `04:30` |
 | `NVCI_LITE_PROBE_MODE` | 定时校验模式：`full`（完整）或 `light`（轻量） | `full` |
 | `NVCI_LITE_VM_URL` | Victoriametrics 地址（配置后「厂商已更新」自动推送指标，供 n9e 告警消费） | 空 |
+| `NVCI_LITE_TRUST_PROXY` | 反向代理信任跳数：部署在 Nginx/网关后必须设置（如 `1`），否则 Cookie `Secure` 不生效、登录限流按代理 IP 计数；直连部署不设置 | 空 |
 | `NVCI_LITE_VISION` | 视觉兜底开关：`off`（默认）/ `auto`。默认关闭——图片抽取无文字层可校验，实测视觉模型会对无规格表的彩页编造参数，启用后结果仅作线索、需人工复核 | `off` |
 | `NVCI_LITE_VISION_MODEL` | 视觉模型（弱文字彩页渲染页面图后抽参数） | `glm-4.6v` |
 | `NVCI_LITE_VISION_DPI` / `NVCI_LITE_VISION_PAGES` | 页面渲染精度与页数上限 | `150` / `6` |
@@ -176,6 +177,16 @@ node deploy.js logs    # 查看日志
 ```
 
 当前部署：`http://10.20.30.203:8789`（8788 已被 sonic-pm-academy 占用）。资料目录已收编进仓库 `profiles/`（27 个产品线文件、957 条来源），Docker 内通过 `NVCI_LITE_PROFILES_DIR=/app/profiles` 挂载只读。
+
+## 运维与可观测（评审 v3 阶段 1/2 落地）
+
+**状态备份/恢复**：人工核对（`confirmations.json`）与自定义来源（`custom-profiles/`）是不可再生数据，`node deploy.js backup` 随时快照（容器内 `/data/backups/`，NAS 卷持久化），`node deploy.js restore <文件名|latest>` 恢复并自动重启；每次 `push` 部署前自动备份（失败仅警告）。bundle 内 `settings.json` 的 AI Key 已脱敏（`redacted` 清单留痕），恢复后空值回落环境变量；仅经界面设置过 Key 且无 env 兜底的部署，恢复后需重填一次。
+
+**错误信封与追踪**：所有错误响应在 `error` 字符串之外顶层附带稳定 `code`（`AUTH_REQUIRED` / `VALIDATION_FAILED` / `CONFLICT` / `RATE_LIMITED` / `NOT_FOUND` / `INTERNAL`）与 `requestId`；每个响应回写 `X-Request-Id`（可入站透传），访问日志（API 全量、静态仅异常）与登录审计（成功/失败/锁定，不含口令）统一携带 requestId，排查时按 ID 串联。
+
+**指标**：`GET /metrics` 输出 Prometheus 文本格式（无需鉴权，仅聚合计数与进程 gauge，无业务数据）：`nvci_http_requests_total{method,route,status}`、`nvci_login_total{outcome}`、`nvci_collect_documents_total{result}`、`nvci_probe_results_total{status,ok}`、`nvci_ai_calls_total{outcome}`（含 429 限流）与进程内存/uptime gauge。vmagent 抓取后即可接入现有 VictoriaMetrics/n9e 体系。
+
+**安全基线**：登录失败同 IP 连续 10 次锁定 15 分钟；口令比较走 SHA-256 摘要 + `timingSafeEqual`；响应带 `X-Content-Type-Options: nosniff`、`X-Frame-Options: DENY`、CSP（`script-src 'self'`、`frame-ancestors 'none'` 等）、`Referrer-Policy: no-referrer`、`Permissions-Policy`。反向代理部署需设置 `NVCI_LITE_TRUST_PROXY`（见环境变量表），否则 Secure Cookie 与按 IP 限流失真。
 
 ## 边界
 

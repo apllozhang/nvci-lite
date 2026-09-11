@@ -36,6 +36,9 @@ module.exports = function collectRoutes(ctx) {
       }
       results.push(row);
     }
+    for (const row of results) {
+      require('../lib/metrics').inc('nvci_collect_documents_total', { result: row.status || 'unknown' });
+    }
     res.json({
       total: results.length,
       completed: results.filter((row) => row.status === 'completed').length,
