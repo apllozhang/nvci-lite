@@ -114,6 +114,41 @@ async function probe() {
   } finally { conn.end(); }
 }
 
+// 远程备份：容器内跑 scripts/backup.js（状态 JSON 落在 /data/backups，宿主卷持久化）
+async function remoteBackup(conn, { quiet = false } = {}) {
+  const result = await execCmd(conn, `docker exec nvci-lite node /app/scripts/backup.js /data`, { sudoPassword: CONFIG.password, timeoutMs: 60000 });
+  const output = (result.stdout || result.stderr || '').trim();
+  if (!quiet) console.log(output);
+  // 返回 JSON 行（脚本首行输出）；容器未运行等情况返回 null，调用方决定是否致命
+  try { return JSON.parse(output.split('\n').find((line) => line.startsWith('{')) || 'null'); } catch { return null; }
+}
+
+async function backupCmd() {
+  const conn = await sshConnect(CONFIG);
+  try {
+    console.log('远程备份（容器内 /data → /data/backups）…');
+    const result = await remoteBackup(conn);
+    if (!result || !result.ok) throw new Error('远程备份失败（容器未运行或数据目录为空）');
+    const listed = await execCmd(conn, `docker exec nvci-lite sh -c "ls -1 /data/backups | tail -5"`, { sudoPassword: CONFIG.password });
+    console.log(`最近备份：\n${(listed.stdout || '').trim().split('\n').map((line) => `  ${line}`).join('\n')}`);
+  } finally { conn.end(); }
+}
+
+async function restoreCmd() {
+  const fileName = String(process.argv[3] || 'latest');
+  const conn = await sshConnect(CONFIG);
+  try {
+    console.log(`远程恢复（${fileName}）…`);
+    const result = await execCmd(conn, `docker exec nvci-lite node /app/scripts/backup.js restore /data ${JSON.stringify(fileName)}`, { sudoPassword: CONFIG.password, timeoutMs: 60000 });
+    console.log((result.stdout || result.stderr || '').trim());
+    if (result.code !== 0 || !/ok/.test(result.stdout || '')) throw new Error('恢复失败，数据未变更或部分变更，请查看上方输出');
+    console.log('重启容器使内存态生效 …');
+    const restarted = await execCmd(conn, `cd ${JSON.stringify(CONFIG.remoteDir)} && docker compose restart nvci-lite`, { sudoPassword: CONFIG.password, timeoutMs: 120000 });
+    if (restarted.code !== 0) throw new Error('恢复完成但重启失败，请手动执行 docker compose restart');
+    console.log('✔ 恢复完成');
+  } finally { conn.end(); }
+}
+
 async function push() {
   refreshProfiles();
   const tarball = packTar();
@@ -121,6 +156,10 @@ async function push() {
   const remoteDir = CONFIG.remoteDir;
   const conn = await sshConnect(CONFIG);
   try {
+    // 部署先备份：覆盖旧代码/重启服务前，线上状态先落一份快照（失败只警告不阻断）
+    console.log('部署前备份 …');
+    const preBackup = await remoteBackup(conn, { quiet: true });
+    console.log(preBackup && preBackup.ok ? `  已备份 ${preBackup.fileName}（${preBackup.fileCount} 个文件）` : '  ⚠ 备份未成功（容器未运行或首次部署），继续部署');
     console.log(`创建远端目录 ${remoteDir} …`);
     await execCmd(conn, `mkdir -p ${JSON.stringify(remoteDir)}/profiles`, { sudoPassword: CONFIG.password });
     console.log('上传代码包 …');
@@ -178,9 +217,9 @@ async function logs() {
 }
 
 const command = process.argv[2] || 'probe';
-const actions = { probe, push, status, logs };
+const actions = { probe, push, status, logs, backup: backupCmd, restore: restoreCmd };
 if (!actions[command]) {
-  console.error('用法：node deploy.js probe|push|status|logs');
+  console.error('用法：node deploy.js probe|push|status|logs|backup|restore [备份文件名|latest]');
   process.exit(1);
 }
 actions[command]().catch((error) => { console.error(`✖ ${error.message}`); process.exit(1); });
