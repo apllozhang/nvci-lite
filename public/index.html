@@ -232,6 +232,14 @@
           <div class="dlg-row"><button class="btn primary" id="sSaveAi" data-i18n="common.save">保存</button><button class="btn ghost" id="sResetAi">清除已保存（恢复环境变量）</button><span class="muted small" id="sAiState"></span></div>
           <div class="muted small" data-i18n="settings.aiNote">保存后立即生效（无需重启）；留空字段沿用环境变量。</div>
         </div>
+        <div class="dlg-sec">
+          <div class="dlg-sec-title" data-i18n="settings.password">访问口令</div>
+          <div class="dlg-row"><input type="password" id="sCurPass" autocomplete="current-password" data-i18n-ph="settings.passCurrent" placeholder="当前口令（免登录时留空）">
+          <input type="password" id="sNewPass" autocomplete="new-password" data-i18n-ph="settings.passNew" placeholder="新口令（至少 8 位）">
+          <input type="password" id="sNewPass2" autocomplete="new-password" data-i18n-ph="settings.passNew2" placeholder="再次输入新口令"></div>
+          <div class="dlg-row"><button class="btn primary" id="sSavePass" data-i18n="settings.passSave">修改口令</button><span class="muted small" id="sPassMode"></span></div>
+          <div class="muted small" data-i18n="settings.passwordNote">修改后所有登录会话立即失效，需用新口令重新登录；新口令留空表示清除口令（恢复免登录或环境变量）。环境变量 NVCI_LITE_PASSWORD 仅在未于此处设置口令时生效。</div>
+        </div>
       </div>
     </div>
   </div>

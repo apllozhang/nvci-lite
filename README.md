@@ -186,7 +186,9 @@ node deploy.js logs    # 查看日志
 
 **指标**：`GET /metrics` 输出 Prometheus 文本格式（无需鉴权，仅聚合计数与进程 gauge，无业务数据）：`nvci_http_requests_total{method,route,status}`、`nvci_login_total{outcome}`、`nvci_collect_documents_total{result}`、`nvci_probe_results_total{status,ok}`、`nvci_ai_calls_total{outcome}`（含 429 限流）与进程内存/uptime gauge。vmagent 抓取后即可接入现有 VictoriaMetrics/n9e 体系。
 
-**安全基线**：登录失败同 IP 连续 10 次锁定 15 分钟；口令比较走 SHA-256 摘要 + `timingSafeEqual`；响应带 `X-Content-Type-Options: nosniff`、`X-Frame-Options: DENY`、CSP（`script-src 'self'`、`frame-ancestors 'none'` 等）、`Referrer-Policy: no-referrer`、`Permissions-Policy`。反向代理部署需设置 `NVCI_LITE_TRUST_PROXY`（见环境变量表），否则 Secure Cookie 与按 IP 限流失真。
+**安全基线**：登录失败同 IP 连续 10 次锁定 15 分钟；口令比较走时序安全比较（settings 哈希 scrypt / env 摘要）；响应带 `X-Content-Type-Options: nosniff`、`X-Frame-Options: DENY`、CSP（`script-src 'self'`、`frame-ancestors 'none'` 等）、`Referrer-Policy: no-referrer`、`Permissions-Policy`。反向代理部署需设置 `NVCI_LITE_TRUST_PROXY`（见环境变量表），否则 Secure Cookie 与按 IP 限流失真。
+
+**访问口令管理**（设置面板「访问口令」区，六语言）：优先级为 **settings 哈希（界面设置，scrypt+盐热生效）> 环境变量 `NVCI_LITE_PASSWORD` > 免登录**——在界面改口令后即接管环境变量，无需重发部署。改口令会轮换会话密钥：所有已登录会话立即失效（含操作者本人），需用新口令重登；新口令留空表示清除口令（env 仍设置时回落 env，否则恢复免登录）。设置文件只存哈希不存明文，遗忘口令时从 `deploy.config.json` 或远端 `.env` 查看环境变量值，或直接在界面重设。
 
 ## 边界
 

@@ -14,11 +14,11 @@ const ai = require('./lib/ai');
 const { FAILED_STATES, ProbeRunner, ProbeState, startScheduleLoop } = require('./lib/probe');
 const settings = require('./lib/settings');
 const loginGuard = require('./lib/login-guard');
+const passwordLib = require('./lib/password');
 const metrics = require('./lib/metrics');
 
 const PORT = Number(process.env.PORT || 8788);
 const DATA_DIR = process.env.NVCI_LITE_DATA_DIR || path.join(__dirname, 'data');
-const PASSWORD = process.env.NVCI_LITE_PASSWORD || '';
 const MAX_COLLECT = 50;
 // T05 型号分列上限：彩页明确覆盖 2~该数个型号时每型号独立一列；更多型号（长尾全系列彩页）
 // 拆列导致矩阵过宽且单型号可抽值稀疏，保持单列，型号归属交由人工确认对话框标注
@@ -140,20 +140,42 @@ app.use((req, _res, next) => {
   next();
 });
 
+// ---------- 口令来源（优先级）：settings 哈希（界面设置，热生效）> 环境变量 > 免登录 ----------
+
+function authState() {
+  const sec = settings.get().security || {};
+  if (sec.passwordHash && sec.passwordSalt) return { mode: 'settings' };
+  const envPassword = process.env.NVCI_LITE_PASSWORD || '';
+  return { mode: envPassword ? 'env' : 'none', envPassword };
+}
+function authRequired() { return authState().mode !== 'none'; }
+
 function auth(req, res, next) {
-  if (!PASSWORD || validSession(req)) return next();
+  if (!authRequired() || validSession(req)) return next();
   res.status(401).json({ error: '未登录或会话已过期' });
 }
 
-// 口令比较走摘要 + timingSafeEqual（评审 R7）：定长摘要消除长度与内容的时序面
+// 口令比较（评审 R7）：settings 哈希走 scrypt 定时安全比较；env 走定长 SHA-256 摘要，
+// 消除长度与内容的时序面
 function passwordMatches(submitted) {
-  const a = crypto.createHash('sha256').update(String(submitted || '')).digest();
-  const b = crypto.createHash('sha256').update(PASSWORD).digest();
+  const state = authState();
+  const text = String(submitted || '');
+  if (state.mode === 'settings') {
+    const sec = settings.get().security;
+    return passwordLib.verifyPassword(text, sec.passwordHash, sec.passwordSalt);
+  }
+  const a = crypto.createHash('sha256').update(text).digest();
+  const b = crypto.createHash('sha256').update(state.envPassword).digest();
   return crypto.timingSafeEqual(a, b);
 }
 
+// 改口令后轮换会话密钥：全部已登录会话立即失效，需用新口令重登
+function rotateSessions() {
+  try { fs.unlinkSync(secretPath()); } catch { /* 首次生成前无需轮换 */ }
+}
+
 app.post('/api/login', (req, res) => {
-  if (!PASSWORD) return res.json({ ok: true, authRequired: false });
+  if (!authRequired()) return res.json({ ok: true, authRequired: false });
   // 登录失败限制：同 IP 连续失败达上限后锁定窗口期，防暴力穷举
   // IP 取 req.ip 而非 socket.remoteAddress（评审 v4 N1）：Express 按 trust proxy 解析——
   // 反代部署取真实客户端 IP，直连部署二者等价；无 trust proxy 时忽略可伪造的 XFF 头
@@ -180,7 +202,7 @@ app.post('/api/login', (req, res) => {
 });
 
 app.get('/api/session', (req, res) => {
-  res.json({ authRequired: Boolean(PASSWORD), authenticated: !PASSWORD || validSession(req) });
+  res.json({ authRequired: authRequired(), authenticated: !authRequired() || validSession(req) });
 });
 
 // 指标端点（评审 R4）：Prometheus 文本格式，仅聚合计数与进程 gauge，无业务数据，公开供抓取
@@ -191,7 +213,7 @@ app.get('/metrics', (_req, res) => {
 
 // ---------- 业务路由挂载（依赖经 ctx 注入） ----------
 
-const routeCtx = { auth, store, probeState, probeRunner, probeSchedule, DATA_DIR, MAX_COLLECT, MAX_MODEL_COLUMNS };
+const routeCtx = { auth, store, probeState, probeRunner, probeSchedule, DATA_DIR, MAX_COLLECT, MAX_MODEL_COLUMNS, authRequired, passwordMatches, rotateSessions };
 app.use(require('./routes/probe')(routeCtx));
 app.use(require('./routes/catalog')(routeCtx));
 app.use(require('./routes/collect')(routeCtx));
@@ -211,7 +233,7 @@ app.listen(PORT, () => {
     event: 'nvci_lite_started',
     port: PORT,
     dataDir: store.rootDir,
-    authRequired: Boolean(PASSWORD),
+    authRequired: authRequired(),
     aiConfigured: ai.isConfigured(),
     catalog: (() => { try { const catalog = loadCatalog(); return { vendors: catalog.vendorCount, documents: catalog.documentCount }; } catch { return { vendors: 0, documents: 0 }; } })(),
   }));

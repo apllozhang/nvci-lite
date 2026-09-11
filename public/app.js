@@ -1934,8 +1934,28 @@ async function openSettings() {
     $('sApiKey').value = '';
     $('sApiKey').placeholder = view.ai.apiKeyConfigured ? t('settings.apiKeyMasked') : 'API Key';
     $('sAiState').textContent = view.ai.apiKeyConfigured ? `● ${t('top.aiOn')}` : '';
+    const modeText = { settings: t('settings.passModeSettings'), env: t('settings.passModeEnv'), none: t('settings.passModeNone') };
+    $('sPassMode').textContent = `● ${modeText[view.security?.authMode] || ''}`;
+    ['sCurPass', 'sNewPass', 'sNewPass2'].forEach((id) => { $(id).value = ''; });
   } catch (error) { toast('error', error.message); }
   $('settingsMask').classList.remove('hidden');
+}
+
+async function savePassword() {
+  const currentPassword = $('sCurPass').value;
+  const newPassword = $('sNewPass').value;
+  const confirm2 = $('sNewPass2').value;
+  if (newPassword !== confirm2) { toast('warn', t('settings.passMismatch')); return; }
+  if (newPassword && newPassword.length < 8) { toast('warn', t('settings.passShort')); return; }
+  try {
+    await api('/api/settings', { method: 'PUT', body: JSON.stringify({ passwordChange: { currentPassword, newPassword } }) });
+    toast('success', t('settings.passSaved'));
+    // 会话已被服务端轮换：强制重新登录
+    $('settingsMask').classList.add('hidden');
+    $('loginMask').classList.remove('hidden');
+    $('passwordInput').value = '';
+    $('passwordInput').focus();
+  } catch (error) { toast('error', error.message); }
 }
 
 async function saveSettings(patch) {
@@ -2054,6 +2074,7 @@ document.addEventListener('click', (event) => {
 });
 $('settingsBtn').addEventListener('click', openSettings);
 $('sClose').addEventListener('click', () => $('settingsMask').classList.add('hidden'));
+$('sSavePass').addEventListener('click', savePassword);
 $('settingsMask').addEventListener('click', (event) => { if (event.target === $('settingsMask')) $('settingsMask').classList.add('hidden'); });
 $('sResetAi').addEventListener('click', async () => {
   if (!window.confirm('清除界面保存的 AI 配置，恢复使用环境变量？')) return;

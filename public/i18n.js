@@ -87,6 +87,10 @@ const I18N = {
     'settings.ai': 'AI 模型对接', 'settings.protocol': '协议', 'settings.baseUrl': 'Base URL', 'settings.model': '模型 ID',
     'settings.visionModel': '视觉模型 ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': '已配置（保存可覆盖）',
     'settings.saved': '设置已保存', 'settings.aiNote': '保存后立即生效（无需重启）；留空字段沿用环境变量。',
+    'settings.password': '访问口令', 'settings.passCurrent': '当前口令（免登录时留空）', 'settings.passNew': '新口令（至少 8 位）', 'settings.passNew2': '再次输入新口令',
+    'settings.passSave': '修改口令', 'settings.passModeSettings': '口令由本页设置（热生效）', 'settings.passModeEnv': '口令由环境变量配置，在此修改后将接管', 'settings.passModeNone': '当前免登录',
+    'settings.passMismatch': '两次输入的新口令不一致', 'settings.passShort': '新口令至少 8 位', 'settings.passSaved': '口令已修改：所有会话已失效，请用新口令重新登录',
+    'settings.passwordNote': '修改后所有登录会话立即失效，需用新口令重新登录；新口令留空表示清除口令。环境变量 NVCI_LITE_PASSWORD 仅在未于此处设置口令时生效。',
     'lang.zh-CN': '简体中文', 'lang.zh-TW': '繁體中文', 'lang.en': 'English', 'lang.fr': 'Français', 'lang.es': 'Español', 'lang.ja': '日本語',
   },
 };
@@ -164,6 +168,10 @@ I18N['zh-TW'] = {
   'settings.ai': 'AI 模型對接', 'settings.protocol': '協議', 'settings.baseUrl': 'Base URL', 'settings.model': '模型 ID',
   'settings.visionModel': '視覺模型 ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': '已配置（儲存可覆蓋）',
   'settings.saved': '設定已儲存', 'settings.aiNote': '儲存後立即生效（無需重啟）；留空欄位沿用環境變數。',
+    'settings.password': '存取口令', 'settings.passCurrent': '目前口令（免登入時留空）', 'settings.passNew': '新口令（至少 8 位）', 'settings.passNew2': '再次輸入新口令',
+    'settings.passSave': '修改口令', 'settings.passModeSettings': '口令由本頁設定（熱生效）', 'settings.passModeEnv': '口令由環境變數配置，於此修改後將接管', 'settings.passModeNone': '目前免登入',
+    'settings.passMismatch': '兩次輸入的新口令不一致', 'settings.passShort': '新口令至少 8 位', 'settings.passSaved': '口令已修改：所有會話已失效，請用新口令重新登入',
+    'settings.passwordNote': '修改後所有登入會話立即失效，需用新口令重新登入；新口令留空表示清除口令。環境變數 NVCI_LITE_PASSWORD 僅在未於此處設定口令時生效。',
 };
 
 I18N['en'] = {
@@ -239,6 +247,10 @@ I18N['en'] = {
   'settings.ai': 'AI integration', 'settings.protocol': 'Protocol', 'settings.baseUrl': 'Base URL', 'settings.model': 'Model ID',
   'settings.visionModel': 'Vision model ID', 'settings.apiKey': 'API Key', 'settings.apiKeyMasked': 'Configured (save to override)',
   'settings.saved': 'Settings saved', 'settings.aiNote': 'Applies immediately (no restart); empty fields fall back to env vars.',
+    'settings.password': 'Access password', 'settings.passCurrent': 'Current password (empty if none)', 'settings.passNew': 'New password (min 8 chars)', 'settings.passNew2': 'Repeat new password',
+    'settings.passSave': 'Change password', 'settings.passModeSettings': 'Password set on this page (hot reload)', 'settings.passModeEnv': 'Password from env var; changing here takes over', 'settings.passModeNone': 'No password required',
+    'settings.passMismatch': 'New passwords do not match', 'settings.passShort': 'New password must be at least 8 characters', 'settings.passSaved': 'Password changed: all sessions invalidated, sign in with the new password',
+    'settings.passwordNote': 'Changing the password invalidates all sessions immediately; leave the new password empty to clear it. Env var NVCI_LITE_PASSWORD only applies until a password is set here.',
 };
 
 I18N['fr'] = {
@@ -311,6 +323,10 @@ I18N['fr'] = {
   'settings.ai': 'Intégration IA', 'settings.protocol': 'Protocole', 'settings.baseUrl': 'Base URL', 'settings.model': 'ID modèle',
   'settings.visionModel': 'ID modèle vision', 'settings.apiKey': 'Clé API', 'settings.apiKeyMasked': 'Configurée (enregistrer pour remplacer)',
   'settings.saved': 'Paramètres enregistrés', 'settings.aiNote': 'Immédiat (sans redémarrage) ; les champs vides gardent les variables d’env.',
+  'settings.password': 'Mot de passe d’accès', 'settings.passCurrent': 'Mot de passe actuel (vide si aucun)', 'settings.passNew': 'Nouveau mot de passe (8 caractères min.)', 'settings.passNew2': 'Répéter le nouveau mot de passe',
+  'settings.passSave': 'Changer le mot de passe', 'settings.passModeSettings': 'Mot de passe défini sur cette page (à chaud)', 'settings.passModeEnv': 'Mot de passe par variable d’env ; le modifier ici prend le relais', 'settings.passModeNone': 'Aucun mot de passe requis',
+  'settings.passMismatch': 'Les nouveaux mots de passe ne correspondent pas', 'settings.passShort': '8 caractères minimum', 'settings.passSaved': 'Mot de passe modifié : sessions invalidées, reconnectez-vous',
+  'settings.passwordNote': 'Le changement invalide toutes les sessions ; laisser vide pour supprimer le mot de passe. La variable NVCI_LITE_PASSWORD ne s’applique qu’absence de mot de passe défini ici.',
 };
 
 I18N['es'] = {
@@ -383,6 +399,10 @@ I18N['es'] = {
   'settings.ai': 'Integración IA', 'settings.protocol': 'Protocolo', 'settings.baseUrl': 'Base URL', 'settings.model': 'ID de modelo',
   'settings.visionModel': 'ID modelo visión', 'settings.apiKey': 'Clave API', 'settings.apiKeyMasked': 'Configurada (guardar para reemplazar)',
   'settings.saved': 'Ajustes guardados', 'settings.aiNote': 'Inmediato (sin reiniciar); los campos vacíos usan variables de entorno.',
+  'settings.password': 'Contraseña de acceso', 'settings.passCurrent': 'Contraseña actual (vacío si no hay)', 'settings.passNew': 'Nueva contraseña (mín. 8)', 'settings.passNew2': 'Repite la nueva contraseña',
+  'settings.passSave': 'Cambiar contraseña', 'settings.passModeSettings': 'Contraseña fijada en esta página (en caliente)', 'settings.passModeEnv': 'Contraseña por variable de entorno; cambiarla aquí la sustituye', 'settings.passModeNone': 'Sin contraseña',
+  'settings.passMismatch': 'Las nuevas contraseñas no coinciden', 'settings.passShort': 'Mínimo 8 caracteres', 'settings.passSaved': 'Contraseña cambiada: sesiones invalidadas, inicia sesión con la nueva',
+  'settings.passwordNote': 'El cambio invalida todas las sesiones; deja vacío para quitar la contraseña. NVCI_LITE_PASSWORD solo aplica si no se fija aquí.',
 };
 
 I18N['ja'] = {
@@ -455,6 +475,10 @@ I18N['ja'] = {
   'settings.ai': 'AI 連携', 'settings.protocol': 'プロトコル', 'settings.baseUrl': 'Base URL', 'settings.model': 'モデル ID',
   'settings.visionModel': 'ビジョンモデル ID', 'settings.apiKey': 'API キー', 'settings.apiKeyMasked': '設定済み（保存で上書き）',
   'settings.saved': '設定を保存しました', 'settings.aiNote': '即時反映（再起動不要）。空欄は環境変数を引き継ぎます。',
+  'settings.password': 'アクセスパスワード', 'settings.passCurrent': '現在のパスワード（未設定なら空）', 'settings.passNew': '新しいパスワード（8文字以上）', 'settings.passNew2': '新しいパスワード（再入力）',
+  'settings.passSave': 'パスワード変更', 'settings.passModeSettings': 'この画面で設定中（即時反映）', 'settings.passModeEnv': '環境変数で設定中。ここで変更すると引き継ぎます', 'settings.passModeNone': 'パスワードなし',
+  'settings.passMismatch': '新しいパスワードが一致しません', 'settings.passShort': '8文字以上必要です', 'settings.passSaved': '変更しました。全セッション無効化済み。新パスワードで再ログインしてください',
+  'settings.passwordNote': '変更すると全セッションが即時無効になります。空欄でパスワード解除。NVCI_LITE_PASSWORD はここで未設定の場合のみ有効。',
 };
 
 const I18N_STATE = { lang: localStorage.getItem('nvci-lang') || 'zh-CN' };
