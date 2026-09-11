@@ -21,6 +21,7 @@ const settings = require('./lib/settings');
 const confirm = require('./lib/confirm');
 const aiCache = require('./lib/ai-cache');
 const thresholds = require('./lib/thresholds');
+const loginGuard = require('./lib/login-guard');
 const { FIELD_TEMPLATE } = require('./lib/params');
 
 const PORT = Number(process.env.PORT || 8788);
@@ -323,9 +324,20 @@ function auth(req, res, next) {
 
 app.post('/api/login', (req, res) => {
   if (!PASSWORD) return res.json({ ok: true, authRequired: false });
-  if (String(req.body?.password || '') !== PASSWORD) return res.status(401).json({ error: '口令错误' });
+  // 登录失败限制：同 IP 连续失败达上限后锁定窗口期，防暴力穷举
+  const ip = req.socket.remoteAddress || 'unknown';
+  const guard = loginGuard.check(ip);
+  if (!guard.allowed) {
+    return res.status(429).json({ error: `失败次数过多，已临时锁定，请 ${Math.ceil(guard.retryAfterSec / 60)} 分钟后再试` });
+  }
+  if (String(req.body?.password || '') !== PASSWORD) {
+    loginGuard.recordFailure(ip);
+    return res.status(401).json({ error: '口令错误' });
+  }
+  loginGuard.recordSuccess(ip);
   const expiresAt = Date.now() + 12 * 60 * 60 * 1000;
-  res.cookie('nvci_lite', `lite.${expiresAt}.${signToken(expiresAt)}`, { httpOnly: true, sameSite: 'strict' });
+  // secure 条件位：HTTPS 部署下自动带上；内网明文 HTTP 下保持关闭（Secure cookie 不随明文请求发送）
+  res.cookie('nvci_lite', `lite.${expiresAt}.${signToken(expiresAt)}`, { httpOnly: true, sameSite: 'strict', secure: req.secure });
   res.json({ ok: true, authRequired: true });
 });
 

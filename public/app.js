@@ -933,6 +933,18 @@ async function removeCustomProfile(profileId) {
   }
 }
 
+// 目录加载告警（自定义来源冲突被跳过等）：静默跳过会让操作者误以为登记成功
+function renderCatalogWarnings() {
+  const box = $('catalogWarnings');
+  if (!box) return;
+  const warnings = state.catalog?.warnings || [];
+  box.classList.toggle('hidden', !warnings.length);
+  if (!warnings.length) { box.innerHTML = ''; return; }
+  box.innerHTML = warnings.map((line) => `<div>⚠ ${esc(line)}</div>`).join('')
+    + `<button class="cw-x" title="${esc(t('common.close'))}">×</button>`;
+  box.querySelector('.cw-x').addEventListener('click', () => box.classList.add('hidden'));
+}
+
 // 目录重载：保留当前选中与展开状态（自定义来源增删后调用）
 async function reloadCatalog() {
   const catalog = await api('/api/catalog');
@@ -944,6 +956,7 @@ async function reloadCatalog() {
     const lines = vendorOf(keepVendor).productLines;
     state.currentProfileId = lines.some((l) => l.profileId === keepProfile) ? keepProfile : (lines[0]?.profileId || '');
   }
+  renderCatalogWarnings();
   renderTree();
   renderDocTable($('docSearch').value);
 }
@@ -1982,6 +1995,7 @@ async function boot() {
     state.currentProfileId = withDocs.profileId;
     state.expanded.add(state.currentVendorId);
   }
+  renderCatalogWarnings();
   renderTree();
   renderDocTable();
   updateTray();
