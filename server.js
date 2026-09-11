@@ -155,7 +155,9 @@ function passwordMatches(submitted) {
 app.post('/api/login', (req, res) => {
   if (!PASSWORD) return res.json({ ok: true, authRequired: false });
   // 登录失败限制：同 IP 连续失败达上限后锁定窗口期，防暴力穷举
-  const ip = req.socket.remoteAddress || 'unknown';
+  // IP 取 req.ip 而非 socket.remoteAddress（评审 v4 N1）：Express 按 trust proxy 解析——
+  // 反代部署取真实客户端 IP，直连部署二者等价；无 trust proxy 时忽略可伪造的 XFF 头
+  const ip = req.ip || req.socket.remoteAddress || 'unknown';
   const guard = loginGuard.check(ip);
   if (!guard.allowed) {
     metrics.inc('nvci_login_total', { outcome: 'locked' });
