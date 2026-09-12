@@ -12,6 +12,9 @@ const state = {
   library: [],           // 服务端已采集清单
   cmpSel: new Set(),     // 对比勾选
   libraryFilter: '',     // 第 3 步品类筛选（空 = 全部）
+  libraryVendor: '',     // 第 3 步厂商筛选（空 = 全部厂商）
+  librarySearch: '',     // 第 3 步搜索（跨品类/厂商命中）
+  catFolded: null,       // 品类折叠集合（null = 未初始化：默认全部折叠）
   matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
   thresholds: [],        // 项目门槛行 {fieldKey, op, value}
   fieldTemplate: null,   // 固定字段字典（门槛下拉），进入第 4 步时加载
@@ -407,6 +410,24 @@ function renderCatChips() {
     </button>`).join('');
   $('catChips').querySelectorAll('button[data-cat]').forEach((btn) => btn.addEventListener('click', () => {
     state.libraryFilter = btn.dataset.cat;
+    state.libraryVendor = ''; // 切品类后厂商集合变化，重置厂商筛选
+    state.catFolded = new Set(); // 显式筛选 = 用户有明确目标，全部展开
+    renderLibrary();
+  }));
+}
+
+// 厂商 chips：随品类联动，把单品类几百行压成「厂商 × 短列表」
+function renderVendorChips(docs) {
+  const counts = new Map();
+  for (const doc of docs) counts.set(doc.vendorName, (counts.get(doc.vendorName) || 0) + 1);
+  const chips = [{ key: '', label: t('common.all'), count: docs.length }]
+    .concat([...counts.entries()].sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ key: name, label: name, count })));
+  $('vendorChips').innerHTML = chips.map((chip) => `
+    <button class="chip ${state.libraryVendor === chip.key ? 'st-info active' : 'st-neutral'}" data-vendor="${esc(chip.key)}">
+      ${esc(chip.label)} <span class="chip-count">${chip.count}</span>
+    </button>`).join('');
+  $('vendorChips').querySelectorAll('button[data-vendor]').forEach((btn) => btn.addEventListener('click', () => {
+    state.libraryVendor = btn.dataset.vendor;
     renderLibrary();
   }));
 }
@@ -416,14 +437,28 @@ async function renderLibrary() {
   if (!state.library.length) {
     box.innerHTML = '<div class="muted empty">还没有已采集的彩页，请回第 1、2 步先采集。</div>';
     renderCatChips();
+    $('vendorChips').innerHTML = '';
     return;
   }
   renderCatChips();
-  const filter = state.libraryFilter || '';
-  const docs = state.library.filter((doc) => !filter || libraryCategoryOf(doc) === filter);
-  // 品类 → 厂商 两级分组；品类按标准顺序，厂商按出现顺序
+  const needle = state.librarySearch.trim().toLowerCase();
+  // 搜索为最高优先级：跨品类/厂商全库命中（结果带品类标签）
+  const matched = state.library.filter((doc) => {
+    if (needle) {
+      return `${doc.series} ${doc.modelNames.join(' ')} ${doc.vendorName} ${doc.productLineName || ''}`.toLowerCase().includes(needle);
+    }
+    if (state.libraryFilter && libraryCategoryOf(doc) !== state.libraryFilter) return false;
+    if (state.libraryVendor && doc.vendorName !== state.libraryVendor) return false;
+    return true;
+  });
+  renderVendorChips(matched);
+  if (!matched.length) {
+    box.innerHTML = `<div class="muted empty">${esc(t('step3.noMatch'))}</div>`;
+    return;
+  }
+  // 品类 → 厂商 两级分组；搜索模式下显示品类标签帮助定位
   const byCategory = new Map();
-  for (const doc of docs) {
+  for (const doc of matched) {
     const cat = libraryCategoryOf(doc);
     if (!byCategory.has(cat)) byCategory.set(cat, new Map());
     const byVendor = byCategory.get(cat);
@@ -431,23 +466,47 @@ async function renderLibrary() {
     byVendor.get(doc.vendorName).push(doc);
   }
   const orderedCats = CATEGORY_ORDER.filter((key) => byCategory.has(key));
+  // 折叠策略：无任何筛选时品类默认全部折叠（先看地图再看街景）；有筛选/搜索时全展开
+  const filtering = Boolean(needle || state.libraryFilter || state.libraryVendor);
+  if (state.catFolded === null) state.catFolded = new Set(orderedCats);
+  const folded = (cat) => !filtering && state.catFolded.has(cat);
   box.innerHTML = orderedCats.map((cat) => {
     const meta = categoryMeta(cat);
     const byVendor = byCategory.get(cat);
+    const total = [...byVendor.values()].reduce((sum, list) => sum + list.length, 0);
+    const isFolded = folded(cat);
     const vendorBlocks = [...byVendor.entries()].map(([vendorName, list]) => `
       <div class="cmp-vendor">${esc(vendorName)}<span class="muted small">· ${list.length}</span></div>
       ${list.map((doc) => `
-      <label class="doc-row ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}" data-id="${esc(doc.documentId)}">
+      <label class="doc-row ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}" data-id="${esc(doc.documentId)}" title="${esc(`${doc.series} ${doc.modelNames.join('、')} · ${doc.pageCount || '?'} 页${doc.warning ? ' · 哈希与基线不一致' : ''}`)}">
         <input type="checkbox" ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}>
         <span class="doc-series">${esc(doc.series)}</span>
         <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-        <span class="muted small">${doc.pageCount || '?'} 页${doc.warning ? ' · ⚠ 哈希与基线不一致' : ''}${doc.pageMarkdown?.status === 'ok' ? ' · 已保存网页' : ''}</span>
+        ${needle ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
       </label>`).join('')}`).join('');
-    return `<div class="cmp-category">
-      <div class="cmp-cat-head"><span class="cmp-cat-name">${esc(meta.label)}</span><span class="muted small">${meta.desc}</span></div>
-      ${vendorBlocks}
+    return `<div class="cmp-category ${isFolded ? 'folded' : ''}">
+      <div class="cmp-cat-head" role="button" tabindex="0" data-cat="${esc(cat)}" title="${isFolded ? esc(t('step3.expand')) : esc(t('step3.collapse'))}">
+        <span class="cmp-cat-arrow">${isFolded ? '▸' : '▾'}</span>
+        <span class="cmp-cat-name">${esc(meta.label)}</span>
+        <span class="muted small">${esc(meta.desc)}</span>
+        <span class="chip-count muted">${total}</span>
+      </div>
+      ${isFolded ? '' : vendorBlocks}
     </div>`;
   }).join('');
+  // 品类头折叠切换（键盘可达）
+  box.querySelectorAll('.cmp-cat-head').forEach((head) => {
+    const toggle = () => {
+      const cat = head.dataset.cat;
+      if (state.catFolded.has(cat)) state.catFolded.delete(cat);
+      else state.catFolded.add(cat);
+      renderLibrary();
+    };
+    head.addEventListener('click', toggle);
+    head.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
+    });
+  });
   box.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', () => {
     const id = row.dataset.id;
     if (state.cmpSel.has(id)) state.cmpSel.delete(id); else state.cmpSel.add(id);
@@ -1022,6 +1081,20 @@ function initProfileDialog() {
   if (btn) btn.addEventListener('click', () => openProfileDlg());
   const mask = $('profileMask');
   if (mask) mask.addEventListener('click', (event) => { if (event.target === mask) closeProfileDlg(); });
+}
+
+// 第 3 步搜索（防抖）：搜索为最高优先级，跨品类/厂商全库命中
+let librarySearchTimer = null;
+function initLibrarySearch() {
+  const input = $('librarySearch');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    clearTimeout(librarySearchTimer);
+    librarySearchTimer = setTimeout(() => {
+      state.librarySearch = input.value;
+      renderLibrary();
+    }, 200);
+  });
 }
 
 async function loadExports() {
@@ -2078,6 +2151,7 @@ async function boot() {
   refreshStepBar();
   refreshAlerts();
   initProfileDialog();
+  initLibrarySearch();
   setInterval(refreshAlerts, 60000);
   applyI18n();
   initTheme();
