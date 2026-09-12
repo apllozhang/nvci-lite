@@ -14,7 +14,8 @@
     "download.h3c.com"
   ],
   "trustedRedirectDomains": [
-    "dlaz.h3c.com"
+    "dlaz.h3c.com",
+    "dltt.h3c.com"
   ],
   "sourcePolicy": "只复用准确产品页发现的 download.h3c.com 下载 ID；保留官方中文文件名、产品页关联、SHA-256 与跨类别归档规则。",
   "evidencePolicy": "official_product_brochure_pdf",
