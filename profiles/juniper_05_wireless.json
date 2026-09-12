@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "2.2",
+  "profileId": "juniper_05_wireless",
+  "vendorId": "juniper",
+  "vendorName": "Juniper Networks",
+  "displayName": "Juniper 无线接入点",
+  "category": "wireless_ap",
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.juniper.net",
+    "juniper.net"
+  ],
+  "trustedRedirectDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "sourcePolicy": "仅采集已登记的公开官方 PDF；PDF 为 juniper.net documentation 域官方硬件指南，含完整硬件规格。",
+  "evidencePolicy": "official_hardware_guide",
+  "productLine": {
+    "id": "05",
+    "name": "05 无线接入点",
+    "libraryRootName": "Juniper产品彩页"
+  },
+  "subseries": {
+    "id": "05",
+    "name": "Mist 系列无线接入点"
+  },
+  "sources": [
+    {
+      "documentId": "juniper_ap34-hwguide",
+      "series": "AP34",
+      "modelNames": [
+        "Mist AP34"
+      ],
+      "description": "Mist AP34 Wi-Fi 6/6E 接入点官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/ap34/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/ap34/ap34.pdf",
+      "officialFileName": "ap34-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_ap45-hwguide",
+      "series": "AP45",
+      "modelNames": [
+        "Mist AP45"
+      ],
+      "description": "Mist AP45 Wi-Fi 6/6E 接入点官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/ap45/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/ap45/ap45.pdf",
+      "officialFileName": "ap45-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    }
+  ]
+}

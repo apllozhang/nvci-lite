@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "2.2",
+  "profileId": "juniper_03_routers",
+  "vendorId": "juniper",
+  "vendorName": "Juniper Networks",
+  "displayName": "Juniper 路由器",
+  "category": "router",
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.juniper.net",
+    "juniper.net"
+  ],
+  "trustedRedirectDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "sourcePolicy": "仅采集已登记的公开官方 PDF；PDF 为 juniper.net documentation 域官方硬件指南，含完整硬件规格。",
+  "evidencePolicy": "official_hardware_guide",
+  "productLine": {
+    "id": "03",
+    "name": "03 路由器",
+    "libraryRootName": "Juniper产品彩页"
+  },
+  "subseries": {
+    "id": "03",
+    "name": "MX/ACX 系列路由器"
+  },
+  "sources": [
+    {
+      "documentId": "juniper_mx204-hwguide",
+      "series": "MX204",
+      "modelNames": [
+        "MX204"
+      ],
+      "description": "MX204 边缘路由器官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/mx204/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/mx204/mx204.pdf",
+      "officialFileName": "mx204-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_mx304-hwguide",
+      "series": "MX304",
+      "modelNames": [
+        "MX304"
+      ],
+      "description": "MX304 边缘路由器官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/mx304/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/mx304/mx304.pdf",
+      "officialFileName": "mx304-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_acx7024-hwguide",
+      "series": "ACX7024",
+      "modelNames": [
+        "ACX7024"
+      ],
+      "description": "ACX7024 汇聚/聚合路由器官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/acx7024/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/acx7024/acx7024.pdf",
+      "officialFileName": "acx7024-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    }
+  ]
+}

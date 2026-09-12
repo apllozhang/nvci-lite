@@ -71,7 +71,7 @@ test('品类推断兜底：产品线名关键词映射标准品类', () => {
   assert.equal(inferCategory('Juniper EX4300 官方资料'), 'other', '无关键词回落 other');
 });
 
-test('自定义来源叠加：新厂商归入目录并带 custom 标记，冲突条目跳过并警告', () => {
+test('自定义来源叠加：归入目录并带 custom 标记，冲突条目跳过并警告', () => {
   const fs = require('fs');
   const os = require('os');
   const path = require('path');
@@ -79,7 +79,8 @@ test('自定义来源叠加：新厂商归入目录并带 custom 标记，冲突
   // 取内置真实存在的 documentId 制造冲突（内置基准不可覆盖）
   const builtinId = loadCatalog().vendors
     .flatMap((vendor) => vendor.productLines.flatMap((line) => line.documents.map((doc) => doc.documentId)))[0];
-  // 一个新厂商来源 + 一条与内置冲突的 documentId
+  // 一个自定义来源 + 一条与内置冲突的 documentId（vendorId 沿用 juniper：
+  // Juniper 已升级内置品牌，验证的是「自定义线叠加到既有厂商」的真实场景）
   fs.writeFileSync(path.join(dir, 'juniper_ex4300.json'), JSON.stringify({
     schemaVersion: '2.2-lite', custom: true,
     profileId: 'juniper_switches_ex4300', vendorId: 'juniper', vendorName: 'Juniper Networks',
@@ -93,9 +94,11 @@ test('自定义来源叠加：新厂商归入目录并带 custom 标记，冲突
   }), 'utf8');
   const catalog = loadCatalog(undefined, dir);
   const juniper = catalog.vendors.find((vendor) => vendor.vendorId === 'juniper');
-  assert.ok(juniper, '新厂商应出现在目录');
+  assert.ok(juniper, 'juniper 应出现在目录（内置 + 自定义叠加）');
   assert.equal(juniper.vendorName, 'Juniper Networks');
-  const line = juniper.productLines[0];
+  // 按 profileId 精确定位自定义线（内置线先注册，不能用下标取）
+  const line = juniper.productLines.find((item) => item.profileId === 'juniper_switches_ex4300');
+  assert.ok(line, '自定义线应叠加在 juniper 厂商下');
   assert.equal(line.custom, true, '自定义产品线带 custom 标记');
   assert.equal(line.documentCount, 1, '冲突条目被跳过，仅 1 条生效');
   assert.ok(catalog.warnings.some((w) => w.includes(builtinId)), '冲突记入 warnings');

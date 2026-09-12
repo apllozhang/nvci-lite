@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "2.2",
+  "profileId": "juniper_01_campus",
+  "vendorId": "juniper",
+  "vendorName": "Juniper Networks",
+  "displayName": "Juniper 园区交换机",
+  "category": "campus_switch",
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.juniper.net",
+    "juniper.net"
+  ],
+  "trustedRedirectDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "sourcePolicy": "仅采集已登记的公开官方 PDF；PDF 为 juniper.net documentation 域官方硬件指南，含完整硬件规格。",
+  "evidencePolicy": "official_hardware_guide",
+  "productLine": {
+    "id": "01",
+    "name": "01 园区交换机",
+    "libraryRootName": "Juniper产品彩页"
+  },
+  "subseries": {
+    "id": "01",
+    "name": "EX 系列园区交换机"
+  },
+  "sources": [
+    {
+      "documentId": "juniper_ex4100-hwguide",
+      "series": "EX4100",
+      "modelNames": [
+        "EX4100",
+        "EX4100-F"
+      ],
+      "description": "EX4100 园区接入交换机（含 EX4100-F 分支型）官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/ex4100/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/ex4100/ex4100.pdf",
+      "officialFileName": "ex4100-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_ex4400-hwguide",
+      "series": "EX4400",
+      "modelNames": [
+        "EX4400"
+      ],
+      "description": "EX4400 园区接入/汇聚交换机（虚拟机箱）官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/ex4400/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/ex4400/ex4400.pdf",
+      "officialFileName": "ex4400-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_ex4650-hwguide",
+      "series": "EX4650",
+      "modelNames": [
+        "EX4650"
+      ],
+      "description": "EX4650 园区汇聚/核心交换机官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/ex4650/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/ex4650/ex4650.pdf",
+      "officialFileName": "ex4650-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    }
+  ]
+}

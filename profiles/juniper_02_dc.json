@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "2.2",
+  "profileId": "juniper_02_dc",
+  "vendorId": "juniper",
+  "vendorName": "Juniper Networks",
+  "displayName": "Juniper 数据中心交换机",
+  "category": "dc_switch",
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.juniper.net",
+    "juniper.net"
+  ],
+  "trustedRedirectDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "sourcePolicy": "仅采集已登记的公开官方 PDF；PDF 为 juniper.net documentation 域官方硬件指南，含完整硬件规格。",
+  "evidencePolicy": "official_hardware_guide",
+  "productLine": {
+    "id": "02",
+    "name": "02 数据中心交换机",
+    "libraryRootName": "Juniper产品彩页"
+  },
+  "subseries": {
+    "id": "02",
+    "name": "QFX 系列数据中心交换机"
+  },
+  "sources": [
+    {
+      "documentId": "juniper_qfx5120-hwguide",
+      "series": "QFX5120",
+      "modelNames": [
+        "QFX5120"
+      ],
+      "description": "QFX5120 数据中心 ToR/汇聚交换机官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/qfx5120/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/qfx5120/qfx5120.pdf",
+      "officialFileName": "qfx5120-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_qfx5130-hwguide",
+      "series": "QFX5130",
+      "modelNames": [
+        "QFX5130"
+      ],
+      "description": "QFX5130 数据中心交换机（100G/400G）官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/qfx5130/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/qfx5130/qfx5130.pdf",
+      "officialFileName": "qfx5130-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_qfx5220-hwguide",
+      "series": "QFX5220",
+      "modelNames": [
+        "QFX5220"
+      ],
+      "description": "QFX5220 数据中心交换机（400G）官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/qfx5220/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/qfx5220/qfx5220.pdf",
+      "officialFileName": "qfx5220-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_qfx5700-hwguide",
+      "series": "QFX5700",
+      "modelNames": [
+        "QFX5700"
+      ],
+      "description": "QFX5700 数据中心核心交换机官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/qfx5700/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/qfx5700/qfx5700.pdf",
+      "officialFileName": "qfx5700-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    }
+  ]
+}

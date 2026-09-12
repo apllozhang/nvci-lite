@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "2.2",
+  "profileId": "juniper_04_security",
+  "vendorId": "juniper",
+  "vendorName": "Juniper Networks",
+  "displayName": "Juniper 安全网关",
+  "category": "security",
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.juniper.net",
+    "juniper.net"
+  ],
+  "trustedRedirectDomains": [
+    "www.hpe.com",
+    "hpe.com"
+  ],
+  "sourcePolicy": "仅采集已登记的公开官方 PDF；PDF 为 juniper.net documentation 域官方硬件指南，含完整硬件规格。",
+  "evidencePolicy": "official_hardware_guide",
+  "productLine": {
+    "id": "04",
+    "name": "04 安全网关",
+    "libraryRootName": "Juniper产品彩页"
+  },
+  "subseries": {
+    "id": "04",
+    "name": "SRX 系列防火墙"
+  },
+  "sources": [
+    {
+      "documentId": "juniper_srx1500-hwguide",
+      "series": "SRX1500",
+      "modelNames": [
+        "SRX1500"
+      ],
+      "description": "SRX1500 下一代防火墙官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/srx1500/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/srx1500/srx1500.pdf",
+      "officialFileName": "srx1500-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_srx1600-hwguide",
+      "series": "SRX1600",
+      "modelNames": [
+        "SRX1600"
+      ],
+      "description": "SRX1600 下一代防火墙官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/srx1600/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/srx1600/srx1600.pdf",
+      "officialFileName": "srx1600-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_srx2300-hwguide",
+      "series": "SRX2300",
+      "modelNames": [
+        "SRX2300"
+      ],
+      "description": "SRX2300 下一代防火墙官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/srx2300/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/srx2300/srx2300.pdf",
+      "officialFileName": "srx2300-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_srx4300-hwguide",
+      "series": "SRX4300",
+      "modelNames": [
+        "SRX4300"
+      ],
+      "description": "SRX4300 下一代防火墙官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/srx4300/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/srx4300/srx4300.pdf",
+      "officialFileName": "srx4300-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "juniper_srx4600-hwguide",
+      "series": "SRX4600",
+      "modelNames": [
+        "SRX4600"
+      ],
+      "description": "SRX4600 下一代防火墙官方硬件指南",
+      "productPageUrl": "https://www.juniper.net/documentation/product/us/en/srx4600/",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.juniper.net/documentation/us/en/hardware/srx4600/srx4600.pdf",
+      "officialFileName": "srx4600-hardware-guide.pdf",
+      "evidencePolicy": "official_hardware_guide",
+      "expectedSha256": ""
+    }
+  ]
+}
