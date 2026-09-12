@@ -14,6 +14,7 @@ const state = {
   libraryFilter: '',     // 第 3 步品类筛选（空 = 全部）
   libraryVendor: '',     // 第 3 步厂商筛选（空 = 全部厂商）
   librarySearch: '',     // 第 3 步搜索（跨品类/厂商命中）
+  cmpForceCross: false,  // 跨品类混合对比的显式放行（选择变化后重新裁决）
   catFolded: null,       // 品类折叠集合（null = 未初始化：默认全部折叠）
   matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
   thresholds: [],        // 项目门槛行 {fieldKey, op, value}
@@ -438,10 +439,17 @@ async function renderLibrary() {
     box.innerHTML = '<div class="muted empty">还没有已采集的彩页，请回第 1、2 步先采集。</div>';
     renderCatChips();
     $('vendorChips').innerHTML = '';
+    refreshCmpGate();
     return;
   }
   renderCatChips();
   const needle = state.librarySearch.trim().toLowerCase();
+  // 已选产品的品类集合：同品类高亮与跨品类警示的共同依据
+  const selectedCats = new Set();
+  for (const id of state.cmpSel) {
+    const doc = state.library.find((item) => item.documentId === id);
+    if (doc) selectedCats.add(libraryCategoryOf(doc));
+  }
   // 搜索为最高优先级：跨品类/厂商全库命中（结果带品类标签）
   const matched = state.library.filter((doc) => {
     if (needle) {
@@ -454,6 +462,7 @@ async function renderLibrary() {
   renderVendorChips(matched);
   if (!matched.length) {
     box.innerHTML = `<div class="muted empty">${esc(t('step3.noMatch'))}</div>`;
+    refreshCmpGate();
     return;
   }
   // 品类 → 厂商 两级分组；搜索模式下显示品类标签帮助定位
@@ -475,15 +484,21 @@ async function renderLibrary() {
     const byVendor = byCategory.get(cat);
     const total = [...byVendor.values()].reduce((sum, list) => sum + list.length, 0);
     const isFolded = folded(cat);
+    const peerHintText = t('step3.peerHint');
     const vendorBlocks = [...byVendor.entries()].map(([vendorName, list]) => `
       <div class="cmp-vendor">${esc(vendorName)}<span class="muted small">· ${list.length}</span></div>
-      ${list.map((doc) => `
-      <label class="doc-row ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}" data-id="${esc(doc.documentId)}" title="${esc(`${doc.series} ${doc.modelNames.join('、')} · ${doc.pageCount || '?'} 页${doc.warning ? ' · 哈希与基线不一致' : ''}`)}">
-        <input type="checkbox" ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}>
+      ${list.map((doc) => {
+        const isSelected = state.cmpSel.has(doc.documentId);
+        // 同品类对标高亮：与已选产品同品类的其他产品（跨厂商为主，同厂商跨档位也有参考价值）
+        const isPeer = selectedCats.size > 0 && !isSelected && selectedCats.has(cat);
+        return `
+      <label class="doc-row ${isSelected ? 'checked' : ''} ${isPeer ? 'is-peer' : ''}" data-id="${esc(doc.documentId)}" title="${esc(`${doc.series} ${doc.modelNames.join('、')} · ${doc.pageCount || '?'} 页${doc.warning ? ' · 哈希与基线不一致' : ''}${isPeer ? ` · ${peerHintText}` : ''}`)}">
+        <input type="checkbox" ${isSelected ? 'checked' : ''}>
         <span class="doc-series">${esc(doc.series)}</span>
         <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
         ${needle ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
-      </label>`).join('')}`).join('');
+        ${isPeer ? `<span class="peer-tag">${esc(peerHintText)}</span>` : ''}
+      </label>`;}).join('')}`).join('');
     return `<div class="cmp-category ${isFolded ? 'folded' : ''}">
       <div class="cmp-cat-head" role="button" tabindex="0" data-cat="${esc(cat)}" title="${isFolded ? esc(t('step3.expand')) : esc(t('step3.collapse'))}">
         <span class="cmp-cat-arrow">${isFolded ? '▸' : '▾'}</span>
@@ -507,14 +522,58 @@ async function renderLibrary() {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
     });
   });
-  box.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', () => {
+  // 单一处理器防双触发：label 默认行为会把文本区点击再转发给 input 产生第二个
+  // click（先加后删净归零，实战踩坑）——文本区点击 preventDefault 阻断转发；
+  // 直接点复选框时原生已翻转 checked，状态跟随视觉
+  box.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', (event) => {
+    const input = row.querySelector('input');
     const id = row.dataset.id;
-    if (state.cmpSel.has(id)) state.cmpSel.delete(id); else state.cmpSel.add(id);
-    row.classList.toggle('checked', state.cmpSel.has(id));
-    row.querySelector('input').checked = state.cmpSel.has(id);
-    $('cmpCount').textContent = state.cmpSel.size;
-    $('toStep4').disabled = state.cmpSel.size < 2;
+    if (event.target === input) {
+      if (input.checked) state.cmpSel.add(id);
+      else state.cmpSel.delete(id);
+    } else {
+      event.preventDefault();
+      if (state.cmpSel.has(id)) state.cmpSel.delete(id);
+      else state.cmpSel.add(id);
+      input.checked = state.cmpSel.has(id);
+    }
+    state.cmpForceCross = false; // 选择变化后跨品类放行重新裁决
+    renderLibrary(); // 同品类高亮与门禁随选择刷新
   }));
+  refreshCmpGate();
+}
+
+// 跨品类对比门禁（第二层）：混合品类时阻断下一步，显式「仍要对比」放行
+function refreshCmpGate() {
+  const counts = new Map();
+  for (const id of state.cmpSel) {
+    const doc = state.library.find((item) => item.documentId === id);
+    if (doc) {
+      const key = libraryCategoryOf(doc);
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+  }
+  const mixed = counts.size > 1;
+  const gate = $('cmpWarn');
+  if (!gate) return;
+  if (mixed) {
+    const list = [...counts.entries()].map(([key, n]) => `${categoryMeta(key).label} ×${n}`).join('、');
+    gate.innerHTML = `<div class="cmp-warn-body">⚠ <b>${esc(t('step3.mixedTitle'))}</b>${esc(list)}——${esc(t('step3.mixedBody'))}</div>${state.cmpForceCross ? '' : `<button class="btn ghost" id="cmpForceBtn">${esc(t('step3.forceCompare'))}</button>`}`;
+    gate.classList.remove('hidden');
+    const forceBtn = $('cmpForceBtn');
+    if (forceBtn) forceBtn.addEventListener('click', () => {
+      state.cmpForceCross = true;
+      refreshCmpGate();
+    });
+  } else {
+    gate.classList.add('hidden');
+    gate.innerHTML = '';
+    state.cmpForceCross = false;
+  }
+  const toStep4 = $('toStep4');
+  if (toStep4) toStep4.disabled = state.cmpSel.size < 2 || (mixed && !state.cmpForceCross);
+  const cmpCount = $('cmpCount');
+  if (cmpCount) cmpCount.textContent = state.cmpSel.size;
 }
 
 /* ---------- 步骤 4：项目门槛（三态判定，方案 §4.4/§9.2） ---------- */

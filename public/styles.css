@@ -732,3 +732,16 @@ body.theme-dark td.mx-click:hover { background: #2c3340; }
 .cmp-category.folded .cmp-cat-head { padding: 7px 14px; }
 #librarySearch { width: 100%; max-width: 560px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; font-size: 13.5px; background: var(--surface); }
 #librarySearch:focus { border-color: var(--ale-purple-500); outline: none; box-shadow: var(--ring-soft); }
+
+/* 第 3 步第二层：跨品类拦截警示条 + 同品类对标高亮 */
+.cmp-warn {
+  border: 1px solid var(--warn); background: var(--warn-bg); border-radius: 8px;
+  padding: 10px 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cmp-warn-body { color: var(--ink-900); font-size: 13px; line-height: 1.55; min-width: 0; }
+.doc-row.is-peer { border-left: 3px solid var(--ale-purple-500); background: rgb(241 236 247 / 55%); }
+.peer-tag {
+  font-size: 10.5px; border: 1px solid var(--ale-purple-500); color: var(--ale-purple-600);
+  border-radius: 8px; padding: 1px 7px; white-space: nowrap;
+}
