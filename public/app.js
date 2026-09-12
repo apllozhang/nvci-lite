@@ -13,8 +13,7 @@ const state = {
   cmpSel: new Set(),     // 对比勾选
   libraryFilter: '',     // 第 3 步品类筛选（空 = 全部）
   libraryVendor: '',     // 第 3 步厂商筛选（空 = 全部厂商）
-  librarySearch: '',     // 第 3 步搜索（跨品类/厂商命中）
-  cmpForceCross: false,  // 跨品类混合对比的显式放行（选择变化后重新裁决）
+  librarySearch: '',     // 第 3 步搜索（逗号分隔多关键词，跨品类/厂商命中）
   catFolded: null,       // 品类折叠集合（null = 未初始化：默认全部折叠）
   matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
   thresholds: [],        // 项目门槛行 {fieldKey, op, value}
@@ -443,7 +442,8 @@ async function renderLibrary() {
     return;
   }
   renderCatChips();
-  const needle = state.librarySearch.trim().toLowerCase();
+  // 多关键词搜索（用户反馈：逗号分隔一次多搜）：逗号/分号拆词，任一命中即入选（OR）
+  const keywords = state.librarySearch.split(/[,，;；]+/).map((word) => word.trim().toLowerCase()).filter(Boolean);
   // 已选产品的品类集合：同品类高亮与跨品类警示的共同依据
   const selectedCats = new Set();
   for (const id of state.cmpSel) {
@@ -452,8 +452,9 @@ async function renderLibrary() {
   }
   // 搜索为最高优先级：跨品类/厂商全库命中（结果带品类标签）
   const matched = state.library.filter((doc) => {
-    if (needle) {
-      return `${doc.series} ${doc.modelNames.join(' ')} ${doc.vendorName} ${doc.productLineName || ''}`.toLowerCase().includes(needle);
+    if (keywords.length) {
+      const hay = `${doc.series} ${doc.modelNames.join(' ')} ${doc.vendorName} ${doc.productLineName || ''}`.toLowerCase();
+      return keywords.some((word) => hay.includes(word));
     }
     if (state.libraryFilter && libraryCategoryOf(doc) !== state.libraryFilter) return false;
     if (state.libraryVendor && doc.vendorName !== state.libraryVendor) return false;
@@ -476,7 +477,7 @@ async function renderLibrary() {
   }
   const orderedCats = CATEGORY_ORDER.filter((key) => byCategory.has(key));
   // 折叠策略：无任何筛选时品类默认全部折叠（先看地图再看街景）；有筛选/搜索时全展开
-  const filtering = Boolean(needle || state.libraryFilter || state.libraryVendor);
+  const filtering = Boolean(keywords.length || state.libraryFilter || state.libraryVendor);
   if (state.catFolded === null) state.catFolded = new Set(orderedCats);
   const folded = (cat) => !filtering && state.catFolded.has(cat);
   box.innerHTML = orderedCats.map((cat) => {
@@ -496,7 +497,7 @@ async function renderLibrary() {
         <input type="checkbox" ${isSelected ? 'checked' : ''}>
         <span class="doc-series">${esc(doc.series)}</span>
         <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-        ${needle ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
+        ${keywords.length ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
         ${isPeer ? `<span class="peer-tag">${esc(peerHintText)}</span>` : ''}
       </label>`;}).join('')}`).join('');
     return `<div class="cmp-category ${isFolded ? 'folded' : ''}">
@@ -537,13 +538,13 @@ async function renderLibrary() {
       else state.cmpSel.add(id);
       input.checked = state.cmpSel.has(id);
     }
-    state.cmpForceCross = false; // 选择变化后跨品类放行重新裁决
-    renderLibrary(); // 同品类高亮与门禁随选择刷新
+    renderLibrary(); // 同品类高亮与跨品类警示随选择刷新
   }));
   refreshCmpGate();
 }
 
-// 跨品类对比门禁（第二层）：混合品类时阻断下一步，显式「仍要对比」放行
+// 跨品类提示（第二层，纯警示不阻断——实战反馈硬阻断会卡住正常多选）：
+// 混合品类时展示品类构成与对标提醒，操作不设限，判断权留给使用者
 function refreshCmpGate() {
   const counts = new Map();
   for (const id of state.cmpSel) {
@@ -558,22 +559,21 @@ function refreshCmpGate() {
   if (!gate) return;
   if (mixed) {
     const list = [...counts.entries()].map(([key, n]) => `${categoryMeta(key).label} ×${n}`).join('、');
-    gate.innerHTML = `<div class="cmp-warn-body">⚠ <b>${esc(t('step3.mixedTitle'))}</b>${esc(list)}——${esc(t('step3.mixedBody'))}</div>${state.cmpForceCross ? '' : `<button class="btn ghost" id="cmpForceBtn">${esc(t('step3.forceCompare'))}</button>`}`;
+    gate.innerHTML = `<div class="cmp-warn-body">⚠ <b>${esc(t('step3.mixedTitle'))}</b>${esc(list)}——${esc(t('step3.mixedBody'))}</div>`;
     gate.classList.remove('hidden');
-    const forceBtn = $('cmpForceBtn');
-    if (forceBtn) forceBtn.addEventListener('click', () => {
-      state.cmpForceCross = true;
-      refreshCmpGate();
-    });
   } else {
     gate.classList.add('hidden');
     gate.innerHTML = '';
-    state.cmpForceCross = false;
   }
   const toStep4 = $('toStep4');
-  if (toStep4) toStep4.disabled = state.cmpSel.size < 2 || (mixed && !state.cmpForceCross);
+  if (toStep4) toStep4.disabled = state.cmpSel.size < 2;
   const cmpCount = $('cmpCount');
   if (cmpCount) cmpCount.textContent = state.cmpSel.size;
+  const meta = $('libraryMeta');
+  if (meta) {
+    const visible = document.querySelectorAll('#libraryList .doc-row').length;
+    meta.textContent = `${t('filter.matched')} ${visible} · ${t('filter.selected')} ${state.cmpSel.size}`;
+  }
 }
 
 /* ---------- 步骤 4：项目门槛（三态判定，方案 §4.4/§9.2） ---------- */

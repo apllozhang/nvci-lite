@@ -103,10 +103,15 @@
     <section id="step3" class="panel hidden">
       <div class="panel-head"><h2 data-i18n="step3.title">选择拟对比的产品（≥2，跨品牌可混选）</h2></div>
       <div class="panel-body">
-        <input type="search" id="librarySearch" data-i18n-ph="step3.searchPh" placeholder="搜索型号或系列（如 S5731、OmniSwitch 2260）…">
-        <div id="cmpWarn" class="cmp-warn hidden"></div>
-        <div id="catChips" class="cat-chips"></div>
-        <div id="vendorChips" class="cat-chips"></div>
+        <div class="cmp-filterbar">
+          <div class="cmp-search-row">
+            <input type="search" id="librarySearch" data-i18n-ph="step3.searchPh" placeholder="搜索型号或系列，逗号分隔可一次多搜（如 S5731, CE16800）…">
+            <span class="muted small" id="libraryMeta"></span>
+          </div>
+          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.category">品类</span><div id="catChips" class="cat-chips"></div></div>
+          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.vendor">厂商</span><div id="vendorChips" class="cat-chips"></div></div>
+          <div id="cmpWarn" class="cmp-warn hidden"></div>
+        </div>
         <div id="libraryList"></div>
       </div>
       <div class="panel-footer">
