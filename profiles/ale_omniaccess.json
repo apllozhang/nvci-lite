@@ -12,6 +12,241 @@
     "al-enterprise.com"
   ],
   "trustedRedirectDomains": [],
-  "sources": [],
+  "sources": [
+    {
+      "documentId": "ale-omniaccess_ap1501-datasheet",
+      "series": "OmniAccess Stellar AP1501",
+      "modelNames": [
+        "OmniAccess Stellar AP1501"
+      ],
+      "description": "OmniAccess Stellar AP1501（Wi-Fi 7 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1501",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1501-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1501-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1501",
+        "AP1501"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1511-datasheet",
+      "series": "OmniAccess Stellar AP1511",
+      "modelNames": [
+        "OmniAccess Stellar AP1511"
+      ],
+      "description": "OmniAccess Stellar AP1511（Wi-Fi 7 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1511",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1511-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1511",
+        "AP1511"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1521-datasheet",
+      "series": "OmniAccess Stellar AP1521",
+      "modelNames": [
+        "OmniAccess Stellar AP1521"
+      ],
+      "description": "OmniAccess Stellar AP1521（Wi-Fi 7 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1521",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1521-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1521-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1521",
+        "AP1521"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1540-datasheet",
+      "series": "OmniAccess Stellar AP1540",
+      "modelNames": [
+        "OmniAccess Stellar AP1540"
+      ],
+      "description": "OmniAccess Stellar AP1540（Wi-Fi 7 室内系列）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1540",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1540-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1540-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1540",
+        "AP1540"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1431-datasheet",
+      "series": "OmniAccess Stellar AP1431",
+      "modelNames": [
+        "OmniAccess Stellar AP1431"
+      ],
+      "description": "OmniAccess Stellar AP1431（Wi-Fi 6E 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1431",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1431-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1431-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1431",
+        "AP1431"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1451-datasheet",
+      "series": "OmniAccess Stellar AP1451",
+      "modelNames": [
+        "OmniAccess Stellar AP1451"
+      ],
+      "description": "OmniAccess Stellar AP1451（Wi-Fi 6E 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1451",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1451-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1451-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1451",
+        "AP1451"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1301-datasheet",
+      "series": "OmniAccess Stellar AP1301",
+      "modelNames": [
+        "OmniAccess Stellar AP1301"
+      ],
+      "description": "OmniAccess Stellar AP1301（Wi-Fi 6 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1301",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-ap1301-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-ap1301-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1301",
+        "AP1301"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1331-datasheet",
+      "series": "OmniAccess Stellar AP1331",
+      "modelNames": [
+        "OmniAccess Stellar AP1331"
+      ],
+      "description": "OmniAccess Stellar AP1331（Wi-Fi 6 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1331",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1331-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1331-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1331",
+        "AP1331"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1351-datasheet",
+      "series": "OmniAccess Stellar AP1351",
+      "modelNames": [
+        "OmniAccess Stellar AP1351"
+      ],
+      "description": "OmniAccess Stellar AP1351（Wi-Fi 6 室内）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1351",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1351-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1351-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1351",
+        "AP1351"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1360-datasheet",
+      "series": "OmniAccess Stellar AP1360",
+      "modelNames": [
+        "OmniAccess Stellar AP1360"
+      ],
+      "description": "OmniAccess Stellar AP1360（Wi-Fi 6 室外 IP67）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1360",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1360-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1360-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1360",
+        "AP1360"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1561-datasheet",
+      "series": "OmniAccess Stellar AP1561",
+      "modelNames": [
+        "OmniAccess Stellar AP1561"
+      ],
+      "description": "OmniAccess Stellar AP1561（Wi-Fi 7 室外）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1561",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1561-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1561-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1561",
+        "AP1561"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1570-datasheet",
+      "series": "OmniAccess Stellar AP1570",
+      "modelNames": [
+        "OmniAccess Stellar AP1570"
+      ],
+      "description": "OmniAccess Stellar AP1570（Wi-Fi 7 室外系列）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1570",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1570-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1570",
+        "AP1570"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-omniaccess_ap1261-datasheet",
+      "series": "OmniAccess Stellar AP1261",
+      "modelNames": [
+        "OmniAccess Stellar AP1261"
+      ],
+      "description": "OmniAccess Stellar AP1261（802.11ac wave2 室外）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1261",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1261-datasheet-en.pdf",
+      "officialFileName": "omniaccess-stellar-oaw-ap1261-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniAccess Stellar AP1261",
+        "AP1261"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    }
+  ],
   "category": "wireless_ap"
 }

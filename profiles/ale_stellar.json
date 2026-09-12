@@ -12,6 +12,43 @@
     "al-enterprise.com"
   ],
   "trustedRedirectDomains": [],
-  "sources": [],
+  "sources": [
+    {
+      "documentId": "ale-stellar_omnivista-terra",
+      "series": "OmniVista Terra",
+      "modelNames": [
+        "OmniVista Terra"
+      ],
+      "description": "OmniVista Terra 网络管理套件：Stellar AP 与 OmniSwitch 的编排管理（云/虚拟化）官方 datasheet",
+      "productPageUrl": "",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omnivista-terra-network-management-datasheet-en.pdf",
+      "officialFileName": "omnivista_terra-network-management-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniVista Terra",
+        "Stellar WLAN management"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    },
+    {
+      "documentId": "ale-stellar_omnivista-2500",
+      "series": "OmniVista 2500 NMS",
+      "modelNames": [
+        "OmniVista 2500"
+      ],
+      "description": "OmniVista 2500 NMS：Stellar WLAN 的 RF 管理/WIDS-WIPS/热图（硬件或虚拟设备）官方 datasheet",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/network-management-security/omnivista-2500-network-management-system",
+      "materialPageUrl": "",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omnivista-2500-nms-datasheet-en.pdf",
+      "officialFileName": "omnivista_2500-nms-datasheet-en.pdf",
+      "matchTerms": [
+        "OmniVista 2500",
+        "Stellar WLAN management"
+      ],
+      "evidencePolicy": "official_datasheet",
+      "expectedSha256": ""
+    }
+  ],
   "category": "wireless_mgmt"
 }

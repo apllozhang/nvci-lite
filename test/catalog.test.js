@@ -32,9 +32,11 @@ test('旧版 schema（ale）兼容：vendorName 有回退、文档可检索', ()
   assert.equal(ale.vendorName, 'ALE');
   const omniswitch = ale.productLines.find((line) => line.displayName === 'OmniSwitch 彩页');
   assert.ok(omniswitch && omniswitch.documents.length === 15, 'ALE OmniSwitch 应有 15 条资料');
-  // 占位产品线（待登记）应可见但无资料
-  const placeholder = ale.productLines.find((line) => line.documentCount === 0);
-  assert.ok(placeholder, '应包含待登记占位产品线');
+  // 无线接入与无线管理两条线已登记（原空占位已补齐：OmniAccess AP ×13、OmniVista 网管 ×2）
+  const omniaccess = ale.productLines.find((line) => line.category === 'wireless_ap');
+  assert.ok(omniaccess && omniaccess.documentCount >= 10, 'OmniAccess 无线 AP 应已登记');
+  const stellar = ale.productLines.find((line) => line.category === 'wireless_mgmt');
+  assert.ok(stellar && stellar.documentCount >= 2, 'Stellar 网管应已登记');
   const found = findDocuments([omniswitch.documents[0].documentId]);
   assert.equal(found.length, 1);
 });
