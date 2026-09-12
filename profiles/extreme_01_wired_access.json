@@ -455,5 +455,6 @@
       ],
       "evidencePolicy": "extreme_product_page_to_sitecore_content_hub_datasheet"
     }
-  ]
+  ],
+  "category": "campus_switch"
 }

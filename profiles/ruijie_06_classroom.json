@@ -661,5 +661,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "锐捷超融合纯TCI云服务器，1颗处理器，RG-CS1020S"
     }
-  ]
+  ],
+  "category": "other"
 }

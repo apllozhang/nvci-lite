@@ -286,5 +286,6 @@
       ],
       "evidencePolicy": "hpe_datasheet_then_specifications_then_quickspecs"
     }
-  ]
+  ],
+  "category": "campus_switch"
 }

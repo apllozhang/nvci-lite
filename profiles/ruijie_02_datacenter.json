@@ -2173,5 +2173,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "新一代48口10G多速率交换机，100G上行，RG-S6160-48XMG4VS2CQ-UP-X"
     }
-  ]
+  ],
+  "category": "dc_switch"
 }

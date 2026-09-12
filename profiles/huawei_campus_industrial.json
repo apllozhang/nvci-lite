@@ -113,5 +113,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "706800c2c49243dfc27a6d916c43904fd53921701dfbf93cef86c13fdc388492"
     }
-  ]
+  ],
+  "category": "industrial"
 }

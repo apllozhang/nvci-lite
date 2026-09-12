@@ -177,5 +177,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "1c52cb1c3bfa5c890ce68e8fbd445903da889932e59f1eb1f988956f7b4ddcc1"
     }
-  ]
+  ],
+  "category": "wireless_ap"
 }

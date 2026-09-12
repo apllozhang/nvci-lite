@@ -116,5 +116,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "ae894f00abc8c9075d50c25df4119d06c09771df387927932ba144a729c716fb"
     }
-  ]
+  ],
+  "category": "dc_switch"
 }

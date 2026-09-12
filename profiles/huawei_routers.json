@@ -97,5 +97,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "26b3f975e29a641678113384f5ecb2ef4bea92e66fd78dcd60c07eb45d5f0afa"
     }
-  ]
+  ],
+  "category": "router"
 }

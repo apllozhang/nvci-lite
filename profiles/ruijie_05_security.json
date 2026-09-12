@@ -517,5 +517,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "多功能安全网关，多合一出口设备RG-CMG6000-06-E"
     }
-  ]
+  ],
+  "category": "security"
 }

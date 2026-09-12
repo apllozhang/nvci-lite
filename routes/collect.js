@@ -4,7 +4,7 @@
 // 从 server.js 原样拆出（逻辑零改动），依赖经 ctx 注入：{ auth, store, MAX_COLLECT }。
 
 const express = require('express');
-const { findDocuments } = require('../lib/catalog');
+const { findDocuments, loadCatalog } = require('../lib/catalog');
 const { collectDocument } = require('../lib/downloader');
 const { fetchPageMarkdown } = require('../lib/page-markdown');
 
@@ -49,7 +49,22 @@ module.exports = function collectRoutes(ctx) {
   });
 
   router.get('/api/library', auth, (req, res) => {
-    res.json({ documents: store.library() });
+    // 品类联表（第 3 步品类化分组）：采集索引没有品类概念，按 documentId 从目录补齐
+    const catByDoc = new Map();
+    for (const vendor of loadCatalog().vendors) {
+      for (const line of vendor.productLines) {
+        for (const doc of line.documents) {
+          catByDoc.set(doc.documentId, { category: line.category, productLineName: line.productLineName });
+        }
+      }
+    }
+    res.json({
+      documents: store.library().map((doc) => ({
+        ...doc,
+        category: catByDoc.get(doc.documentId)?.category || 'other',
+        productLineName: doc.productLineName || catByDoc.get(doc.documentId)?.productLineName || '',
+      })),
+    });
   });
 
   return router;

@@ -11,6 +11,7 @@ const state = {
   collected: new Set(),  // 已采集 documentId
   library: [],           // 服务端已采集清单
   cmpSel: new Set(),     // 对比勾选
+  libraryFilter: '',     // 第 3 步品类筛选（空 = 全部）
   matrix: null,          // 最近一次分析的参数矩阵（网页人工核对用）
   thresholds: [],        // 项目门槛行 {fieldKey, op, value}
   fieldTemplate: null,   // 固定字段字典（门槛下拉），进入第 4 步时加载
@@ -364,7 +365,15 @@ async function startCollect() {
   }
 }
 
-/* ---------- 步骤 3：选对比 ---------- */
+/* ---------- 步骤 3：选对比（品类化分组） ---------- */
+
+// 标准品类顺序（其他/未分类固定垫底）；标签与说明走 i18n
+const CATEGORY_ORDER = ['campus_switch', 'dc_switch', 'wireless_ap', 'wireless_mgmt', 'router', 'security', 'mgmt_platform', 'industrial', 'other'];
+const categoryMeta = (key) => ({
+  key,
+  label: t(`cat.${key}`) ,
+  desc: t(`cat.${key}.desc`),
+});
 
 async function ensureLibrary() {
   try {
@@ -378,20 +387,67 @@ async function ensureLibrary() {
   }
 }
 
+function libraryCategoryOf(doc) {
+  const key = doc.category || 'other';
+  return CATEGORY_ORDER.includes(key) ? key : 'other';
+}
+
+function renderCatChips() {
+  const counts = new Map();
+  for (const doc of state.library) {
+    const key = libraryCategoryOf(doc);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  const present = CATEGORY_ORDER.filter((key) => counts.has(key));
+  const chips = [{ key: '', label: t('common.all'), count: state.library.length }]
+    .concat(present.map((key) => ({ key, label: categoryMeta(key).label, count: counts.get(key) })));
+  $('catChips').innerHTML = chips.map((chip) => `
+    <button class="chip ${state.libraryFilter === chip.key ? 'st-info active' : 'st-neutral'}" data-cat="${esc(chip.key)}">
+      ${esc(chip.label)} <span class="chip-count">${chip.count}</span>
+    </button>`).join('');
+  $('catChips').querySelectorAll('button[data-cat]').forEach((btn) => btn.addEventListener('click', () => {
+    state.libraryFilter = btn.dataset.cat;
+    renderLibrary();
+  }));
+}
+
 async function renderLibrary() {
   const box = $('libraryList');
   if (!state.library.length) {
     box.innerHTML = '<div class="muted empty">还没有已采集的彩页，请回第 1、2 步先采集。</div>';
+    renderCatChips();
     return;
   }
-  box.innerHTML = state.library.map((doc) => `
-    <label class="doc-row ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}" data-id="${esc(doc.documentId)}">
-      <input type="checkbox" ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}>
-      <span class="vendor-chip">${esc(doc.vendorName)}</span>
-      <span class="doc-series">${esc(doc.series)}</span>
-      <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-      <span class="muted small">${doc.pageCount || '?'} 页${doc.warning ? ' · ⚠ 哈希与基线不一致' : ''}${doc.pageMarkdown?.status === 'ok' ? ' · 已保存网页' : ''}</span>
-    </label>`).join('');
+  renderCatChips();
+  const filter = state.libraryFilter || '';
+  const docs = state.library.filter((doc) => !filter || libraryCategoryOf(doc) === filter);
+  // 品类 → 厂商 两级分组；品类按标准顺序，厂商按出现顺序
+  const byCategory = new Map();
+  for (const doc of docs) {
+    const cat = libraryCategoryOf(doc);
+    if (!byCategory.has(cat)) byCategory.set(cat, new Map());
+    const byVendor = byCategory.get(cat);
+    if (!byVendor.has(doc.vendorName)) byVendor.set(doc.vendorName, []);
+    byVendor.get(doc.vendorName).push(doc);
+  }
+  const orderedCats = CATEGORY_ORDER.filter((key) => byCategory.has(key));
+  box.innerHTML = orderedCats.map((cat) => {
+    const meta = categoryMeta(cat);
+    const byVendor = byCategory.get(cat);
+    const vendorBlocks = [...byVendor.entries()].map(([vendorName, list]) => `
+      <div class="cmp-vendor">${esc(vendorName)}<span class="muted small">· ${list.length}</span></div>
+      ${list.map((doc) => `
+      <label class="doc-row ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}" data-id="${esc(doc.documentId)}">
+        <input type="checkbox" ${state.cmpSel.has(doc.documentId) ? 'checked' : ''}>
+        <span class="doc-series">${esc(doc.series)}</span>
+        <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
+        <span class="muted small">${doc.pageCount || '?'} 页${doc.warning ? ' · ⚠ 哈希与基线不一致' : ''}${doc.pageMarkdown?.status === 'ok' ? ' · 已保存网页' : ''}</span>
+      </label>`).join('')}`).join('');
+    return `<div class="cmp-category">
+      <div class="cmp-cat-head"><span class="cmp-cat-name">${esc(meta.label)}</span><span class="muted small">${meta.desc}</span></div>
+      ${vendorBlocks}
+    </div>`;
+  }).join('');
   box.querySelectorAll('.doc-row').forEach((row) => row.addEventListener('click', () => {
     const id = row.dataset.id;
     if (state.cmpSel.has(id)) state.cmpSel.delete(id); else state.cmpSel.add(id);

@@ -1741,5 +1741,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "智能安全网关，构筑网络出口边界防护屏障，RG-EG-E3300-E"
     }
-  ]
+  ],
+  "category": "other"
 }

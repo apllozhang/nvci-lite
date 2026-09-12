@@ -97,5 +97,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "a84ba4acf27aee3bdb430781f1fd1eadd6006b041fc0d9e087ebd576ded3335c"
     }
-  ]
+  ],
+  "category": "mgmt_platform"
 }

@@ -232,5 +232,6 @@
       ]
     }
   ],
-  "bundledRevision": "2026-08-19-r3"
+  "bundledRevision": "2026-08-19-r3",
+  "category": "campus_switch"
 }

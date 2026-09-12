@@ -43,6 +43,32 @@ test('findDocuments 忽略未知 ID', () => {
   assert.deepEqual(findDocuments(['not_exist_id']), []);
 });
 
+test('Cisco 拆线与品类标注：园区/数据中心/工业三线，documentId 保持稳定', () => {
+  const catalog = loadCatalog();
+  const cisco = catalog.vendors.find((vendor) => vendor.vendorId === 'cisco');
+  assert.equal(cisco.productLines.length, 3, '拆为三条产品线');
+  assert.deepEqual(cisco.productLines.map((line) => line.category), ['campus_switch', 'dc_switch', 'industrial']);
+  const total = cisco.productLines.reduce((sum, line) => sum + line.documentCount, 0);
+  assert.equal(total, 69, '拆线不丢条目');
+  const ids = cisco.productLines.flatMap((line) => line.documents.map((doc) => doc.documentId));
+  assert.equal(new Set(ids).size, 69, 'documentId 无重复（拆线不换 ID）');
+  // 全目录品类字段齐备
+  const withoutCategory = catalog.vendors.flatMap((v) => v.productLines).filter((line) => !line.category);
+  assert.deepEqual(withoutCategory, [], '所有产品线都有品类');
+});
+
+test('品类推断兜底：产品线名关键词映射标准品类', () => {
+  const { inferCategory } = require('../lib/catalog');
+  assert.equal(inferCategory('01 园区交换机'), 'campus_switch');
+  assert.equal(inferCategory('02 数据中心交换机'), 'dc_switch');
+  assert.equal(inferCategory('无线接入'), 'wireless_ap');
+  assert.equal(inferCategory('路由器'), 'router');
+  assert.equal(inferCategory('安全网关'), 'security');
+  assert.equal(inferCategory('管理平台'), 'mgmt_platform');
+  assert.equal(inferCategory('03 工业交换机'), 'industrial');
+  assert.equal(inferCategory('Juniper EX4300 官方资料'), 'other', '无关键词回落 other');
+});
+
 test('自定义来源叠加：新厂商归入目录并带 custom 标记，冲突条目跳过并警告', () => {
   const fs = require('fs');
   const os = require('os');

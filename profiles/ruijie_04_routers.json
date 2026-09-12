@@ -319,5 +319,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "多业务核心路由器，10U框式，RG-RSR77-XA-08"
     }
-  ]
+  ],
+  "category": "router"
 }

@@ -175,5 +175,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "8846ae1f2d9277361f9aa93bf97edbd717a7e87590ed5cea40a02a37f648368a"
     }
-  ]
+  ],
+  "category": "security"
 }

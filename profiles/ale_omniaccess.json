@@ -12,5 +12,6 @@
     "al-enterprise.com"
   ],
   "trustedRedirectDomains": [],
-  "sources": []
+  "sources": [],
+  "category": "wireless_ap"
 }

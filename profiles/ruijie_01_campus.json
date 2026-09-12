@@ -2047,5 +2047,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "24口千兆电接入交换机，4个千兆上行口，RG-S2910-24GT4SFP-UP-H"
     }
-  ]
+  ],
+  "category": "campus_switch"
 }

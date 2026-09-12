@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "2.2",
+  "bundledRevision": "2026-08-20-seven-vendor-controlled-v2",
+  "profileId": "cisco_03_industrial",
+  "vendorId": "cisco",
+  "vendorName": "Cisco",
+  "displayName": "Cisco 工业交换机",
+  "approvalStatus": "draft",
+  "enabled": false,
+  "mode": "public_official_pdf_incremental",
+  "officialDomains": [
+    "www.cisco.com",
+    "cisco.com"
+  ],
+  "trustedRedirectDomains": [],
+  "sourcePolicy": "每条来源必须保持官方 Data sheet 页面到同页明确对应原始 PDF 的一对一映射；无公开 PDF 才可保留官方 HTML 并明确标注。",
+  "evidencePolicy": "official_product_brochure_pdf",
+  "productLine": {
+    "id": "03",
+    "name": "03 工业交换机",
+    "libraryRootName": "Cisco产品彩页"
+  },
+  "subseries": {
+    "id": "cisco_1_03",
+    "name": "03 工业交换机"
+  },
+  "productLinePath": [
+    "Cisco产品彩页",
+    "01 交换机"
+  ],
+  "collectionPolicy": {
+    "protocol": "https:",
+    "headTimeoutMs": 15000,
+    "downloadHeaderTimeoutMs": 45000,
+    "downloadBodyIdleTimeoutMs": 120000,
+    "maxPdfBytes": 52428800,
+    "maxDocumentsPerRun": 50,
+    "userAgent": "NVCI-Collector/0.4 (controlled public-document incremental audit)",
+    "sequentialRequests": true
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 1,
+    "hour": 2,
+    "minute": 15,
+    "timezone": "local"
+  },
+  "sources": [
+    {
+      "documentId": "cisco_switch_1_35",
+      "series": "Catalyst IE3100 Rugged",
+      "modelNames": [
+        "Catalyst IE3100 Rugged"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.pdf",
+      "officialFileName": "catalyst-ie3100-rugged-series-ds.pdf",
+      "expectedSha256": "8d749d144eee1745d2adf4ae8230d0c751b19aa7358943b0c19649c4676877ba",
+      "matchTerms": [
+        "Catalyst IE3100 Rugged",
+        "IE3100"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_1_36",
+      "series": "Catalyst IE3300 Rugged",
+      "modelNames": [
+        "Catalyst IE3300 Rugged"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-ie3300-rugged-series/catalyst-ie3300-rugged-series-ds.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-ie3300-rugged-series/catalyst-ie3300-rugged-series-ds.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-ie3300-rugged-series/catalyst-ie3300-rugged-series-ds.pdf",
+      "officialFileName": "catalyst-ie3300-rugged-series-ds.pdf",
+      "expectedSha256": "9cbe292c8256da2395d95a9d44905bbde2b5f21cc0abe60ef65d203cba260730",
+      "matchTerms": [
+        "Catalyst IE3300 Rugged",
+        "IE3300"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_1_37",
+      "series": "Industrial Ethernet 4000",
+      "modelNames": [
+        "Industrial Ethernet 4000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-4000-series-switches/datasheet-c78-733058.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-4000-series-switches/datasheet-c78-733058.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-4000-series-switches/datasheet-c78-733058.pdf",
+      "officialFileName": "datasheet-c78-733058.pdf",
+      "expectedSha256": "1e44c61468b3029fe5cdf7758accd86f1c6c920d914ebade6215aeeb746ef377",
+      "matchTerms": [
+        "Industrial Ethernet 4000",
+        "Ethernet4000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    },
+    {
+      "documentId": "cisco_switch_1_38",
+      "series": "Industrial Ethernet 5000",
+      "modelNames": [
+        "Industrial Ethernet 5000"
+      ],
+      "productPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-5000-series-switches/datasheet-c78-734967.html",
+      "materialPageUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-5000-series-switches/datasheet-c78-734967.html",
+      "pdfUrl": "https://www.cisco.com/c/en/us/products/collateral/switches/industrial-ethernet-5000-series-switches/datasheet-c78-734967.pdf",
+      "officialFileName": "datasheet-c78-734967.pdf",
+      "expectedSha256": "770002b2f4821122f02d48921a0c459ff365811114d06bfe480d8f5a52aa609d",
+      "matchTerms": [
+        "Industrial Ethernet 5000",
+        "Ethernet5000"
+      ],
+      "evidencePolicy": "cisco_exact_datasheet_page_to_pdf_mapping"
+    }
+  ],
+  "category": "industrial"
+}

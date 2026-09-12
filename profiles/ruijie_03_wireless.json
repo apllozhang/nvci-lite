@@ -1201,5 +1201,6 @@
       "evidencePolicy": "ruijie_public_previewfile_from_product_resource_chain",
       "description": "Wi-Fi 7 三射频室外无线AP，10G光电复用口，RG-AP6981"
     }
-  ]
+  ],
+  "category": "wireless_ap"
 }

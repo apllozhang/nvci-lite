@@ -101,5 +101,6 @@
       "evidencePolicy": "official_product_brochure_pdf",
       "expectedSha256": "dc5a9354f42daec9f8cd54714621f36a0a69c2500977a67d2a75d285eb98fefc"
     }
-  ]
+  ],
+  "category": "campus_switch"
 }
