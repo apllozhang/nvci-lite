@@ -161,7 +161,9 @@ async function push() {
     const preBackup = await remoteBackup(conn, { quiet: true });
     console.log(preBackup && preBackup.ok ? `  已备份 ${preBackup.fileName}（${preBackup.fileCount} 个文件）` : '  ⚠ 备份未成功（容器未运行或首次部署），继续部署');
     console.log(`创建远端目录 ${remoteDir} …`);
-    await execCmd(conn, `mkdir -p ${JSON.stringify(remoteDir)}/profiles`, { sudoPassword: CONFIG.password });
+    // profiles 目录强制与仓库一致：tar 解压只增不删，本地删除的产品线文件会在远端
+    // 残留成幽灵线（实例：cisco_01_switches 拆线后残留，旧 documentId 抢注导致新线空挂）
+    await execCmd(conn, `rm -rf ${JSON.stringify(remoteDir)}/profiles && mkdir -p ${JSON.stringify(remoteDir)}/profiles`, { sudoPassword: CONFIG.password });
     console.log('上传代码包 …');
     await sftpUpload(conn, tarball, remoteTar);
     await sftpUpload(conn, path.join(PROJECT_DIR, 'docker-compose.yml'), `${remoteDir}/docker-compose.yml`);
