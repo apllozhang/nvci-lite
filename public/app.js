@@ -480,7 +480,10 @@ async function renderLibrary() {
   const filtering = Boolean(keywords.length || state.libraryFilter || state.libraryVendor);
   if (state.catFolded === null) state.catFolded = new Set(orderedCats);
   const folded = (cat) => !filtering && state.catFolded.has(cat);
-  box.innerHTML = orderedCats.map((cat) => {
+  // 首用提示：全折叠且无筛选时告诉用户行在哪（走查发现新用户不知道要点品类行）
+  const foldHintHtml = (!filtering && orderedCats.length && orderedCats.every((cat) => state.catFolded.has(cat)))
+    ? `<div class="muted small" style="padding: 2px 4px 8px;">${esc(t('step3.foldHint'))}</div>` : '';
+  box.innerHTML = foldHintHtml + orderedCats.map((cat) => {
     const meta = categoryMeta(cat);
     const byVendor = byCategory.get(cat);
     const total = [...byVendor.values()].reduce((sum, list) => sum + list.length, 0);
@@ -681,7 +684,16 @@ async function startAnalyze() {
   const button = $('startAnalyze');
   if (state.cmpSel.size < 2) { toast('warn', '至少选择 2 个对比产品'); return; }
   button.disabled = true;
-  button.textContent = '分析中…（PDF 抽取 + 参数对齐，可能需要 1–3 分钟）';
+  // 动态耗时反馈（走查发现：文案承诺 1–3 分钟，AI 抽取实测 5–11 分钟，普通用户会以为死机）
+  const startedAt = Date.now();
+  const elapsedText = () => {
+    const sec = Math.round((Date.now() - startedAt) / 1000);
+    return sec < 60 ? sec + ' 秒' : Math.floor(sec / 60) + ' 分 ' + (sec % 60) + ' 秒';
+  };
+  const ticker = setInterval(() => {
+    button.textContent = '分析中… 已进行 ' + elapsedText() + '（AI 抽取通常需要 5–10 分钟，请勿关闭页面）';
+  }, 1000);
+  button.textContent = '分析中…（PDF 抽取 + 参数对齐）';
   $('analyzeResult').innerHTML = '';
   state.matrix = null;
   renderMatrix();
@@ -719,6 +731,7 @@ async function startAnalyze() {
     toast('error', `分析失败：${error.message}`, 6000);
   } finally {
     button.disabled = false;
+    clearInterval(ticker);
     button.textContent = '生成报告（Excel 参数对照 + Word 分析 / AI 材料包）';
   }
 }
