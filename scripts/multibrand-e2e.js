@@ -1,8 +1,8 @@
 'use strict';
 // 三品牌（ALE×2 + 华为×1）选择→采集→对比（预带入/往返）→生成 全流程验证
 const puppeteer = require('puppeteer-core');
-const BASE = 'http://127.0.0.1:8788';
-const PW = 'EnvPass1234';
+const BASE = process.env.BASE_URL || 'http://127.0.0.1:8788';
+const PW = process.env.NVCI_PW || 'EnvPass1234';
 (async () => {
   const browser = await puppeteer.launch({
     executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
