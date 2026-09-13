@@ -202,7 +202,26 @@ test('定时：HH:MM 解析与下一次触发时间', () => {
   assert.equal(next.getHours(), 4);
 });
 
-const PDF_BYTES = Buffer.from('%PDF-1.4\n1 0 obj\n<</Type/Page/Count 1>>\nendobj\ntrailer\n%%EOF');
+// 程序化生成带完整 xref 表的最小合法 PDF（页数判定改 pdfjs 真实解析后，残缺夹具不再可用）
+function makePdfBytes() {
+  const objects = [
+    '<</Type/Catalog/Pages 2 0 R>>',
+    '<</Type/Pages/Kids[3 0 R]/Count 1>>',
+    '<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>',
+  ];
+  let body = '%PDF-1.4\n';
+  const offsets = [];
+  objects.forEach((obj, index) => {
+    offsets.push(body.length);
+    body += `${index + 1} 0 obj${obj}endobj\n`;
+  });
+  const xrefStart = body.length;
+  body += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (const offset of offsets) body += `${String(offset).padStart(10, '0')} 00000 n \n`;
+  body += `trailer<</Size ${objects.length + 1}/Root 1 0 R>>\nstartxref\n${xrefStart}\n%%EOF\n`;
+  return Buffer.from(body, 'latin1');
+}
+const PDF_BYTES = makePdfBytes();
 
 function methodAwareFetch(responses) {
   // responses: { HEAD: fn(...), GET: fn(...) }，按请求方法分发

@@ -6,6 +6,7 @@
 const express = require('express');
 const { findDocuments } = require('../lib/catalog');
 const { collectDocument, hashBuffer, inspectPdf, nowIso } = require('../lib/downloader');
+const { pdfPageCount } = require('../lib/pdf-text');
 const { autoAssign, matchDocuments } = require('../lib/match');
 const { FAILED_STATES, MANUAL_SETTLED, PROBE_STATE_LABELS, classifyCollectRow } = require('../lib/probe');
 
@@ -169,15 +170,17 @@ module.exports = function probeRoutes(ctx) {
     res.json({ ok: true, status: mark });
   });
 
-  router.post('/api/probe/manual/:documentId/pdf', auth, express.raw({ type: 'application/pdf', limit: '60mb' }), (req, res) => {
+  router.post('/api/probe/manual/:documentId/pdf', auth, express.raw({ type: 'application/pdf', limit: '60mb' }), async (req, res) => {
     const documentId = String(req.params.documentId || '');
     const document = findDocuments([documentId])[0];
     if (!document) return res.status(404).json({ error: '资料不存在' });
     const buffer = Buffer.isBuffer(req.body) ? req.body : Buffer.alloc(0);
     if (!buffer.length) return res.status(400).json({ error: '未收到 PDF 内容' });
     try {
-      // 签名 + 可读性 + 页数检查（与自动采集同一套 inspectPdf）
+      // 签名 + 可读性 + 页数检查（与自动采集同一套：签名/EOF 走 inspectPdf，页数走 pdfjs 真实解析）
       const inspection = inspectPdf(buffer);
+      const parsedPageCount = await pdfPageCount(buffer);
+      if (parsedPageCount < 1) throw new Error('PDF 解析不到任何页面，无法通过基础可读性检查');
       const sha256 = hashBuffer(buffer);
       store.writePdf(sha256, buffer);
       const baselineChanged = Boolean(document.expectedSha256 && document.expectedSha256 !== sha256);
@@ -185,7 +188,7 @@ module.exports = function probeRoutes(ctx) {
       const previousEntry = previousProbe?.sha256 ? { sha256: previousProbe.sha256 } : store.getIndexEntry(documentId);
       const result = {
         status: 'completed', decision: 'downloaded', sha256, bytes: buffer.length,
-        pageCount: inspection.pageCount, httpStatus: 0, detail: '人工上传',
+        pageCount: parsedPageCount, httpStatus: 0, detail: '人工上传',
         warning: baselineChanged ? `SHA-256 与基线不一致（厂商可能已更新彩页）：expected=${document.expectedSha256.slice(0, 12)}… actual=${sha256.slice(0, 12)}…` : '',
         clearManual: true,
       };
@@ -203,7 +206,7 @@ module.exports = function probeRoutes(ctx) {
         materialPageUrl: document.materialPageUrl,
         sha256,
         bytes: buffer.length,
-        pageCount: inspection.pageCount,
+        pageCount: parsedPageCount,
         status: 'completed',
         decision: 'downloaded',
         completedAt: nowIso(),
@@ -217,7 +220,7 @@ module.exports = function probeRoutes(ctx) {
       });
       probeState.recordResult(`manual-${Date.now()}`, document, result, previousProbe);
       probeState.save();
-      res.json({ ok: true, probeStatus: result.probeStatus, sha256, pageCount: inspection.pageCount, warning: result.warning, stateLabels: PROBE_STATE_LABELS });
+      res.json({ ok: true, probeStatus: result.probeStatus, sha256, pageCount: parsedPageCount, warning: result.warning, stateLabels: PROBE_STATE_LABELS });
     } catch (error) {
       res.status(400).json({ error: `PDF 未通过校验：${String(error.message || error)}` });
     }

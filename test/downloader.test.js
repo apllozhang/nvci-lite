@@ -6,11 +6,32 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { collectDocument, inspectPdf, assertAllowedUrl, hashBuffer } = require('../lib/downloader');
+const { pdfPageCount } = require('../lib/pdf-text');
 const { Store } = require('../lib/store');
 
 function tempDir() { return fs.mkdtempSync(path.join(os.tmpdir(), 'nvci-lite-')); }
 
-const MINIMAL_PDF = Buffer.from('%PDF-1.4\n1 0 obj <</Type/Catalog>> endobj\n2 0 obj <</Type/Pages/Kids[3 0 R]/Count 1>> endobj\n3 0 obj <</Type/Page/Parent 2 0 R>> endobj\ntrailer <</Root 1 0 R>>\n%%EOF\n');
+// 程序化生成带完整 xref 表的最小合法 PDF（旧夹具无 xref，字节 grep 时代能过、
+// pdfjs 真解析过不去——页数判定改为真实解析后夹具同步升级）
+function makeMinimalPdf() {
+  const objects = [
+    '<</Type/Catalog/Pages 2 0 R>>',
+    '<</Type/Pages/Kids[3 0 R]/Count 1>>',
+    '<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>',
+  ];
+  let body = '%PDF-1.4\n';
+  const offsets = [];
+  objects.forEach((obj, index) => {
+    offsets.push(body.length);
+    body += `${index + 1} 0 obj${obj}endobj\n`;
+  });
+  const xrefStart = body.length;
+  body += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (const offset of offsets) body += `${String(offset).padStart(10, '0')} 00000 n \n`;
+  body += `trailer<</Size ${objects.length + 1}/Root 1 0 R>>\nstartxref\n${xrefStart}\n%%EOF\n`;
+  return Buffer.from(body, 'latin1');
+}
+const MINIMAL_PDF = makeMinimalPdf();
 
 function makeResponse(status, headers, buffer) {
   const headerMap = new Map(Object.entries(headers));
@@ -59,9 +80,10 @@ test('assertAllowedUrl：HTTPS + 官方域名白名单', () => {
   assert.doesNotThrow(() => assertAllowedUrl('https://mirror.com/a.pdf', { officialDomains: ['e.huawei.com'], trustedRedirectDomains: ['mirror.com'] }, true));
 });
 
-test('inspectPdf：签名、页数检查', () => {
+test('inspectPdf：签名守门；页数走 pdfjs 真实解析（压缩对象流不再误拒）', async () => {
   const inspection = inspectPdf(MINIMAL_PDF);
-  assert.equal(inspection.pageCount, 1);
+  assert.equal(inspection.pageCount, undefined, 'inspectPdf 不再承担页数（字节 grep 对 PDF 1.5+ 压缩对象流失明）');
+  assert.equal(await pdfPageCount(MINIMAL_PDF), 1, '真实解析给出页数');
   assert.throws(() => inspectPdf(Buffer.from('not a pdf at all %%EOF')), /签名/);
   assert.throws(() => inspectPdf(Buffer.from('%PDF-1.4 no eof marker')), /结束标记/);
 });
