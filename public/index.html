@@ -64,6 +64,11 @@
           <div class="picker-bar">
             <input type="search" id="docSearch" data-i18n-ph="step1.searchPh" placeholder="在当前产品线中搜索系列或型号…">
             <span class="muted" id="lineInfo"></span>
+            <span class="picker-bulk hidden" id="pickerBulk">
+              <button class="btn ghost" id="selAllBtn" data-i18n="step1.selectAll" data-i18n-title="step1.selectAllTip" title="勾选当前列表全部彩页">全选</button>
+              <button class="btn ghost" id="selNoneBtn" data-i18n="step1.selectNone" data-i18n-title="step1.selectNoneTip" title="取消勾选当前列表全部彩页">全不选</button>
+              <button class="btn ghost" id="selInvertBtn" data-i18n="step1.invertSel" data-i18n-title="step1.invertSelTip" title="反选：勾的取消、没勾的勾上">反选</button>
+            </span>
           </div>
           <div class="doc-table" id="docTable" translate="no"></div>
         </div>

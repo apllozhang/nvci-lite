@@ -188,13 +188,23 @@ function renderTree() {
   }));
 }
 
+function visibleDocs() {
+  // 当前产品线中按搜索框筛选后的可见彩页——批量选择只作用于这个范围
+  const line = currentLine();
+  if (!line) return [];
+  const needle = ($('docSearch').value || '').trim().toLowerCase();
+  return line.documents.filter((doc) => !needle
+    || `${doc.series} ${doc.modelNames.join(' ')} ${doc.officialFileName} ${doc.description || ''}`.toLowerCase().includes(needle));
+}
+
 function renderDocTable(filter = '') {
   const line = currentLine();
-  if (!line) { $('docTable').innerHTML = `<div class="muted empty">${t('step1.pickFirst')}</div>`; $('lineInfo').textContent = ''; return; }
-  const needle = filter.trim().toLowerCase();
-  const docs = line.documents.filter((doc) => !needle
-    || `${doc.series} ${doc.modelNames.join(' ')} ${doc.officialFileName} ${doc.description || ''}`.toLowerCase().includes(needle));
-  $('lineInfo').textContent = `${vendorOf(state.currentVendorId).vendorName} · ${line.displayName} · ${line.documents.length} ${t('step1.docCount')}`;
+  if (!line) { $('docTable').innerHTML = `<div class="muted empty">${t('step1.pickFirst')}</div>`; $('lineInfo').textContent = ''; $('pickerBulk').classList.add('hidden'); return; }
+  const docs = visibleDocs();
+  const filtering = ($('docSearch').value || '').trim().length > 0;
+  $('lineInfo').textContent = `${vendorOf(state.currentVendorId).vendorName} · ${line.displayName} · ${line.documents.length} ${t('step1.docCount')}`
+    + (filtering && docs.length < line.documents.length ? ` · ${t('common.showing')}${docs.length} ${t('common.rows')}` : '');
+  $('pickerBulk').classList.toggle('hidden', !line.documents.length || !docs.length);
   if (!line.documents.length) {
     $('docTable').innerHTML = `<div class="muted empty">${t('common.pending')} · ${esc(line.displayName)}<br><span class="small">${t('step1.pickFirst')}</span></div>`;
     return;
@@ -258,6 +268,30 @@ function toggleDocSelect(documentId) {
   }
   renderDocTable($('docSearch').value);
   updateTray();
+}
+
+// 批量选择（全选/全不选/反选），只作用于当前搜索筛选后的可见行；
+// 状态联动与单条 toggleDocSelect 完全一致（勾上清 cmpDropped，取消清 cmpSel）
+function bulkSelectDocs(mode) {
+  const docs = visibleDocs();
+  if (!docs.length) return;
+  let changed = 0;
+  for (const doc of docs) {
+    const id = doc.documentId;
+    const has = state.selected.has(id);
+    const next = mode === 'all' ? true : mode === 'none' ? false : !has;
+    if (next === has) continue;
+    if (next) { state.selected.set(id, doc); state.cmpDropped.delete(id); }
+    else { state.selected.delete(id); state.cmpSel.delete(id); }
+    changed++;
+  }
+  if (!changed) {
+    toast('ok', mode === 'all' ? t('step1.bulkAllDone') : mode === 'none' ? t('step1.bulkNoneDone') : t('step1.bulkInvertDone'));
+    return;
+  }
+  renderDocTable($('docSearch').value);
+  updateTray();
+  toast('ok', (mode === 'all' ? t('step1.bulkAll') : mode === 'none' ? t('step1.bulkNone') : t('step1.bulkInvert')).replace('{n}', changed));
 }
 
 
@@ -2304,6 +2338,9 @@ $('passwordInput').addEventListener('keydown', (event) => { if (event.key === 'E
 
 document.querySelectorAll('.step').forEach((el) => el.addEventListener('click', () => goStep(Number(el.dataset.step))));
 $('docSearch').addEventListener('input', (event) => renderDocTable(event.target.value));
+$('selAllBtn').addEventListener('click', () => bulkSelectDocs('all'));
+$('selNoneBtn').addEventListener('click', () => bulkSelectDocs('none'));
+$('selInvertBtn').addEventListener('click', () => bulkSelectDocs('invert'));
 $('toStep2').addEventListener('click', () => goStep(2));
 $('backToStep1').addEventListener('click', () => goStep(1));
 $('startCollect').addEventListener('click', startCollect);
