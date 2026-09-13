@@ -225,13 +225,23 @@ function renderDocTable(filter = '') {
       <tbody>${rows}</tbody>
     </table>`;
   enhanceResizable($('docTable'), 'catalog');
+  // 单一处理器防双触发（与第 3 步同款修复）：文本区点击 preventDefault 阻断 label
+  // 转发；直接点复选框则状态跟随原生翻转——两种点法都恰好切换一次
   $('docTable').querySelectorAll('.doc-tr').forEach((tr) => tr.addEventListener('click', (event) => {
-    if (event.target.tagName === 'INPUT') return;
-    toggleDocSelect(tr.dataset.id);
-  }));
-  $('docTable').querySelectorAll('.doc-tr input').forEach((input) => input.addEventListener('click', (event) => {
-    event.stopPropagation();
-    toggleDocSelect(input.closest('.doc-tr').dataset.id);
+    const input = tr.querySelector('input');
+    const id = tr.dataset.id;
+    if (event.target === input) {
+      if (input.checked) state.selected.set(id, currentLine().documents.find((d) => d.documentId === id));
+      else state.selected.delete(id);
+      tr.classList.toggle('checked', state.selected.has(id));
+    } else {
+      event.preventDefault();
+      toggleDocSelect(id);
+      const nowInput = tr.querySelector('input');
+      if (nowInput) nowInput.checked = state.selected.has(id);
+      return; // toggleDocSelect 内部已按当前筛选重渲表格
+    }
+    updateTray();
   }));
 }
 
@@ -253,6 +263,16 @@ function toggleDocSelect(documentId) {
 
 
 
+function refreshRowById(documentId) {
+  // 同步第 1 步表格行的勾选视觉（托盘 × / 清空都会用到）
+  const row = document.querySelector('#docTable tbody tr[data-id="' + CSS.escape(documentId) + '"]');
+  if (row) {
+    const input = row.querySelector('input');
+    if (input) input.checked = state.selected.has(documentId);
+    row.classList.toggle('checked', state.selected.has(documentId));
+  }
+}
+
 function updateTray() {
   $('selCount').textContent = state.selected.size;
   $('toStep2').disabled = state.selected.size === 0;
@@ -263,6 +283,20 @@ function updateTray() {
       <span class="tray-chip">${esc(doc.vendorName)} · ${esc(doc.series)}
         <button class="tray-x" data-id="${esc(doc.documentId)}" title="移除">×</button>
       </span>`).join('');
+  if (state.selected.size > 1) {
+    tray.innerHTML += '<button class="tray-clear" id="trayClearAll">' + esc(t('tray.clearAll')) + '</button>';
+  }
+  tray.querySelectorAll('.tray-clear').forEach((btn) => btn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    for (const id of [...state.selected.keys()]) {
+      state.selected.delete(id);
+      state.cmpSel.delete(id);
+      state.cmpDropped.add(id); // 清空后进第 3 步不自动带回
+      refreshRowById(id);
+    }
+    updateTray();
+    toast('info', t('tray.clearedAll'));
+  }));
   tray.querySelectorAll('.tray-x').forEach((btn) => btn.addEventListener('click', (event) => {
     event.stopPropagation();
     state.selected.delete(btn.dataset.id);
@@ -580,6 +614,8 @@ function refreshCmpGate() {
     gate.classList.add('hidden');
     gate.innerHTML = '';
   }
+  const clearBtn = $('cmpClearAll');
+  if (clearBtn) clearBtn.classList.toggle('hidden', state.cmpSel.size === 0);
   const toStep4 = $('toStep4');
   if (toStep4) toStep4.disabled = state.cmpSel.size < 2;
   const cmpCount = $('cmpCount');
@@ -1169,6 +1205,16 @@ function initProfileDialog() {
 
 // 第 3 步搜索（防抖）：搜索为最高优先级，跨品类/厂商全库命中
 let librarySearchTimer = null;
+// 一键清空对比勾选（小白用户反悔路径：清空后进第 3 步不自动带回）
+function clearAllCmp() {
+  for (const id of [...state.cmpSel]) {
+    state.cmpSel.delete(id);
+    state.cmpDropped.add(id);
+  }
+  refreshCmpGate();
+  renderLibrary();
+}
+
 function initLibrarySearch() {
   const input = $('librarySearch');
   if (!input) return;
@@ -2236,6 +2282,8 @@ async function boot() {
   refreshAlerts();
   initProfileDialog();
   initLibrarySearch();
+  const cmpClearAllBtn = $('cmpClearAll');
+  if (cmpClearAllBtn) cmpClearAllBtn.addEventListener('click', clearAllCmp);
   setInterval(refreshAlerts, 60000);
   applyI18n();
   initTheme();
