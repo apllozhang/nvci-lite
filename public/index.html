@@ -65,7 +65,7 @@
             <input type="search" id="docSearch" data-i18n-ph="step1.searchPh" placeholder="在当前产品线中搜索系列或型号…">
             <span class="muted" id="lineInfo"></span>
           </div>
-          <div class="doc-table" id="docTable"></div>
+          <div class="doc-table" id="docTable" translate="no"></div>
         </div>
       </div>
       <div id="selTray" class="sel-tray hidden"></div>
@@ -108,11 +108,11 @@
             <input type="search" id="librarySearch" data-i18n-ph="step3.searchPh" placeholder="搜索型号或系列，逗号分隔可一次多搜（如 S5731, CE16800）…">
             <span class="muted small" id="libraryMeta"></span>
           </div>
-          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.category">品类</span><div id="catChips" class="cat-chips"></div></div>
-          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.vendor">厂商</span><div id="vendorChips" class="cat-chips"></div></div>
+          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.category">品类</span><div id="catChips" class="cat-chips notranslate" translate="no"></div></div>
+          <div class="cmp-filter-row"><span class="cmp-filter-label" data-i18n="filter.vendor">厂商</span><div id="vendorChips" class="cat-chips notranslate" translate="no"></div></div>
           <div id="cmpWarn" class="cmp-warn hidden"></div>
         </div>
-        <div id="libraryList"></div>
+        <div id="libraryList" class="notranslate" translate="no"></div>
       </div>
       <div class="panel-footer">
         <button class="btn ghost" id="backToStep2">← 返回采集</button>
@@ -143,9 +143,9 @@
         <div class="muted small hidden" id="matrixHint" data-i18n="matrix.hint">点击「待核对」或「✓ 人工核对」单元格：查看全部候选与原文，选定或修正后保存。确认绑定彩页 SHA-256，下次分析自动采用；彩页更新后自动失效。</div>
         <div id="thresholdResult" class="hidden"></div>
         <div id="matrixMeta" class="matrix-meta hidden"></div>
-        <div id="matrixWrap"></div>
+        <div id="matrixWrap" translate="no" class="notranslate"></div>
         <h3 data-i18n="step4.history">历史导出</h3>
-        <div id="exportList" class="export-list"></div>
+        <div id="exportList" class="export-list notranslate" translate="no"></div>
       </div>
       <div class="panel-footer">
         <button class="btn ghost" id="backToStep3">← 重选对比对象</button>
@@ -192,9 +192,9 @@
           <button type="button" class="legend-btn" id="legendBtn" title="状态图例">?</button>
           <div class="legend-pop hidden" id="legendPop"></div>
         </div>
-        <div id="probeResults"></div>
+        <div id="probeResults" class="notranslate" translate="no"></div>
         <h3 data-i18n="step5.history">历史校验</h3>
-        <div id="probeRuns" class="probe-runs"></div>
+        <div id="probeRuns" class="probe-runs notranslate" translate="no"></div>
       </div>
       <div class="panel-footer">
         <span class="muted">校验在服务端后台运行，可随时切换页面；哈希建档存于 data/probe-state.json</span>

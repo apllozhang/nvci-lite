@@ -210,7 +210,7 @@ function renderDocTable(filter = '') {
     </tr>`;
   }).join('');
   $('docTable').innerHTML = `
-    <table class="probe-table doc-table">
+    <table class="probe-table doc-table" translate="no">
       <thead><tr>
         <th></th><th>${t('common.series')}</th><th>${t('common.model')}</th>
         <th>${t('common.status')}</th><th>${t('common.description')}</th>
@@ -746,7 +746,7 @@ function renderMatrix() {
     <tr class="mx-group"><td colspan="${docs.length + 1}">${esc(group.group)}</td></tr>
     ${group.fields.map((field) => `<tr><td class="mx-field">${esc(field.label)}</td>${docs.map((doc) => matrixCellHtml(field, doc)).join('')}</tr>`).join('')}
   `).join('');
-  wrap.innerHTML = `<table class="matrix-table">${head}<tbody>${body}</tbody></table>`;
+  wrap.innerHTML = `<table class="matrix-table" translate="no">${head}<tbody>${body}</tbody></table>`;
   wrap.querySelectorAll('td.mx-click').forEach((td) => td.addEventListener('click', () => {
     openConfirmDlg(td.dataset.doc, td.dataset.key);
   }));
