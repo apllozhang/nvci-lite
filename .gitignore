@@ -15,3 +15,5 @@ Thumbs.db
 /round2-verify.xlsx
 # 截图类验证产物不入库
 test/*.png
+# AI 交接线下材料（含口令与内网信息，不入公开仓库）
+/交接-线下材料/

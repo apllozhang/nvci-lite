@@ -1,6 +1,7 @@
 # NVCI Lite · 网络厂商彩页采集与对比分析
 
-> 四步向导完成「选型号 → 采集 → 对比 → AI 报告」，第五步彩页校验用哈希建档守护 7 品牌 957 条官方来源的长期有效性，人工校验与批量导入兜底异常。
+> 四步向导完成「选型号 → 采集 → 对比 → AI 报告」，第五步彩页校验用哈希建档守护 8 品牌 989 份官方来源的长期有效性，人工校验与批量导入兜底异常。
+> AI 协作者请从 [AGENTS.md](AGENTS.md) 与 [docs/HANDOVER.md](docs/HANDOVER.md) 进入（项目背景、未完成清单、工程红线）。
 
 ![四步向导：品牌树 + 型号勾选](docs/ui-wizard.png)
 
@@ -12,7 +13,7 @@
 flowchart LR
     W["浏览器 · 四步向导 + 彩页校验<br>+ 人工校验 + 批量导入"] --> S["Express 服务<br>server.js"]
     S --> DL["确定性采集器<br>白名单 · HEAD 增量 · SHA-256"]
-    DL --> V["厂商官网<br>7 品牌 957 条公开来源"]
+    DL --> V["厂商官网<br>8 品牌 989 份公开来源"]
     S --> PJ["探测引擎<br>降频 · 熔断 · 哈希建档"]
     PJ --> V
     DL --> D[("内容缓存与建档<br>index.json / probe-state.json")]
@@ -106,7 +107,7 @@ npm start
 
 ## 彩页资料探测校验（第 5 步菜单）
 
-对品牌库 957 条登记来源做周期性有效性验证，手动触发或定时自动运行（`NVCI_LITE_PROBE_ENABLED=true`）。方法论与采集完全一致：HTTPS 白名单断言、重定向逐跳校验、HEAD 元数据优先、顺序请求、声明 UA、不绕过访问控制。
+对品牌库 989 份登记来源做周期性有效性验证，手动触发或定时自动运行（`NVCI_LITE_PROBE_ENABLED=true`）。方法论与采集完全一致：HTTPS 白名单断言、重定向逐跳校验、HEAD 元数据优先、顺序请求、声明 UA、不绕过访问控制。
 
 - **完整校验**：HEAD 元数据比对 → 无变化直接复用缓存；有变化或未建档则下载 → PDF 签名检查 → SHA-256 建档比对（对 bundled 基线 `expectedSha256` 与上次建档哈希双重比对），判定「厂商已更新」时告警不阻断。首次全量建档会下载全部彩页进入内容缓存（约 1–3 GB，一次性），此后仅增量。
 - **轻量探测**：仅 HEAD 元数据，不下载，适合快速巡检可达性。
@@ -115,7 +116,7 @@ npm start
 
 ## 采集方法论（继承自 NVCI）
 
-- 仅访问 bundled-profiles 已登记的**公开官方 HTTPS 来源**（7 品牌 957 条），域名白名单 + 受信重定向逐跳断言
+- 仅访问 bundled-profiles 已登记的**公开官方 HTTPS 来源**（8 品牌 989 份），域名白名单 + 受信重定向逐跳断言
 - HEAD 元数据比对增量采集：未变化直接复用本地缓存，不重复下载
 - PDF 字节级检查（`%PDF-` 签名 / 页数）+ SHA-256 内容寻址缓存；与基线哈希不一致时标注 warning（厂商可能更新了彩页），不阻断
 - 顺序请求、声明 UA、不绕过登录/验证码/访问控制
@@ -131,7 +132,7 @@ npm start
 3. **样本检查**：保存前对前 5 条做低频 HEAD 验证（HTTPS 域名、HTTP 状态、Content-Type），不下载文件体；全部通过再保存启用。
 4. **采集与校验**：保存后目录树即时出现该产品线（带「自」标记），勾选后走与内置来源完全相同的采集、探测、参数分析流程；来源可编辑 / 删除（✎ / × 按钮）。
 
-硬约束与内置来源一致：仅公开官方 HTTPS 域名、重定向逐跳断言、不绕过访问控制。归档存于 `data/custom-profiles/*.json`（与内置 `profiles/` 同 schema），`documentId` / `profileId` 与内置冲突时自定义侧跳过并在 `catalog.warnings` 提示——内置 957 条官方登记基准不可被本地文件覆盖。接口：`GET/POST /api/profiles`、`DELETE /api/profiles/:profileId`、`POST /api/profiles/sample-check`。
+硬约束与内置来源一致：仅公开官方 HTTPS 域名、重定向逐跳断言、不绕过访问控制。归档存于 `data/custom-profiles/*.json`（与内置 `profiles/` 同 schema），`documentId` / `profileId` 与内置冲突时自定义侧跳过并在 `catalog.warnings` 提示——内置 989 份官方登记基准不可被本地文件覆盖。接口：`GET/POST /api/profiles`、`DELETE /api/profiles/:profileId`、`POST /api/profiles/sample-check`。
 
 ## 目录结构
 
@@ -176,7 +177,7 @@ node deploy.js status  # 查看容器状态
 node deploy.js logs    # 查看日志
 ```
 
-当前部署：`http://10.20.30.203:8789`（8788 已被 sonic-pm-academy 占用）。资料目录已收编进仓库 `profiles/`（27 个产品线文件、957 条来源），Docker 内通过 `NVCI_LITE_PROFILES_DIR=/app/profiles` 挂载只读。
+当前部署：`http://10.20.30.203:8789`（8788 已被 sonic-pm-academy 占用）。资料目录已收编进仓库 `profiles/`（34 个产品线文件、989 份来源），Docker 内通过 `NVCI_LITE_PROFILES_DIR=/app/profiles` 挂载只读。
 
 ## 运维与可观测（评审 v3 阶段 1/2 落地）
 
