@@ -11,6 +11,7 @@ const state = {
   collected: new Set(),  // 已采集 documentId
   library: [],           // 服务端已采集清单
   cmpSel: new Set(),     // 对比勾选
+  cmpDropped: new Set(), // 第 3 步手动取消过的对比勾选（往返不再自动带回）
   libraryFilter: '',     // 第 3 步品类筛选（空 = 全部）
   libraryVendor: '',     // 第 3 步厂商筛选（空 = 全部厂商）
   librarySearch: '',     // 第 3 步搜索（逗号分隔多关键词，跨品类/厂商命中）
@@ -102,7 +103,13 @@ async function goStep(step) {
   for (let i = 1; i <= 5; i += 1) $(`step${i}`).classList.toggle('hidden', i !== step);
   refreshStepBar();
   if (step === 2) renderCollectSummary();
-  if (step === 3) renderLibrary();
+  if (step === 3) {
+    // 跨品牌多选主路径：第 1 步勾选且已采集的自动带入对比（手动取消过的不再带回）
+    for (const id of state.selected.keys()) {
+      if (state.collected.has(id) && !state.cmpDropped.has(id)) state.cmpSel.add(id);
+    }
+    renderLibrary();
+  }
   if (step === 4) { renderAiMode(); loadExports(); loadFieldTemplate(); renderMatrix(); }
   if (step === 5) renderProbe();
 }
@@ -232,8 +239,13 @@ function toggleDocSelect(documentId) {
   const line = currentLine();
   const doc = line && line.documents.find((d) => d.documentId === documentId);
   if (!doc) return;
-  if (state.selected.has(documentId)) state.selected.delete(documentId);
-  else state.selected.set(documentId, doc);
+    if (state.selected.has(documentId)) {
+    state.selected.delete(documentId);
+    state.cmpSel.delete(documentId); // 第 1 步取消勾选 = 不再参与对比
+  } else {
+    state.selected.set(documentId, doc);
+    state.cmpDropped.delete(documentId); // 重新勾选视为重新想要
+  }
   renderDocTable($('docSearch').value);
   updateTray();
 }
@@ -533,12 +545,12 @@ async function renderLibrary() {
     const input = row.querySelector('input');
     const id = row.dataset.id;
     if (event.target === input) {
-      if (input.checked) state.cmpSel.add(id);
-      else state.cmpSel.delete(id);
+      if (input.checked) { state.cmpSel.add(id); state.cmpDropped.delete(id); }
+      else { state.cmpSel.delete(id); state.cmpDropped.add(id); }
     } else {
       event.preventDefault();
-      if (state.cmpSel.has(id)) state.cmpSel.delete(id);
-      else state.cmpSel.add(id);
+      if (state.cmpSel.has(id)) { state.cmpSel.delete(id); state.cmpDropped.add(id); }
+      else { state.cmpSel.add(id); state.cmpDropped.delete(id); }
       input.checked = state.cmpSel.has(id);
     }
     renderLibrary(); // 同品类高亮与跨品类警示随选择刷新
