@@ -732,6 +732,13 @@ body.theme-dark td.mx-click:hover { background: #2c3340; }
 .cmp-cat-head { cursor: pointer; user-select: none; }
 .cmp-cat-head:hover .cmp-cat-name { color: var(--ale-purple-600); }
 .cmp-cat-arrow { color: var(--muted); font-size: 11px; width: 14px; }
+/* 品类行批量按钮（全选/反选）：贴右侧、折叠头同款小尺寸；stopPropagation 防触发折叠 */
+.cmp-cat-bulk { margin-left: auto; display: inline-flex; gap: 6px; align-self: center; }
+.cat-mini {
+  padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--surface); color: var(--ink-500); cursor: pointer; font-size: 12px;
+}
+.cat-mini:hover { border-color: var(--ale-purple-500); color: var(--ale-purple-600); }
 .cmp-category.folded { border-color: var(--line-soft); }
 .cmp-category.folded .cmp-cat-head { padding: 7px 14px; }
 #librarySearch { width: 100%; max-width: 560px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; font-size: 13.5px; background: var(--surface); }
