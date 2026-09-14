@@ -327,6 +327,159 @@ test('长彩页分段抽取（验收实战：ALE 全量输入返空）：按页�
   });
 });
 
+function buildWideMatrix(groupCount, fieldsPerGroup, padChars) {
+  const documents = [
+    { documentId: 'd1', columnId: 'd1', label: 'A', vendorName: 'V', series: 'S1' },
+    { documentId: 'd2', columnId: 'd2', label: 'B', vendorName: 'V', series: 'S2' },
+  ];
+  const groups = [];
+  for (let g = 0; g < groupCount; g += 1) {
+    const fields = [];
+    for (let f = 0; f < fieldsPerGroup; f += 1) {
+      fields.push({
+        key: `k_${g}_${f}`,
+        label: `字段${g}-${f}`.padEnd(padChars, '参'),
+        values: {
+          d1: { status: 'ok', value: '1', quote: '原文1', page: 1 },
+          d2: { status: 'ok', value: '2', quote: '原文2', page: 2 },
+        },
+      });
+    }
+    groups.push({ group: `分组${g}`.padEnd(80, '组'), fields });
+  }
+  return { documents, groups, meta: {}, thresholds: [] };
+}
+
+test('analyzeWithAi 超大矩阵：按参数分组分段调用并合并结果', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    const calls = [];
+    const mockFetch = async (_url, options) => {
+      const body = JSON.parse(options.body);
+      const userContent = body.messages[0].content;
+      calls.push(userContent);
+      if (userContent.includes('分段分析结果')) {
+        return {
+          ok: true, status: 200,
+          json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
+            executive_summary: '跨分组综合摘要',
+            key_deviations: ['综合后的关键偏离'],
+            scenario_advice: [{ scenario: '园区接入', recommendation: '优先 A' }],
+            procurement_questions: ['请提供 PoE 总功率证明'],
+          }) }] }),
+        };
+      }
+      const isFirst = userContent.includes('第 1/');
+      return {
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
+          executive_summary: isFirst ? '第一段摘要' : '第二段摘要',
+          parameter_analysis: [{ field: isFirst ? '字段0-0' : '字段1-0', finding: isFirst ? 'A 领先' : 'B 领先' }],
+          hard_gates: [{ field: '上行端口数', finding: 'A 满足' }],
+          key_deviations: [isFirst ? '段一偏离' : '段二偏离', '重复偏离'],
+          scenario_advice: [{ scenario: isFirst ? '场景1' : '场景2', recommendation: '建议' }],
+          procurement_questions: [isFirst ? '问题1' : '问题2', '重复问题'],
+        }) }] }),
+      };
+    };
+    // 每组约 2 字段 × 长 label，总长明显超过 28K → 必须分段
+    const matrix = buildWideMatrix(4, 3, 4000);
+    const analysis = await ai.analyzeWithAi(
+      matrix,
+      matrix.documents.map((doc) => ({ ...doc, pageCount: 2, sha256: 'a'.repeat(64) })),
+      { fetchImpl: mockFetch },
+    );
+    const segmentCalls = calls.filter((content) => content.includes('本段仅覆盖参数分组'));
+    const synthesisCalls = calls.filter((content) => content.includes('分段分析结果'));
+    assert.ok(segmentCalls.length >= 2, `应分段调用（实际 ${segmentCalls.length} 段）`);
+    assert.ok(segmentCalls.some((c) => c.includes('第 1/')), '分段提示含序号');
+    assert.ok(segmentCalls.every((c) => c.includes('禁止扩展到未给出的分组')), '每段限制分析范围');
+    assert.equal(synthesisCalls.length, 1, '多段后应有一次综合调用');
+    assert.equal(analysis.executive_summary, '跨分组综合摘要');
+    assert.ok(analysis.parameter_analysis.length >= 2, '分段参数分析应合并');
+    assert.ok(analysis.key_deviations.includes('综合后的关键偏离'));
+    assert.ok(analysis.key_deviations.includes('段一偏离'));
+    assert.equal(analysis.key_deviations.filter((item) => item === '重复偏离').length, 1, '偏离应去重');
+    assert.equal(analysis.procurement_questions.filter((item) => item === '重复问题').length, 1, '采购问题应去重');
+    assert.ok(analysis.scenario_advice.length >= 2);
+  });
+});
+
+test('analyzeWithAi：综合调用失败不阻断，分段合并结果仍返回', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    let callIndex = 0;
+    const mockFetch = async (_url, options) => {
+      callIndex += 1;
+      const body = JSON.parse(options.body);
+      const userContent = body.messages[0].content;
+      if (userContent.includes('分段分析结果')) throw new Error('综合调用失败');
+      return {
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
+          executive_summary: `段摘要${callIndex}`,
+          parameter_analysis: [{ field: `f${callIndex}`, finding: 'x' }],
+          hard_gates: [],
+          key_deviations: [`偏离${callIndex}`],
+          scenario_advice: [],
+          procurement_questions: [],
+        }) }] }),
+      };
+    };
+    const matrix = buildWideMatrix(3, 3, 4000);
+    const analysis = await ai.analyzeWithAi(matrix, matrix.documents, { fetchImpl: mockFetch });
+    assert.match(analysis.executive_summary, /段摘要/);
+    assert.ok(analysis.parameter_analysis.length >= 1);
+    assert.ok(analysis.key_deviations.includes('偏离1'));
+  });
+});
+
+test('analyzeWithAi：小矩阵仍单次调用，行为与旧版一致', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'glm-4.6',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    let calls = 0;
+    const mockFetch = async () => {
+      calls += 1;
+      return {
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
+          executive_summary: '单次摘要',
+          parameter_analysis: [{ field: '交换容量', finding: 'A 更高' }],
+          hard_gates: [],
+          key_deviations: [],
+          scenario_advice: [],
+          procurement_questions: [],
+        }) }] }),
+      };
+    };
+    const matrix = {
+      documents: [{ documentId: 'd1', columnId: 'd1', label: 'A' }],
+      groups: [{ group: '性能', fields: [{ key: 'k', label: '交换容量', values: { d1: { status: 'ok', value: '1T', quote: '1T', page: 1 } } }] }],
+      meta: {},
+      thresholds: [],
+    };
+    const analysis = await ai.analyzeWithAi(matrix, matrix.documents, { fetchImpl: mockFetch });
+    assert.equal(calls, 1, '未超限不得分段');
+    assert.equal(analysis.executive_summary, '单次摘要');
+    assert.equal(analysis.parameter_analysis[0].field, '交换容量');
+  });
+});
+
 test('长彩页分段抽取：部分段失败仍返回成功段，全失败才抛错', async () => {
   const ai = require('../lib/ai');
   await withEnv({
