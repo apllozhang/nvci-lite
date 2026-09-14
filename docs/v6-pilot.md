@@ -23,3 +23,5 @@
 
 - **R4-01 修复**:`styles.css` 窄屏断点 `max-width:760px` → `860px`(覆盖 768 平板档;原先 768 落桌面布局致 865px 根溢出、顶栏逐字竖排)。
 - 验证:320/768/1440 三档根级零溢出;verify-nvci 8/8 回归 PASS。
+
+- **R4-02 字体接入(M6-R1)**:vendored `fonts/noto.css` + `noto/*.woff2`(400/500/700,SIL OFL,与 kit shared 同源),页面真实请求 200、FontFaceSet loaded、`document.fonts.check` 命中——FONT-CHAIN PASS。

@@ -1,0 +1,33 @@
+/* ============================================================
+   Noto Sans SC（思源黑体）自托管分片 — SIL OFL 1.1 免费商用
+   来源：@fontsource/noto-sans-sc；仅含 chinese-simplified 400/500/700。
+   unicode-range 分片：浏览器只下载页面实际用到的分片。
+   ============================================================ */
+
+/* chinese-simplified 400 */
+/* noto-sans-sc-chinese-simplified-400-normal */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./noto/noto-sans-sc-chinese-simplified-400-normal.woff2) format('woff2'), url(./noto/noto-sans-sc-chinese-simplified-400-normal.woff) format('woff');
+}
+/* chinese-simplified 500 */
+/* noto-sans-sc-chinese-simplified-500-normal */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(./noto/noto-sans-sc-chinese-simplified-500-normal.woff2) format('woff2'), url(./noto/noto-sans-sc-chinese-simplified-500-normal.woff) format('woff');
+}
+/* chinese-simplified 700 */
+/* noto-sans-sc-chinese-simplified-700-normal */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./noto/noto-sans-sc-chinese-simplified-700-normal.woff2) format('woff2'), url(./noto/noto-sans-sc-chinese-simplified-700-normal.woff) format('woff');
+}
