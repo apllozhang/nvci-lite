@@ -275,6 +275,14 @@ function toggleDocSelect(documentId) {
 function bulkSelectDocs(mode) {
   const docs = visibleDocs();
   if (!docs.length) return;
+  // 大批量先确认（全不选是纯回退不需确认）：份数 + 超 50 上限提示（服务端会拒）
+  if (mode !== 'none' && docs.length > BULK_CONFIRM_MIN) {
+    const cap = docs.length > COLLECT_CAP ? '\n' + t('step1.bulkConfirmCap') : '';
+    const msg = mode === 'all'
+      ? t('step1.bulkConfirmAll').replace('{n}', docs.length) + cap
+      : t('step1.bulkConfirmInvert').replace('{n}', docs.length) + cap;
+    if (!window.confirm(msg)) return;
+  }
   let changed = 0;
   for (const doc of docs) {
     const id = doc.documentId;
@@ -512,6 +520,21 @@ function renderVendorChips(docs) {
   }));
 }
 
+// 第 3 步当前筛选（多关键词搜索 > 品类 chip > 厂商 chip）命中的产品集，
+// renderLibrary 与品类级批量选择共用同一作用域定义
+function matchedLibraryDocs() {
+  const keywords = state.librarySearch.split(/[,，;；]+/).map((word) => word.trim().toLowerCase()).filter(Boolean);
+  return state.library.filter((doc) => {
+    if (keywords.length) {
+      const hay = `${doc.series} ${doc.modelNames.join(' ')} ${doc.vendorName} ${doc.productLineName || ''}`.toLowerCase();
+      return keywords.some((word) => hay.includes(word));
+    }
+    if (state.libraryFilter && libraryCategoryOf(doc) !== state.libraryFilter) return false;
+    if (state.libraryVendor && doc.vendorName !== state.libraryVendor) return false;
+    return true;
+  });
+}
+
 async function renderLibrary() {
   const box = $('libraryList');
   if (!state.library.length) {
@@ -522,8 +545,6 @@ async function renderLibrary() {
     return;
   }
   renderCatChips();
-  // 多关键词搜索（用户反馈：逗号分隔一次多搜）：逗号/分号拆词，任一命中即入选（OR）
-  const keywords = state.librarySearch.split(/[,，;；]+/).map((word) => word.trim().toLowerCase()).filter(Boolean);
   // 已选产品的品类集合：同品类高亮与跨品类警示的共同依据
   const selectedCats = new Set();
   for (const id of state.cmpSel) {
@@ -531,15 +552,8 @@ async function renderLibrary() {
     if (doc) selectedCats.add(libraryCategoryOf(doc));
   }
   // 搜索为最高优先级：跨品类/厂商全库命中（结果带品类标签）
-  const matched = state.library.filter((doc) => {
-    if (keywords.length) {
-      const hay = `${doc.series} ${doc.modelNames.join(' ')} ${doc.vendorName} ${doc.productLineName || ''}`.toLowerCase();
-      return keywords.some((word) => hay.includes(word));
-    }
-    if (state.libraryFilter && libraryCategoryOf(doc) !== state.libraryFilter) return false;
-    if (state.libraryVendor && doc.vendorName !== state.libraryVendor) return false;
-    return true;
-  });
+  const matched = matchedLibraryDocs();
+  const searching = state.librarySearch.trim().length > 0;
   renderVendorChips(matched);
   if (!matched.length) {
     box.innerHTML = `<div class="muted empty">${esc(t('step3.noMatch'))}</div>`;
@@ -557,7 +571,7 @@ async function renderLibrary() {
   }
   const orderedCats = CATEGORY_ORDER.filter((key) => byCategory.has(key));
   // 折叠策略：无任何筛选时品类默认全部折叠（先看地图再看街景）；有筛选/搜索时全展开
-  const filtering = Boolean(keywords.length || state.libraryFilter || state.libraryVendor);
+  const filtering = Boolean(searching || state.libraryFilter || state.libraryVendor);
   if (state.catFolded === null) state.catFolded = new Set(orderedCats);
   const folded = (cat) => !filtering && state.catFolded.has(cat);
   // 首用提示：全折叠且无筛选时告诉用户行在哪（走查发现新用户不知道要点品类行）
@@ -580,7 +594,7 @@ async function renderLibrary() {
         <input type="checkbox" ${isSelected ? 'checked' : ''}>
         <span class="doc-series">${esc(doc.series)}</span>
         <span class="doc-models">${esc(doc.modelNames.join('、') || '—')}</span>
-        ${keywords.length ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
+        ${searching ? `<span class="badge st-info">${esc(categoryMeta(cat).label)}</span>` : ''}
         ${isPeer ? `<span class="peer-tag">${esc(peerHintText)}</span>` : ''}
       </label>`;}).join('')}`).join('');
     return `<div class="cmp-category ${isFolded ? 'folded' : ''}">
@@ -589,6 +603,10 @@ async function renderLibrary() {
         <span class="cmp-cat-name">${esc(meta.label)}</span>
         <span class="muted small">${esc(meta.desc)}</span>
         <span class="chip-count muted">${total}</span>
+        <span class="cmp-cat-bulk">
+          <button class="cat-mini" data-op="all" data-cat="${esc(cat)}" data-i18n-title="step3.catSelAllTip" title="${esc(t('step3.catSelAllTip'))}">${esc(t('step1.selectAll'))}</button>
+          <button class="cat-mini" data-op="invert" data-cat="${esc(cat)}" data-i18n-title="step3.catInvertTip" title="${esc(t('step3.catInvertTip'))}">${esc(t('step1.invertSel'))}</button>
+        </span>
       </div>
       ${isFolded ? '' : vendorBlocks}
     </div>`;
@@ -606,6 +624,11 @@ async function renderLibrary() {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
     });
   });
+  // 品类级批量选择按钮：阻断冒泡避免触发品类头折叠切换；折叠态同样生效（数据在、只是不展开显示）
+  box.querySelectorAll('.cat-mini').forEach((btn) => btn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    bulkSelectCategory(btn.dataset.cat, btn.dataset.op);
+  }));
   // 单一处理器防双触发：label 默认行为会把文本区点击再转发给 input 产生第二个
   // click（先加后删净归零，实战踩坑）——文本区点击 preventDefault 阻断转发；
   // 直接点复选框时原生已翻转 checked，状态跟随视觉
@@ -624,6 +647,34 @@ async function renderLibrary() {
     renderLibrary(); // 同品类高亮与跨品类警示随选择刷新
   }));
   refreshCmpGate();
+}
+
+// 批量确认阈值：一次批量影响超过该份数时先问一句（H3C 单产品线 306 份的教训——
+// 全选 306 份即使确认了，采集也会被服务端单次上限 50 拒绝，话术里必须讲清楚）
+const BULK_CONFIRM_MIN = 20;
+const COLLECT_CAP = 50; // 与服务端 routes/collect.js 的 MAX_COLLECT 保持一致
+
+// 品类级全选/反选（第 3 步品类分组行）：作用域 = 当前筛选命中的该品类产品；
+// 选中/取消的状态联动与单行点击完全一致（取消要进 cmpDropped 压制第 1 步预带）
+function bulkSelectCategory(cat, op) {
+  const docs = matchedLibraryDocs().filter((doc) => libraryCategoryOf(doc) === cat);
+  if (!docs.length) return;
+  const label = categoryMeta(cat).label;
+  if (docs.length > BULK_CONFIRM_MIN) {
+    const msg = op === 'all'
+      ? t('step3.catConfirmAll').replace('{cat}', label).replace('{n}', docs.length)
+      : t('step3.catConfirmInvert').replace('{cat}', label).replace('{n}', docs.length);
+    if (!window.confirm(msg)) return;
+  }
+  for (const doc of docs) {
+    const id = doc.documentId;
+    const has = state.cmpSel.has(id);
+    const next = op === 'all' ? true : !has;
+    if (next === has) continue;
+    if (next) { state.cmpSel.add(id); state.cmpDropped.delete(id); }
+    else { state.cmpSel.delete(id); state.cmpDropped.add(id); }
+  }
+  renderLibrary();
 }
 
 // 跨品类提示（第二层，纯警示不阻断——实战反馈硬阻断会卡住正常多选）：

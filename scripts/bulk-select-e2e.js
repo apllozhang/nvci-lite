@@ -21,6 +21,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const page = await browser.newPage();
   const pageErrors = [];
   page.on('pageerror', (e) => pageErrors.push(String(e).slice(0, 120)));
+  // confirm 弹窗行为由测试动态指定：'accept' 接受 / 'dismiss' 取消；记录最近一次弹窗文案
+  let dialogAction = null;
+  let dialogMsg = null;
+  page.on('dialog', async (d) => {
+    dialogMsg = d.message();
+    if (dialogAction === 'accept') await d.accept();
+    else await d.dismiss();
+  });
 
   await page.goto(BASE, { waitUntil: 'networkidle2', timeout: 30000 });
   await sleep(1000);
@@ -42,9 +50,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   ok('ALE 无线接入加载 13 份', total === 13, `实际 ${total}`);
   ok('批量按钮组可见', await page.evaluate(() => !document.querySelector('#pickerBulk').classList.contains('hidden')));
 
-  // 1) 全选 13 份 → 托盘 13
+  // 1) 全选 13 份 → 托盘 13（13 ≤ 20 阈值，不应弹确认框）
+  dialogMsg = null;
   await page.click('#selAllBtn');
   await sleep(300);
+  ok('13 份全选不弹确认框（阈值内）', dialogMsg === null, dialogMsg || '无弹窗');
   ok('全选后托盘 13', await page.evaluate(() => document.querySelector('#selCount').textContent) === '13');
   ok('全选后所有行勾上', await page.evaluate(() => {
     const inputs = [...document.querySelectorAll('#docTable tbody input')];
@@ -109,6 +119,38 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await page.click('#selNoneBtn');
   await sleep(300);
   ok('空态再点全不选不报错', pageErrors.length === 0, pageErrors.join(' | ') || '无页面错误');
+
+  // ===== 大产品线确认弹窗：Cisco 数据中心交换机 52 份（>20 阈值，>50 上限话术） =====
+  await page.evaluate(() => {
+    [...document.querySelectorAll('.tree-brand-btn')].find((el) => /Cisco/.test(el.textContent))?.click();
+  });
+  await sleep(400);
+  await page.evaluate(() => {
+    [...document.querySelectorAll('.tree-line')].find((el) => /数据中心交换机/.test(el.textContent))?.click();
+  });
+  await sleep(600);
+  const dcTotal = await page.evaluate(() => document.querySelectorAll('#docTable tbody tr').length);
+  ok('Cisco 数据中心交换机 > 20 份', dcTotal > 20, `实际 ${dcTotal}`);
+  await page.evaluate(() => { const i = document.querySelector('#docSearch'); i.value = ''; i.dispatchEvent(new Event('input', { bubbles: true })); });
+
+  dialogAction = 'dismiss';
+  dialogMsg = null;
+  await page.click('#selAllBtn');
+  await sleep(300);
+  ok('大批量全选弹出确认框', dialogMsg !== null && dialogMsg.includes(String(dcTotal)), dialogMsg || '未弹窗');
+  ok('取消确认后不勾选', await page.evaluate(() => document.querySelector('#selCount').textContent) === '0',
+    await page.evaluate(() => document.querySelector('#selCount').textContent));
+  if (dcTotal > 50) ok('超 50 上限时话术含上限提示', dialogMsg.includes('50'), dialogMsg || '');
+
+  dialogAction = 'accept';
+  await page.click('#selAllBtn');
+  await sleep(300);
+  ok('确认后全选生效', await page.evaluate(() => document.querySelector('#selCount').textContent) === String(dcTotal),
+    await page.evaluate(() => document.querySelector('#selCount').textContent));
+  dialogAction = null;
+  await page.click('#selNoneBtn');
+  await sleep(200);
+  ok('大批量场景结束托盘归零', pageErrors.length === 0, pageErrors.join(' | ') || '无页面错误');
 
   await browser.close();
   console.log(process.exitCode ? '\n== 存在失败断言 ==' : '\n== 全部断言通过 ==');
