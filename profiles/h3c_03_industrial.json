@@ -109,9 +109,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4300/IE4300/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9933998",
-      "officialFileName": "H3C IE4300 系列机架式工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "bd50c45aa5477cb35ef854bdf58e29405f98c2122a1bb89dfd18875188452591",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4300",
         "IE4300"
@@ -126,9 +126,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4120U/IE4120U/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9934205",
-      "officialFileName": "H3C IE4120U系列导轨式无管理工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "4f6b2de476a4e684a225ec67ff67d0e4e6374be38462aae48e113d4ccacf8650",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4120U",
         "IE4120U"
@@ -143,9 +143,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320S/IE4320S/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9969542",
-      "officialFileName": "H3C IE4320S 系列机架式工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "862d1e9fb2cfd8234d502882bfd3c6879d7de4869bb2ac805ff73b08d2b49ab1",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4320S",
         "IE4320S"
@@ -160,9 +160,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4320_Intellect/IE4320_Intellect/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=9969543",
-      "officialFileName": "H3C IE4320 智能变电站系列工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "88d84856322332ad39a178f2a749f4f0b8583b88541a69e7d9b6a9073830fbb4",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4320_Intellect",
         "IE4320",
@@ -335,9 +335,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Guideway_Switch/IE4300U/IE4300U/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11338216",
-      "officialFileName": "H3C IE4300U系列导轨式无管理工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "71f1024841e9d3ac3cb2b6c5b379d1921ee6d42ec5b6b0685979e7ef505be6a3",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4300U",
         "IE4300U"
@@ -352,9 +352,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/Rack_Switch/IE4120U/IE4120U/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11607623",
-      "officialFileName": "H3C IE4120U系列机架式无管理工业以太网交换机产品彩页.pdf",
-      "expectedSha256": "9532373aac5c46dbda7f432eaba68a4b9d460ffe8ac645e59506244a1ef314f2",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "IE4120U",
         "IE4120U"
