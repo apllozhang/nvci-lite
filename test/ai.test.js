@@ -480,6 +480,49 @@ test('analyzeWithAi：小矩阵仍单次调用，行为与旧版一致', async (
   });
 });
 
+test('analyzeWithAi：完整提示空返回时自动压缩矩阵重试', async () => {
+  const ai = require('../lib/ai');
+  await withEnv({
+    NVCI_LITE_AI_BASE: 'https://open.bigmodel.cn/api/anthropic',
+    NVCI_LITE_AI_KEY: 'test-key',
+    NVCI_LITE_AI_MODEL: 'GLM-5.3-Flash',
+    NVCI_LITE_AI_PROTOCOL: 'anthropic',
+  }, async () => {
+    let calls = 0;
+    let lastUser = '';
+    const mockFetch = async (_url, options) => {
+      calls += 1;
+      const body = JSON.parse(options.body);
+      lastUser = body.messages[0].content;
+      // 第一次完整矩阵：模拟 GLM 空返回；压缩后（无原文引用）成功
+      if (lastUser.includes('原文:')) {
+        return { ok: true, status: 200, json: async () => ({ content: [{ type: 'text', text: '' }] }) };
+      }
+      return {
+        ok: true, status: 200,
+        json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
+          executive_summary: '压缩后摘要',
+          parameter_analysis: [{ field: '端口', finding: '一致' }],
+          hard_gates: [], key_deviations: [], scenario_advice: [], procurement_questions: [],
+        }) }] }),
+      };
+    };
+    const matrix = {
+      documents: [{ documentId: 'd1', columnId: 'd1', label: 'A' }],
+      groups: [{
+        group: '端口',
+        fields: [{ key: 'p', label: '端口数', values: { d1: { status: 'ok', value: '24', quote: '24-port uplink', page: 1 } } }],
+      }],
+      meta: {},
+      thresholds: [],
+    };
+    const analysis = await ai.analyzeWithAi(matrix, matrix.documents, { fetchImpl: mockFetch });
+    assert.equal(analysis.executive_summary, '压缩后摘要');
+    assert.ok(calls >= 2, '应发生压缩重试');
+    assert.ok(!lastUser.includes('原文:'), '重试提示词应去掉原文引用');
+  });
+});
+
 test('长彩页分段抽取：部分段失败仍返回成功段，全失败才抛错', async () => {
   const ai = require('../lib/ai');
   await withEnv({
