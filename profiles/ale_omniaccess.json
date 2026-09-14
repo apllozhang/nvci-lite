@@ -56,16 +56,16 @@
         "OmniAccess Stellar AP1521"
       ],
       "description": "OmniAccess Stellar AP1521（Wi-Fi 7 室内）官方 datasheet",
-      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-ap1521",
+      "productPageUrl": "https://www.al-enterprise.com/en/products/wlan/omniaccess-stellar-access-point-1521",
       "materialPageUrl": "",
-      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/omniaccess-stellar-oaw-ap1521-datasheet-en.pdf",
-      "officialFileName": "omniaccess-stellar-oaw-ap1521-datasheet-en.pdf",
+      "pdfUrl": "https://www.al-enterprise.com/-/media/assets/internet/documents/alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
+      "officialFileName": "alcatel-lucent-omniaccess-stellar-ap1521-datasheet-en.pdf",
       "matchTerms": [
         "OmniAccess Stellar AP1521",
         "AP1521"
       ],
       "evidencePolicy": "official_datasheet",
-      "expectedSha256": ""
+      "expectedSha256": "75dfb14ae75839d4017a74440db1a5cf3dc1128b325d791804a158030426b04c"
     },
     {
       "documentId": "ale-omniaccess_ap1540-datasheet",
