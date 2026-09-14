@@ -806,12 +806,13 @@ function renderAiMode() {
   $('aiMode').textContent = configured
     ? `AI 已配置（${state.aiStatus.model}）`
     : 'AI 未配置';
+  // 业务默认：只出 Excel、不走 AI——规则提取通常十几秒，避免 5–10 分钟长请求
   $('aiHint').textContent = configured
-    ? '最快：只勾 Excel、取消 AI 抽取（规则提取，通常十几秒）。只要参数表时不要勾 Word。'
-    : '未配置 AI：仅能规则抽取并导出 Excel / 材料包；勾选 Word 无效。';
-  $('useAi').checked = Boolean(configured);
+    ? '业务默认只出 Excel（规则提取，通常 <30 秒）。需要更准参数再勾 AI；Word 最慢，非必要不勾。'
+    : '未配置 AI：规则抽取导出 Excel / 材料包。';
+  $('useAi').checked = false;
   $('useAi').disabled = !configured;
-  $('outWord').checked = Boolean(configured);
+  $('outWord').checked = false;
   $('outWord').disabled = !configured;
 }
 
@@ -822,6 +823,14 @@ async function startAnalyze() {
   const wantWord = $('outWord').checked && !$('outWord').disabled;
   const useAi = $('useAi').checked && !$('useAi').disabled;
   if (!wantExcel && !wantWord) { toast('warn', '请至少勾选 Excel 或 Word'); return; }
+  if (wantWord || useAi) {
+    const slow = [];
+    if (useAi) slow.push('AI 抽取');
+    if (wantWord) slow.push('Word 叙事');
+    if (slow.length && !window.confirm(`将启用${slow.join(' + ')}，可能需要数分钟。\n业务急用建议只勾 Excel、取消 AI。\n\n仍要继续？`)) {
+      return;
+    }
+  }
   button.disabled = true;
   // 动态耗时反馈（走查发现：文案承诺 1–3 分钟，AI 抽取实测 5–11 分钟，普通用户会以为死机）
   const startedAt = Date.now();
@@ -829,9 +838,9 @@ async function startAnalyze() {
     const sec = Math.round((Date.now() - startedAt) / 1000);
     return sec < 60 ? sec + ' 秒' : Math.floor(sec / 60) + ' 分 ' + (sec % 60) + ' 秒';
   };
-  const modeNote = !useAi && !wantWord ? '（规则抽取，通常较快）'
-    : !wantWord && useAi ? '（AI 抽取 + Excel，跳过 Word 叙事）'
-      : (useAi ? '（AI 抽取 + Word，通常 5–10 分钟）' : '（规则抽取 + Word 叙事）');
+  const modeNote = !useAi && !wantWord ? '（规则 Excel，通常 <30 秒）'
+    : !wantWord && useAi ? '（AI 抽取 + Excel）'
+      : (useAi ? '（AI + Word，可能数分钟）' : '（规则 + Word 叙事）');
   const ticker = setInterval(() => {
     button.textContent = '分析中… 已进行 ' + elapsedText() + modeNote + '，请勿关闭页面';
   }, 1000);

@@ -418,19 +418,19 @@ test('analyzeWithAi：综合调用失败不阻断，分段合并结果仍返回'
     NVCI_LITE_AI_MODEL: 'glm-4.6',
     NVCI_LITE_AI_PROTOCOL: 'anthropic',
   }, async () => {
-    let callIndex = 0;
     const mockFetch = async (_url, options) => {
-      callIndex += 1;
       const body = JSON.parse(options.body);
       const userContent = body.messages[0].content;
       if (userContent.includes('分段分析结果')) throw new Error('综合调用失败');
+      // 并行分段：用分组名标识，不依赖调用序号
+      const group = (userContent.match(/本段仅覆盖参数分组：([^。]+)/) || [, 'seg'])[1].slice(0, 8);
       return {
         ok: true, status: 200,
         json: async () => ({ content: [{ type: 'text', text: JSON.stringify({
-          executive_summary: `段摘要${callIndex}`,
-          parameter_analysis: [{ field: `f${callIndex}`, finding: 'x' }],
+          executive_summary: `段摘要${group}`,
+          parameter_analysis: [{ field: group, finding: 'x' }],
           hard_gates: [],
-          key_deviations: [`偏离${callIndex}`],
+          key_deviations: [`偏离${group}`],
           scenario_advice: [],
           procurement_questions: [],
         }) }] }),
@@ -440,7 +440,7 @@ test('analyzeWithAi：综合调用失败不阻断，分段合并结果仍返回'
     const analysis = await ai.analyzeWithAi(matrix, matrix.documents, { fetchImpl: mockFetch });
     assert.match(analysis.executive_summary, /段摘要/);
     assert.ok(analysis.parameter_analysis.length >= 1);
-    assert.ok(analysis.key_deviations.includes('偏离1'));
+    assert.ok(analysis.key_deviations.length >= 1, '应保留至少一条分段偏离');
   });
 });
 
