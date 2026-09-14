@@ -1,12 +1,12 @@
 {
   "schemaVersion": "2.2",
-  "bundledRevision": "2026-09-14-aruba-wifi-full-series-draft",
+  "bundledRevision": "2026-09-14-aruba-wifi-full-series",
   "profileId": "hpe_aruba_wifi",
   "vendorId": "hpe",
   "vendorName": "HPE Networking",
   "displayName": "Aruba 无线网络",
-  "approvalStatus": "draft",
-  "enabled": false,
+  "approvalStatus": "approved",
+  "enabled": true,
   "mode": "public_official_pdf_incremental",
   "officialDomains": [
     "www.hpe.com",
