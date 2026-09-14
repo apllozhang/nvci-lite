@@ -31,7 +31,7 @@ const DOCUMENTS = [
   { documentId: 'b', vendorName: '新华三 H3C', series: 'S5120V3-EI', modelNames: ['S5120V3-28P-EI'], officialFileName: 'b.pdf', pdfUrl: 'https://example.com/b.pdf', productPageUrl: '', sha256: 'b'.repeat(64), pageCount: 3, collectedAt: '2026-09-03', warning: '' },
 ];
 
-test('Excel：三个工作表生成且参数行含三态', async () => {
+test('Excel：含性能/特性矩阵五表，参数行含三态', async () => {
   const dir = tempDir();
   try {
     const outPath = path.join(dir, 'out.xlsx');
@@ -40,7 +40,7 @@ test('Excel：三个工作表生成且参数行含三态', async () => {
     const ExcelJS = require('exceljs');
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(outPath);
-    assert.deepEqual(workbook.worksheets.map((sheet) => sheet.name), ['参数对照', '资料清单', '原文片段']);
+    assert.deepEqual(workbook.worksheets.map((sheet) => sheet.name), ['参数对照', '性能参数矩阵', '功能特性矩阵', '资料清单', '原文片段']);
     const cell = workbook.worksheets[0].getCell('A2').value;
     assert.equal(cell, '参数', '第 2 行应为表头');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }

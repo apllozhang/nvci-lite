@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { extractParamsByRules, buildMatrix, cellStatusText } = require('../lib/params');
+const { extractParamsByRules, extractFeaturesByRules, buildMatrix, cellStatusText } = require('../lib/params');
 
 const HUAWEI_LINES = [
   '华为 CloudEngine S5731-S 系列交换机彩页',
@@ -171,13 +171,13 @@ test('限定词不因换算等价被吞并：≤60W 与 60W 保持互异冲突�
 });
 
 test('模板初始化：双方都无参数时矩阵仍含全部固定字段行', () => {
-  const { FIELD_TEMPLATE } = require('../lib/params');
+  const { FIELD_TEMPLATE, FEATURE_TEMPLATE } = require('../lib/params');
   const matrix = buildMatrix([
     { documentId: 'a', label: 'A 系列', params: [] },
     { documentId: 'b', label: 'B 系列', params: [] },
   ], { initTemplate: true });
   const rows = matrix.groups.flatMap((group) => group.fields);
-  assert.equal(rows.length, FIELD_TEMPLATE.length, '固定模板字段全部在矩阵中');
+  assert.equal(rows.length, FIELD_TEMPLATE.length + FEATURE_TEMPLATE.length, '固定模板与功能特性字段全部在矩阵中');
   for (const field of rows) {
     assert.equal(field.values.a.status, 'not_disclosed', `${field.key} 应显示未找到而非被折叠`);
     assert.equal(field.values.b.status, 'not_disclosed');
@@ -267,4 +267,51 @@ test('矩阵层 key 归一化兜底（实战验收）：旧缓存携带分裂 ke
   assert.equal(dims[0].values.a.value, '483x985x438');
   assert.equal(dims[0].values.b.value, '483x985x703');
   assert.equal(dims[0].values.c.value, '483x1144x1436');
+});
+
+test('竞品字段：定位/OS/最高速率/静态满载功耗/插槽规则命中', () => {
+  const lines = [
+    'H3C S6550X-HI 园区汇聚/核心交换机',
+    '操作系统 Comware V9',
+    '最高速率 100Gbit/s',
+    '静态功耗 67.72W，满载功耗 315.4W',
+    '扩展插槽 1个',
+  ];
+  const byKey = new Map(extractParamsByRules(makeExtraction(lines)).map((p) => [p.key, p]));
+  assert.match(byKey.get('positioning')?.value || '', /园区汇聚|核心/);
+  assert.match(byKey.get('os_version')?.value || '', /Comware V9/i);
+  assert.match(byKey.get('max_speed')?.value || '', /100G/i);
+  assert.match(byKey.get('power_static')?.value || '', /67\.72W/);
+  assert.match(byKey.get('power_max')?.value || '', /315\.4W/);
+  assert.match(byKey.get('expansion_slots')?.value || '', /1/);
+});
+
+test('功能特性：✓/✗ 勾选；未写明不输出（未披露≠不支持）', () => {
+  const params = extractFeaturesByRules(makeExtraction([
+    '支持 IRF2 智能弹性架构',
+    '支持 VXLAN、EVPN',
+    '不支持 MACsec',
+    'Telemetry 可视化运维',
+  ]));
+  const byKey = new Map(params.map((p) => [p.key, p]));
+  assert.equal(byKey.get('feat_stacking_irf')?.value, '✓');
+  assert.equal(byKey.get('feat_vxlan_evpn')?.value, '✓');
+  assert.equal(byKey.get('feat_macsec')?.value, '✗');
+  assert.equal(byKey.get('feat_telemetry')?.value, '✓');
+  assert.equal(byKey.has('feat_mlag'), false, '未写明 M-LAG 不得推断');
+  assert.equal(byKey.has('feat_issu'), false);
+});
+
+test('功能特性进矩阵后 initTemplate 预置为未披露', () => {
+  const matrix = buildMatrix([{ documentId: 'a', label: 'A', params: [
+    { key: 'feat_vxlan_evpn', label: 'VXLAN+EVPN', group: '功能特性', value: '✓', quote: 'q', page: 1, status: 'ok', source: 'rule' },
+  ] }], { initTemplate: true });
+  const featureGroup = matrix.groups.find((g) => g.group === '功能特性');
+  assert.ok(featureGroup, '应有功能特性分组');
+  const keys = featureGroup.fields.map((f) => f.key);
+  assert.ok(keys.includes('feat_issu'));
+  const issu = featureGroup.fields.find((f) => f.key === 'feat_issu');
+  assert.equal(issu.values.a.status, 'not_disclosed');
+  const vxlan = featureGroup.fields.find((f) => f.key === 'feat_vxlan_evpn');
+  assert.equal(vxlan.values.a.value, '✓');
 });

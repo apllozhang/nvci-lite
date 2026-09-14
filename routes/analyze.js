@@ -8,7 +8,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { extractPdfText } = require('../lib/pdf-text');
-const { extractParamsByRules, buildMatrix, buildModelColumnParams, mergeParams } = require('../lib/params');
+const { extractParamsByRules, extractFeaturesByRules, buildMatrix, buildModelColumnParams, mergeParams } = require('../lib/params');
 const ai = require('../lib/ai');
 const { buildExcel, buildWordDocx, buildMaterialPack } = require('../lib/report');
 const vision = require('../lib/vision');
@@ -61,6 +61,8 @@ module.exports = function analyzeRoutes(ctx) {
       const columnsByDoc = await Promise.all(extractions.map(async (entry) => {
         const doc = documents.find((item) => item.documentId === entry.documentId);
         const ruleParams = extractParamsByRules(entry.extraction);
+        const featureParams = extractFeaturesByRules(entry.extraction);
+        const baseRuleParams = mergeParams(featureParams, ruleParams);
         // 视觉兜底（系列级，无型号归属）：文字层薄弱的彩页（扫描件/图片型）渲染页面图走视觉模型补参数
         const visionCfg = vision.visionConfig();
         let visionParams = null;
@@ -93,7 +95,7 @@ module.exports = function analyzeRoutes(ctx) {
         // （型号归属未验证，界面提示「系列值」），防止系列值静默冒充型号值。
         if (useAi && ai.isConfigured() && Array.isArray(doc.modelNames)
           && doc.modelNames.length >= 2 && doc.modelNames.length <= MAX_MODEL_COLUMNS) {
-          const seriesParams = visionParams ? mergeParams(visionParams, ruleParams) : ruleParams;
+          const seriesParams = visionParams ? mergeParams(visionParams, baseRuleParams) : baseRuleParams;
           // 多型号并行抽取：串行 for 会把 N 轮 AI 时延叠成 N 倍（提速关键）
           const modelResults = await Promise.all(doc.modelNames.map(async (targetModel) => {
             const label = `${entry.label} ${targetModel}`;
@@ -108,7 +110,7 @@ module.exports = function analyzeRoutes(ctx) {
           if (failed) entry.aiExtractError = failed.error;
           return modelResults.map((item) => item.column);
         }
-        let params = ruleParams;
+        let params = baseRuleParams;
         if (useAi && ai.isConfigured()) {
           try {
             // 证据分级合并：同键冲突时保留双方候选并标待核对；AI 失败时仅用规则结果。
