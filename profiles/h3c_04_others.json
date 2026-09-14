@@ -559,9 +559,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/GYYT/GZJ/IEF4520_G/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11131865",
-      "officialFileName": "H3C IEF4520-G 系列机架式工业全光以太网交换机产品彩页.pdf",
-      "expectedSha256": "f4b4f960ce6277707f29fd94a2d89c913b952ee540020d33bd1d1d3d8eeec491",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "GZJ",
         "IEF4520_G",
@@ -577,9 +577,9 @@
       ],
       "productPageUrl": "https://www.h3c.com/cn/Products_And_Solution/InterConnect/Products/Switches/Products/Industrial_Switch/GYYT/YZD/IEF4320/",
       "materialPageUrl": "",
-      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=11132323",
-      "officialFileName": "H3C IEF4320 系列导轨式工业全光以太网交换机产品彩页.pdf",
-      "expectedSha256": "c1124c4b09b84f3a562b45a8311225d99f5d4720b948888bef35b8a612ee0ccd",
+      "pdfUrl": "https://download.h3c.com/app/cn/download.do?id=5877396",
+      "officialFileName": "H3C IE系列工业交换机 Datasheet.pdf",
+      "expectedSha256": "9e5e079b920058e8269b9619e4928c89506cf167577f3337dd84340d1cb02364",
       "matchTerms": [
         "YZD",
         "IEF4320"
