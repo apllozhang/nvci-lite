@@ -84,12 +84,14 @@ function refreshProfiles() {
 }
 
 function packTar() {
-  const out = path.join(os.tmpdir(), `nvci-lite-deploy-${Date.now()}.tgz`);
+  // Windows 自带 bsdtar 不支持 --force-local；输出到项目内相对路径，避免盘符冒号被当成远程主机名
+  const stamp = Date.now();
+  const relativeOut = `.nvci-deploy-${stamp}.tgz`;
+  const out = path.join(PROJECT_DIR, relativeOut);
   // 排除 .env：远端 .env 由 deploy.config.env 生成、在解压前写入；
   // 若本地 .env 进包，解压会覆盖刚写好的远端配置（口令/AI Key 全部被本地开发值顶掉）
-  const excludes = ['./node_modules', './node_modules/*', './data', './data/*', './deploy.config.json', './.env', './start.bat'];
-  // --force-local：GNU tar 会把 "C:\..." 里的盘符冒号误判为远程主机名
-  execSync(`tar --force-local -czf "${out}" -C "${PROJECT_DIR}" ${excludes.map((item) => `--exclude "${item}"`).join(' ')} .`, { stdio: 'pipe' });
+  const excludes = ['./node_modules', './node_modules/*', './data', './data/*', './deploy.config.json', './.env', './start.bat', relativeOut];
+  execSync(`tar -czf "${relativeOut}" -C "${PROJECT_DIR}" ${excludes.map((item) => `--exclude "${item}"`).join(' ')} .`, { stdio: 'pipe' });
   const megabytes = (fs.statSync(out).size / 1024 / 1024).toFixed(2);
   console.log(`打包完成：${out}（${megabytes} MB）`);
   return out;
