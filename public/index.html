@@ -133,7 +133,9 @@
       <div class="panel-head"><h2 data-i18n="step4.title">AI 智能分析</h2><div id="aiMode" class="muted"></div></div>
       <div class="panel-body">
         <div class="analyze-options" id="analyzeOptions">
-          <label class="check"><input type="checkbox" id="useAi" checked> 用 AI 抽取参数并生成 Word 分析报告</label>
+          <label class="check"><input type="checkbox" id="outExcel" checked> <span data-i18n="step4.outExcel">Excel 参数对照</span></label>
+          <label class="check"><input type="checkbox" id="outWord" checked> <span data-i18n="step4.outWord">Word 分析报告</span></label>
+          <label class="check"><input type="checkbox" id="useAi" checked> <span data-i18n="step4.useAi">用 AI 抽取参数（更准，更慢）</span></label>
           <p class="muted small" id="aiHint"></p>
         </div>
         <details id="thresholdBox" class="threshold-box">
@@ -142,7 +144,7 @@
           <div id="thresholdRows"></div>
           <button type="button" class="btn ghost" id="thresholdAdd" data-i18n="thr.add">＋ 添加门槛</button>
         </details>
-        <button class="btn primary" id="startAnalyze">生成报告（Excel 参数对照 + Word 分析 / AI 材料包）</button>
+        <button class="btn primary" id="startAnalyze" data-i18n="step4.generate">生成报告</button>
         <div id="analyzeResult"></div>
         <h3 id="matrixTitle" class="hidden" data-i18n="matrix.title">参数对照矩阵</h3>
         <div class="muted small hidden" id="matrixHint" data-i18n="matrix.hint">点击「待核对」或「✓ 人工核对」单元格：查看全部候选与原文，选定或修正后保存。确认绑定彩页 SHA-256，下次分析自动采用；彩页更新后自动失效。</div>

@@ -36,7 +36,7 @@ const I18N = {
     'step2.next': '下一步：选对比 →', 'step2.back': '← 加选资料', 'step2.includePages': ' 同时采集产品页参数（Markdown，尽力而为）',
     'step3.title': '选择拟对比的产品（≥2，跨品牌可混选）', 'step3.next': '下一步：分析', 'step3.back': '← 返回采集', 'step3.addMore': '＋ 回去补采',
     'step3.empty': '还没有已采集的彩页，请回第 1、2 步先采集。',
-    'step4.title': 'AI 智能分析', 'step4.useAi': ' 用 AI 抽取参数并生成 Word 分析报告', 'step4.generate': '生成报告（Excel 参数对照 + Word 分析 / AI 材料包）',
+    'step4.title': 'AI 智能分析', 'step4.useAi': '用 AI 抽取参数（更准，更慢）', 'step4.outExcel': 'Excel 参数对照', 'step4.outWord': 'Word 分析报告', 'step4.generate': '生成报告',
     'step4.history': '历史导出', 'step4.back': '← 重选对比对象', 'step4.restart': '↻ 从头开始',
 
     'matrix.title': '参数对照矩阵',
@@ -139,7 +139,7 @@ I18N['zh-TW'] = {
   'step2.next': '下一步：選對比 →', 'step2.back': '← 加選資料', 'step2.includePages': ' 同時採集產品頁參數（Markdown，盡力而為）',
   'step3.title': '選擇擬對比的產品（≥2，跨品牌可混選）', 'step3.next': '下一步：分析', 'step3.back': '← 返回採集', 'step3.addMore': '＋ 回去補採',
   'step3.empty': '還沒有已採集的彩頁，請回第 1、2 步先採集。',
-  'step4.title': 'AI 智慧分析', 'step4.useAi': ' 用 AI 抽取參數並生成 Word 分析報告', 'step4.generate': '生成報告（Excel 參數對照 + Word 分析 / AI 材料包）',
+  'step4.title': 'AI 智慧分析', 'step4.useAi': '用 AI 抽取參數（更準，更慢）', 'step4.outExcel': 'Excel 參數對照', 'step4.outWord': 'Word 分析報告', 'step4.generate': '生成報告',
   'step4.history': '歷史匯出', 'step4.back': '← 重選對比物件', 'step4.restart': '↻ 從頭開始',
 
     'matrix.title': '參數對照矩陣',
@@ -240,7 +240,7 @@ I18N['en'] = {
   'step2.next': 'Next: Pick comparison →', 'step2.back': '← Add more docs', 'step2.includePages': ' Also fetch product pages (Markdown, best effort)',
   'step3.title': 'Pick products to compare (≥2, cross-vendor OK)', 'step3.next': 'Next: Analyze', 'step3.back': '← Back to collect', 'step3.addMore': '＋ Collect more',
   'step3.empty': 'No collected datasheets yet — collect in steps 1–2 first.',
-  'step4.title': 'AI analysis', 'step4.useAi': ' Extract params with AI and generate Word report', 'step4.generate': 'Generate (Excel + Word / AI pack)',
+  'step4.title': 'AI analysis', 'step4.useAi': ' Extract params with AI (more accurate, slower)', 'step4.outExcel': 'Excel comparison', 'step4.outWord': 'Word analysis report', 'step4.generate': 'Generate',
   'step4.history': 'Past exports', 'step4.back': '← Re-pick products', 'step4.restart': '↻ Start over',
 
     'matrix.title': 'Parameter matrix',
@@ -341,7 +341,7 @@ I18N['fr'] = {
   'step2.next': 'Suivant : Comparaison →', 'step2.back': '← Ajouter des docs', 'step2.includePages': ' Récupérer aussi les pages produit (Markdown)',
   'step3.title': 'Choisir les produits à comparer (≥2)', 'step3.next': 'Suivant : Analyse', 'step3.back': '← Retour collecte', 'step3.addMore': '＋ Collecter plus',
   'step3.empty': 'Aucune fiche collectée — passez par les étapes 1–2.',
-  'step4.title': 'Analyse IA', 'step4.useAi': ' Extraction IA + rapport Word', 'step4.generate': 'Générer (Excel + Word / pack IA)',
+  'step4.title': 'Analyse IA', 'step4.useAi': ' Extraction IA des paramètres (plus précis, plus lent)', 'step4.outExcel': 'Comparaison Excel', 'step4.outWord': 'Rapport Word', 'step4.generate': 'Générer',
   'step4.history': 'Exports précédents', 'step4.back': '← Rechoisir', 'step4.restart': '↻ Recommencer',
 
     'matrix.title': 'Matrice des paramètres',
@@ -439,7 +439,7 @@ I18N['es'] = {
   'step2.next': 'Siguiente: Comparación →', 'step2.back': '← Añadir docs', 'step2.includePages': ' Obtener también páginas de producto (Markdown)',
   'step3.title': 'Elegir productos a comparar (≥2)', 'step3.next': 'Siguiente: Análisis', 'step3.back': '← Volver a recolección', 'step3.addMore': '＋ Recolectar más',
   'step3.empty': 'Aún no hay fichas recolectadas — use los pasos 1–2.',
-  'step4.title': 'Análisis IA', 'step4.useAi': ' Extracción IA + informe Word', 'step4.generate': 'Generar (Excel + Word / paquete IA)',
+  'step4.title': 'Análisis IA', 'step4.useAi': ' Extraer parámetros con IA (más preciso, más lento)', 'step4.outExcel': 'Comparación Excel', 'step4.outWord': 'Informe Word', 'step4.generate': 'Generar',
   'step4.history': 'Exportaciones', 'step4.back': '← Elegir de nuevo', 'step4.restart': '↻ Reiniciar',
 
     'matrix.title': 'Matriz de parámetros',
@@ -537,7 +537,7 @@ I18N['ja'] = {
   'step2.next': '次へ：比較選択 →', 'step2.back': '← 資料を追加', 'step2.includePages': ' 製品ページも取得（Markdown、ベストエフォート）',
   'step3.title': '比較する製品を選択（≥2、ブランド横断可）', 'step3.next': '次へ：分析', 'step3.back': '← 収集に戻る', 'step3.addMore': '＋ 追加収集',
   'step3.empty': '収集済みデータシートがありません。手順 1–2 で先に収集してください。',
-  'step4.title': 'AI 分析', 'step4.useAi': ' AI でパラメータ抽出し Word レポート生成', 'step4.generate': '生成（Excel + Word / AI パック）',
+  'step4.title': 'AI 分析', 'step4.useAi': 'AIでパラメータ抽出（高精度・低速）', 'step4.outExcel': 'Excel比較表', 'step4.outWord': 'Word分析レポート', 'step4.generate': '生成',
   'step4.history': '過去のエクスポート', 'step4.back': '← 選び直す', 'step4.restart': '↻ 最初から',
 
     'matrix.title': 'パラメータ対照マトリクス',

@@ -29,8 +29,12 @@ module.exports = function analyzeRoutes(ctx) {
   router.post('/api/analyze', auth, async (req, res) => {
     const documentIds = [...new Set(Array.isArray(req.body?.documentIds) ? req.body.documentIds.map(String) : [])];
     const useAi = Boolean(req.body?.useAi);
+    // 输出可选：Excel / Word 至少一项；Word 与 AI 抽取解耦——可只要规则 Excel，也可规则矩阵+一次 Word
+    const wantExcel = req.body?.wantExcel !== false;
+    const wantWord = Boolean(req.body?.wantWord) && ai.isConfigured();
     if (documentIds.length < 2) return res.status(400).json({ error: '对比分析至少选择 2 个产品' });
     if (documentIds.length > 6) return res.status(400).json({ error: '对比分析一次最多 6 个产品' });
+    if (!wantExcel && !wantWord) return res.status(400).json({ error: '请至少勾选一种输出（Excel 或 Word）' });
     const library = new Map(store.library().map((doc) => [doc.documentId, doc]));
     const missing = documentIds.filter((id) => !library.has(id));
     if (missing.length) return res.status(400).json({ error: `以下产品尚未采集：${missing.join('、')}` });
@@ -90,19 +94,19 @@ module.exports = function analyzeRoutes(ctx) {
         if (useAi && ai.isConfigured() && Array.isArray(doc.modelNames)
           && doc.modelNames.length >= 2 && doc.modelNames.length <= MAX_MODEL_COLUMNS) {
           const seriesParams = visionParams ? mergeParams(visionParams, ruleParams) : ruleParams;
-          const columns = [];
-          for (const targetModel of doc.modelNames) {
+          // 多型号并行抽取：串行 for 会把 N 轮 AI 时延叠成 N 倍（提速关键）
+          const modelResults = await Promise.all(doc.modelNames.map(async (targetModel) => {
             const label = `${entry.label} ${targetModel}`;
             try {
               const aiParams = await extractForTarget(targetModel);
-              columns.push({ documentId: entry.documentId, model: targetModel, label, params: buildModelColumnParams(aiParams, seriesParams) });
+              return { ok: true, targetModel, label, column: { documentId: entry.documentId, model: targetModel, label, params: buildModelColumnParams(aiParams, seriesParams) } };
             } catch (error) {
-              entry.aiExtractError = String(error.message || error);
-              // AI 失败降级：整列只剩系列值（均标 unattributed），归属交由人工核对
-              columns.push({ documentId: entry.documentId, model: targetModel, label, params: seriesParams });
+              return { ok: false, targetModel, label, error: String(error.message || error), column: { documentId: entry.documentId, model: targetModel, label, params: seriesParams } };
             }
-          }
-          return columns;
+          }));
+          const failed = modelResults.find((item) => !item.ok);
+          if (failed) entry.aiExtractError = failed.error;
+          return modelResults.map((item) => item.column);
         }
         let params = ruleParams;
         if (useAi && ai.isConfigured()) {
@@ -144,11 +148,14 @@ module.exports = function analyzeRoutes(ctx) {
       // 同一次分析的三个产物共享 base（runId 语义），杜绝同毫秒并发互相占名
       const runBase = store.exportBaseName(stem);
 
-      const excelPath = store.exportPath(`${runBase}.xlsx`);
-      await buildExcel({ matrix, documents, outPath: excelPath });
-
-      const files = [{ fileName: path.basename(excelPath), kind: 'excel' }];
-      if (useAi && ai.isConfigured()) {
+      const files = [];
+      if (wantExcel) {
+        const excelPath = store.exportPath(`${runBase}.xlsx`);
+        await buildExcel({ matrix, documents, outPath: excelPath });
+        files.push({ fileName: path.basename(excelPath), kind: 'excel' });
+      }
+      // Word 与 AI 抽取解耦：只要勾了 Word 且 AI 可用就走叙事；未勾 Word 则跳过最慢一段
+      if (wantWord) {
         try {
           const analysis = await ai.analyzeWithAi(matrix, documents);
           const wordPath = store.exportPath(`${runBase}.docx`);
@@ -170,7 +177,8 @@ module.exports = function analyzeRoutes(ctx) {
             files.push({ fileName: '', kind: 'word_failed', error: `${String(error.message || error)}；材料包降级也失败：${String(packError.message || packError)}` });
           }
         }
-      } else {
+      } else if (!useAi) {
+        // 未勾 AI 且未勾 Word：给一份材料包，便于事后手工分析
         const packPath = store.exportPath(`${runBase}.md`);
         buildMaterialPack({
           matrix,

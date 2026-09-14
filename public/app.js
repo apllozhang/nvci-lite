@@ -804,18 +804,24 @@ function renderThresholdResult(rows) {
 function renderAiMode() {
   const configured = state.aiStatus?.configured;
   $('aiMode').textContent = configured
-    ? `AI 已配置（${state.aiStatus.model}）· 参数抽取 + Word 分析将自动生成`
-    : 'AI 未配置 · 将导出「AI 材料包」，可整体复制给任意 AI 生成同结构分析';
+    ? `AI 已配置（${state.aiStatus.model}）`
+    : 'AI 未配置';
   $('aiHint').textContent = configured
-    ? '取消勾选则只做规则抽取，输出 Excel + 材料包（不调用 AI 接口）。'
-    : '如需自动生成 Word 报告：设置环境变量 NVCI_LITE_AI_BASE、NVCI_LITE_AI_KEY、NVCI_LITE_AI_MODEL 后重启。';
+    ? '最快：只勾 Excel、取消 AI 抽取（规则提取，通常十几秒）。只要参数表时不要勾 Word。'
+    : '未配置 AI：仅能规则抽取并导出 Excel / 材料包；勾选 Word 无效。';
   $('useAi').checked = Boolean(configured);
   $('useAi').disabled = !configured;
+  $('outWord').checked = Boolean(configured);
+  $('outWord').disabled = !configured;
 }
 
 async function startAnalyze() {
   const button = $('startAnalyze');
   if (state.cmpSel.size < 2) { toast('warn', '至少选择 2 个对比产品'); return; }
+  const wantExcel = $('outExcel').checked;
+  const wantWord = $('outWord').checked && !$('outWord').disabled;
+  const useAi = $('useAi').checked && !$('useAi').disabled;
+  if (!wantExcel && !wantWord) { toast('warn', '请至少勾选 Excel 或 Word'); return; }
   button.disabled = true;
   // 动态耗时反馈（走查发现：文案承诺 1–3 分钟，AI 抽取实测 5–11 分钟，普通用户会以为死机）
   const startedAt = Date.now();
@@ -823,8 +829,11 @@ async function startAnalyze() {
     const sec = Math.round((Date.now() - startedAt) / 1000);
     return sec < 60 ? sec + ' 秒' : Math.floor(sec / 60) + ' 分 ' + (sec % 60) + ' 秒';
   };
+  const modeNote = !useAi && !wantWord ? '（规则抽取，通常较快）'
+    : !wantWord && useAi ? '（AI 抽取 + Excel，跳过 Word 叙事）'
+      : (useAi ? '（AI 抽取 + Word，通常 5–10 分钟）' : '（规则抽取 + Word 叙事）');
   const ticker = setInterval(() => {
-    button.textContent = '分析中… 已进行 ' + elapsedText() + '（AI 抽取通常需要 5–10 分钟，请勿关闭页面）';
+    button.textContent = '分析中… 已进行 ' + elapsedText() + modeNote + '，请勿关闭页面';
   }, 1000);
   button.textContent = '分析中…（PDF 抽取 + 参数对齐）';
   $('analyzeResult').innerHTML = '';
@@ -836,7 +845,9 @@ async function startAnalyze() {
       method: 'POST',
       body: JSON.stringify({
         documentIds: [...state.cmpSel],
-        useAi: $('useAi').checked && !$('useAi').disabled,
+        useAi,
+        wantExcel,
+        wantWord,
         thresholds: thresholdPayload(),
       }),
     });
@@ -865,7 +876,7 @@ async function startAnalyze() {
   } finally {
     button.disabled = false;
     clearInterval(ticker);
-    button.textContent = '生成报告（Excel 参数对照 + Word 分析 / AI 材料包）';
+    button.textContent = t('step4.generate');
   }
 }
 
