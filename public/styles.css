@@ -266,10 +266,10 @@ h3 { font-size: 15px; margin: 12px 0 0; }
   padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .steps { display: none; }
   .doc-series { min-width: 120px; }
-  /* M5 试点（v6 320 口径）：顶栏换行 + 选择器工具条换行，窄屏根级零横向溢出 */
+  /* M5/M6 试点（v6 窄屏口径，断点 860 覆盖 768 平板档，R4-01）：顶栏换行 + 选择器工具条换行，窄屏根级零横向溢出 */
   .topbar { height: auto; flex-wrap: wrap; padding: 8px 14px; gap: 8px 12px; }
   .top-tools { margin-left: auto; }
   .picker-bar { flex-wrap: wrap; gap: 8px; padding: 10px 14px; }
