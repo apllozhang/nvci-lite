@@ -315,3 +315,23 @@ test('功能特性进矩阵后 initTemplate 预置为未披露', () => {
   const vxlan = featureGroup.fields.find((f) => f.key === 'feat_vxlan_evpn');
   assert.equal(vxlan.values.a.value, '✓');
 });
+
+test('英文彩页：ALE Max switching ASIC / Switch frame rate 与 Cisco 带宽表能命中', () => {
+  const ale = extractParamsByRules(makeExtraction([
+    'The Alcatel-Lucent OmniSwitch 2360 operates on the field-proven Alcatel-Lucent Operating System (AOS)',
+    'Max switching ASIC  128 Gb/s  128 Gb/s  216 Gb/S  216 Gb/S',
+    'Switch frame rate @  68.4 Mpps  68.4 Mpps  107.1 Mpps  107.1 Mpps',
+  ]));
+  const aleByKey = new Map(ale.map((p) => [p.key, p]));
+  assert.match(aleByKey.get('switching_capacity')?.value || '', /128\s*Gb\/s/i);
+  assert.match(aleByKey.get('forwarding_rate')?.value || '', /68\.4\s*Mpps/i);
+
+  const cisco = extractParamsByRules(makeExtraction([
+    'Description  Switching capacity  Switch capacity with  Forwarding rate  Forwarding rate with',
+    'Stacking  Stacking',
+    'C9200  - 24T  128 Gbps  288 Gbps  95.23 Mpps  214 Mpps',
+  ]));
+  const ciscoByKey = new Map(cisco.map((p) => [p.key, p]));
+  assert.match(ciscoByKey.get('switching_capacity')?.value || '', /128\s*Gbps/i);
+  assert.match(ciscoByKey.get('forwarding_rate')?.value || '', /95\.23\s*Mpps/i);
+});
